@@ -19,13 +19,48 @@
 }
 \renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
 \begin{document}
-\section*{求阴影面积}
-\begin{center}
-	\begin{tikzpicture}
-		\node(x){\includegraphics[scale=.1]{WechatIMG1.jpg}};
-		\node at (x.center) [yshift=1.3cm, xshift=.8cm]{\color{red}\Large $G$};
+\section{求阴影面积}
+\begin{figure}[htbp]
+	\centering
+	\begin{gather*}
+		长方形ABCD\\
+		AB = 9 \\
+		BC = 6 \\
+		求阴影面积
+	\end{gather*}
+	\begin{tikzpicture}[scale=.5]
+		\coordinate (A) at (9,0);
+		\coordinate (B) at (0,0);
+		\coordinate (C) at (0,-6);
+		\coordinate (D) at (9, -6);
+		\coordinate (E) at (3, 0);
+		\coordinate (F) at (5, -6);
+		\coordinate (C') at (9, -3);
+		\coordinate (B') at ($(C') ! 1.2 ! -90:(F)$);
+		\path [name path=B'C'] (B') -- (C');
+		\path [name path=AE] (A) -- (E);
+
+		\draw [name intersections={of=B'C' and AE, by=G}];
+		\node [above right] at(G){$G$};
+
+		% \path[draw=red] {AE};
+
+		\draw[dashed](B) -- (E);
+		\draw (E)-- (A) -- (D) -- (F) -- (E);
+		\draw[dashed] (F) -- (C) -- (B);
+		\draw (F) -- (C') -- (B') -- (E);
+
+		\draw [pattern=north east lines](E) -- (G) -- (C') -- (F) -- cycle;
+		\node at (A)[above right]{$A$};
+		\node at (B)[above left]{$B$};
+		\node at (C)[below left]{$C$};
+		\node at (D)[below right]{$D$};
+		\node at (F)[below]{$F$};
+		\node at (C')[right]{$C\prime$ 中点};
+		\node at (E)[above left]{$E$};
+		\node at (B')[right, xshift=5pt]{$B\prime$};
 	\end{tikzpicture}
-\end{center}
+\end{figure}
 
 \begin{align}
 	FC + FD                    & = 9                      \\
@@ -47,44 +82,6 @@ Calculate the length of $BE$：
 	BE                       & = AC = 3
 \end{align}
 
-\clearpage
-\tikz \node[align=left]{长方形$ABCD$\\$AB=9$\\$BC=6$};
-
-\begin{tikzpicture}[scale=.5]
-
-	\coordinate (A) at (9,0);
-	\coordinate (B) at (0,0);
-	\coordinate (C) at (0,-6);
-	\coordinate (D) at (9, -6);
-	\coordinate (E) at (3, 0);
-	\coordinate (F) at (5, -6);
-	\coordinate (C') at (9, -3);
-	\coordinate (B') at ($(C') ! 1.2 ! -90:(F)$);
-	\path [name path=B'C'] (B') -- (C');
-	\path [name path=AE] (A) -- (E);
-
-	\draw [name intersections={of=B'C' and AE, by=G}];
-	\node [above right] at(G){$G$};
-
-	% \path[draw=red] {AE};
-
-	\draw[dashed](B) -- (E);
-	\draw (E)-- (A) -- (D) -- (F) -- (E);
-	\draw[dashed] (F) -- (C) -- (B);
-	\draw (F) -- (C') -- (B') -- (E);
-
-	\draw [pattern=north east lines](E) -- (G) -- (C') -- (F) -- cycle;
-	\node at (A)[above right]{$A$};
-	\node at (B)[above left]{$B$};
-	\node at (C)[below left]{$C$};
-	\node at (D)[below right]{$D$};
-	\node at (F)[below]{$F$};
-	\node at (C')[right]{$C\prime$ 中点};
-	\node at (E)[above left]{$E$};
-	\node at (B')[right, xshift=5pt]{$B\prime$};
-\end{tikzpicture}
-
-求阴影部分面积。
 \section*{20以内两位数乘法练习}
 \begin{center}
 	\begin{tikzpicture}
