@@ -1,0 +1,18 @@
+\section{SVSU2022 level2}
+\subsubsection{}
+求
+$\displaystyle\sum_{k=0}^{2022}\frac{2022!\cdot (-1)^k2^k}{k! \cdot (2022-k)!}$
+的值
+
+\subsection*{解：}
+\begin{enumerate}
+	\item 利用二项式定理$\displaystyle(x+y)^n = \sum_{k=0}^{n}\binom{k}{n}x^ky^{n-k}$
+	      \begin{align}
+		      \sum_{k=0}^{2022}\frac{2022!\cdot(-1)^k2^k}{k!\cdot(2022-k)!} & = \sum_{k=0}^{2022}\frac{2022!}{k!\cdot
+		      (2022-k)!}(-2)^k                                                                                        \\
+		                                                                    & =
+		      \sum_{k=0}^{2022}\binom{2022}{k}(-2)^k\cdot 1^{2022-k}                                                  \\
+		                                                                    & = (1-2)^{2022}                          \\
+		                                                                    & = 1
+	      \end{align}
+\end{enumerate}
