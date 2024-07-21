@@ -1,5 +1,6 @@
 %!tex program = lualatex
-\documentclass{ctexart}
+\documentclass[answers]{exam}
+\usepackage{ctex}
 \usepackage{graphicx}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath}
@@ -10,13 +11,13 @@
 \newcounter{xcord}
 \newcounter{ycord}
 \newcounter{total}
-\ctexset{
-	subsection/name = {第,题},
-	subsection/number = {\thesubsection},
-	section ={
-		name = {第,部分}
-	}
-}
+% \ctexset{
+% 	subsection/name = {第,题},
+% 	subsection/number = {\thesubsection},
+% 	section ={
+% 		name = {第,部分}
+% 	}
+% }
 \renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
 \begin{document}
 \section{求阴影面积}

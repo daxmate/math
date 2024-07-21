@@ -1,3 +1,28 @@
+\section{SVSU2022 level1}
+\begin{questions}
+	\question 考虑方程$p(x): ax^2 + bx + c=0$，其系数$a$，$b$和$c$都是非零的，并且每个系数都满足从方程$p(x)$
+	中移除包含该系数的项后得到的方程；例如，系数$b$是方程 $ax^2+c=0$的一个解。求方程$p(x)$
+	所有解的和是多少？
+	\begin{oneparchoices}
+		\CorrectChoice 总是 1 \choice 总是 -1 \choice 总是 2 \choice 1 或者 -1 \choice 1 或者 2
+	\end{oneparchoices}
+	\begin{solution}
+		方程$p(x)$的两个解分别为$\displaystyle x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$，则$\displaystyle x_1 +
+			x_2 = -\frac{b}{a}$\\
+		由题意得
+		\begin{align}
+			ac^2  + bc & = 0 \label{\thequestion:1} \\
+			ab^2  + c  & = 0 \label{\thequestion:2} \\
+			ab    + c  & = 0 \label{\thequestion:3}
+		\end{align}
+		由式(\ref{\thequestion:2}) 和(\ref{\thequestion:3})得$b=1$和$a+c=0$，代入(\ref{\thequestion:1})得：
+		\begin{equation}
+			a(-a) -a  = 0
+		\end{equation}
+
+		则$a=-1$或$a=0$，因为题目中$a \ne 0$，所以$a=-1$，则$\displaystyle x_1 + x_2 = -\frac{b}{a}=1$
+	\end{solution}
+\end{questions}
 \section{SVSU2022 level2}
 \subsection{}
 求
