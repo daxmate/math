@@ -23,6 +23,28 @@
 
 		则$a=-1$或$a=0$，因为题目中$a \ne 0$，所以$a=-1$，则$\displaystyle x_1 + x_2 = -\frac{b}{a}=1$
 	\end{solution}
+	\question 一支行进乐队共有150名成员。有一天，只有部分成员到场，但没有人想花时间去清点具体人数。他们首先尝试以每排5名成员的方式排队，但结果多出了1名成员。接着他们改以每排6名成员的方式排列，仍然多出了1名成员。最后，他们尝试以每排7名成员的方式排列，这次多出了2名成员。请问，为了确保没有成员被剩下，他们应该以每排多少人的方式排列？
+
+	\begin{oneparchoices}
+		\choice 4人每排
+		\CorrectChoice 11人每排
+		\choice 13人每排
+		\choice 17人每排
+		\choice 上述选项中无正确答案
+	\end{oneparchoices}
+	\begin{solution}
+		设当天一共到场$x$人， 根据题意得
+		\begin{equation}
+			\begin{cases}
+				x \equiv 1 \mod 5 \\
+				x \equiv 1 \mod 6
+			\end{cases}
+		\end{equation}
+		则$x=k(5 \times 6) + 1$，其中$k=1,2,3 \ldots$
+
+		根据总人数小于150这个条件，$x$可能的值有$31,61,91,121$，然后根据每排排7人的情况下多出2名成员，得到$x=121$，则每排11个人可以确保没有成员被剩下。
+
+	\end{solution}
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
