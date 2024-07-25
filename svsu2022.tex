@@ -105,6 +105,76 @@
 
 	\end{solution}
 
+	\question
+	一个人沿着海滩走，从点A开始，以每小时3公里的速度行走，并且在B点进入水中，以每小时2公里的速度斜向游到一个距离C点$\sqrt{3}$公里远的小岛上，直接横跨岛屿与海岸线相对的位置，如图所示。从A点到C点的总距离为3公里。有两种不同的选择，从A点到B点的距离（以公里为单位）将导致步行和游泳的总时间为一小时四十分钟；这两个数字之和是多少？
+
+	\begin{oneparchoices}
+		\choice 2 \choice 4 \CorrectChoice $\frac{14}{5}$ \choice $\frac{16}{5}$ \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{figure}[ht]
+		\centering
+		\begin{tikzpicture}[scale=0.8, every node/.style={transform shape}]
+			% Define coordinates
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (2,0);
+			\coordinate (C) at (3,0);
+			\coordinate (D) at (3,{sqrt(3)});
+
+			% Draw horizontal lines for the sea
+			\begin{scope}[on background layer]
+				\draw[dashed] (A) -- (B);
+				\draw[dashed] (B) -- (C);
+				\draw[dashed] (C) -- (D);
+				\draw[dashed] (B) -- (D);
+			\end{scope}
+
+			\node[fill=white] at (A){$A$};
+			\node[fill=white] at (B){$B$};
+			\node[fill=white] at (C){$C$};
+			\node[cloud, draw=black, minimum width=3cm, minimum height=2cm, anchor=south] at (D){小岛};
+
+			\draw[decoration={coil, segment length = 5mm, amplitude = 0.5mm}, decorate] ([yshift=0.5cm]A) -- ([yshift=0.5cm]C);
+			\draw[decoration={brace, mirror}, decorate] ([yshift=-0.5cm]A) -- ([yshift=-0.5cm]C);
+			\draw[decoration={brace, mirror}, decorate] ([xshift=0.5cm]C) -- ([xshift=0.5cm]D);
+			\node at ([yshift=-1cm]$(A)!0.5!(C)$) {3公里};
+			\node at ([xshift=1.5cm]$(C)!0.5!(D)$) {$\sqrt{3}$公里};
+
+			\node at (0,2) {\~{}};
+			\node at (1,1.5) {\~{}};
+			\node at (2,1) {\~{}};
+			\node at (2,1.5) {\~{}};
+
+		\end{tikzpicture}
+		\caption{\thequestion}
+	\end{figure}
+
+	\begin{solution}
+		\begin{enumerate}
+			\item 设$AB=x$，则$BC=3-x$
+			\item 设$B$点到小岛的距离为$y$，则有
+			      \begin{equation}
+				      y^2 = (3-x)^2 + 3 \label{\thequestion:step2}
+			      \end{equation}
+			\item 根据总时间可以得
+			      \begin{gather}
+				      \frac{x}{3} + \frac{y}{2} = \frac{100}{60} = \frac{5}{3}\\
+				      2x + 3y = 10 \\
+				      y = \frac{10 - 2x}{3}
+			      \end{gather}
+			\item 将$y$代入式(\ref{\thequestion:step2})中，得
+			      \begin{gather}
+				      \frac{(10-2x)^2}{3^2} = 9 - 6x + x^2 + 3 \\
+				      100 -40x + 4x^2 = 108 - 54x + 9x^2 \\
+				      5x^2 -14x + 8 = 0 \label{\thequestion:step4}
+			      \end{gather}
+			\item 方程(\ref{\thequestion:step4})的两个解的和
+			      \begin{equation}
+				      x_1 + x_2 = \frac{-(-14) \times 2}{5 \times 2} = \frac{14}{5}
+			      \end{equation}
+		\end{enumerate}
+	\end{solution}
+
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
