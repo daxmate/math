@@ -219,6 +219,46 @@
 		\end{enumerate}
 	\end{solution}
 
+	\question
+	\begin{minipage}{0.7\textwidth}
+		右边所展示的立方体的每一面都标有一个正整数，使得每一对相对面的数字的乘积都是相同的。找出所有面上数字之和的最低可能值。
+	\end{minipage}
+	\begin{minipage}{0.25\textwidth}
+		\begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}, baseline=(B)]
+			\coordinate(A) at (0,0,0);
+			\coordinate(B) at (0,3,0);
+			\coordinate(C) at (3,3,0);
+			\coordinate(D) at (3,0,0);
+			\coordinate(E) at (0,0,3);
+			\coordinate(F) at (0,3,3);
+			\coordinate(G) at (3,3,3);
+			\coordinate(H) at (3,0,3);
+
+			\draw (E) -- (F) -- (G) -- (H) -- cycle;
+			\draw (F) -- (B) -- (C) -- (D) -- (H);
+			\draw (C) -- (G);
+
+			\node at ($(E)!0.5!(G)$){\fontsize{64}{32}\selectfont\sf 14};
+			\node[text effects={xslant=0.9}, xscale=1.4] at ($(F)!0.5!(C)$){\fontsize{40}{32}\selectfont\sf 10};
+			\node [text effects={yslant=0.9}, yscale=1.4] at ($(H)!0.5!(C)$){\fontsize{36}{32}\selectfont\sf 15};
+		\end{tikzpicture}
+	\end{minipage}
+
+	\begin{oneparchoices}
+		\choice 78 \choice 80 \CorrectChoice 89 \choice 107 \choice 以上都不对
+	\end{oneparchoices}
+	\pagebreak
+	\begin{solution}\\
+		10、14、15三个数的最小公倍数为：210，则有
+		\begin{equation*}
+			\begin{cases}
+				10\text{的对面是} 21 \\
+				14\text{的对面是} 15 \\
+				15\text{的对面是} 14
+			\end{cases}
+		\end{equation*}
+	\end{solution}
+
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
