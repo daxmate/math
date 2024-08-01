@@ -275,6 +275,10 @@
 	\question 小明和小红正在用他们的计算器计算两个数 \( a \)和 \( b \)的平均值。首先，小明 使用计算器输入了 \( a + b
 	\div 2 \) ，结果得到 \( 30 \)。然后小红使用相同的计算器输入了 \( b + a \div 2 \)结果得到 18。请问两个数的正确平均值是多少？
 
+	\begin{oneparchoices}
+		\choice 28 \choice 24 \CorrectChoice 16 \choice 12 \choice 以上都不对
+	\end{oneparchoices}
+
 	\begin{solution}
 		\begin{align*}
 			a    + b \div 2   & = 30 \\
@@ -283,6 +287,44 @@
 			a    + b          & = 32 \\
 		\end{align*}
 		则正确的平均数为16。如果用常规的计算器是不会出现这种情况的。
+	\end{solution}
+
+	\question 下面的方程有几对整数解？
+	\begin{equation}
+		3x^2y - 10xy - 8y - 17 = 0
+	\end{equation}
+	\begin{oneparchoices}
+		\choice 无 \CorrectChoice 1 \choice 2 \choice 4 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			3x^2y - 10xy - 8y - 17 & = 0  \\
+			y(3x^2 - 10x - 8)      & = 17 \\
+			y(x-4)(3x+2)           & = 17 \\
+		\end{align*}
+		因为 \( 17 \) 是质数，所以只能有以下两种情况：
+		\begin{equation*}
+			\begin{cases}
+				y = 1, \quad (x-4)(3x+2) = 17 \\
+				y = 17,\quad  (x-4)(3x+2) = 1
+			\end{cases}
+		\end{equation*}
+		在第一种情况下：
+		\begin{align*}
+			(x-4)(3x+2)     & = 17 \\
+			3x^2 -10x - 25  & = 0  \\
+			(3x + 5)(x - 5) & = 0  \\
+		\end{align*}
+		则 \( (x=5, y=1) \) 是方程的一组整数解。
+
+		在第二种情况下：
+		\begin{align*}
+			3x^2 - 10x - 9 & = 0 \\
+		\end{align*}
+		此方程没有整数解。
+
+		因此，题目中的方程只有一组整数解。
 	\end{solution}
 
 \end{questions}
