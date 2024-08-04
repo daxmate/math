@@ -420,6 +420,34 @@
 		\end{align*}
 	\end{solution}
 
+	\question 一个等边三角形的基点位于一个半径为2的圆边上，这个三角形的面积是：
+
+	\begin{oneparchoices}
+		\CorrectChoice \( 3\sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 5\sqrt{3} \) \choice \( 4\sqrt{3} \) \choice
+		以上都不是
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\draw circle (2);
+				\draw (90:2) -- (210:2) -- (330:2) -- cycle;
+				\draw[dashed, red] (90:2) --node[anchor=east, black]{2} (0,0);
+				\draw[decoration={brace, mirror}, decorate] (90:2) -- (0,0);
+				\draw[dashed, green] (0,0)--node[black, sloped, above]{2} (330:2);
+				\draw[decoration={brace}, decorate] (0,0)-- (330:2);
+				\draw[dashed, blue] (0,0) --node[anchor=east, black]{$x$} ($(210:2)!0.5!(330:2)$);
+				\draw[decoration={brace, mirror}, decorate] (0,0) -- ($(210:2)!0.5!(330:2)$);
+				\draw[decoration={brace, mirror}, decorate] ($(210:2)!0.5!(330:2)$) --node[below]{$y$} (330:2);
+			\end{tikzpicture}
+		\end{center}
+
+		因为是等边三角形，所以得 \( x = 1 \)，所以 \( y = \sqrt{2^2 - 1^2} = \sqrt{3} \)，则三角形的面积为
+		\[
+			2y \cdot (2 + x) / 2=  3\sqrt{3}
+		\]
+	\end{solution}
+
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
