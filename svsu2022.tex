@@ -346,6 +346,108 @@
 		\choice 1 \choice \( \frac{1}{2^{100}} \) \choice \( \frac{1}{2^{101}} \) \CorrectChoice \( \frac{1}{2} \) \choice 以上都不对
 	\end{oneparchoices}
 
+	\question  如果两只土拨鼠在12分钟内可以啃掉32斤的木头，那么三只土拨鼠在8分钟内可以啃掉多少斤的木头？
+	\begin{oneparchoices}
+		\choice \( 21\frac13 \) \CorrectChoice 32 \choice 64 \choice 80 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			32 \div 12 \div 2 \times 3 \times 8 & = \frac{32 \times 3 \times 8}{12 \times 2} \\
+			                                    & = 32
+		\end{align*}
+	\end{solution}
+
+	\question 假设有打呼、磨牙、抽烟三种生活不良习惯，请问下列哪个系列的前提假设能够推断出老王不喝酒？
+
+	\begin{oneparchoices}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人都磨牙\\
+			磨牙的人不打呼 \\
+			有些打呼的人抽烟 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			有些喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			有些抽烟的人会打呼 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			所有打呼的人抽烟 \\
+			老王抽烟
+		\end{minipage}
+		\CorrectChoice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			所有抽烟的人打呼 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			以上都不对
+		\end{minipage}
+	\end{oneparchoices}
+
+	\begin{solution}
+
+		A选项没有与喝酒相关的内容 \\
+		B选项从老王抽烟与有些抽烟的人会打呼，只能推断出老王可能会打呼。
+		从有些喝酒的人磨牙和没有磨牙的人会打呼，只能推断出有些喝酒的人不会打呼。\\
+		C选项从老王抽烟，及所有打呼的人抽烟并不能推断出都比打呼 \\
+		D选项从老王抽烟，以及所有抽烟的人打呼得出老王打呼\\
+		从所有喝酒的人磨牙和没有磨牙的人会打呼得出喝酒的人不打呼，所以老王不喝酒
+
+	\end{solution}
+
+	\question 下列哪些表达式对于所有的 \( x \)都为 0？
+	\begin{oneparchoices}
+		\choice \( (x+1)(x-1) - x^2 + 1 \) \choice \( x^0 - 1 \) \choice \( \sqrt{x^2} - x\) \choice 对于所有 \( x
+		\)没有表达式的值为0 \CorrectChoice 对于所有 \( x \)有不止一个表达式值为0
+	\end{oneparchoices}
+
+	\begin{solution}\\
+		\begin{align*}
+			(x+1)(x-1) - x^2 + 1 & = x^2 - 1 - x^2 + 1 = 0       \\
+			x^0 - 1              & = 1 - 1       = 0             \\
+			\sqrt{x^2} - x       & = \pm x - x = 0 \text{或} -2x
+		\end{align*}
+	\end{solution}
+
+	\question 一个等边三角形的基点位于一个半径为2的圆边上，这个三角形的面积是：
+
+	\begin{oneparchoices}
+		\CorrectChoice \( 3\sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 5\sqrt{3} \) \choice \( 4\sqrt{3} \) \choice
+		以上都不是
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\draw circle (2);
+				\draw (90:2) -- (210:2) -- (330:2) -- cycle;
+				\draw[dashed, red] (90:2) --node[anchor=east, black]{2} (0,0);
+				\draw[decoration={brace, mirror}, decorate] (90:2) -- (0,0);
+				\draw[dashed, green] (0,0)--node[black, sloped, above]{2} (330:2);
+				\draw[decoration={brace}, decorate] (0,0)-- (330:2);
+				\draw[dashed, blue] (0,0) --node[anchor=east, black]{$x$} ($(210:2)!0.5!(330:2)$);
+				\draw[decoration={brace, mirror}, decorate] (0,0) -- ($(210:2)!0.5!(330:2)$);
+				\draw[decoration={brace, mirror}, decorate] ($(210:2)!0.5!(330:2)$) --node[below]{$y$} (330:2);
+			\end{tikzpicture}
+		\end{center}
+
+		因为是等边三角形，所以得 \( x = 1 \)，所以 \( y = \sqrt{2^2 - 1^2} = \sqrt{3} \)，则三角形的面积为
+		\[
+			2y \cdot (2 + x) / 2=  3\sqrt{3}
+		\]
+	\end{solution}
+
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
