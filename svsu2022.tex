@@ -330,14 +330,14 @@
 	\question 有多少个 \( n \)使得 \( \displaystyle\frac{11n+14}{n-2} \)是一个整数？
 
 	\begin{oneparchoices}
-	\choice 3 \choice 6 \choice 9 \CorrectChoice 18 \choice 以上都不是
+		\choice 3 \choice 6 \choice 9 \CorrectChoice 18 \choice 以上都不是
 	\end{oneparchoices}
 
 	\begin{solution}
-	\begin{equation*}
-		\frac{11n + 14}{n-2} = {11n - 22 + 36}{n-2} = 11 + \frac{36}{n-2}
-	\end{equation*}
-	\( 36 \)的因数有 \( 1,2,3,4,6,9,12,18,36 \)一共9个，再考虑到负数的情况就一共有18个了。
+		\begin{equation*}
+			\frac{11n + 14}{n-2} = {11n - 22 + 36}{n-2} = 11 + \frac{36}{n-2}
+		\end{equation*}
+		\( 36 \)的因数有 \( 1,2,3,4,6,9,12,18,36 \)一共9个，再考虑到负数的情况就一共有18个了。
 	\end{solution}
 
 	\question 一枚均匀的硬币被投掷100次，结果全部是正面朝上。请问第101次投掷时，硬币正面朝上的概率是多少？
@@ -446,6 +446,23 @@
 		\[
 			2y \cdot (2 + x) / 2=  3\sqrt{3}
 		\]
+	\end{solution}
+
+	\question 存在多少个仅由0和1组成的7位数能够被6整除？
+	\begin{oneparchoices}
+		\choice 10 \choice 11 \choice 16 \CorrectChoice 21 \choice 33
+	\end{oneparchoices}
+
+	\begin{solution}
+		首先，末位必须是0以保证能被2整除。前面的6位要能被3整除，则数字和为3的倍数。
+		\begin{enumerate}
+			\item 数字和为6的话，只有一种情况。
+			\item 数字和为3的话，
+			      \begin{equation*}
+				      \binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20
+			      \end{equation*}
+		\end{enumerate}
+		所以一共有21个符合条件的整数。
 	\end{solution}
 
 \end{questions}
