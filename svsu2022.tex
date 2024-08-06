@@ -224,7 +224,7 @@
 		右边所展示的立方体的每一面都标有一个正整数，使得每一对相对面的数字的乘积都是相同的。找出所有面上数字之和的最低可能值。
 	\end{minipage}
 	\begin{minipage}{0.25\textwidth}
-		\begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}, baseline=(B)]
+		\begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}, baseline=(current bounding box.north)]
 			\coordinate(A) at (0,0,0);
 			\coordinate(B) at (0,3,0);
 			\coordinate(C) at (3,3,0);
@@ -499,6 +499,71 @@
 
 	\begin{solution}
 		因为7和35的点是相对的，那么在7和35连成的直径两边各有 \( 34 - 7 = 27 \)个点，再加上本身的两个，一共是56个点。
+	\end{solution}
+
+	\question 一个菱形的回家弄是10 cm，并且两条对角线的差是4 cm，那么这个菱形的面积是多少？
+
+	\begin{oneparchoices}
+		\CorrectChoice \( 96\, \text{cm}^2 \) \choice \( 100\, \text{cm}^2 \) \choice \( 100\sqrt{2}\, \text{cm}^2 \) \choice
+		信息不够 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}\\
+		\begin{minipage}{0.4\textwidth}
+			\begin{tikzpicture}[scale=0.5, baseline = (current bounding box.north)]
+				\coordinate (A) at (0,5);
+				\coordinate (B) at (3,0);
+				\coordinate (C) at (0,-5);
+				\coordinate (D) at (-3,0);
+				\node [shape=diamond, draw, minimum width=6cm, minimum height=10cm, scale=0.5](x){};
+				\node[above] at (A) {A};
+				\node[right] at (B) {B};
+				\node[below] at (C) {C};
+				\node[left] at (D) {D};
+				\draw[dashed, name path=AC] (A) -- (C);
+				\draw[dashed, name path=BD] (B) -- (D);
+				\path[name intersections={of=AC and BD, by={O}}];
+				\node[below right] at (O) {O};
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\begin{equation*}
+				AC - BD  = 4
+			\end{equation*}
+			则
+			\begin{equation*}
+				OC - OB  = 2
+			\end{equation*}
+			设 \( OB = x \)，则有
+			\begin{align*}
+				x^2 + (2+x)^2     & = 10^2 \\
+				x^2 + x^2 + 4x +4 & = 100  \\
+				x^2 +2x -48       & = 0    \\
+				(x-6)(x+8)        & = 0    \\
+				x                 & = 6
+			\end{align*}
+			则 \( OC = 8 \)， 菱形的面积为 \( 6 \times 8 \div 2 \times 4 = 96\, \text{cm}^2 \)
+		\end{minipage}
+	\end{solution}
+
+	\question \( P \)点在一个边长是2的等边三角形之内， \( P \)点到三个顶点的距离分别是 \( x, y \)和 \( z \)，那么 \( x +
+	y + z \)等于多少？
+
+	\begin{oneparchoices}
+		\choice \( \sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 3\sqrt{3} \) \choice 条件不足 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}\\
+		\begin{tikzpicture}
+			\coordinate (A) at (90:2);
+			\coordinate (B) at (210:2);
+			\coordinate (C) at (330:2);
+			\coordinate (O) at (0:.5);
+			\draw (A)node[above]{A} -- (B)node[left]{B} -- (C)node[right]{C} -- cycle;
+			\node[above] at (O) {O};
+			\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
+			\draw[red, dashed] (A) -- (O) (B) -- (O) (C) -- (O);
+		\end{tikzpicture}
 	\end{solution}
 
 \end{questions}
