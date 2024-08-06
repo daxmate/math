@@ -546,6 +546,26 @@
 		\end{minipage}
 	\end{solution}
 
+	\question \( P \)点在一个边长是2的等边三角形之内， \( P \)点到三个顶点的距离分别是 \( x, y \)和 \( z \)，那么 \( x +
+	y + z \)等于多少？
+
+	\begin{oneparchoices}
+		\choice \( \sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 3\sqrt{3} \) \choice 条件不足 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}\\
+		\begin{tikzpicture}
+			\coordinate (A) at (90:2);
+			\coordinate (B) at (210:2);
+			\coordinate (C) at (330:2);
+			\coordinate (O) at (0:.5);
+			\draw (A)node[above]{A} -- (B)node[left]{B} -- (C)node[right]{C} -- cycle;
+			\node[above] at (O) {O};
+			\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
+			\draw[red, dashed] (A) -- (O) (B) -- (O) (C) -- (O);
+		\end{tikzpicture}
+	\end{solution}
+
 \end{questions}
 \section{SVSU2022 level2}
 \subsection{}
