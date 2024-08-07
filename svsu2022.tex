@@ -568,11 +568,11 @@
 				\node[left] at (D) {D};
 				\node[right] at (E) {E};
 				\node[below] at (F) {F};
-				\pic[draw, blue]{right angle = B--D--O};
-				\pic[draw, blue]{right angle = A--E--O};
-				\pic[draw, blue]{right angle = C--F--O};
+				\pic[draw]{right angle = B--D--O};
+				\pic[draw]{right angle = A--E--O};
+				\pic[draw]{right angle = C--F--O};
 				\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
-				\draw[red, dashed] (A) -- (O) (B) -- (O) (C) -- (O);
+				\draw[dotted] (A) -- (O) (B) -- (O) (C) -- (O);
 			\end{tikzpicture}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
@@ -585,7 +585,19 @@
 			\end{align*}
 			所以 \( x + y + z \)值为 \( \sqrt3 \)
 		\end{minipage}
+	\end{solution}
+	\question 一个矩形的的长为 \( l \)宽为 \( w \)，且有 \( l > w \)。 对其中一个值增长 \( 20\% \)，另一个减小 \( 20\%
+	\)，矩形的面积会发生怎样的变化？
 
+	\begin{oneparchoices}
+		\choice 不变 \CorrectChoice 减小 \choice 变大 \choice 只有当 \( l \)增长时才变大 \choice 只有当 \( w \)增长时才变大
+	\end{oneparchoices}
+
+	\begin{solution}
+		假设 \( l \)增大 \( 20\% \)，而 \( w \)减小 \( 20\% \)，则面积变为 \( 1.2l \cdot 0.8w = 0.96lw \)
+
+		同样的，如果 \( l \)减小 \( 20\% \)而 \( w \)增大 \( (20\%) \)可以计算出变化后的面积也是 \( 0.96lw
+		\)，所以面积会减小。
 	\end{solution}
 
 \end{questions}
