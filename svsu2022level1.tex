@@ -5,7 +5,7 @@
 	所有解的和是多少？
 
 	\begin{oneparchoices}
-		\CorrectChoice 总是 1 \choice 总是 -1 \choice 总是 2 \choice 1 或者 -1 \choice 1 或者 2
+		\choice 总是 1 \choice 总是 -1 \choice 总是 2 \CorrectChoice 1 或者 -1 \choice 1 或者 2
 	\end{oneparchoices}
 	\begin{solution}
 		方程$p(x)$的两个解分别为$\displaystyle x_1, x_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$，则$\displaystyle x_1 +
@@ -18,10 +18,10 @@
 		\end{align}
 		由式(\ref{\thequestion:2}) 和(\ref{\thequestion:3})得$b=1$和$a+c=0$，代入(\ref{\thequestion:1})得：
 		\begin{equation}
-			a(-a) -a  = 0
+			a(-a)^2 -a  = 0
 		\end{equation}
 
-		则$a=-1$或$a=0$，因为题目中$a \ne 0$，所以$a=-1$，则$\displaystyle x_1 + x_2 = -\frac{b}{a}=1$
+		则$a=\pm 1$或$a=0$，因为题目中$a \ne 0$，所以$a=\pm 1$，则$\displaystyle x_1 + x_2 = -\frac{b}{a}=\pm 1$
 	\end{solution}
 	\question 一支行进乐队共有150名成员。有一天，只有部分成员到场，但没有人想花时间去清点具体人数。他们首先尝试以每排5名成员的方式排队，但结果多出了1名成员。接着他们改以每排6名成员的方式排列，仍然多出了1名成员。最后，他们尝试以每排7名成员的方式排列，这次多出了2名成员。请问，为了确保没有成员被剩下，他们应该以每排多少人的方式排列？
 
@@ -217,6 +217,9 @@
 			\item 一共6个面，每个面中间有25个，共计150个
 			\item 共计218个
 		\end{enumerate}
+
+		另外一种解法更方便，大正方体里面的 \( 5 \times 5 \times 5 \)的小正方体没有在表面，即125个，因此有 \( 7^3 - 5^3 =
+		218\)个小正方体在表面。
 	\end{solution}
 
 	\question
@@ -260,6 +263,7 @@
 	\end{solution}
 
 	\question 找出下列比 \( \displaystyle \sqrt{22 + \sqrt{22 + \sqrt{22 + \sqrt{22}}}} \)小的最大整数。
+
 	\begin{oneparchoices}
 		\choice 4 \CorrectChoice 5 \choice 9 \choice 20 \choice 25
 	\end{oneparchoices}
@@ -335,7 +339,7 @@
 
 	\begin{solution}
 		\begin{equation*}
-			\frac{11n + 14}{n-2} = {11n - 22 + 36}{n-2} = 11 + \frac{36}{n-2}
+			\frac{11n + 14}{n-2} = \frac{11n - 22 + 36}{n-2} = 11 + \frac{36}{n-2}
 		\end{equation*}
 		\( 36 \)的因数有 \( 1,2,3,4,6,9,12,18,36 \)一共9个，再考虑到负数的情况就一共有18个了。
 	\end{solution}
@@ -407,17 +411,21 @@
 	\end{solution}
 
 	\question 下列哪些表达式对于所有的 \( x \)都为 0？
+
 	\begin{oneparchoices}
-		\choice \( (x+1)(x-1) - x^2 + 1 \) \choice \( x^0 - 1 \) \choice \( \sqrt{x^2} - x\) \choice 对于所有 \( x
-		\)没有表达式的值为0 \CorrectChoice 对于所有 \( x \)有不止一个表达式值为0
+		\CorrectChoice \( (x+1)(x-1) - x^2 + 1 \)
+		\choice \( x^0 - 1 \)
+		\choice \( \sqrt{x^2} - x\)
+		\choice 对于所有 \( x \)没有表达式的值为0
+		\choice 对于所有 \( x \)有不止一个表达式值为0
 	\end{oneparchoices}
 
-	\begin{solution}\\
-		\begin{align*}
-			(x+1)(x-1) - x^2 + 1 & = x^2 - 1 - x^2 + 1 = 0       \\
-			x^0 - 1              & = 1 - 1       = 0             \\
-			\sqrt{x^2} - x       & = \pm x - x = 0 \text{或} -2x
-		\end{align*}
+	\begin{solution}
+		\begin{itemize}
+			\item \( (x+1)(x-1) - x^2 + 1  = x^2 - 1 - x^2 + 1 = 0  \)
+			\item \( x^0 - 1 \)，当 \( x=0 \)时 \( x^0 \)无定义
+			\item \( \sqrt{x^2} - x = \pm x - x = 0 \,\text{或} -2x \)
+		\end{itemize}
 	\end{solution}
 
 	\question 一个等边三角形的基点位于一个半径为2的圆边上，这个三角形的面积是：
@@ -451,19 +459,19 @@
 	\question 存在多少个仅由0和1组成的7位数能够被6整除？
 
 	\begin{oneparchoices}
-		\choice 10 \choice 11 \choice 16 \CorrectChoice 21 \choice 33
+		\choice 10 \CorrectChoice 11 \choice 16 \choice 21 \choice 33
 	\end{oneparchoices}
 
 	\begin{solution}
 		首先，末位必须是0以保证能被2整除。前面的6位要能被3整除，则数字和为3的倍数。
 		\begin{enumerate}
 			\item 数字和为6的话，只有一种情况。
-			\item 数字和为3的话，
+			\item 数字和为3的话，最左边一位必须是1
 			      \begin{equation*}
-				      \binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20
+				      \binom{5}{2} = \frac{5!}{2!(5-2)!} = \frac{5 \times 4 \times 3}{3 \times 2 \times 1} = 10
 			      \end{equation*}
 		\end{enumerate}
-		所以一共有21个符合条件的整数。
+		所以一共有11个符合条件的整数。
 	\end{solution}
 
 	\question 假设 \( x \)和 \( y \)满足 \( \frac{x-y}{x+y}=9 \)和 \( \frac{xy}{x+y}=-60 \)，那么 \( (x+y) + (x-y) + xy
@@ -501,7 +509,7 @@
 		因为7和35的点是相对的，那么在7和35连成的直径两边各有 \( 34 - 7 = 27 \)个点，再加上本身的两个，一共是56个点。
 	\end{solution}
 
-	\question 一个菱形的回家弄是10 cm，并且两条对角线的差是4 cm，那么这个菱形的面积是多少？
+	\question 一个菱形的边长是10 cm，并且两条对角线的差是4 cm，那么这个菱形的面积是多少？
 
 	\begin{oneparchoices}
 		\CorrectChoice \( 96\, \text{cm}^2 \) \choice \( 100\, \text{cm}^2 \) \choice \( 100\sqrt{2}\, \text{cm}^2 \) \choice
@@ -564,6 +572,7 @@
 				\coordinate (E) at ($(C)!(O)!(A)$);
 				\coordinate (F) at ($(B)!(O)!(C)$);
 				\draw (A)node[above]{A} -- (B)node[left]{B} -- (C)node[right]{C} -- cycle;
+				\draw[fill] (O) circle[radius=1pt];
 				\node[above] at (O) {O};
 				\node[left] at (D) {D};
 				\node[right] at (E) {E};
@@ -571,8 +580,8 @@
 				\pic[draw]{right angle = B--D--O};
 				\pic[draw]{right angle = A--E--O};
 				\pic[draw]{right angle = C--F--O};
-				\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
-				\draw[dotted] (A) -- (O) (B) -- (O) (C) -- (O);
+				\draw[thick] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
+				\draw (A) -- (O) (B) -- (O) (C) -- (O);
 			\end{tikzpicture}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
