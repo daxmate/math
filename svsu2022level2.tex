@@ -1,0 +1,38 @@
+\section{SVSU2022 level2}
+\subsection{}
+求
+$\displaystyle\sum_{k=0}^{2022}\frac{2022!\cdot (-1)^k2^k}{k! \cdot (2022-k)!}$
+的值
+
+\subsection*{解：}
+\begin{enumerate}
+	\item 利用二项式定理$\displaystyle(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}$
+	      \begin{align}
+		      \sum_{k=0}^{2022}\frac{2022!\cdot(-1)^k2^k}{k!\cdot(2022-k)!} & = \sum_{k=0}^{2022}\frac{2022!}{k!\cdot
+		      (2022-k)!}(-2)^k                                                                                        \\
+		                                                                    & =
+		      \sum_{k=0}^{2022}\binom{2022}{k}(-2)^k\cdot 1^{2022-k}                                                  \\
+		                                                                    & = (1-2)^{2022}                          \\
+		                                                                    & = 1
+	      \end{align}
+\end{enumerate}
+
+\subsection{}
+求$(\sqrt[4]{27} + \sqrt{3} + \sqrt[4]{3} + 1)^2$
+\subsection*{解：}
+\begin{enumerate}
+	\item 设$\displaystyle x=3^{\frac{1}{4}}$，则
+	      \begin{align}
+		      (\sqrt[4]{27} + \sqrt{3} + \sqrt[4]{3} + 1)^2 & = (x^3 + x^2 + x + 1)^2                     \\
+		                                                    & = [x^2(x+1) + (x+1)]^2                      \\
+		                                                    & = (x^2 + 1)^2(x+1)^2                        \\
+		                                                    & = \frac{(x^2 + 1)^2(x+1)^2(x-1)^2}{(x-1)^2} \\
+		                                                    & = \frac{(x^4 - 1)^2}{(x-1)^2}
+	      \end{align}
+	\item 将$x=\sqrt[4]{3}$代入得：
+	      \begin{align}
+		      \frac{(x^4 - 1)^2}{(x-1)^2} & = \frac{4}{(x-1)^2}                     \\
+		                                  & = \frac{4}{x^2 - 2x + 1}                \\
+		                                  & = \frac{4}{\sqrt{3} - 2\sqrt[4]{3} + 1}
+	      \end{align}
+\end{enumerate}
