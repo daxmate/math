@@ -550,20 +550,42 @@
 	y + z \)等于多少？
 
 	\begin{oneparchoices}
-		\choice \( \sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 3\sqrt{3} \) \choice 条件不足 \choice 以上都不对
+		\CorrectChoice \( \sqrt{3} \) \choice \( 2\sqrt{3} \) \choice \( 3\sqrt{3} \) \choice 条件不足 \choice 以上都不对
 	\end{oneparchoices}
 
 	\begin{solution}\\
-		\begin{tikzpicture}
-			\coordinate (A) at (90:2);
-			\coordinate (B) at (210:2);
-			\coordinate (C) at (330:2);
-			\coordinate (O) at (0:.5);
-			\draw (A)node[above]{A} -- (B)node[left]{B} -- (C)node[right]{C} -- cycle;
-			\node[above] at (O) {O};
-			\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
-			\draw[red, dashed] (A) -- (O) (B) -- (O) (C) -- (O);
-		\end{tikzpicture}
+		\begin{minipage}{0.49\textwidth}
+			\begin{tikzpicture}[scale=2]
+				\coordinate (A) at (90:2);
+				\coordinate (B) at (210:2);
+				\coordinate (C) at (330:2);
+				\coordinate (O) at (0:.5);
+				\coordinate (D) at ($(A)!(O)!(B)$);
+				\coordinate (E) at ($(C)!(O)!(A)$);
+				\coordinate (F) at ($(B)!(O)!(C)$);
+				\draw (A)node[above]{A} -- (B)node[left]{B} -- (C)node[right]{C} -- cycle;
+				\node[above] at (O) {O};
+				\node[left] at (D) {D};
+				\node[right] at (E) {E};
+				\node[below] at (F) {F};
+				\pic[draw, blue]{right angle = B--D--O};
+				\pic[draw, blue]{right angle = A--E--O};
+				\pic[draw, blue]{right angle = C--F--O};
+				\draw[dashed] (O) -- ($(B)!(O)!(C)$) (O) -- ($(A)!(O)!(B)$) (O) -- ($(A)!(O)!(C)$);
+				\draw[red, dashed] (A) -- (O) (B) -- (O) (C) -- (O);
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{align*}
+				A_{\triangle{ABC}} & = \frac12 \times 2 \times \sqrt{3}                               \\
+				                   & = \sqrt{3}                                                       \\
+				                   & = A_{\triangle{AOC}} + A_{\triangle{BOC}} + A_{\triangle{AOB}}   \\
+				                   & = \frac12 AC\cdot OE + \frac12 BC \cdot OF + \frac12 AB \cdot OD \\
+				                   & = OE + OF + OD
+			\end{align*}
+			所以 \( x + y + z \)值为 \( \sqrt3 \)
+		\end{minipage}
+
 	\end{solution}
 
 \end{questions}
