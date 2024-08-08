@@ -1,0 +1,27 @@
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usetikzlibrary{
+	angles,
+	backgrounds,
+	calc,
+	decorations.pathmorphing,
+	decorations.pathreplacing,
+	decorations.text,
+	intersections,
+	patterns,
+	quotes,
+	shapes,
+	shapes.symbols,
+}
+\pagestyle{empty}
+\newcounter{xcord}
+\newcounter{ycord}
+\newcounter{total}
+\renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
+
+\CorrectChoiceEmphasis{\color{blue!70!green}\bfseries}
+\renewcommand{\solutiontitle}{\textbf{解：}}
