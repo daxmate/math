@@ -36,6 +36,47 @@
 		\end{align*}
 	\end{solution}
 
+	\question 下列选项中，哪个不是方程：
+	\begin{equation*}
+		3^x - 6^x = 12^x - \left(\frac32\right)^x.
+	\end{equation*}
+	的解？
+
+	\begin{oneparchoices}
+		\choice \( \dfrac{3\pi i}{\ln2} \)
+		\choice 0
+		\choice \( \dfrac{6\pi i}{\ln2} \)
+		\choice \( \dfrac{27\pi i}{\ln2} \)
+		\CorrectChoice 所有都是解
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			3^x - 6^x                               & = 12^x - \left(\frac32\right)^x             \\
+			3^x - 2^x \cdot 3^x                     & = 2^x \cdot 2^x \cdot 3^x - \frac{3^x}{2^x} \\
+			2^x \cdot 3^x - 2^x \cdot 2^x \cdot 3^x & = 2^x \cdot 2^x \cdot 2^x \cdot 3^x - 3^x
+		\end{align*}
+		设 \( a = 2^x, b = 3^x \)，则有
+		\begin{align*}
+			a^3b + a^2b - ab - b & = 0
+		\end{align*}
+		因为 \( b \ne 0 \)，所以进一步化简得
+		\begin{align*}
+			a^3 + a^2 - a - 1 & = 0 \\
+			a^2(a+1) - (a+1)  & = 0 \\
+			(a+1)(a^2 - 1)    & = 0 \\
+			(a+1)^2(a-1)      & = 0
+		\end{align*}
+		则有 \( a = \pm 1 \)即 \( 2^x = \pm 1 \)
+
+		将 \( 2^x = e^{x\ln2} \)代入欧拉公式 \( e^{i\theta} = \cos\theta + i\sin\theta \)，有
+		\begin{gather*}
+			x \ln 2 = k\pi,  k \in \mathbb{Z} \\
+			x = \frac{k\pi}{\ln2}, k \in \mathbb{Z}
+		\end{gather*}
+		所以选E
+	\end{solution}
+
 	\question 求\(  \displaystyle\sum_{k=0}^{2022}\frac{2022!\cdot (-1)^k2^k}{k! \cdot (2022-k)!}\) 的值
 	\begin{solution}
 		\begin{enumerate}
