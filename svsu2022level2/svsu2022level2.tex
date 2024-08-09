@@ -69,10 +69,17 @@
 		\end{align*}
 		则有 \( a = \pm 1 \)即 \( 2^x = \pm 1 \)
 
-		将 \( 2^x = e^{x\ln2} \)代入欧拉公式 \( e^{i\theta} = \cos\theta + i\sin\theta \)，有
+		欧拉公式 \( e^{i\theta} = \cos\theta + i\sin\theta \)对于 \( \theta = k\pi, k \in \mathbb{Z}  \)时有
+		\begin{equation*}
+			\begin{cases}
+				\cos(k\pi) + i\sin(k\pi) = 1, k \text{是偶数} \\
+				\cos(k\pi) + i\sin(k\pi) = -1, k \text{是奇数}
+			\end{cases}
+		\end{equation*}
+		将 \( 2^x = e^{x\ln2} \)代入欧拉公式有
 		\begin{gather*}
-			x \ln 2 = k\pi,  k \in \mathbb{Z} \\
-			x = \frac{k\pi}{\ln2}, k \in \mathbb{Z}
+			x \ln 2 = k\pi i,  k \in \mathbb{Z} \\
+			x = \frac{k\pi i}{\ln2}, k \in \mathbb{Z}
 		\end{gather*}
 		所以选E
 	\end{solution}
