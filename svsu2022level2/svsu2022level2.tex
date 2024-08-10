@@ -135,6 +135,28 @@
 		\end{align*}
 	\end{solution}
 
+	\question 假设 \( f \)是一个函数，并有 \( f(n+1) = f(n) + 3f(n-1) \)对所有整数成立。如果 \( f(4) = 151 \)和 \( f(1)
+	= 1\)，那么 \( f(-1) \)的值是多少？
+
+	\begin{oneparchoices}
+		\choice 12 \choice 4 \CorrectChoice \( -\dfrac{11}{3} \) \choice \( \dfrac{13}{3} \) \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		由题意得
+		\begin{align*}
+			f(4)  & = f(3) + 3f(2)           \\
+			f(3)  & = f(2) + 3f(1)           \\
+			f(4)  & = f(2) + 3f(1) + 3f(2)   \\
+			151   & = 4f(2) + 3              \\
+			f(2)  & = \dfrac{151 -3}{4} = 37 \\
+			      & = f(1) + 3f(0)           \\
+			f(0)  & = 12                     \\
+			f(1)  & = f(0) + 3f(-1)          \\
+			f(-1) & = -\dfrac{11}{3}
+		\end{align*}
+	\end{solution}
+
 	\question 求\(  \displaystyle\sum_{k=0}^{2022}\frac{2022!\cdot (-1)^k2^k}{k! \cdot (2022-k)!}\) 的值
 	\begin{solution}
 		\begin{enumerate}
