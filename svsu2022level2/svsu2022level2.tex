@@ -110,6 +110,31 @@
 		此题与2022level1中重复
 	\end{solution}
 
+	\question 求下列序列前五项的和：
+	\begin{equation*}
+		\left\{ \dfrac{2}{3}, \dfrac{4}{9}, \dfrac{8}{27}, \dots\right\}
+	\end{equation*}
+
+	\begin{oneparchoices}
+		\choice \( \dfrac{64}{81} \)
+		\choice \( \dfrac{550}{243} \)
+		\choice \( \dfrac{32}{81} \)
+		\CorrectChoice \( \dfrac{422}{243} \)
+		\choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		设 \( S_5 = \dfrac{2}{3} + \left(\dfrac{2}{3}\right)^2 + \dots + \left(\dfrac{2}{3}\right)^5\)
+		则有
+		\begin{align*}
+			\dfrac{2}{3}\cdot S_5 & = \left(\dfrac{2}{3}\right)^2 + \dots + \left(\dfrac{2}{3}\right)^6 \\
+			\dfrac{1}{3}\cdot S_5 & = \dfrac{2}{3} - \left(\dfrac{2}{3}\right)^6                        \\
+			S_5                   & = 2 - \dfrac{2^6}{3^5}                                              \\
+			                      & = \dfrac{243 \times 2 - 64}{243}                                    \\
+			                      & = \dfrac{422}{243}
+		\end{align*}
+	\end{solution}
+
 	\question 求\(  \displaystyle\sum_{k=0}^{2022}\frac{2022!\cdot (-1)^k2^k}{k! \cdot (2022-k)!}\) 的值
 	\begin{solution}
 		\begin{enumerate}
