@@ -406,5 +406,51 @@
 			                 & = -2^{1011}i
 		\end{align*}
 	\end{solution}
+
+	\question 下列哪个等于 \(\displaystyle \sin\left(\frac{\pi}{8}\right) \)？
+
+	\begin{oneparchoices}
+		\choice \(\displaystyle \sqrt{\frac{2-\sqrt{2}}{2}} \)
+		\choice \(\displaystyle \sqrt{\frac{2+\sqrt{2}}{2}} \)
+		\CorrectChoice \(\displaystyle \frac{\sqrt{2-\sqrt{2}}}{2} \)
+		\choice \(\displaystyle \frac{\sqrt{2+\sqrt{2}}}{2} \)
+		\choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			\text{根据欧拉公式} e^{i\theta} & = \cos\theta + i\sin\theta,
+			\quad\text{将}\theta = \frac{\pi}{8} \text{代入得}                                                   \\
+			e^{\frac{\pi}{8}i}              & =
+			\cos\left(\frac{\pi}{8}\right) + \sin\left(\frac{\pi}{8}\right)i,\quad \text{记作}z                  \\
+			z^2                             & = e^{\frac{\pi}{4}i}
+			= \left(\cos\frac{\pi}{8}\right)^2 - \left(\sin\frac{\pi}{8}\right)^2 +
+			2\sin\left(\frac{\pi}{8}\right)\cos\left(\frac{\pi}{8}\right)i                                       \\
+			                                & = \cos\left(\frac{\pi}{4}\right) + \sin\left(\frac{\pi}{4}\right)i \\
+			                                & = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i                         \\
+		\end{align*}
+		则有:
+		\begin{equation*}
+			\begin{cases}
+				\left(\cos\frac{\pi}{8}\right)^2 - \left(\sin\frac{\pi}{8}\right)^2  = \frac{\sqrt{2}}{2} \\
+				2\sin\left(\frac{\pi}{8}\right)\cos\left(\frac{\pi}{8}\right) = \frac{\sqrt{2}}{2}
+			\end{cases}
+		\end{equation*}
+		将 \(\displaystyle \cos\left(\frac{\pi}{8}\right) = \frac{\sqrt{2}}{4\sin\left(\frac{\pi}{8}\right)}\)代入得
+		\[
+			\left(\frac{\sqrt{2}}{4\sin\left(\frac{\pi}{8}\right)}\right)^2 - \left(\sin\frac{\pi}{8}\right)^2  = \sqrt{2}
+		\]
+		设 \( \sin\left(\frac{\pi}{8}\right) = a \)，则有
+		\begin{align*}
+			\frac{1}{8a^2} - a^2 & = \frac{\sqrt{2}}{2}                       \\
+			1 - 8a^4             & = 4\sqrt{2}a^2                             \\
+			a^2                  & = \frac{-4\sqrt{2} \pm \sqrt{32 + 32}}{16} \\
+			                     & = \frac{-\sqrt{2} \pm 2}{4}                \\
+			\text{因为}a^2 \ge 0 \text{有}\quad
+			a^2                  & = \frac{2-\sqrt{2}}{4}                     \\
+			\text{因为} a > 0 \quad
+			a                    & = \frac{\sqrt{2-\sqrt{2}}}{2}
+		\end{align*}
+	\end{solution}
 \end{questions}
 \end{document}
