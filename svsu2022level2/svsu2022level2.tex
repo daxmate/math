@@ -451,6 +451,75 @@
 			\text{因为} a > 0 \quad
 			a                    & = \frac{\sqrt{2-\sqrt{2}}}{2}
 		\end{align*}
+
+		\begin{itemize}
+			\item 三角恒等式：
+			      \begin{equation}
+				      \sin^2(\theta) +\cos^2(\theta) = 1
+			      \end{equation}
+			\item 和角公式
+			      \begin{gather}
+				      \sin(\alpha + \beta) = \sin\alpha\cos\beta + \sin\beta\cos\alpha \\
+				      \cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta
+			      \end{gather}
+			      \clearpage
+			      \begin{minipage}{0.53\textwidth}
+				      \begin{tikzpicture}[scale=2]
+					      \draw[help lines] (-1.5, -1.5) grid (1.5,1.5);
+					      \coordinate(P) at (30:1);
+					      \coordinate(Q) at (60:1);
+					      \coordinate(O) at (0,0);
+					      \coordinate(A) at ({cos(30)},0);
+					      \coordinate(B) at ({cos(60)},0);
+					      \coordinate(D) at ($(O)!(Q)!(P)$);
+
+					      \draw circle [radius=1];
+					      \node[above right] at (P) {P(\(\cos\alpha, \sin\alpha \))};
+					      \pic[draw, "$\alpha$", angle radius = 0.8cm, ->] {angle = A--O--P};
+					      \pic[draw, "$\beta$", angle radius = 0.8cm, ->] {angle = P--O--Q};
+					      \node[above right] at (Q) {Q$(\cos(\alpha+\beta), \sin(\alpha+\beta))$};
+
+					      \node[below left] at (O) {O};
+					      \node[below] at (B) {B};
+					      \node[below] at (A) {A};
+					      \draw (O) -- (P) (O) -- (Q) (O) -- (1,0);
+					      \draw (P) -- (A) (Q) -- (B);
+					      \draw (Q) -- (D)node[below]{D};
+					      \path[name path=QB] (Q) -- (B);
+					      \path[name path=OP] (O) -- (P);
+					      \fill [name intersections={of=OP and QB, by=C}]  (C)node[below right]{C} circle[radius=1pt];
+
+				      \end{tikzpicture}
+			      \end{minipage}
+			      \begin{minipage}{0.4\textwidth}
+				      \begin{gather*}
+					      % \cos^2(\alpha + \beta) = 1  - \sin^2(\alpha + \beta)
+					      QB^2 = OQ^2 - OB^2 = 1 - OB^2 \\
+					      \frac{OB}{OA} = \frac{OC}{OP} = OC \\
+					      OB = OA \cdot OC \\
+					      QB^2 = 1 - (OA \cdot OC)^2 \\
+					      \frac{OB}{OC} = \cos\alpha \\
+					      OB = \cos(\alpha + \beta) \\
+					      OC = \frac{cos(\alpha + \beta)}{\cos\alpha}\\
+					      \sin^2(\alpha+\beta) = 1 - (\cos\alpha \cdot \frac{\cos(\alpha + \beta)}{\cos\alpha})^2
+				      \end{gather*}
+			      \end{minipage}
+			      \begin{align*}
+				      e^{i\alpha}                  & = \cos\alpha + i\sin\alpha                                                                 \\
+				      e^{i\beta}                   & = \cos\beta + i\sin\beta                                                                   \\
+				      e^{i\alpha} \cdot e^{i\beta} & = e^{i(\alpha + \beta)} = \cos(\alpha + \beta) + i\sin(\alpha + \beta)                     \\
+				                                   & = (\cos\alpha + i\sin\alpha)(\cos\beta + i\sin\beta)                                       \\
+				                                   & = \cos\alpha\cos\beta - \sin\alpha\sin\beta + i(\sin\alpha\cos\beta + \cos\alpha\sin\beta)
+			      \end{align*}
+			      则有
+			      \begin{math}
+				      \begin{cases}
+					      \sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta \\
+					      \cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta
+				      \end{cases}
+			      \end{math}
+		\end{itemize}
+
 	\end{solution}
 \end{questions}
 \end{document}
