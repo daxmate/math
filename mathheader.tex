@@ -3,7 +3,7 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{csquotes}
-\usepackage{tikz}
+\usepackage{tikz, pgfplots}
 \usetikzlibrary{
 	angles,
 	backgrounds,
@@ -22,6 +22,8 @@
 \newcounter{ycord}
 \newcounter{total}
 \renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
+
+\pgfplotsset{compat=1.18}
 
 \CorrectChoiceEmphasis{\color{blue!70!green}\bfseries}
 \renewcommand{\solutiontitle}{\textbf{解：}}
