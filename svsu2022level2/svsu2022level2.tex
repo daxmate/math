@@ -521,5 +521,72 @@
 		\end{itemize}
 
 	\end{solution}
+
+	\question 下列哪个函数在给定的范围内是一一对应的？
+
+	\begin{oneparchoices}
+		\choice \( \cos(x),\, -\frac{\pi}{2} \le x \le \frac{\pi}{2} \)
+		\CorrectChoice \( \sin(x),\, -\frac{\pi}{2} \le x \le \frac{\pi}{2} \)
+		\choice \( x^3 - x,\, -1 \le x \le 1 \)
+		\choice \( |x+2|,\, -4 \le x \le 2 \)
+		\choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+
+		\begin{tikzpicture}
+			\begin{axis}[
+					title=$\sin(x)$,
+					xlabel = $x$,
+					ylabel = $y$,
+					xmin = -1.1*pi, xmax = 1.1*pi,
+					ymin = -1.5, ymax = 1.5,
+					axis lines=center,
+					xtick={-pi,-1/2*pi,0,1/2*pi,pi},
+					xticklabels = {$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$},
+				]
+				\addplot[samples=100, domain=-1/2*pi:1/2*pi, ]{sin(deg(x))};
+			\end{axis}
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}[
+					title=$\cos(x)$,
+					xlabel = $x$,
+					ylabel = $y$,
+					xmin = -1.1*pi, xmax = 1.1*pi,
+					ymin = -1.5, ymax = 1.5,
+					axis lines=center,
+					xtick={-pi,-1/2*pi,0,1/2*pi,pi},
+					xticklabels = {$-\pi$,$-\frac{\pi}{2}$,0,$\frac{\pi}{2}$,$\pi$},
+				]
+				\addplot[samples=100, domain=-1/2*pi:1/2*pi]{cos(deg(x))};
+			\end{axis}
+		\end{tikzpicture}
+
+		\begin{tikzpicture}
+			\begin{axis}[
+					title=$x^3 - x$,
+					xlabel = $x$,
+					ylabel = $y$,
+					xmin = -1.5, xmax = 1.5,
+					ymin = -.5, ymax = .5,
+					axis lines=center,
+				]
+				\addplot[samples=100, domain=-1:1]{x^3 -x};
+			\end{axis}
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}[
+					title = $|x+2|$,
+					xlabel = $x$,
+					ylabel = $y$,
+					xmin = -4.5, xmax = 2.5,
+					ymin = -1, ymax = 5,
+					axis lines=center,
+				]
+				\addplot[samples=100, domain=-4:2]{abs(x+2)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{solution}
 \end{questions}
 \end{document}
