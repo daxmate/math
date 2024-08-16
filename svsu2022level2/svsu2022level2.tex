@@ -650,5 +650,35 @@
 		\end{align*}
 		则有 \( f(x) = 3x + 1 \), \( F(f)(x) = f(20x) + 22 = 60x + 23\)
 	\end{solution}
+
+	\question 这些函数 \( p \) 和 \( q \) 的定义由以下表格给出，其中一些值缺失，标记为问号。表格中还包含了一些函数 \( r
+	\) 的值，它由方程 \( r(x) = q(p(x)) \) 定义，有些值被问号替代。
+
+	\begin{tabularx}{0.8\textwidth}{|B|C|C|C|C|C|C|} \hline
+		\(\mathbf x \)    & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\ \hline
+		\(\mathbf p(x) \) & 4          & ?          & ?          & 2          & 1          & 0          \\ \hline
+		\(\mathbf q(x) \) & ?          & 2          & ?          & 0          & 5          & 1          \\ \hline
+		\(\mathbf r(x) \) & ?          & 1          & 0          & 4          & ?          & 3          \\ \hline
+	\end{tabularx}
+
+	缺失部分值的和是多少？
+
+	\begin{oneparchoices}
+		\CorrectChoice 22 \choice 15 \choice 20 \choice 17 \choice 给定信息不足
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			r(3) & = q(p(3)) = q(2) = 4   \\
+			r(5) & = q(p(5)) = q(0) = 3   \\
+			r(0) & = q(p(0)) = q(4) = 5   \\
+			r(4) & = q(p(4)) = q(1) = 2   \\
+			r(1) & = q(p(1)) = 1   = q(5) \\
+			p(1) & = 5                    \\
+			r(2) & = q(p(2)) = 0 = q(3)   \\
+			p(2) & = 3
+		\end{align*}
+		则有缺失部分值的和为22。
+	\end{solution}
 \end{questions}
 \end{document}
