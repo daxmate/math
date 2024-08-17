@@ -680,5 +680,39 @@
 		\end{align*}
 		则有缺失部分值的和为22。
 	\end{solution}
+
+	\question 给定的集合$\mathbb{N}_0 = \{0, 1, 2,
+		\ldots\}$包含了所有的非负整数，并且具有一个关联的操作“加法”，记作$+$。同时，这个集合中有一个特殊的对象$0$，满足对于任何非负整数$n$，有$n
+		+ 0 = 0 + n = n$。我们称集合$\mathbb{N}$是一个带有操作$+$和恒等对象$0$的\textbf{半群（monoid）}。另一个半群的例子是集合$\mathbb{B} = \{0, 1\}$，其中的操作“或”（记作$\vee$），定义为以下方程：$0 \vee 0 = 0$, $0 \vee 1 = 1 \vee 0 = 1$ 和 $1 \vee 1 = 1$。在这个半群中的恒等对象也是$0$。
+	函数$f$从$\mathbb{N}_0$到$\mathbb{B}$被称为\textbf{半群同态（monoid morphism）}，如果它满足以下两个性质：
+
+	\begin{itemize}
+	\item 对于来自$\mathbb{N}_0$的任意两个数字$m$和$n$，等式$f(m + n) = f(m) \vee f(n)$成立（我们说$f$保持了半群的操作）。
+	\item $f(0) = 0$（我们说$f$保持了恒等对象）。
+	\end{itemize}
+
+	问题是：函数$f$由以下公式定义：
+	\[ f(n) =
+		\begin{cases}
+			0 & \text{如果 } n \text{ 是偶数} \\
+			1 & \text{如果 } n \text{ 是奇数}
+		\end{cases}
+	\]
+	是否是上述两个半群之间的半群同态？
+
+	\begin{choices}
+		\choice $f$ 是一个半群同态。
+		\choice $f$ 保持了半群的操作但没有保持恒等对象。
+		\CorrectChoice $f$ 保持了恒等对象但没有保持半群的操作。
+		\choice $f$ 既没有保持恒等对象也没有保持半群的操作。
+		\choice $f$ 不是从$\mathbb{N}_0$到$\mathbb{B}$的函数。
+	\end{choices}
+
+	\begin{solution}
+		因为 \( \mathbb{N}_0 \)中的数不是奇数就是偶数，对于任何一个 \( \mathbb{N}_0 \)中的数字，函数 \( f
+		\)都能将其产生一个 \( \mathbb{B} \)中的数，并且有 \( f(0) = 0 \)，所以函数 \( f
+		\)保持了恒等对象，但是对于两个奇数 \( m,n \)， \( f(m+n) = 0   \)，而 \( f(m) + f(n) = 2 \)，所以函数 \( f
+		\)只保持了恒等对象没有保持半群的操作。
+	\end{solution}
 \end{questions}
 \end{document}
