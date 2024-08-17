@@ -687,8 +687,8 @@
 	函数$f$从$\mathbb{N}_0$到$\mathbb{B}$被称为\textbf{半群同态（monoid morphism）}，如果它满足以下两个性质：
 
 	\begin{itemize}
-	\item 对于来自$\mathbb{N}_0$的任意两个数字$m$和$n$，等式$f(m + n) = f(m) \vee f(n)$成立（我们说$f$保持了半群的操作）。
-	\item $f(0) = 0$（我们说$f$保持了恒等对象）。
+		\item 对于来自$\mathbb{N}_0$的任意两个数字$m$和$n$，等式$f(m + n) = f(m) \vee f(n)$成立（我们说$f$保持了半群的操作）。
+		\item $f(0) = 0$（我们说$f$保持了恒等对象）。
 	\end{itemize}
 
 	问题是：函数$f$由以下公式定义：
@@ -714,5 +714,97 @@
 		\)保持了恒等对象，但是对于两个奇数 \( m,n \)， \( f(m+n) = 0   \)，而 \( f(m) + f(n) = 2 \)，所以函数 \( f
 		\)只保持了恒等对象没有保持半群的操作。
 	\end{solution}
+
+	\question
+	\begin{minipage}{0.7\textwidth}
+		右边所展示的立方体的每一面都标有一个正整数，使得每一对相对面的数字的乘积都是相同的。找出所有面上数字之和的最低可能值。
+	\end{minipage}
+	\begin{minipage}{0.25\textwidth}
+		\begin{tikzpicture}[scale=0.5, every node/.style={scale=0.5}, baseline=(current bounding box.north)]
+			\coordinate(A) at (0,0,0);
+			\coordinate(B) at (0,3,0);
+			\coordinate(C) at (3,3,0);
+			\coordinate(D) at (3,0,0);
+			\coordinate(E) at (0,0,3);
+			\coordinate(F) at (0,3,3);
+			\coordinate(G) at (3,3,3);
+			\coordinate(H) at (3,0,3);
+
+			\draw (E) -- (F) -- (G) -- (H) -- cycle;
+			\draw (F) -- (B) -- (C) -- (D) -- (H);
+			\draw (C) -- (G);
+
+			\node at ($(E)!0.5!(G)$){\fontsize{64}{32}\selectfont\sf 14};
+			\node[text effects={xslant=0.9}, xscale=1.4] at ($(F)!0.5!(C)$){\fontsize{40}{32}\selectfont\sf 10};
+			\node [text effects={yslant=0.9}, yscale=1.4] at ($(H)!0.5!(C)$){\fontsize{36}{32}\selectfont\sf 15};
+		\end{tikzpicture}
+	\end{minipage}
+
+	\begin{oneparchoices}
+		\choice 78 \choice 80 \CorrectChoice 89 \choice 107 \choice 以上都不对
+	\end{oneparchoices}
+	\begin{solution}\\
+		10、14、15三个数的最小公倍数为：210，则有
+		\begin{equation*}
+			\begin{cases}
+				10\text{的对面是} 21 \\
+				14\text{的对面是} 15 \\
+				15\text{的对面是} 14
+			\end{cases}
+		\end{equation*}
+	\end{solution}
+
+	\question 找出下列比 \( \displaystyle \sqrt{22 + \sqrt{22 + \sqrt{22 + \sqrt{22}}}} \)小的最大整数。
+
+	\begin{oneparchoices}
+		\choice 4 \CorrectChoice 5 \choice 9 \choice 20 \choice 25
+	\end{oneparchoices}
+	\begin{solution}
+		\begin{align*}
+			\sqrt{22 + \sqrt{22 + \sqrt{22 + \sqrt{22}}}} & > \sqrt{22 + \sqrt{22 + \sqrt{22 + 4}}} \\
+			                                              & > \sqrt{22 + \sqrt{22 + 5}}             \\
+			                                              & > \sqrt{22 + 5}                         \\
+			                                              & > 5
+		\end{align*}
+	\end{solution}
+
+	\question 下面的方程有几对整数解？
+	\begin{equation}
+		3x^2y - 10xy - 8y - 17 = 0
+	\end{equation}
+	\begin{oneparchoices}
+		\choice 无 \CorrectChoice 1 \choice 2 \choice 4 \choice 以上都不对
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			3x^2y - 10xy - 8y - 17 & = 0  \\
+			y(3x^2 - 10x - 8)      & = 17 \\
+			y(x-4)(3x+2)           & = 17 \\
+		\end{align*}
+		因为 \( 17 \) 是质数，所以只能有以下两种情况：
+		\begin{equation*}
+			\begin{cases}
+				y = 1, \quad (x-4)(3x+2) = 17 \\
+				y = 17,\quad  (x-4)(3x+2) = 1
+			\end{cases}
+		\end{equation*}
+		在第一种情况下：
+		\begin{align*}
+			(x-4)(3x+2)     & = 17 \\
+			3x^2 -10x - 25  & = 0  \\
+			(3x + 5)(x - 5) & = 0  \\
+		\end{align*}
+		则 \( (x=5, y=1) \) 是方程的一组整数解。
+
+		在第二种情况下：
+		\begin{align*}
+			3x^2 - 10x - 9 & = 0 \\
+		\end{align*}
+		此方程没有整数解。
+
+		因此，题目中的方程只有一组整数解。
+	\end{solution}
+
 \end{questions}
 \end{document}
