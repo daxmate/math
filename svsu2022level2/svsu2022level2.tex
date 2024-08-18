@@ -806,5 +806,44 @@
 		因此，题目中的方程只有一组整数解。
 	\end{solution}
 
+	\question
+	\begin{minipage}[t]{0.95\textwidth}
+		\begin{wrapfigure}{R}{0.4\textwidth}
+			\begin{tikzpicture}[>=stealth, scale=0.5]
+				\node (1) {1};
+				\node (2) [below=of 1]{};
+				\node (3) [below=of 2]{};
+				\node (4) [below=of 3] {2};
+				\draw (1) edge[post] (4);
+			\end{tikzpicture}
+			\begin{tikzpicture}[>=stealth, scale=0.5]
+				\node (alpha) {$\alpha$};
+				\node (beta)[below=of alpha] {$\beta$};
+				\node (a) [below=of beta] {};
+				\node (delta) [left= of a] {$\delta$};
+				\node (gamma) [right=of a] {$\gamma$};
+				\node (b) [below= of delta] {};
+				\node (omega) [left=of b] {$\omega$};
+				\node (c) [below=of gamma] {};
+				\node (epsilon)[right=of c] {$\epsilon$};
+				\draw[->] (alpha) edge[post] (beta);
+				\draw[->] (beta)  edge[post] (gamma)
+				edge[pre] (delta);
+				\draw[->] (gamma) edge[post] (delta);
+				\draw[->] (delta) edge[post] (omega);
+				\draw[->] (gamma) edge[post] (epsilon);
+				\draw[->] (epsilon) edge[loop below](epsilon);
+			\end{tikzpicture}
+		\end{wrapfigure}
+		图由一组节点和一组连接节点的箭头组成。右侧展示了两个示例图，第一个图的节点集为$A=\{1,2\}$，第二个图的节点集为$B=\{\alpha,\beta,\gamma,\delta,\epsilon,\omega\}$. 在第一个图中，你可以通过跟随箭头从1到达2，但不能从2到达1。在第二个图中，例如可以从$\alpha$到达除$\alpha$以外的所有节点。该图中的另外两个极端是$\epsilon$，只能到达自身，以及$\omega$，无法通过跟随箭头到达任何地方。
+		从集合$A$到集合$B$的一个函数$f$称为\textbf{图映射（diagram mapping）}，如果对于集合$A$中的任意两个节点$a$和$b$，可以通过跟随箭头从$a$到达$b$，那么也可以通过跟随箭头从$f(a)$到达$f(b)$。
+
+		从第一个图到第二个图有多少个图映射？
+	\end{minipage}
+
+	\begin{oneparchoices}
+		\choice 6 \choice 17 \choice 18 \choice 20 \CorrectChoice 21
+	\end{oneparchoices}
+
 \end{questions}
 \end{document}
