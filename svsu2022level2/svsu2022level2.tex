@@ -845,5 +845,88 @@
 		\choice 6 \choice 17 \choice 18 \choice 20 \CorrectChoice 21
 	\end{oneparchoices}
 
+	\begin{solution}
+		假设存在函数 \( f \)，对于节点集 \( A \)分别有 \( f(1) \) 和 \( f(2) \)，分以下几种情况来讨论：
+		\begin{itemize}
+			\item \( f(1) = \alpha \)，则有 \( f(2)=\beta, f(2)=\gamma, f(2)=\delta, f(2)=\omega, f(2)=\epsilon \)
+			\item \( f(1) = \beta \)，则有 \(f(2)=\gamma, f(2)=\delta,  f(2)=\beta, f(2)=\omega, f(2)=\epsilon \)
+			\item \( f(1) = \gamma \)，则有 \( f(2)=\delta, f(2)=\beta, f(2)=\gamma, f(2)=\omega, f(2)=\epsilon \)
+			\item \( f(1) = \delta \)，则有 \( f(2)=\beta, f(2)=\gamma, f(2)=\delta, f(2)=\omega, f(2)=\epsilon \)
+			\item \( f(1) = \epsilon \)，则有 \( f(2)=\epsilon \)
+			\item \( f(1) = \omega \)，没有映射。
+		\end{itemize}
+	\end{solution}
+
+	\question 假设有打呼、磨牙、抽烟三种生活不良习惯，请问下列哪个系列的前提假设能够推断出老王不喝酒？
+
+	\begin{oneparchoices}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人都磨牙\\
+			磨牙的人不打呼 \\
+			有些打呼的人抽烟 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			有些喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			有些抽烟的人会打呼 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			所有打呼的人抽烟 \\
+			老王抽烟
+		\end{minipage}
+		\CorrectChoice
+		\begin{minipage}{0.25\textwidth}
+			所有喝酒的人磨牙 \\
+			没有磨牙的人会打呼 \\
+			所有抽烟的人打呼 \\
+			老王抽烟
+		\end{minipage}
+		\choice
+		\begin{minipage}{0.25\textwidth}
+			以上都不对
+		\end{minipage}
+	\end{oneparchoices}
+
+	\begin{solution}
+
+		A选项没有与喝酒相关的内容 \\
+		B选项从老王抽烟与有些抽烟的人会打呼，只能推断出老王可能会打呼。
+		从有些喝酒的人磨牙和没有磨牙的人会打呼，只能推断出有些喝酒的人不会打呼。\\
+		C选项从老王抽烟，及所有打呼的人抽烟并不能推断出都比打呼 \\
+		D选项从老王抽烟，以及所有抽烟的人打呼得出老王打呼\\
+		从所有喝酒的人磨牙和没有磨牙的人会打呼得出喝酒的人不打呼，所以老王不喝酒
+
+	\end{solution}
+	\question 假设 \( x \)和 \( y \)满足 \( \frac{x-y}{x+y}=9 \)和 \( \frac{xy}{x+y}=-60 \)，那么 \( (x+y) + (x-y) + xy
+	\)的值是？
+
+	\begin{oneparchoices}
+		\choice \( -50 \) \CorrectChoice \( -150 \) \choice \( -14310 \) \choice 210 \choice 14160
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			(x+y) + (x-y) + xy & = (x+y) + 9(x+y) -60(x+y) \\
+			                   & = -50(x+y)
+		\end{align*}
+		设 \( a = x + y, a \ne 0 \)，则
+		\begin{align*}
+			a^2         & = (x+y)^2              \\
+			            & = x^2 + 2xy + y^2      \\
+			            & = x^2 - 2xy + y^2 +4xy \\
+			            & = (x-y)^2 + 4xy        \\
+			            & = (9a)^2 + 4(-60a)     \\
+			80a^2 -240a & = 0                    \\
+		\end{align*}
+		因为 \( a \ne 0 \)，所以 \( a = 3 \)，则原式等于 \( -150 \)。
+	\end{solution}
+
 \end{questions}
 \end{document}
