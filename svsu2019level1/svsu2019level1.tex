@@ -1,0 +1,40 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\input{../mathheader.tex}
+\begin{document}
+\begin{questions}
+	\question
+	小明想处理掉他大部分的玩具汽车。他先给了小轩自己收藏的六分之一再加上8辆车，然后又给了小丽剩下车辆的四分之一再加上4辆，接着他把剩下的车分了一半给阿强。之后他又把剩下车辆的40\%再加上5辆给了小杰。最后他自己留下了10辆车。请问小明最初有多少辆玩具汽车？
+
+	\begin{oneparchoices}
+		\choice 116 \choice 106 \CorrectChoice 96 \choice 86 \choice 以上都不是
+	\end{oneparchoices}
+
+	\begin{solution}
+		设给小杰前小明有 \( a \)辆玩具汽车，则有：
+		\begin{equation*}
+			a \times 0.6 - 5 = 10
+		\end{equation*}
+
+		则可以求出 \( a = 25 \)辆。
+
+		那么在分给阿强之前小明有50辆车。
+
+		同样的设给小丽前小明有 \( b \)辆玩具汽车，则有：
+		\begin{equation*}
+			b \cdot \frac{3}{4} - 4 = 50
+		\end{equation*}
+		可以求出 \( b=72 \)辆。
+
+		设小明最初有 \( c \)辆汽车，则有：
+		\begin{equation*}
+			c \cdot \frac{5}{6} - 8 = 72
+		\end{equation*}
+
+		可以计算出小明最初有 \( c=96 \)辆车。
+
+	\end{solution}
+
+\end{questions}
+
+\end{document}
