@@ -35,6 +35,90 @@
 
 	\end{solution}
 
+	\question
+	设 \( k \) 是一个非零实数。两个函数 \( f(x) = \frac{k}{x} \) 和 \( g(x) = kx + k \) 被绘制在同一坐标平面上。下列哪个是正确的图像？
+
+	\begin{oneparchoices}
+		\choice
+		\begin{tikzpicture}[scale=0.3]
+			\begin{axis}[
+					axis lines=center,
+					xticklabels=none,
+					yticklabels=none,
+					thick
+				]
+				\addplot[samples=100, domain=-10:0]{1/x};
+				\addplot[samples=100, domain=0:10]{1/x};
+				\addplot[samples=100, domain=-7:7]{-x + 1};
+			\end{axis}
+		\end{tikzpicture}
+
+		\choice
+		\begin{tikzpicture}[scale=0.3]
+			\begin{axis}[
+					axis lines=center,
+					xticklabels=none,
+					yticklabels=none,
+					thick
+				]
+				\addplot[samples=100, domain=-10:0]{-1/x};
+				\addplot[samples=100, domain=0:10]{-1/x};
+				\addplot[samples=100, domain=-7:7]{x - 1};
+			\end{axis}
+		\end{tikzpicture}
+
+		\CorrectChoice
+		\begin{tikzpicture}[scale=0.3]
+			\begin{axis}[
+					axis lines=center,
+					xticklabels=none,
+					yticklabels=none,
+					thick
+				]
+				\addplot[samples=100, domain=-10:0]{1/x};
+				\addplot[samples=100, domain=0:10]{1/x};
+				\addplot[samples=100, domain=-7:7]{x + 1};
+			\end{axis}
+		\end{tikzpicture}
+		\choice
+		\begin{tikzpicture}[scale=0.3]
+			\begin{axis}[
+					axis lines=center,
+					xticklabels=none,
+					yticklabels=none,
+					thick
+				]
+				\addplot[samples=100, domain=-10:0]{-1/x};
+				\addplot[samples=100, domain=0:10]{-1/x};
+				\addplot[samples=100, domain=-7:7]{-x + 1};
+			\end{axis}
+		\end{tikzpicture}
+		\choice
+		\begin{tikzpicture}[scale=0.3]
+			\begin{axis}[
+					axis lines=center,
+					xticklabels=none,
+					yticklabels=none,
+					thick
+				]
+				\addplot[samples=100, domain=-10:0]{1/x};
+				\addplot[samples=100, domain=0:10]{1/x};
+				\addplot[samples=100, domain=-7:7]{-x - 1};
+			\end{axis}
+		\end{tikzpicture}
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{itemize}
+			\item 选项A中，倒数的图像中 \( k > 0 \)，而直线的图像是矛盾的，方向上可以得出 \( k < 0 \)，而与 \( y
+			      \)轴的交点却得到 \( k > 0 \)
+			\item 选项B中， 直线的图像中 \( k \)值矛盾
+			\item 选项C中，直线与倒数的图像中都可以推出 \( k > 0 \)
+			\item 选项D中，直线的图像中 \( k \)值矛盾
+			\item 选项E中，直线的图像中 \( k < 0 \)，而倒数图像中 \( k > 0 \)
+		\end{itemize}
+	\end{solution}
+
 \end{questions}
 
 \end{document}
