@@ -119,6 +119,68 @@
 		\end{itemize}
 	\end{solution}
 
+	\question
+
+	\begin{minipage}[t]{0.95\textwidth}
+		\begin{wrapfigure}{R}{0.3\textwidth}
+			\begin{tikzpicture}
+				% \draw (2,0) arc [start angle=0, end angle=180, radius=2cm];
+				% \draw (-2,0) -- (2,0);
+				% \draw ({sqrt(2)}, {sqrt(2)}) arc [start angle=0, end angle=-180, radius={sqrt(2)}];
+				% \draw ({-sqrt(2)}, {sqrt(2)}) -- ({sqrt(2)}, {sqrt(2)});
+				\tkzDefPoints{0/0/O, 2/0/A, -2/0/B}
+				\tkzDefPoints{sqrt(2)/sqrt(2)/C,-sqrt(2)/sqrt(2)/D, 0/sqrt(2)/E}
+				\tkzDrawSector(O,A)(B)
+				\tkzDrawSector(E,D)(C)
+
+				\tkzDefShiftPoint[A](0,-0.3){A'}
+				\tkzDefShiftPoint[B](0,-0.3){B'}
+				\tkzDrawSegment[Stealth-Stealth](A',B')
+
+				\tkzLabelLine[below, fill=white](A,B){4cm}
+			\end{tikzpicture}
+		\end{wrapfigure}
+
+		一个小半圆内接于一个大的半圆，如右图所示。请问小半圆的半径是多少？
+
+		\begin{oneparchoices}
+			\choice \( \frac{\sqrt{2}}{2} \) cm
+			\CorrectChoice \( \sqrt{2} \) cm
+			\choice 1.5 cm
+			\choice 2 cm
+			\choice 以上都不对
+		\end{oneparchoices}
+	\end{minipage}
+
+	\begin{solution}
+		\begin{minipage}[t]{0.95\textwidth}
+			\begin{wrapfigure}{L}{0.3\textwidth}
+				\begin{tikzpicture}
+					\tkzDefPoints{0/0/O, 2/0/A, -2/0/B}
+					\tkzDefPoints{sqrt(2)/sqrt(2)/C,-sqrt(2)/sqrt(2)/D, 0/sqrt(2)/E}
+					\tkzDrawSector(O,A)(B)
+					\tkzDrawSector(E,D)(C)
+
+					\tkzDrawSegment[dim={4cm, 0.3cm,}](A,B)
+					\tkzDrawSegments[dashed](O,E)
+					\tkzDrawSegments[dashed](O,C)
+
+					\tkzLabelPoints[right](A,C)
+					\tkzLabelPoints[above](E)
+					\tkzLabelPoints[above left](O)
+				\end{tikzpicture}
+			\end{wrapfigure}
+
+			\begin{equation*}
+				OC^2 = OE^2 + EC^2
+			\end{equation*}
+
+			则有小半圆的半径为 \( \sqrt{2} \)cm
+		\end{minipage}
+		\vspace{2cm}
+
+	\end{solution}
+
 \end{questions}
 
 \end{document}
