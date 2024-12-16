@@ -89,6 +89,47 @@
 
 	\end{solution}
 
+	\question 已知二次函数 \( y = x^2 - 6x + 5 \)
+	\begin{enumerate}[label=(\arabic*)]
+		\item 求出它的图像的顶点坐标和对称轴方程；
+		\item 画出它的图像；
+		\item 分别求出它的图像和 \( x \)轴、$ y $的交点坐标.
+	\end{enumerate}
+
+	\begin{solution}
+		\begin{enumerate}[label=(\arabic*)]
+			\item
+			      \begin{align*}
+				      \text{对称轴的方程为} x = -\frac{b}{2a} & = 3,  \\
+				      \text{将} x = 3 \text{代入得：} y     & = -4, \\
+			      \end{align*}
+			\item
+			      \begin{tikzpicture}
+				      \begin{axis}[
+						      axis lines=middle,          % 坐标轴通过原点
+						      xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
+						      grid=major,                 % 显示网格
+						      xmin=-2, xmax=8,            % x轴范围
+						      ymin=-5, ymax=10,           % y轴范围
+						      domain=-4:8,                % 定义函数绘制范围
+						      samples=100,                % 样本点数，越大曲线越平滑
+						      enlargelimits=true,         % 扩展范围
+					      ]
+					      % 绘制抛物线 y = ax^2 + bx + c
+					      \addplot[smooth, thick, blue] {x^2 - 6*x + 5};
+					      % 添加图例
+					      \addlegendentry{$y = x^2 - 6x + 5$}
+				      \end{axis}
+			      \end{tikzpicture}
+			\item \begin{align*}
+				      y & = x^2 - 6x + 5                            \\
+				        & = (x - 1)(x - 5)                          \\
+				        & \text{则有两个交点分别为：} (1, 0) \text{和} (5, 0).
+			      \end{align*}
+		\end{enumerate}
+
+	\end{solution}
+
 \end{questions}
 
 \end{document}
