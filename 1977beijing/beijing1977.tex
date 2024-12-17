@@ -104,23 +104,26 @@
 				      \text{将} x = 3 \text{代入得：} y     & = -4, \\
 			      \end{align*}
 			\item
-			      \begin{tikzpicture}
-				      \begin{axis}[
-						      axis lines=middle,          % 坐标轴通过原点
-						      xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
-						      grid=major,                 % 显示网格
-						      xmin=-2, xmax=8,            % x轴范围
-						      ymin=-5, ymax=10,           % y轴范围
-						      domain=-4:8,                % 定义函数绘制范围
-						      samples=100,                % 样本点数，越大曲线越平滑
-						      enlargelimits=true,         % 扩展范围
-					      ]
-					      % 绘制抛物线 y = ax^2 + bx + c
-					      \addplot[smooth, thick, blue] {x^2 - 6*x + 5};
-					      % 添加图例
-					      \addlegendentry{$y = x^2 - 6x + 5$}
-				      \end{axis}
-			      \end{tikzpicture}
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[
+							      axis lines=middle,          % 坐标轴通过原点
+							      xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
+							      grid=major,                 % 显示网格
+							      xmin=-2, xmax=8,            % x轴范围
+							      ymin=-5, ymax=10,           % y轴范围
+							      domain=-4:8,                % 定义函数绘制范围
+							      samples=100,                % 样本点数，越大曲线越平滑
+							      enlargelimits=true,         % 扩展范围
+						      ]
+						      % 绘制抛物线 y = ax^2 + bx + c
+						      \addplot[smooth, thick, blue] {x^2 - 6*x + 5};
+						      % 添加图例
+						      \addlegendentry{$y = x^2 - 6x + 5$}
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
+
 			\item \begin{align*}
 				      y & = x^2 - 6x + 5                            \\
 				        & = (x - 1)(x - 5)                          \\
@@ -128,6 +131,116 @@
 			      \end{align*}
 		\end{enumerate}
 
+	\end{solution}
+
+	\question 一只船以 $20$ 海里/小时的速度向正东航行, 起初船在 $A$处看见一灯塔 $B$ 在船的北 $45^\circ$ 东方向, 一小时后船在
+	$C$ 处看见这个灯塔在船的北 $15^\circ$ 东方向, 求这时船和灯塔的距离 $CB$.
+
+	\begin{solution}\\
+		\begin{tikzpicture}
+			\coordinate(A) at (0,0);
+			\coordinate(B) at (4,4);
+			\coordinate(C) at (2,0);
+			\coordinate(D) at (0,4);
+			\coordinate(E) at (2,4);
+			\draw[dashed] (D)  -- (A)node[left]{$A$};
+			\draw[name path=AB] (A) --  (B)node[right]{$B$};
+			\pic["$45^\circ$", draw, angle eccentricity=2] {angle=B--A--D};
+			\draw (A) -- (C)node[right] {$C$};
+			\draw[decorate, decoration={brace, mirror, raise=5pt}, blue, draw] (A) --node[midway, below=8pt]{20} (C);
+			\draw (C)-- (B)node[right]{$B$};
+			\draw[dashed, name path=CE] (E) -- (C);
+			\pic["$15^\circ$", draw, angle eccentricity=2] {angle=B--C--E};
+			\path [name intersections={of=AB and CE, by=F}];
+			\node[above left] at (F) {$F$};
+			\coordinate(G) at ($(C)!(F)!(B)$);
+			\draw (F) -- (G)node[right]{$G$};
+		\end{tikzpicture}
+		\begin{tikzpicture}
+			\tkzDefPoint(0,0){A}  % 定义点 A
+			\tkzDefPoint(4,4){B}  % 定义点 B
+			\tkzDefPoint(2,0){C}  % 定义点 C
+			\tkzDefPoint(0,4){D}  % 定义点 D
+			\tkzDefPoint(2,4){E}  % 定义点 E
+
+			% 绘制点
+			\tkzDrawPoints(A,B,C,D,E)
+
+			% 绘制线段
+			\tkzDrawSegments(A,B B,C C,D)
+			\tkzDrawSegment[draw,dashed](A,D)  % 虚线
+			\tkzDrawSegment[draw,dashed](C,E)  % 虚线
+
+			% 标记角度
+			\tkzMarkAngle[draw=blue,fill=blue,angle radius=1cm](B,A,D)
+			\tkzLabelAngle[sloped, pos=1.5](B,A,D){$45^\circ$}
+			\tkzMarkAngle[draw=red,fill=red,angle radius=1cm](B,C,E)
+			\tkzLabelAngle[sloped, pos=1.5](B,C,E){$15^\circ$}
+
+			% 在某些点上标记标签
+			\tkzLabelPoint[below left](A){$A$}
+			\tkzLabelPoint[above right](B){$B$}
+			\tkzLabelPoint[below](C){$C$}
+			\tkzLabelPoint[above](D){$D$}
+			\tkzLabelPoint[above](E){$E$}
+
+			% 绘制带有标签的标注
+			\tkzDrawSegment(A,C)
+			\tkzLabelSegment[below](A,C){20}
+
+			% 寻找交点 F，并绘制直线
+			\tkzInterLL(A,B)(C,E) \tkzGetPoint{F}
+			\tkzDrawPoints(F)
+			\tkzLabelPoint[above left](F){$F$}
+
+			% 绘制直线 FG
+			\tkzDefPointBy[projection=onto B--C](F) \tkzGetPoint{G}
+			\tkzDrawSegment(F,G)
+			\tkzLabelPoint[right](G){$G$}
+		\end{tikzpicture}
+
+		\begin{itemize}
+			\item \textbf{确定三角形} $\triangle{ACF}$ 是等腰直角三角形，得出:
+			      \[
+				      CF = AC = 20 \text{（海里）}.
+			      \]
+			\item \textbf{角度关系}：设 $\alpha = 15^\circ$，则:
+			      \[
+				      FG = \sin{\alpha} \cdot FC, \quad CG = \cos{\alpha} \cdot FC.
+			      \]
+			\item \textbf{角度推导}：由三角形角度关系得:
+			      \[
+				      \angle ABC = 180^\circ - \angle CAB - 90^\circ - 15^\circ = 30^\circ.
+			      \]
+			\item \textbf{计算 BG}：使用三角关系得:
+			      \[
+				      BG = \sqrt{3} \cdot FG.
+			      \]
+			\item \textbf{求解BC}: 综合前述公式得:
+			      \[
+				      BC = BG + CG = \sqrt{3} \cdot 20 \cdot \sin{\alpha} + 20 \cdot \cos{\alpha}.
+			      \]
+			\item \textbf{最终结果}：
+			      \[
+				      BC^2 = 400 \left( 3 \sin^2{\alpha} + 2\sqrt{3} \sin{\alpha} \cos{\alpha} + \cos^2{\alpha} \right).
+			      \]
+			\item \textbf{化简倍角公式}：
+			      \[
+				      \text{倍角公式：} \sin{2\alpha} = 2 \sin{\alpha} \cos{\alpha}, \quad \sin^2{\alpha} + \cos^2{\alpha} = 1,
+			      \]
+			      得到：
+			      \[
+				      BC^2 = 400 \left( 2 \sin^2{\alpha} + \sqrt{3} \sin{2\alpha} + 1 \right).
+			      \]
+			\item \textbf{最后化简}：
+			      \[
+				      BC^2 = 400 \left( 1 - \frac{\sqrt{3}}{2} + \frac{\sqrt{3}}{2} + 1 \right),
+			      \]
+			      最终得出：
+			      \[
+				      BC = 20\sqrt{2} \text{（海里）}.
+			      \]
+		\end{itemize}
 	\end{solution}
 
 \end{questions}
