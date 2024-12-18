@@ -243,6 +243,36 @@
 		\end{itemize}
 	\end{solution}
 
+	\question 一个圆内接三角形 \( ABC \)，$\angle A$的平分线交$BC$于$D$，交外接圆于$E$，求证： \( AD \cdot AE = AC \cdot
+	AB\).
+
+	\begin{solution}
+		\begin{minipage}{.4\textwidth}
+			\begin{tikzpicture}
+				\tkzDefPoint (0,0){A}
+				\tkzDefPoint (5,0){B}
+				\tkzDefPoint (3,4){C}
+
+				% 外接圆
+				\tkzCircumCenter(A,B,C) \tkzGetPoint{O}
+				\tkzDrawCircle(O,A)
+
+				% 角平分线
+				\tkzDefLine[bisector](B,A,C) \tkzGetPoint{a}
+				\tkzInterLL(A,a)(B,C) \tkzGetPoint{D}
+				\tkzInterLC(A,a)(O,A) \tkzGetPoints{A}{E}
+				\tkzDrawSegment(A,E)
+
+				\tkzDrawPolygon(A,B,C)
+				\tkzLabelPoints(A,B)
+				\tkzLabelPoint[above](C){$C$}
+				\tkzLabelPoint[above left](D){$D$}
+				\tkzLabelPoint[right](E){$E$}
+			\end{tikzpicture}
+		\end{minipage}
+
+	\end{solution}
+
 \end{questions}
 
 \end{document}
