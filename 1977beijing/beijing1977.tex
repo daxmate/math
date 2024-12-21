@@ -346,30 +346,42 @@
 			      x^2\sin\frac{\pi}{x}, (x \neq 0) \\
 			      0, (x=0)
 		      \end{cases} \)的导数.
-	\end{enumerate}
 
-	\begin{solution}
-		\begin{enumerate}[label=\arabic*)]
-			\item \( x \neq 0 \)
-			      \begin{align*}
-				      f'(x) = (x^2\sin\frac{\pi}{x})' & = (x^2)'\sin\frac{\pi}{x} + x^2\cdot(\sin\frac{\pi}{x})' \\
-				                              & = 2x\sin\frac{\pi}{x} + x^2\cdot\cos\frac{\pi}{x}
-			      \end{align*}
-			\item \( x = 0 \)
+		      \begin{solution}
+			      \begin{enumerate}[label=\arabic*)]
+				      \item \( x \neq 0 \)
+				            \begin{align*}
+					            f'(x) = (x^2\sin\frac{\pi}{x})' & = (x^2)'\sin\frac{\pi}{x} + x^2\cdot(\sin\frac{\pi}{x})' \\
+					                                            & = 2x\sin\frac{\pi}{x} + x^2\cdot\cos\frac{\pi}{x}
+				            \end{align*}
+				      \item \( x = 0 \)
+				            \begin{math}
+					            f'(x) = 0
+				            \end{math}
+			      \end{enumerate}
+			      综上：
 			      \begin{math}
-				      f'(x) = 0
+				      f'(x) =
+				      \begin{cases}
+					      2x\sin\frac{\pi}{x} + x^2\cos\frac{\pi}{x} (x \neq 0) \\
+					      0 (x = 0)
+				      \end{cases}.
 			      \end{math}
-		\end{enumerate}
-		综上：
-		\begin{math}
-			f'(x) =
-			\begin{cases}
-				2x\sin\frac{\pi}{x} + x^2\cos\frac{\pi}{x} (x \neq 0) \\
-				0 (x = 0)
-			\end{cases}.
-		\end{math}
+		      \end{solution}
 
-	\end{solution}
+		\item 求椭圆 \( \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \)绕 $x$轴旋转而成的旋转体体积.
+		      \begin{solution}
+			      用切片法对旋转体垂直于 \( x \)轴方向的圆盘进行积分来计算旋转体的体积：\\
+			      每个圆盘的面积为： \( \pi y^2 = \pi (1-\frac{x^2}{a^2})b^2 \) \\
+			      则体积为:
+			      \begin{align*}
+				      \int_{-a}^{a}\pi(1-\frac{x^2}{a^2})b^2 & = 2\pi ab^2 - \frac{b^2\cdot 2a^3}{3a^2} \\
+				                                             & = \frac{4}{3}ab^2
+			      \end{align*}
+
+		      \end{solution}
+
+	\end{enumerate}
 
 \end{questions}
 
