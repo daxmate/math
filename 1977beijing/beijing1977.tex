@@ -337,6 +337,37 @@
 				\end{axis}
 			\end{tikzpicture}
 		\end{center}
+	\end{solution}
+
+	\section*{附加题}
+	\question
+	\begin{enumerate}[label=(\arabic*)]
+		\item 求函数 \( f(x) = \begin{cases}
+			      x^2\sin\frac{\pi}{x}, (x \neq 0) \\
+			      0, (x=0)
+		      \end{cases} \)的导数.
+	\end{enumerate}
+
+	\begin{solution}
+		\begin{enumerate}[label=\arabic*)]
+			\item \( x \neq 0 \)
+			      \begin{align*}
+				      f'(x) = (x^2\sin\frac{\pi}{x})' & = (x^2)'\sin\frac{\pi}{x} + x^2\cdot(\sin\frac{\pi}{x})' \\
+				                              & = 2x\sin\frac{\pi}{x} + x^2\cdot\cos\frac{\pi}{x}
+			      \end{align*}
+			\item \( x = 0 \)
+			      \begin{math}
+				      f'(x) = 0
+			      \end{math}
+		\end{enumerate}
+		综上：
+		\begin{math}
+			f'(x) =
+			\begin{cases}
+				2x\sin\frac{\pi}{x} + x^2\cos\frac{\pi}{x} (x \neq 0) \\
+				0 (x = 0)
+			\end{cases}.
+		\end{math}
 
 	\end{solution}
 
