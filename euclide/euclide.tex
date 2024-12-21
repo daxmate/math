@@ -1,0 +1,69 @@
+%!tex program = lualatex
+\documentclass{exam}
+\usepackage{ctex}
+\usepackage[lua]{tkz-euclide}
+\newcommand\tkzDrawXY[0]{\tkzDrawX\tkzDrawY}
+	\tkzSetUpLine[teal]
+	\tkzSetUpLabel[teal]
+	\tkzSetUpPoint[fill=black]
+
+\begin{document}
+\begin{tikzpicture}
+	\tkzInit[xmax=5, ymax=5]
+	\tkzSetUpLine[teal]
+	\tkzSetUpLabel[teal]
+	\tkzDrawX
+	\tkzDrawY
+	\tkzDefPoints{0/0/O, 1/0/I, 0/1/J}
+	\tkzDefPoint(3,4){A}
+	\tkzDrawPoints(A,O)
+	\tkzLabelPoint[above](A){$A_1(x_1,y_1)$}
+	\tkzPointShowCoord[>=Stealth, xlabel=$x_1$, ylabel=$y_1$](A)
+	\tkzDrawPoints[shape=cross, thick](I,J)
+	\tkzLabelPoints[left](J)
+	\tkzLabelPoints[below](I)
+	\tkzLabelPoints[below left](O)
+\end{tikzpicture}
+\begin{tikzpicture}
+	\tkzInit[xmax=5, ymax=5]
+	\tkzDrawXY
+	\tkzDefPoint(3,3){P}
+	\tkzDefPoints{0/0/O, 1/0/I, 0/1/J}
+	\tkzDrawPoints[shape=cross, thick](O, I, J)
+	\tkzDrawPoint(P)
+	\tkzDrawSegment[dim={$d$, 16pt, above=6pt}](O,P)
+	\tkzLabelPoint[right](P){$P(\alpha:d)$}
+
+	\tkzMarkAngle[->](I,O,P)
+	\tkzFillAngle[opacity=.5](I,O,P)
+	\tkzLabelAngle[pos=1.25](I,O,P){$\alpha$}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\tkzInit[xmax=4, ymax=4]
+	\tkzDrawXY
+	\tkzDefPoint(-1+2, sqrt(4)){O}
+	\tkzDefPoint({3*ln(exp(1))}, {exp(1)}){A}
+	\tkzDefPoint({4*sin(pi/6)}, {4*cos(pi/6)}){B}
+	\tkzDrawPoints(O,B,A)
+\end{tikzpicture}
+\begin{tikzpicture}
+	\foreach \an [count=\i] in {0,60,...,300}
+		{ \tkzDefPoint(\an:3){A_\i}}
+	\tkzDrawPolygon(A_1,A_...,A_6)
+	\tkzDrawPoints(A_1,A_...,A_6)
+\end{tikzpicture}
+
+\begin{tikzpicture}[rotate=-15]
+	\tkzDefPoint(2,3){A}
+	\tkzDefShiftPoint[A](0:4){B}
+	\tkzDefShiftPoint[A](30:4){C}
+
+	\tkzDrawPolygon(A,B,C)
+	\tkzMarkSegments(A,B A,C)
+	\tkzDrawPoints(A,B,C)
+	\tkzLabelPoints[right](B,C)
+	\tkzLabelPoints[left](A)
+\end{tikzpicture}
+
+\end{document}
