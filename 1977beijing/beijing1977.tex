@@ -260,7 +260,7 @@
 				% 角平分线
 				\tkzDefLine[bisector](B,A,C) \tkzGetPoint{a}
 				\tkzInterLL(A,a)(B,C) \tkzGetPoint{D}
-				\tkzInterLC(A,a)(O,A) \tkzGetPoints{A}{E}
+				\tkzInterLC(A,a)(O,A) \tkzGetSecondPoint{E}
 				\tkzDrawSegment(A,E)
 
 				\tkzMarkAngle[mark=|](B,A,E)
