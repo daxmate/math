@@ -60,6 +60,26 @@
 			      \end{math}
 			      则函数的定义域为 \( 1 < x < 2 \)
 		      \end{solution}
+		\item 如图，在梯形 \( ABCD \)中， \( DM = MP = PA, MN \parallel PQ \parallel AB \)， \( DC = 2\text{cm}, AB =
+		      3.5\text{cm} \)，求 \( MN \)和 \( PQ \)的长。
+
+		      \begin{tikzpicture}
+			      \tkzDefPoints{0/0/A, 3/0/B, 0.5/3/D, 2.5/3/C}
+			      \tkzDefPointOnLine[pos={1/3}](A,D)\tkzGetPoint{P}
+			      \tkzDefPointOnLine[pos={2/3}](A,D)\tkzGetPoint{M}
+			      \tkzDefPointOnLine[pos={1/3}](C,B)\tkzGetPoint{N}
+			      \tkzDefPointOnLine[pos={2/3}](C,B)\tkzGetPoint{Q}
+
+			      \tkzDrawPolygon(A,B,C,D)
+			      \tkzDrawSegments(P,Q M,N)
+
+			      \tkzLabelSegment[above](D,C){$2$}
+			      \tkzLabelSegment[above](A,B){$3.5$}
+
+			      \tkzLabelPoints[left](D,M,P,A)
+			      \tkzLabelPoints[right](C,N,Q,A)
+
+		      \end{tikzpicture}
 	\end{enumerate}
 \end{questions}
 \end{document}
