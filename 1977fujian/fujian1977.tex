@@ -1,0 +1,25 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\input{../mathheader}
+\begin{document}
+\begin{center}
+	\textbf{1977年普通高等学校招生考试(福建卷)}
+
+	\textbf{\huge{理科数学}}
+\end{center}
+\begin{questions}
+	\question
+	\begin{enumerate}[label=(\arabic*)]
+		\item 计算： \( 5 - 3 \times \left[(-3\frac38)^{-\frac13} + 1031 \times (0.25 - 2^{-2})\right] \div 9^0 \).
+		      \begin{solution}
+			      \begin{align*}
+				      \text{原式} & = 5 - 3 \times \left[ (-3\frac38)^{-\frac13} + 1031 \times 0 \right] \div 1 \\
+				                & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
+				                & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
+				                & = 5 + 2                                                                     \\
+				                & = 7
+			      \end{align*}
+		      \end{solution}
+	\end{enumerate}
+\end{questions}
+\end{document}
