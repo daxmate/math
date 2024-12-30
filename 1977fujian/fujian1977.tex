@@ -1,6 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
 \input{../mathheader}
+\usepackage[lua]{tkz-euclide}
 \begin{document}
 \begin{center}
 	\textbf{1977年普通高等学校招生考试(福建卷)}
@@ -20,6 +21,34 @@
 				                & = 7
 			      \end{align*}
 		      \end{solution}
+
+		\item \( y = \dfrac{\cos{160^\circ} - \cos{170^\circ}}{\tan{155^\circ}} \)的值是正的还是负的？为什么？
+		      \begin{solution}
+			      \begin{tikzpicture}[scale=3]
+				      \tkzDefPoints{0/0/O, 1/0/A, -1/0/A'}
+				      \tkzDefShiftPointCoord[O](160:1){B}
+				      \tkzDefShiftPointCoord[O](170:1){C}
+				      \tkzDefShiftPointCoord[O](155:1){D}
+
+				      \tkzDefLine[orthogonal=through B](O,A) \tkzGetPoint{x}
+				      \tkzInterLL(B,x)(O,A) \tkzGetPoint{B'}
+				      \tkzDefLine[orthogonal=through C](O,A) \tkzGetPoint{x}
+				      \tkzInterLL(C,x)(O,A) \tkzGetPoint{C'}
+				      \tkzDefLine[orthogonal=through D](O,A) \tkzGetPoint{x}
+				      \tkzInterLL(D,x)(O,A) \tkzGetPoint{D'}
+
+				      \tkzDrawSegments(A,A' O,B)
+				      \tkzDrawSegment[dim={$\cos{160^\circ}$, .25cm, below=2pt}](O,B')
+				      \tkzDrawSegments(A,O O,C)
+				      \tkzDrawSegment[dim={$\cos{170^\circ}$, .75cm, below=2pt}](O,C')
+				      \tkzDrawSegments(A,O O,D)
+				      \tkzDrawSegments[blue, thick](D,D' D',O)
+			      \end{tikzpicture}
+
+			      由三角函数的定义有\( \cos{160^\circ} < 0, \cos{170^\circ} < 0, \tan{155^\circ} < 0 \)，并且有 \(
+			      \cos{160^\circ} > \cos{170^\circ} \)，则分子为正数，而且分母为负数，所以 \( y \)的值为负。
+		      \end{solution}
+
 	\end{enumerate}
 \end{questions}
 \end{document}
