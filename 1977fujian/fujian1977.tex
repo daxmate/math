@@ -15,10 +15,10 @@
 		      \begin{solution}
 			      \begin{align*}
 				      \text{原式} & = 5 - 3 \times \left[ (-3\frac38)^{-\frac13} + 1031 \times 0 \right] \div 1 \\
-				                & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
-				                & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
-				                & = 5 + 2                                                                     \\
-				                & = 7
+				                  & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
+				                  & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
+				                  & = 5 + 2                                                                     \\
+				                  & = 7
 			      \end{align*}
 		      \end{solution}
 
@@ -85,20 +85,20 @@
 		      \begin{solution}
 			      \begin{align*}
 				       & \because MN \parallel PQ \parallel AB \text{并且} DM = MP = PA \\
-				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}     \\
-				       & \text{将数值代入得：}                                               \\
-				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                \\
-				       & \text{则有：} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7      \\
-				       & MN = \sqrt[3]{14}                                            \\
-				       & PQ = \sqrt[3]{14^2} / 2                                      \\
+				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}       \\
+				       & \text{将数值代入得：}                                          \\
+				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                  \\
+				       & \text{则有：} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7    \\
+				       & MN = \sqrt[3]{14}                                              \\
+				       & PQ = \sqrt[3]{14^2} / 2                                        \\
 			      \end{align*}
 		      \end{solution}
 		\item 已经 \( \lg3=0.4771, \lg{x}=-3.5229 \)，求 \( x \)。
 		      \begin{solution}
 			      \begin{align*}
-				       & \because \lg3                              = 0.4771                  \\
-				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229  \\
-				       & \text{另有} \lg0.001                       = -3                        \\
+				       & \because \lg3                              = 0.4771                   \\
+				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229   \\
+				       & \text{另有} \lg0.001                       = -3                       \\
 				       & \text{则} \lg(0.001 \times \frac{3}{10} )  = -3 + (-0.5229) = -3.5229 \\
 				       & \therefore x = \frac{3}{10000}
 			      \end{align*}
@@ -210,6 +210,38 @@
 			      因为分母 \( (x+1)^2 + 1  \)肯定大于0，所以有 \( (x-3)(x+2) < 0 \)
 
 			      因此有 \( -2 < x < 3 \)
+		      \end{solution}
+
+		\item 证明： \( \dfrac{2\cos\theta - \sin2\theta}{2\cos\theta + \sin2\theta} = \tan^2\left(\dfrac{90^\circ -
+			      \theta}{2}\right) \).
+		      \begin{solution}
+			      \begin{enumerate}[label=\arabic*. ]
+				      \item 首先，根据倍角公式 \( \sin2\theta = 2\sin\theta\cos\theta \) 来化简等式的左边：
+				            \begin{align*}
+					            \frac{2\cos\theta - \sin2\theta}{2\cos\theta + \sin2\theta}
+					             & = \frac{2\cos\theta - 2\sin\theta\cos\theta}{2\cos\theta + 2\sin\theta\cos\theta} \\
+					             & = \frac{1-\sin\theta}{1+\sin\theta} \tag{a}
+				            \end{align*}
+				      \item 然后，结合半角公式 \( \tan\dfrac{\theta}{2} = \dfrac{\sin\theta}{1+\cos\theta} \)
+				            来化简等式的右边：
+				            \begin{align*}
+					            \tan^2\left(\dfrac{90^\circ - \theta}{2}\right)
+					             & = \left(\frac{\sin(90^\circ-\theta)}{1+\cos(90^\circ-\theta)}\right)^2 \tag{b}
+				            \end{align*}
+				      \item 利用差角公式 \( \sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta \) 及 \(
+				            \cos(\alpha - \beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta \) 进一步化简式(b):
+				            \begin{align*}
+					            \left(\frac{\sin(90^\circ-\theta)}{1+\cos(90^\circ-\theta)}\right)^2
+					             & = \left(\frac{\sin90^\circ\cos\theta -
+						            \cos90^\circ\sin\theta}{1+\cos90^\circ\cos\theta + \sin90^\circ\sin\theta}\right)^2
+					            \\
+					             & = \left(\frac{\cos\theta}{1+\sin\theta}\right)^2 \\
+					             & = \frac{\cos^2\theta}{(1+\sin\theta)^2}          \\
+					             & = \frac{1-\sin^2\theta}{(1+\sin\theta)^2}        \\
+					             & = \frac{1-\sin\theta}{1+\sin\theta} \tag{c}
+				            \end{align*}
+				      \item 综上，由(a) = (c)，原式成立。
+			      \end{enumerate}
 		      \end{solution}
 	\end{enumerate}
 
