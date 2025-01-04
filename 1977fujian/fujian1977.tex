@@ -15,10 +15,10 @@
 		      \begin{solution}
 			      \begin{align*}
 				      \text{原式} & = 5 - 3 \times \left[ (-3\frac38)^{-\frac13} + 1031 \times 0 \right] \div 1 \\
-				                  & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
-				                  & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
-				                  & = 5 + 2                                                                     \\
-				                  & = 7
+				                & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
+				                & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
+				                & = 5 + 2                                                                     \\
+				                & = 7
 			      \end{align*}
 		      \end{solution}
 
@@ -85,20 +85,20 @@
 		      \begin{solution}
 			      \begin{align*}
 				       & \because MN \parallel PQ \parallel AB \text{并且} DM = MP = PA \\
-				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}       \\
-				       & \text{将数值代入得：}                                          \\
-				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                  \\
-				       & \text{则有：} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7    \\
-				       & MN = \sqrt[3]{14}                                              \\
-				       & PQ = \sqrt[3]{14^2} / 2                                        \\
+				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}     \\
+				       & \text{将数值代入得：}                                               \\
+				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                \\
+				       & \text{则有：} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7      \\
+				       & MN = \sqrt[3]{14}                                            \\
+				       & PQ = \sqrt[3]{14^2} / 2                                      \\
 			      \end{align*}
 		      \end{solution}
 		\item 已经 \( \lg3=0.4771, \lg{x}=-3.5229 \)，求 \( x \)。
 		      \begin{solution}
 			      \begin{align*}
-				       & \because \lg3                              = 0.4771                   \\
-				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229   \\
-				       & \text{另有} \lg0.001                       = -3                       \\
+				       & \because \lg3                              = 0.4771                  \\
+				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229  \\
+				       & \text{另有} \lg0.001                       = -3                        \\
 				       & \text{则} \lg(0.001 \times \frac{3}{10} )  = -3 + (-0.5229) = -3.5229 \\
 				       & \therefore x = \frac{3}{10000}
 			      \end{align*}
@@ -245,16 +245,28 @@
 		      \end{solution}
 		\item
 		      某中学革命师生自己动手油漆一个直径为$1.2$米的地球仪，如果第平方米面积需要油漆$150$克，问共需油漆多少克？(答案保留整数。)
-			  \begin{solution}
-			   球体的面积公式为： \( A = 4\pi r^3 \)，代入$r=1.2$得：
-			   \begin{math}
-				   A = 4\times 3.14 \times 1.2^2 = 18.0864
-			   \end{math}
+		      \begin{solution}
+			      球体的面积公式为： \( A = 4\pi r^3 \)，代入$r=1.2$得：
+			      \begin{math}
+				      A = 4\times 3.14 \times 1.2^2 = 18.0864
+			      \end{math}
 
-			   则共需油漆 \( 18.0864 \times 150 = 2712.96 \approx 2713 \text{g} \)
+			      则共需油漆 \( 18.0864 \times 150 = 2712.96 \approx 2713 \text{g} \)
+		      \end{solution}
+		\item
+		      某农机厂开展\enquote{工业学大庆}运动，在十月份生产拖拉机$1000$台，这样，一月至十月的产量恰好完成全年生产任务。工人同志为了加速农业机械化，计划在年底前再生产$2310$台，求十一月、十二月平均每月增长率。
 
-		
-			  \end{solution}
+		      \begin{solution}
+			      设每月的平均增长率为$x$，则有 	\( 1000(1+x) + 1000(1+x)^2 = 2310 \)。
+			      对式子进行化简：
+			      \begin{align*}
+				      1000(1+x) + 1000(1+x)^2 & = 1000 + 1000x + 1000 + 2000x + 1000x^2 \\
+				                              & = 2000 + 3000x + 1000x^2 = 2310         \\
+				      1000x^2 +3000x - 310    & = 0                                     \\
+				      (10x + 31)(100x - 10)   & = 0                                     \\
+				      x                       & = 10\%
+			      \end{align*}
+		      \end{solution}
 	\end{enumerate}
 
 \end{questions}
