@@ -268,6 +268,29 @@
 			      \end{align*}
 		      \end{solution}
 	\end{enumerate}
+	\question 在半径为$R$的圆内接正六边形内，依次连续各边的中点，得一正六边形，又在这一正六边形内，再依次连结各边的中点，又得一正六边形，这样无限地继续下去，求：
+	\begin{enumerate}[label=(\arabic*)]
+		\item 前$n$个正六边形的周长之和$S_n$；
+		\item 所有这些正六边形的周长之和$S$。
+	\end{enumerate}
+	\begin{solution}
+		\begin{enumerate}[label=\zhnum{*}、]
+			\item 半径为$R$的圆的内接正六边形的边长也为$R$，所以第一个正六边形的边长为$6R$。
+			\item
+			      以第一个正六边形的边的中点连接而成的第二个正六边形的边长，根据三角关系得到边长为$\frac{\sqrt{3}}{2}R$，则边长为$3\sqrt{3}R$
+			\item 则前$n$个正六边形的周长之和为：
+			      \begin{align*}
+				      S_n & = 6R + 3\sqrt{3}R + \cdots +  (\frac{\sqrt{3}}{2})^{n-1}R \\
+				          & = 12\frac{1-(\frac{\sqrt{3}}{2})^n}{2-\sqrt{3}}R          \\
+			      \end{align*}
+			\item 所有这些正六边形的周长之和：
+			      \begin{align*}
+				      S & = \lim_{n\to\infty}12\frac{1-(\frac{\sqrt{3}}{2})^n}{2-\sqrt{3}}R \\
+				        & = \frac{12}{2-\sqrt{3}}R                                          \\
+				        & = 12(2+\sqrt{3})R
+			      \end{align*}
+		\end{enumerate}
+	\end{solution}
 
 \end{questions}
 \end{document}
