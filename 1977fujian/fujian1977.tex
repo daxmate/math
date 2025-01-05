@@ -292,5 +292,86 @@
 		\end{enumerate}
 	\end{solution}
 
+	\question 某大队在农田基本建设的规划中，要测定被障碍物隔开的两点$A,
+		P$之间的距离，他们土法上马，在障碍物的两侧，选取两点$B$和$C$(如图)，测得$AB=AC=50$m，$ \angle{BAC}=60^\circ,
+		\angle{ACP}=120^\circ， \angle{ACP}=135^\circ$，求$A$和$P$之间的距离。(答案可用最简根式表示)。
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[scale=1.5]
+			\tkzDefPoint(0,0){A}
+			\tkzDefShiftPointCoord[A](30:2){C}
+			\tkzDefShiftPointCoord[A](-30:2){B}
+			\tkzDefPoint(4,0.3){P}
+			\tkzInterLL(A,P)(B,C) \tkzGetPoint{D}
+			\tkzDefLine[orthogonal=through C](B,P) \tkzGetPoint{x}
+			\tkzInterLL(B,P)(C,x) \tkzGetPoint{E}
+			\tkzInterLL(A,P)(C,E) \tkzGetPoint{O}
+
+			\tkzDrawPolygon(A,B,P,C)
+			\draw[fill=gray!50] (D) ellipse[x radius=0.3, y radius=0.2];
+			\tkzDrawSegments[dashed](A,P B,C)
+			\tkzDrawSegment[red, dashed](C,E)
+			\tkzDrawPoint(O)
+
+			\tkzLabelAngle[pos=.8](E,C,P){$45^\circ$}
+			\tkzMarkAngle[size=.5, mark=s|](E,C,P)
+			\tkzMarkRightAngle[red](C,E,P)
+
+			\tkzMarkAngle[size=.5, mark=s|](C,P,E)
+			\tkzLabelAngle[pos=.8](C,P,E){$45^\circ$}
+
+			\tkzMarkAngle[size=.6](B,C,E)
+			\tkzLabelAngle[pos=.8](B,C,E){$30^\circ$}
+			\tkzMarkRightAngle[red](A,C,E)
+
+			\tkzLabelPoint[left](A){$A$}
+			\tkzLabelPoint[below](B){$B$}
+			\tkzLabelPoint[above](C){$C$}
+			\tkzLabelPoint[right](P){$P$}
+			\tkzLabelPoint[below](E){$E$}
+			\tkzLabelPoint[above right](O){$O$}
+
+			\tkzLabelSegment[above left](A,C){$x$}
+			\tkzLabelSegment[below left](A,B){$x$}
+			\tkzLabelSegment[below right](B,E){$\frac{x}{2}$}
+			\tkzLabelSegment[below right](E,P){$\frac{\sqrt{3}}{2}x$}
+		\end{tikzpicture}
+	\end{figure}
+
+	\begin{solution}
+		\begin{enumerate}[label=\zhnum{*}、]
+			\item 为了书写方便，将$AC$的长度记为$x$
+			\item 由 \( AB=AC, \angle{BAC}=60^\circ \)，得 \( \triangle{ABC}是等边三角形 \)，并有 \( BC=AB=AC=x \)
+			\item 从$C$点作垂线到$BP$并与$BP$交于$E$点，$CE$与$AP$交于$O$点
+			\item 由 \( \angle{BAC}=60^\circ, \angle{ACP}=135^\circ, \angle{ABP}=120^\circ \)得$\angle{CPB}=45^\circ$
+			\item 则有 \( \angle{ECP} = 45^\circ, \angle{BCE}=30^\circ \)
+			\item 由 \( \angle{ACB}=60^\circ, \angle{BCE}=30^\circ \)得 \( \angle{ACO}=90^\circ \)
+			\item 在 直角\( \triangle{BCE} \)中，有 \( BE=\frac{BC}{2} = \frac{x}{2}, CE=\frac{\sqrt{3}}{2}BC =
+			      \frac{\sqrt{3}}{2}x \)
+			\item 在等腰直角三角形 \( \triangle{EPC} \)中，有 \( EP = EC = \frac{\sqrt{3}}{2}x \)
+			\item 对于 \( \triangle{ACO} \)和 \( \triangle{PEO} \)，因为 \( \angle{ACO} = \angle{PEO} = 90^\circ,
+			      \angle{AOC} = \angle{POE} \)，所以 \( \triangle{AOC} \sim \triangle{POE} \)
+
+			      根据相似三角形的性质有：
+			      \begin{align*}
+				      \frac{AC}{EP}                 & = \frac{CO}{OE} = \frac{AO}{OP}                     \\
+				      \frac{x}{\frac{\sqrt{3}}{2}x} & = \frac{CO}{OE} = \frac{AO}{OP}= \frac{2}{\sqrt{3}} \\
+			      \end{align*}
+			\item 因为 \( CE=\frac{\sqrt{3}}{2}x \)，则有 \( CO = (2\sqrt{3} - 3)x, OE = \frac{6 - 3\sqrt{3}}{2}x \)
+			\item 则有 \( AO = \sqrt{AC^2 + CO^2} = \sqrt{x^2 - (2\sqrt{3} - 3)^2x^2} = \sqrt{12\sqrt{3} - 20}x \)
+			\item
+			      \begin{align*}
+				      OP & = \frac{\sqrt{3}}{2} \cdot AO               \\
+				      AP & = AO + OP                                   \\
+				         & = (1+\frac{\sqrt{3}}{2})AO                  \\
+				         & = \frac{2+\sqrt{3}}{2}\sqrt{12\sqrt{3}-20}x \\
+				         & = \sqrt{\sqrt{3} + 1}x                      \\
+				         & = 50\sqrt{\sqrt{3} + 1}
+			      \end{align*}
+
+		\end{enumerate}
+	\end{solution}
+
 \end{questions}
 \end{document}
