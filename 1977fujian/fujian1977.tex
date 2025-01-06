@@ -373,8 +373,78 @@
 		\end{enumerate}
 	\end{solution}
 
-	\question 已知双曲线 \( \frac{x^2}{24\alpha} - \frac{y^2}{16\cot\alpha} = 1 (\alpha\text{为锐角})\)和圆 \( (x-m)^2 +
+	\question 已知双曲线 \( \frac{x^2}{24\tan\alpha} - \frac{y^2}{16\cot\alpha} = 1 (\alpha\text{为锐角})\)和圆 \( (x-m)^2 +
 	y^2 = r^2 \)相切于点 \( A(4\sqrt{3},4) \)，求 \( \alpha, m, r \)的值。
+	\begin{solution}
+		\begin{enumerate}[label=\arabic*., noitemsep]
+			\item 将点 	\( A(4\sqrt{3}, 4) \)代入双曲线方程得：
+			      \begin{equation*}
+				      \frac{(4\sqrt{3})^2}{24\tan\alpha} - \frac{4^2}{16\cot\alpha} = 1
+			      \end{equation*}
+
+			      进一步化简得：
+			      \begin{equation*}
+				      \frac{2}{\tan\alpha} - \frac{1}{\cot\alpha} = 1
+			      \end{equation*}
+			      设 $\tan\alpha=x$，则有：
+			      \begin{align*}
+				      2\cdot\frac1x - x = 1 \\
+				      x^2 +x - 2 = 0        \\
+				      (x+2)(x-1) = 0        \\
+			      \end{align*}
+			      因为$\alpha$是锐角，所以 $x=1$，即 \( \alpha=45^\circ \)。
+			\item 将点 \( A(4\sqrt{3}, 4) \)代入圆方程得：
+			      \begin{equation*}
+				      (4\sqrt{3} - m)^2 + 4^2 = r^2 \tag{a}
+			      \end{equation*}
+			\item 双曲线与圆在 $A$点相切，所以其切线斜率相同。
+			      \begin{enumerate}[label=\alph*., noitemsep]
+				      \item 求解双曲线在$A$点的切线的斜率
+
+				            对双曲线求偏导：
+				            \begin{equation*}
+					            \frac{2x}{24\tan\alpha} - \frac{2y}{16\cot\alpha}\cdot\frac{\text{d}y}{\text{d} x} = 0
+				            \end{equation*}
+				            解得：
+				            \begin{equation*}
+					            \frac{\text{d}y}{\text{d}x} = \frac{\frac{x}{12\tan\alpha}}{\frac{y}{8\cot\alpha}}
+					            = \frac{8\cot\alpha\cdot x}{12\tan\alpha\cdot y} = \frac{2x}{3y}
+				            \end{equation*}
+				            点 \( A(4\sqrt{3},4) \)的切线斜率为：
+				            \begin{equation*}
+					            k_1 = \frac{2\cdot4\sqrt{3}}{3\cdot4} =
+					            \frac{2\sqrt{3}}{3}
+				            \end{equation*}
+				      \item 求解圆在$A$点的法线的斜率
+
+				            对圆求偏导：
+				            \begin{equation*}
+					            2(x-m) + 2y\frac{\text{d}y}{\text{d}x} = 0
+				            \end{equation*}
+
+				            点$A(4\sqrt{3},4)$处的切线斜率为：
+				            \begin{equation*}
+					            k_2 = -\frac{4\sqrt{3} - m}{4}
+				            \end{equation*}
+
+				      \item 因为 \( k_1 = k_2 \)，所以有
+				            \begin{align*}
+					            -\frac{4\sqrt{3} - m }{4} = \frac{2\sqrt{3}}{3}
+				            \end{align*}
+				            解得：
+				            \begin{math}
+					            m = \frac{20}{\sqrt{3}}
+				            \end{math}
+
+			      \end{enumerate}
+
+			\item 将 \( m = \frac{20}{\sqrt{3}} \)代入式(a)得:
+			      \begin{math}
+				      r = \sqrt{\dfrac{112}{3}}
+			      \end{math}
+
+		\end{enumerate}
+	\end{solution}
 
 \end{questions}
 \end{document}
