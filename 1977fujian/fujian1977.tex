@@ -486,5 +486,22 @@
 		\end{enumerate}
 
 	\end{solution}
+	\begin{center}
+		\section*{附加题}
+	\end{center}
+	\question 求函数 $y = e^{-2x}\sin\left(5x+\dfrac{\pi}{4}\right)$的导数。
+	\begin{solution}
+		\begin{align*}
+			\frac{\text{d}y}{\text{d}x} & =  (e^{-2x})'\sin\left(5x + \frac{\pi}{4}\right) + e^{-2x}\sin'\left(5x +
+			\frac{\pi}{4}\right)                                                                                    \\
+			                            & = -2e^{-2x}\sin\left(5x+\frac{\pi}{4}\right) +
+			5e^{-2x}\cos\left(5x+\frac{\pi}{4}\right)                                                               \\
+			                            & = e^{-2x}\left[-2\sin\left(5x + \frac{\pi}{4}\right) + 5\cos\left(5x +
+			\frac{\pi}{4}\right)\right]                                                                             \\
+			                            & = e^{-2x}(-2\sin5x\cos\frac{\pi}{4} - 2\cos5x\sin\frac{\pi}{4} +
+			5\cos5x\cos\frac{\pi}{4} - 5\sin5x\sin\frac{\pi}{4})                                                    \\
+			                            & = -\frac{\sqrt{2}}{2}e^{-2x}(7\sin5x - 3\cos5x)
+		\end{align*}
+	\end{solution}
 \end{questions}
 \end{document}
