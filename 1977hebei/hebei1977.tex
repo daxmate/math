@@ -138,6 +138,43 @@
 		因为$x>0$所以$x=2$。
 	\end{solution}
 
+	\question
+	\begin{minipage}[t]{.6\textwidth}
+		某生产队要建立一个形状是直角梯形的苗圃，其两邻边借用夹角为$135^\circ$的两面墙，另外两边是总长为$30$米的篱笆(如图，$AD$和$DC$为墙),问篱笆的两边各多长时，苗圃的面积最大？最大面积是多少？
+	\end{minipage}
+	\hspace{1cm}
+	\begin{tikzpicture}[baseline=(current bounding box.north)]
+		\tkzDefPoints{0/0/A, 3/0/B}
+		\tkzDefPoint(45:2){D}
+		\tkzDefLine[parallel=through D](A,B) \tkzGetPoint{x}
+		\tkzDefLine[orthogonal=through B](A,B) \tkzGetPoint{y}
+		\tkzInterLL(D,x)(B,y) \tkzGetPoint{C}
+
+		\tkzDefLine[orthogonal=through D](A,B) \tkzGetPoint{x}
+		\tkzInterLL(D,x)(A,B) \tkzGetPoint{E}
+
+		\tkzDrawPolygon(A,B,C,D)
+		\tkzLabelPoints[below](A,B,E)
+		\tkzLabelPoints[above](C,D)
+		\tkzDrawSegment[blue, dashed](D,E)
+	\end{tikzpicture}
+
+	\begin{solution}
+		\begin{mathenum}
+			\item 从$D$点向$AB$作垂线,垂足为$E$.
+			\item 从条件可知$AE=ED=BC$
+			\item 设$AE=x$,则有$DC=EB=30-2x$
+			\item 梯形的面积可以表示为:
+			\begin{align*}
+				S & = (30 - 2x + x + 30 - 2x)\cdot x / 2 \\
+				  & = (60 - 3x)x/2                       \\
+				  & = -\frac32x^2 + 30x \tag{1}
+			\end{align*}
+		\item 根据抛物线的性质在$x=-\frac{b}{2a}$时有极值,代入可得$x=10$,此时$AB=20,BC=10$
+		\item 将$x=10$代入式(1)可得最大面积为$150\mathrm{m}^2$
+		\end{mathenum}
+	\end{solution}
+
 \end{questions}
 
 \end{document}
