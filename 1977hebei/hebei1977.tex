@@ -104,6 +104,22 @@
 		\end{enumerate}
 	\end{solution}
 
+	\question 证明： $\dfrac{\sin2\alpha + 1}{1+\cos2\alpha + \sin2\alpha} = \dfrac12\tan\alpha + \dfrac12$.
+	\begin{mathenum}
+		\item 根据倍角公式$\sin2\alpha = 2\sin\alpha\cos\alpha$和$\cos2\alpha=\cos^2\alpha -
+			\sin^2\alpha$来化简等式的左边得：
+		\begin{align*}
+			\frac{\sin2\alpha + 1}{1+\cos2\alpha + \sin2\alpha}
+			 & = \frac{2\sin\alpha\cos\alpha + 1}{1 + \cos^2\alpha - \sin^2\alpha + 2\sin\alpha\cos\alpha} \\
+			 & = \frac{\cos^2\alpha + \sin^2\alpha + 2\sin\alpha\cos\alpha}{\cos^2\alpha + \sin^2\alpha +
+			\cos^2\alpha - \sin^2\alpha + 2\sin\alpha\cos\alpha}                                           \\
+			 & = \frac{(\sin\alpha + \cos\alpha)^2}{2\cos\alpha(\sin\alpha + \cos\alpha)}                  \\
+			 & = \frac{\sin\alpha + \cos\alpha}{2\cos\alpha}                                               \\
+			 & = \frac12\tan\alpha + \frac12
+		\end{align*}
+	\item 综上，等式成立。
+	\end{mathenum}
+
 \end{questions}
 
 \end{document}
