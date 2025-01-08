@@ -1,6 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
 \input{../mathheader}
+\usepackage[lua]{tkz-euclide}
 
 \begin{document}
 \begin{center}
@@ -55,6 +56,53 @@
 			      \end{align*}
 		      \end{solution}
 	\end{enumerate}
+
+	\question
+	\begin{minipage}[t]{.3\textwidth}
+		证明：如图，$AB$是圆$O$的直径，$CB$是圆$O$的切线，切点为$B$,$OC$平行于弦$AD$，求证：$DC$是圆$O$的切线。
+	\end{minipage}\hspace{3cm}
+	\begin{tikzpicture}[scale=.5, baseline=(current bounding box.center)]
+		\tkzDefPoints{-2/0/A, 0/0/O, 2/0/B, 2/5/C}
+		\tkzDefLine[parallel=through A](O,C) \tkzGetPoint{x}
+		\tkzInterLC(A,x)(O,B) \tkzGetPoints{D}{A}
+
+		\tkzDrawCircle(O,B)
+		\tkzDrawSegment(A,B)
+		\tkzDrawSegment(C,B)
+		\tkzDrawSegment(C,O)
+		\tkzDrawSegment(A,D)
+		\tkzDrawSegment(C,D)
+		\tkzDrawSegment[dashed, red](D,O)
+
+		\tkzMarkAngle[mark=|, size=15pt](O,A,D)
+		\tkzMarkAngle[mark=|, size=15pt](B,O,C)
+		\tkzMarkAngle[mark=||, size=20pt](A,D,O)
+		\tkzMarkAngle[mark=||, size=20pt](C,O,D)
+
+		\tkzLabelPoint[left](A){$A$}
+		\tkzLabelPoint[right](B){$B$}
+		\tkzLabelPoint[above](C){$C$}
+		\tkzLabelPoint[below](O){$O$}
+		\tkzLabelPoint[left](D){$D$}
+	\end{tikzpicture}
+
+	\begin{solution}
+		\begin{enumerate}[label=\arabic*.]
+			\item 因为 $CB$ 是圆 $O$ 的切线且切点为 $B$，所以有 $AB \perp CB$。
+			\item 由于 $AD \parallel OC$，可以得到 $\angle DAO = \angle COB$。
+			\item 作辅助线 $DO$。因为 $\angle ADO$ 和 $\angle COD$ 是平行线的内错角，所以 $\angle ADO = \angle COD$。
+			\item 在 $\triangle AOD$ 中，由于 $AD \parallel OC$，且 $OA = OD$（都是圆的半径），所以 $\triangle AOD$ 是等腰三角形，由此得到 $\angle OAD = \angle ODA$。
+			\item 进一步分析 $\triangle DOC$ 和 $\triangle BOC$：
+			      \begin{itemize}
+				      \item $OB = OD$（都是圆的半径）；
+				      \item $OC = OC$（公共边）；
+				      \item $\angle BOC = \angle DOC$（由 $\angle COB = \angle DAO$ 和 $\angle ADO = \angle COD$ 推导）。
+			      \end{itemize}
+			      因此，$\triangle BOC \cong \triangle DOC$（根据边角边准则）。
+			\item 由 $\triangle BOC \cong \triangle DOC$，可以得到 $\angle ODC = \angle CBO = 90^\circ$。
+			\item 因为 $\angle ODC = 90^\circ$，所以 $DC$ 是圆 $O$ 的切线。
+		\end{enumerate}
+	\end{solution}
 
 \end{questions}
 
