@@ -262,30 +262,7 @@
 		\end{mathenum}
 	\end{solution}
 	\question
-	\begin{minipage}[t]{.6\textwidth}
-		如图,$MN$为圆的直径,$P$、$C$为圆上两点,连$PM,PN$,过$C$作$MN$的垂线与$MN,MP$和$NP$的延长线依次相交于$A,B,D$,求证:$AC^2=AB\cdot AD.$
-		\renewcommand{\solutiontitle}{证明:}
-
-		\begin{solution}
-			\begin{flalign*}
-				 & \because \angle{AMP} = \angle{PMA} \text{并且有} \angle{MAB} = \angle{MPN} = 90^\circ \\
-				 & \therefore \triangle{AMB} \sim \triangle{PMN}                                         \\
-				 & \because \angle{PNM} = \angle{MNP} \text{和} \angle{MPN} = \angle{DAN} = 90^\circ     \\
-				 & \therefore \triangle{PMN} \sim \triangle{ADN}                                         \\
-				 & \therefore \triangle{AMB} \sim \triangle{ADN}                                         \\
-				 & \therefore \frac{AB}{MA} = \frac{AN}{AD}                                              \\
-				 & \therefore AB\cdot AD = MA \cdot AN                                                   \\
-				 & \because \angle{MCA} = \angle{CNA} = 90^\circ - \angle{NMC}                           \\
-				 & \text{和} \angle{CAN} = \angle{CAM} = 90^\circ                                        \\
-				 & \therefore \triangle{AMC} \sim \triangle{ACN}                                         \\
-				 & \therefore \frac{AC}{MA} = \frac{NA}{AC}                                              \\
-				 & \therefore AC^2 = MA \cdot CA                                                         \\
-				 & \therefore AC^2 = AB \cdot AD
-			\end{flalign*}
-		\end{solution}
-
-		\renewcommand{\solutiontitle}{\textbf{解：}}
-	\end{minipage}\hspace{1cm}
+	如图,$MN$为圆的直径,$P$、$C$为圆上两点,连$PM,PN$,过$C$作$MN$的垂线与$MN,MP$和$NP$的延长线依次相交于$A,B,D$,求证:$AC^2=AB\cdot AD.$
 	\begin{tikzpicture}[baseline=(current bounding box.north), scale=.8]
 		\tkzDefPoints{-2/0/M,0/0/O,2/0/N}
 		\tkzDefPoint(65:2){P}
@@ -306,6 +283,23 @@
 		\tkzLabelPoint[right](N){$N$}
 		\tkzLabelPoint[above right](P){$P$}
 	\end{tikzpicture}
+	\begin{solution}
+		\begin{align*}
+			 & \because \angle{AMP} = \angle{PMA} \text{并且有} \angle{MAB} = \angle{MPN} = 90^\circ \\
+			 & \therefore \triangle{AMB} \sim \triangle{PMN}                                      \\
+			 & \because \angle{PNM} = \angle{MNP} \text{和} \angle{MPN} = \angle{DAN} = 90^\circ   \\
+			 & \therefore \triangle{PMN} \sim \triangle{ADN}                                      \\
+			 & \therefore \triangle{AMB} \sim \triangle{ADN}                                      \\
+			 & \therefore \frac{AB}{MA} = \frac{AN}{AD}                                           \\
+			 & \therefore AB\cdot AD = MA \cdot AN                                                \\
+			 & \because \angle{MCA} = \angle{CNA} = 90^\circ - \angle{NMC}                        \\
+			 & \text{和} \angle{CAN} = \angle{CAM} = 90^\circ                                      \\
+			 & \therefore \triangle{AMC} \sim \triangle{ACN}                                      \\
+			 & \therefore \frac{AC}{MA} = \frac{NA}{AC}                                           \\
+			 & \therefore AC^2 = MA \cdot CA                                                      \\
+			 & \therefore AC^2 = AB \cdot AD
+		\end{align*}
+	\end{solution}
 
 \end{questions}
 
