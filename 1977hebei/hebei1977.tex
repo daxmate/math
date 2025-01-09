@@ -170,9 +170,97 @@
 				  & = (60 - 3x)x/2                       \\
 				  & = -\frac32x^2 + 30x \tag{1}
 			\end{align*}
-		\item 根据抛物线的性质在$x=-\frac{b}{2a}$时有极值,代入可得$x=10$,此时$AB=20,BC=10$
-		\item 将$x=10$代入式(1)可得最大面积为$150\mathrm{m}^2$
+			\item 根据抛物线的性质在$x=-\frac{b}{2a}$时有极值,代入可得$x=10$,此时$AB=20,BC=10$
+			\item 将$x=10$代入式(1)可得最大面积为$150\mathrm{m}^2$
 		\end{mathenum}
+	\end{solution}
+
+	\question
+	工人师傅要用铁皮做一个上大下小的正四棱台形容器(上面开口)，使其容积为$208$立方分米,高为$4$分米,上口边长与下底面边长的比为$5:2$,做这样的容器需要多少平方米的铁皮?(不计容器的厚度和加工余量,不要求写出已知,
+	求解,直接求解并画图即可)
+
+	\begin{solution}
+		\begin{mathenum}
+			\item 设下底面的边长为$2x$,则上底面的边长为$5x$,上下底面的面积分别为$25x^2$和$4x^2$
+			\item 容器沿平行于边的中心线剖面是一个等腰梯形,沿着两个斜边作延长线,汇聚于点$E$
+
+			\begin{tikzpicture}[scale=2]
+				\tkzDefPoints{-2.5/0/A, 2.5/0/B, -1/-1/D, 1/-1/C, 0/-{5/3}/E, 0/0/O, 0/-1/F}
+				\tkzDefLine[orthogonal=through C](A,B) \tkzGetPoint{x}
+				\tkzInterLL(C,x)(A,B) \tkzGetPoint{G}
+
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzDrawSegments[dashed](D,E C,E)
+				\tkzDrawSegment[dim={$4$dm, 6pt,right=6pt}](O,F)
+				\tkzDrawSegment[dim={$y$, 6pt, right=6pt}, dashed](F,E)
+				\tkzLabelPoint[above](O){$O$}
+				\tkzLabelPoint[below](E){$E$}
+				\tkzLabelPoint[above left](F){$F$}
+
+				\tkzDrawSegment[dashed](G,C)
+				\tkzLabelPoint[above](G){$G$}
+				\tkzLabelPoint[right](C){$C$}
+				\tkzLabelPoint[right](B){$B$}
+			\end{tikzpicture}
+
+			\tdplotsetmaincoords{60}{130}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\coordinate(A) at (1,1,0);
+				\coordinate(B) at (-1,1,0);
+				\coordinate(C) at (-1,-1,0);
+				\coordinate(D) at (1,-1,0);
+				\coordinate(A') at (2.5,2.5,2);
+				\coordinate(B') at (-2.5,2.5,2);
+				\coordinate(C') at (-2.5,-2.5,2);
+				\coordinate(D') at (2.5,-2.5,2);
+				\coordinate(E) at (-2.5, 0, 2);
+				\coordinate(F) at (2.5, 0, 2);
+				\coordinate(G) at (1, 0, 0);
+				\coordinate(H) at (-1, 0, 0);
+				\coordinate(I) at (-1, 0, 2);
+
+				\draw (D) -- (A) -- (B);
+				\draw [dashed](B)-- (C) -- (D);
+
+				\draw (A') -- (B') -- (C') -- (D') -- cycle;
+				\draw (A) -- (A');
+				\draw (B) -- (B');
+				\draw[dashed] (C) -- (C');
+				\draw (D) -- (D');
+				\draw[dashed](E) -- (F) -- (G) -- (H) -- cycle;
+				\draw[dashed](H) -- (I);
+
+				\tkzLabelPoint[above](E){$E$}
+				\tkzLabelPoint[above](F){$F$}
+				\tkzLabelPoint[below left](G){$G$}
+				\tkzLabelPoint[above left](H){$H$}
+				\tkzLabelPoint[above](I){$I$}
+
+				% \tkzMarkSegments(C',E E,B')
+				% \tkzMarkSegments[mark=||](A',F F,D')
+				\tkzMarkRightAngle(H,I,E)
+
+			\end{tikzpicture}
+			\item 根据几何比例关系,$EF$的长度$y$有如下等式:
+			\begin{equation*}
+				\frac{y}{y+4} = \frac25
+			\end{equation*}
+			解得$y=\frac83$dm.
+			\item 则容器的容积为:
+			\begin{align*}
+				\frac13 \left[ 25x^2 \cdot (4 + \frac83) - 4x^2 \cdot \frac83 \right]
+				 & = 51x^2 \\
+				 & = 208
+			\end{align*}
+			计算得 $x = 2$,则有下边长为$4$,上边长为$10$
+			\item 在截面上从$B$点作垂线到$AB$,垂足为$G$,则可以求得棱面梯形的高$BC=5$,因此铁皮的面积为
+			\begin{align*}
+				(4+10)\times 5 \div 2 \times 4  + 
+				4 \times 4 % 底面积
+				= 156 (\text{dm}^2)
+			\end{align*}
+		\end{mathenum}
+
 	\end{solution}
 
 \end{questions}
