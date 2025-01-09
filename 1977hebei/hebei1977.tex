@@ -255,13 +255,57 @@
 			计算得 $x = 2$,则有下边长为$4$,上边长为$10$
 			\item 在截面上从$B$点作垂线到$AB$,垂足为$G$,则可以求得棱面梯形的高$BC=5$,因此铁皮的面积为
 			\begin{align*}
-				(4+10)\times 5 \div 2 \times 4  + 
+				(4+10)\times 5 \div 2 \times 4  +
 				4 \times 4 % 底面积
 				= 156 (\text{dm}^2)
 			\end{align*}
 		\end{mathenum}
-
 	\end{solution}
+	\question
+	\begin{minipage}[t]{.6\textwidth}
+		如图,$MN$为圆的直径,$P$、$C$为圆上两点,连$PM,PN$,过$C$作$MN$的垂线与$MN,MP$和$NP$的延长线依次相交于$A,B,D$,求证:$AC^2=AB\cdot AD.$
+		\renewcommand{\solutiontitle}{证明:}
+
+		\begin{solution}
+			\begin{flalign*}
+				 & \because \angle{AMP} = \angle{PMA} \text{并且有} \angle{MAB} = \angle{MPN} = 90^\circ \\
+				 & \therefore \triangle{AMB} \sim \triangle{PMN}                                         \\
+				 & \because \angle{PNM} = \angle{MNP} \text{和} \angle{MPN} = \angle{DAN} = 90^\circ     \\
+				 & \therefore \triangle{PMN} \sim \triangle{ADN}                                         \\
+				 & \therefore \triangle{AMB} \sim \triangle{ADN}                                         \\
+				 & \therefore \frac{AB}{MA} = \frac{AN}{AD}                                              \\
+				 & \therefore AB\cdot AD = MA \cdot AN                                                   \\
+				 & \because \angle{MCA} = \angle{CNA} = 90^\circ - \angle{NMC}                           \\
+				 & \text{和} \angle{CAN} = \angle{CAM} = 90^\circ                                        \\
+				 & \therefore \triangle{AMC} \sim \triangle{ACN}                                         \\
+				 & \therefore \frac{AC}{MA} = \frac{NA}{AC}                                              \\
+				 & \therefore AC^2 = MA \cdot CA                                                         \\
+				 & \therefore AC^2 = AB \cdot AD
+			\end{flalign*}
+		\end{solution}
+
+		\renewcommand{\solutiontitle}{\textbf{解：}}
+	\end{minipage}\hspace{1cm}
+	\begin{tikzpicture}[baseline=(current bounding box.north), scale=.8]
+		\tkzDefPoints{-2/0/M,0/0/O,2/0/N}
+		\tkzDefPoint(65:2){P}
+		\tkzDefPoint(110:2){C}
+
+		\tkzDefLine[orthogonal=through C](M,N) \tkzGetPoint{x}
+		\tkzInterLL(C,x)(M,N) \tkzGetPoint{A}
+		\tkzInterLL(C,x)(M,P) \tkzGetPoint{B}
+		\tkzInterLL(C,x)(N,P) \tkzGetPoint{D}
+
+		\tkzDrawCircle(O,N)
+		\tkzDrawSegments(M,N M,P A,D N,D C,N M,C)
+		\tkzLabelPoint(A){$A$}
+		\tkzLabelPoint[right](B){$B$}
+		\tkzLabelPoint[above left](C){$C$}
+		\tkzLabelPoint[above](D){$D$}
+		\tkzLabelPoint[left](M){$M$}
+		\tkzLabelPoint[right](N){$N$}
+		\tkzLabelPoint[above right](P){$P$}
+	\end{tikzpicture}
 
 \end{questions}
 
