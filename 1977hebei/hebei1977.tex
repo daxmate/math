@@ -309,6 +309,25 @@
 		\( \frac{x^2}{2} + \frac{y^2}{1} = 1 \)
 	\end{solution}
 
+	【乙】已知菱形的一对内角各为$60^\circ$，边长为$4$，以菱形为对角线所在的直线为坐标轴建立直角坐标系，以菱形$60^\circ$角的两个顶点为焦点，并且过菱形的另外两个顶点作椭圆，求椭圆方程。
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}
+			\tkzInit[xmax=5,xmin=-5, ymax=5, ymin=-5]
+			\tkzDrawX\tkzDrawY
+			\tkzDefPoints{2/0/A,-2/0/C, 0/{2sqrt(3)}/B, 0/-{2sqrt(3)}/D, 0/0/O}
+
+			\tkzDrawPolygon(A,B,C,D)
+			\tkzMarkSegment[dim={$4$, 16pt, right=6pt}, mark=](B,A)
+			\tkzMarkSegment[dim={$2$, -16pt, below=6pt}, mark=](O,A)
+			\tkzMarkSegment[dim={$2\sqrt{3}$, 16pt, left=6pt}, mark=](O,B)
+
+		\draw[x radius=4, y radius=2*sqrt(3)] ellipse;
+		\end{tikzpicture}
+	\end{figure}
+
+	根据几何关系可知椭圆的短半轴为$b=2\sqrt{3}$，半焦距为$c=2$，长半轴$a=4$，所以椭圆的方程为$\frac{x^2}{16} +
+		\frac{y^2}{12} = 1$
 
 \end{questions}
 
