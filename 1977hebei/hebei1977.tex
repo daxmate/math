@@ -342,6 +342,27 @@
 		所以收敛区间为$(-\infty, \infty)$.
 	\end{solution}
 
+	\question 利用定积分计算椭圆$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 (a > b > 0)$所围成的面积。
+	\begin{solution}
+		对于任意一处的$x$对应的$y=\pm b\sqrt{1 -
+				\frac{x^2}{a^2}}$，则在此处的形成的宽度为$\mathrm{d}x$，高度为$2|y|$的微小矩形的面积表达式为：$2b\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x$，则椭圆的面积为
+		\begin{equation*}
+			A = \int_{-a}^{a}2b\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x
+		\end{equation*}
+		令$x=a\sin\theta$，则$\mathrm{d}x = a\cos\theta\mathrm{d}\theta$，其中$\theta \in [0, \frac\pi2]$。
+		代入得：
+		\begin{align*}
+			A = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x
+			 & = 4b\int_0^{\frac\pi2}\sqrt{1 -
+			\frac{a^2\sin^2\theta}{a^2}}a\cos\theta\mathrm{d}\theta                              \\
+			 & = 4ab\int_0^{\frac\pi2}\cos^2\theta\mathrm{d}\theta                               \\
+			 & = 4ab\int_0^{\frac\pi2}\frac{1+\cos(2\theta)}{2}\mathrm{d}\theta                  \\
+			 & = 4ab\left(\int_0^{\frac\pi2}\frac12\mathrm{d}\theta +
+			\int_0^{\frac\pi2}\frac{\cos(2\theta)}{2}\mathrm{d}\theta\right)                     \\
+			 & = 4ab\left(\frac\pi4  + \left[\frac{\sin(2\theta)}{4}\right]_0^{\frac\pi2}\right) \\
+			 & = \pi ab
+		\end{align*}
+	\end{solution}
 
 \end{questions}
 
