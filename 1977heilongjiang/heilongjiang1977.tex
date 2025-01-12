@@ -215,6 +215,43 @@
 		\end{align*}
 	\end{solution}
 
+	\question 已知三角形的三边成等差数列，周长为$80$cm，面积为$54$cm$^2$，求三边的长。
+	\begin{solution}
+		% \begin{tikzpicture}[scale=.5,baseline=(current bounding box.north)]
+		% 	\tkzDefPoints{0/0/A, 12/0/B}
+		% 	\tkzDefPoint(75:8){C}
+		% 	\tkzDefLine[orthogonal=through A](C,B) \tkzGetPoint{x}
+		% 	\tkzInterLL(C,B)(A,x) \tkzGetPoint{D}
+
+		% 	\tkzDrawPolygon(A,B,C)
+		% 	\tkzMarkSegment[dim={$12$cm, 16pt, above=6pt}, mark=](C,B)
+		% 	\tkzMarkSegment[dim={$(12+x)$cm, -16pt, above=6pt}, mark=](A,B)
+		% 	\tkzMarkSegment[dim={$(12-x)$cm, 16pt, above=6pt}, sloped, mark=](A,C)
+		% 	\tkzDrawSegment(A,D)
+		% 	\tkzMarkRightAngle(A,D,B)
+		% 	\tkzMarkSegment[dim={$y$cm, 16pt, above=6pt}, sloped, mark=](D,A)
+
+		% 	\tkzLabelPoint[below left](A){$A$}
+		% 	\tkzLabelPoint[right](B){$B$}
+		% 	\tkzLabelPoint[above](C){$C$}
+		% 	\tkzLabelPoint[left](D){$D$}
+		% \end{tikzpicture}
+
+		由三边成等差数列，可得中间长度的边长为$12$cm，设另外两边分别为$(12+x)$cm和$(12-x)$cm。由海伦公式可得面积为：
+		\begin{math}
+			S = \sqrt{p(p-a)(p-b)(p-c)} = 54\; \text{其中} p = \frac{36}{2} = 18
+		\end{math}
+		代入可得：
+		\begin{align*}
+			S = \sqrt{18(18 - 12 + x)(18 - 12 - x)(18 - 12)} & = 54              \\
+			\sqrt{18\cdot 6 (36-x^2)}                        & = 54              \\
+			18\cdot 6 (36- x^2)                              & = 54^2            \\
+			x^2                                              & = 9               \\
+			x                                                & = 3 (\mathrm{cm})
+		\end{align*}
+
+	\end{solution}
+
 \end{questions}
 
 \end{document}
