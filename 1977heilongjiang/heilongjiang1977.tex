@@ -281,10 +281,19 @@
 		根据三角关系有$\sin\alpha = \frac{l}{OP}$，所以有$OP =
 			\frac{l}{\sin\alpha}$，即$P$点的横坐标为$\frac{l}{\sin\alpha}$
 
-			另有$\sin\angle{P} = \frac{R}{OP} =
+		另有$\sin\angle{P} = \frac{R}{OP} =
 			\frac{R\sin\alpha}{l}$，可以得出在$\alpha$为直角时$\sin\angle{P}$有最大值，即$\angle{P}$有最大值。
 	\end{solution}
-
+	\question 求曲线$y=\sin{x}$在$[0,\pi]$上的曲边梯形绕$x$轴旋转一周所形成的旋转体的体积。
+	\begin{solution}
+		\begin{align*}
+			V & = \int_0^{\pi}\pi \sin^2{x}\mathrm{d}x                              \\
+			  & = \pi\int_0^{\pi}\frac{1-\cos{2x}}{2}\mathrm{d}x                    \\
+			  & = \pi(\left[\frac{x}{2}\right]_0^{\pi} - \frac12[\sin(2x)]_0^{\pi}) \\
+			  & = \pi\frac{\pi}{2}
+			  & = \frac{\pi^2}{2}
+		\end{align*}
+	\end{solution}
 
 \end{questions}
 
