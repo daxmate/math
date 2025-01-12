@@ -322,12 +322,26 @@
 			\tkzMarkSegment[dim={$2$, -16pt, below=6pt}, mark=](O,A)
 			\tkzMarkSegment[dim={$2\sqrt{3}$, 16pt, left=6pt}, mark=](O,B)
 
-		\draw[x radius=4, y radius=2*sqrt(3)] ellipse;
+			\draw[x radius=4, y radius=2*sqrt(3)] ellipse;
 		\end{tikzpicture}
 	\end{figure}
 
 	根据几何关系可知椭圆的短半轴为$b=2\sqrt{3}$，半焦距为$c=2$，长半轴$a=4$，所以椭圆的方程为$\frac{x^2}{16} +
 		\frac{y^2}{12} = 1$
+	\begin{center}
+		\subsection*{附加题}
+	\end{center}
+	\question 将函数$f(x)=e^x$展开为$x$的幂级数，并求出收敛区间。($e=2.718$为自然对数的底数)
+	\begin{solution}
+		$e^x$的幂级数展开式为$\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$，使用比值判别法：
+		\begin{equation*}
+			\lim_{n\to\infty}\left| \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right| =
+			\lim_{n\to\infty}\left|\frac{x}{n+1}\right|
+			= 0
+		\end{equation*}
+		所以收敛区间为$(-\infty, \infty)$.
+	\end{solution}
+
 
 \end{questions}
 
