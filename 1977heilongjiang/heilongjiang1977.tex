@@ -131,10 +131,55 @@
 
 			      设所求直线方程为$y =
 				      -\frac52x+b$, 并将点$(1,4)$代入得$b = \frac{13}{2}$。
-					  所以直线方程为：$2y + 5x - 13 = 0$。
+			      所以直线方程为：$2y + 5x - 13 = 0$。
 		      \end{solution}
 	\end{enumerate}
 
+	\question 如果$\triangle{ABC}$的$\angle{A}$的平分线交$BC$于$D$，交它的外接圆于$E$，那么$AB\cdot AC = AD \cdot AE$。
+	\begin{figure*}[htbp]
+		\centering
+		\begin{tikzpicture}
+			\tkzDefPoints{0/0/A, 3/0/B, 2.5/2.5/C}
+			\tkzDefLine[bisector](B,A,C) \tkzGetPoint{x}
+			\tkzDefCircle(A,B,C) \tkzGetPoint{O}
+			\tkzInterLL(A,x)(B,C) \tkzGetPoint{D}
+			\tkzInterLC(A,x)(O,A) \tkzGetSecondPoint{E}
+
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawCircle(O,A)
+			\tkzDrawSegment(A,E)
+
+			\tkzLabelPoint[left](A){$A$}
+			\tkzLabelPoint[right](B){$B$}
+			\tkzLabelPoint[above](C){$C$}
+			\tkzLabelPoint[above left](D){$D$}
+			\tkzLabelPoint[right](E){$E$}
+
+			\tkzDrawSegments[red, dashed](C,E E,B)
+
+		\end{tikzpicture}
+	\end{figure*}
+	\begin{solution}
+		\begin{mathenum}
+			\item 作辅助线$CE$和$BE$
+			\item \because $\overset{\frown}{CE}$对应圆周角$\angle{CAE}$和$\angle{CBE}$
+			\\ \therefore\ $\angle{CAE} = \angle{CBE}$
+			\\ \because\ $\angle{CDA} = \angle{EDB} $
+			\\ \therefore\ $\triangle{CAD} \sim \triangle{EBD}$
+			\item \because\ $\overset{\frown}{BE}$对应圆周角$\angle{BAE} = \angle{BCE}$
+			\\ \therefore\ $\angle{BAE} = \angle{EAC}$
+			\\ \because $\angle{BAE} = \angle{BAC}$
+			\\ \therefore\ $\overset{\frown}{CE} = \overset{\frown}{BE}$
+			\\ \therefore\ $\angle{BCE} = \angle{CBE}$
+			\\ \therefore\ $\angle{EBD} = \angle{BAE}$
+			\\ \because\ $\angle{BEA} = \angle{AEB}$
+			\\ \therefore\ $\triangle{EBD} \sim \triangle{EAB}$
+			\\ \therefore\ $\triangle{EAB} \sim \triangle{CAD}$
+			\\ \therefore\ $\dfrac{AC}{AE}={AD}{AB}$
+			\\ \therefore\ $AC\cdot AB = AD\cdot AE$
+		\end{mathenum}
+
+	\end{solution}
 \end{questions}
 
 \end{document}
