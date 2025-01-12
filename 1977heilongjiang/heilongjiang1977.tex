@@ -1,0 +1,65 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\input{../mathheader.tex}
+\usepackage[lua]{tkz-euclide}
+
+\begin{document}
+\begin{center}
+	\textbf{1977年普通高等学校招生考试（黑龙江卷）}
+
+	\textbf{\Large{数学试卷}}
+\end{center}
+
+\begin{questions}
+	\question 解答下列各题：
+	\begin{enumerate}[label=(\arabic*)]
+		\item 解方程：$\sqrt{3x+4} = 4$。
+		      \begin{solution}
+			      方程两边平方得：
+			      \begin{math}
+				      3x + 4 = 16
+			      \end{math}
+			      移项整理得
+			      \begin{align*}
+				      3x & = 12 \\
+				      x  & = 4
+			      \end{align*}
+
+		      \end{solution}
+		\item 解不等式：$|x| < 5$
+		      \begin{solution}
+			      \begin{math}
+				      -5 < x < 5
+			      \end{math}
+
+		      \end{solution}
+		\item 已知正三角形的外接圆半径为$6\sqrt{3}$cm，求它的边长。
+		      \begin{solution}
+			      \begin{tikzpicture}[scale=.3]
+				      \tkzDefPoints{0/0/O, 6sqrt(3)/0/A}
+				      \tkzDefPoint(90:6sqrt(3)){B}
+				      \tkzDefPoint(210:6sqrt(3)){C}
+				      \tkzDefPoint(330:6sqrt(3)){D}
+				      \tkzDefLine[orthogonal=through O](B,C) \tkzGetPoint{x}
+				      \tkzInterLL(O,x)(B,C) \tkzGetPoint{E}
+
+				      \tkzDrawCircle(O,A)
+				      \tkzDrawPolygon(B,C,D)
+				      \tkzDrawPoint(O)
+				      \tkzLabelPoint[below right](O){$O$}
+				      \tkzDrawSegments(B,O C,O O,E)
+
+				      \tkzMarkSegment[dim={$6\sqrt{3}$, 16pt, right=6pt}, mark=](B,O)
+					  \tkzMarkAngle[size=2](C,B,O)
+					  \tkzLabelAngle[pos=3.5](C,B,O){$30^\circ$}
+					  \tkzLabelPoint[left](E){$E$}
+					  \tkzLabelPoint[above](B){$B$}
+			      \end{tikzpicture}
+				  可以计算出$BE=6$，则正三角形的边长为$12$。
+		      \end{solution}
+
+	\end{enumerate}
+
+\end{questions}
+
+\end{document}
