@@ -252,6 +252,40 @@
 
 	\end{solution}
 
+	\begin{center}
+		\subsubsection*{附加题}
+	\end{center}
+
+	\question
+	如图，$AP$表示发动机的连杆，$OA$表示它的曲柄。当$A$在圆上作圆周运动时，$P$在$x$轴上作直线运动，求$P$点的横坐标。为什么当$\alpha$是直角时，$\angle{P}$是最大？
+
+	\begin{tikzpicture}
+		\tkzInit[xmax=4, xmin=0]
+		\tkzDrawX
+		\tkzDefPoints{0/0/O, 3/0/P, 1/1.5/A}
+
+		\tkzDrawCircle(O,A)
+		\tkzDrawSegment(O,A)
+		\tkzMarkAngle[size=.5](P,O,A)
+		\tkzLabelAngle(P,O,A){$\alpha$}
+
+		\tkzDrawSegment(A,P)
+		\tkzLabelSegment[above](A,P){$l$}
+		\tkzLabelSegment[left](O,A){$R$}
+
+		\tkzLabelPoint(O){$O$}
+		\tkzLabelPoint(P){$P$}
+		\tkzLabelPoint[above](A){$A$}
+	\end{tikzpicture}
+	\begin{solution}
+		根据三角关系有$\sin\alpha = \frac{l}{OP}$，所以有$OP =
+			\frac{l}{\sin\alpha}$，即$P$点的横坐标为$\frac{l}{\sin\alpha}$
+
+			另有$\sin\angle{P} = \frac{R}{OP} =
+			\frac{R\sin\alpha}{l}$，可以得出在$\alpha$为直角时$\sin\angle{P}$有最大值，即$\angle{P}$有最大值。
+	\end{solution}
+
+
 \end{questions}
 
 \end{document}
