@@ -1,6 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
 \input{../mathheader.tex}
+\usepackage[lua]{tkz-euclide}
 
 \begin{document}
 \begin{center}
@@ -115,6 +116,36 @@
 			 & = \sqrt{32 + 32} \\
 			 & = 8
 		\end{align*}
+	\end{solution}
+	\question 在直角三角形$ \triangle{ABC} $中，$ \angle{ACB} = 90^\circ
+	$，$CD$、$CE$分别为斜边$AB$上的高和中线，且$\angle{BCD}$与$\angle{ACD}$之比为$3:1$，求证：$CD=DE$。
+
+	\begin{tikzpicture}
+		\tkzDefPoints{-1/0/A, 0/0/D, 0/2/C}
+		\tkzDefLine[orthogonal=through C](A,C) \tkzGetPoint{x}
+		\tkzInterLL(C,x)(A,D) \tkzGetPoint{B}
+		\tkzDefPointOnLine[pos=0.5](A,B) \tkzGetPoint{E}
+
+		\tkzDrawPolygon(A,B,C)
+		\tkzDrawSegments(C,D C,E)
+
+		\tkzLabelPoints[below](A,D,E,B)
+		\tkzLabelPoint[above](C){$C$}
+	\end{tikzpicture}
+	\begin{solution}
+		\begin{align*}
+			 & \text{设}\angle{ACD} = \alpha                               \\
+			 & \because CE\text{是直角三角形的中线}                                \\
+			 & \therefore CE = EB                                         \\
+			 & \therefore \angle{ECB} = \angle{CBE}                       \\
+			 & \because \angle{DCB} = 3\angle{ACD}                        \\
+			 & \because \angle{ACD} = \angle{CBE}                         \\
+			 & \therefore \angle{DCE} = 3\alpha - \alpha = 2\alpha        \\
+			 & \because \angle{DEC} = \angle{EBC} + \angle{ECB} = 2\alpha \\
+			 & \therefore \angle{DEC} = \angle{DCE}                       \\
+			 & \therefore DE = DC
+		\end{align*}
+
 	\end{solution}
 \end{questions}
 
