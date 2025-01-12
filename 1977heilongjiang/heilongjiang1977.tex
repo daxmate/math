@@ -180,6 +180,25 @@
 		\end{mathenum}
 
 	\end{solution}
+	\question
+	前进大队响应毛主席关于\enquote{绿化祖国}的伟大号召，1975年造林$200$亩，又知1975年到1977年三年内共造林$728$亩，求后两年造林面积的年平均增长率是多少？
+	\begin{solution}
+		设年平均增长率为$q$，根据等比数列求和公式
+		\begin{math}
+			S_n = a_0\frac{1-q^n}{1-q} (a_0 = 200, n = 3, S_3 = 728)
+		\end{math}
+
+		代入得：
+		\begin{math}
+			728 = 200 \frac{1-q^3}{1-q} = 200 \frac{(1-q)(1 + q + q^2)}{1-q} = 200(1 + q + q^2)
+		\end{math}
+		化简得：
+		\begin{align*}
+			25q^2 + 25q - 66  & = 0 \\
+			(5q - 6)(5q + 11) & = 0 \\
+		\end{align*}
+		因为$q > 0$所以$q=1.2$
+	\end{solution}
 \end{questions}
 
 \end{document}
