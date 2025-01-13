@@ -2,7 +2,6 @@
 \WarningFilter{latexfont}{Font shape}
 \WarningFilter{latexfont}{Some font}
 \usepackage{ctex}
-\usepackage{graphicx}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath, amssymb, amsthm, arcs}
 \usepackage{csquotes}
@@ -38,7 +37,6 @@
 \usepackage{array, tabularx}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{B}{>{\centering\bfseries\arraybackslash}X}
-\catcode`\幺=0
 
 \usepackage{fontawesome5}
 \usepackage{enumitem}
@@ -47,3 +45,11 @@
 \newenvironment{mathenum}
 {\begin{enumerate}[label=\arabic*.]}
 		{\end{enumerate}}
+
+\makeatletter
+\providecommand\@gobblethree[3]{}
+\patchcmd{\over@under@arc}
+{\@gobbletwo}
+{\@gobblethree}
+{}{}
+\makeatother
