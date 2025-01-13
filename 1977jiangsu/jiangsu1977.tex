@@ -186,10 +186,54 @@
 		\end{equation*}
 		整理可得
 		\begin{equation*}
-			(a-40)(a+240) = 0 
+			(a-40)(a+240) = 0
 		\end{equation*}
 		所以 $a = 40$厘米。
 	\end{solution}
+	\question
+	\begin{enumerate}[label=(\arabic*)]
+		\item 若三角形三内角成等差数列，求证：必有一内角为$60^\circ$
+		      \begin{solution}
+			      因为三个内角成等差数列，可以设中间的角为$x$，则其余两个角可以分别表示为$x-a,
+				      x+a$，那么三个角的和可以表示为$x-a + x + x + a = 3x = 180^\circ$，则有$x=60^\circ$
+		      \end{solution}
+		\item 若三角形三内角成等差数列，而且三边又成等比数列，求证：三角形三内角都是$60^\circ$.
+		      \begin{solution}
+			      \begin{tikzpicture}
+				      \tkzDefPoints{0/0/A, 2/0/B}
+				      \tkzDefPoint(60:2){C}
+				      \tkzDefLine[orthogonal=through C](A,B) \tkzGetPoint{x}
+				      \tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
+
+				      \tkzDrawPolygon(A,B,C)
+				      \tkzDrawSegment[dashed](C,D)
+
+				      \tkzLabelPoints(A,B,D)
+				      \tkzLabelPoint[above](C){$C$}
+				      \tkzMarkAngle[size=0.5](B,A,C)
+				      \tkzLabelAngle(B,A,C){$60^\circ$}
+				      \tkzLabelSegment[above, sloped](A,C){$a$}
+			      \end{tikzpicture}
+
+			      假设三角形不是等边三角形，并假设$\angle{A} = 60^\circ,
+				      AC=a$，且$AC$是最短的一条边，则$AB$为最长边设其长为$b$。从$C$点作垂线交$AB$于$D$。根据题目中的信息有：
+			      \begin{equation*}
+				      \frac{AC}{BC} = \frac{BC}{AB} \tag{1}
+			      \end{equation*}
+			      根据三角关系得$AD=\frac{a}{2},
+				      CD=\frac{\sqrt{3}}{2}a$，$DB=b-\frac{a}{2}$，则可以计算出$BC=\sqrt{(b-\frac{a}{2})^2 +
+					      (\frac{\sqrt{3}}{2}a)^2}$
+			      根据式（1）有
+			      \begin{align*}
+				      BC^2 = AC \cdot AB                                 \\
+				      (b - \frac{a}{2})^2 + (\frac{\sqrt{3}}{2}a)^2 = ab \\
+				      b^2 - ab + \frac{1}{4}a^2 + \frac34a^2 = ab        \\
+				      (b-a)^2 = 0                                        \\
+					  a = b
+			      \end{align*}
+				  所以假设不成立，三角形为T等边三角形，所以三角形的三内角都是$60^\circ$
+		      \end{solution}
+	\end{enumerate}
 \end{questions}
 
 \end{document}
