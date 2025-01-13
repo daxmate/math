@@ -264,9 +264,9 @@
 			\frac{1-x}{x}a$，则$\triangle{EMK}$与$\triangle{NKF}$的面积和为：
 		\begin{align*}
 			\frac12axh + \frac12\cdot\frac{1-x}{x}a\cdot(1-x)h
-			\\          & = \frac12ah(x + \frac{(1-x)^2}{x})
-			\\          & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
-			\\        & = \frac12ah\frac{2x^2 - 2x + 1}{x}
+			\\                  & = \frac12ah(x + \frac{(1-x)^2}{x})
+			\\                  & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
+			\\                & = \frac12ah\frac{2x^2 - 2x + 1}{x}
 			\\ & = \frac12ah(2x -2 + \frac1x)
 		\end{align*}
 		对其求导数得：
@@ -288,6 +288,20 @@
 			\text{原式} & = \lim_{n\to\infty}\frac{\sqrt{x}}{\sqrt{x+1} + \sqrt{x}} \\
 			          & = \lim_{n\to\infty}\frac{1}{\sqrt{1 + \frac1x} + 1}       \\
 			          & = \frac12
+		\end{align*}
+	\end{solution}
+	\question 求不定积分：$\int\dfrac{\mathrm{d}x}{(1+e^x)^2}$.
+	\begin{solution}
+		设$u = 1 + e^x$，则有$\mathrm{d}u = e^x\mathrm{d}x$，即$\mathrm{d}x = \frac{\mathrm{d}u}{u-1}$
+
+		代入得：
+		\begin{align*}
+			\int\frac{\mathrm{d}x}{(1+e^x)^2} & = \int\frac{1}{(u-1)u^2}\mathrm{d}u     \\
+			                                  & = \int\frac{1}{u^3} - \int\frac{1}{u^2} \\
+			                                  & = \frac{1}{-2u^2} + \frac{1}{u} + C     \\
+			                                  & = \frac{2u - 1}{2u^2}  + C              \\
+			                                  & = \frac{2(1+e^x) + 1}{2(1+e^x)^2} + C   \\
+			                                  & = \frac{2e^x + 3}{2(1+e^x)^2}  + C
 		\end{align*}
 	\end{solution}
 \end{questions}
