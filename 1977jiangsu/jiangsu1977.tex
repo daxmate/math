@@ -264,9 +264,9 @@
 			\frac{1-x}{x}a$，则$\triangle{EMK}$与$\triangle{NKF}$的面积和为：
 		\begin{align*}
 			\frac12axh + \frac12\cdot\frac{1-x}{x}a\cdot(1-x)h
-			\\                  & = \frac12ah(x + \frac{(1-x)^2}{x})
-			\\                  & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
-			\\                & = \frac12ah\frac{2x^2 - 2x + 1}{x}
+			\\                              & = \frac12ah(x + \frac{(1-x)^2}{x})
+			\\                              & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
+			\\                            & = \frac12ah\frac{2x^2 - 2x + 1}{x}
 			\\ & = \frac12ah(2x -2 + \frac1x)
 		\end{align*}
 		对其求导数得：
@@ -296,13 +296,50 @@
 
 		代入得：
 		\begin{align*}
-			\int\frac{\mathrm{d}x}{(1+e^x)^2} & = \int\frac{1}{(u-1)u^2}\mathrm{d}u     \\
-			                                  & = \int\frac{1}{u^3} - \int\frac{1}{u^2} \\
-			                                  & = \frac{1}{-2u^2} + \frac{1}{u} + C     \\
-			                                  & = \frac{2u - 1}{2u^2}  + C              \\
-			                                  & = \frac{2(1+e^x) + 1}{2(1+e^x)^2} + C   \\
-			                                  & = \frac{2e^x + 3}{2(1+e^x)^2}  + C
+			\int\frac{\mathrm{d}x}{(1+e^x)^2} & = \int\frac{1}{(u-1)u^2}\mathrm{d}u
 		\end{align*}
+		对于$\frac{1}{(u-1)u^2}$进行因式分解，假设分解后的形式为:
+		\begin{equation*}
+			\frac{1}{(u-1)u^2} = \frac{A}{u} + \frac{B}{u^2} + \frac{C}{u-1}
+		\end{equation*}
+		两边同乘以$(u-1)u^2$得到：
+		\begin{equation*}
+			1 = Au(u-1) + B(u-1) + Cu^2
+		\end{equation*}
+		合并同类项得：
+		\begin{equation*}
+			1 = (C+A)u^2 + (B-A)u - B
+		\end{equation*}
+		比较系数得：
+		\begin{equation*}
+			\begin{cases}
+				B = -1 \\
+				A = -1 \\
+				C = 1  \\
+			\end{cases}
+		\end{equation*}
+		因此
+		\begin{align*}
+			\int\frac{1}{(u-1)u^2}\mathrm{d}u
+			 & = \int\left(-\frac{1}{u} - \frac{1}{u^2} + \frac{1}{u-1}\right)\mathrm{d}u \\
+			 & = \int\left(-\frac1u\right)\mathrm{d}u +
+			\int\left(-\frac1{u^2}\right)\mathrm{d}u +
+			\int\left(\frac1{u-1}\right)\mathrm{d}u                                       \\
+			 & = -\ln|u| + \frac1u + \ln|u-1| + C
+		\end{align*}
+		将$u=1+e^x$代入得
+		\begin{equation*}
+			-\ln|1+e^x| + \frac{1}{1+e^x} + \ln|e^x| + C
+			= -\ln(1+e^x) + \frac{1}{1+e^x} + x + C
+		\end{equation*}
+		所以不定积分为：
+		{
+		\boldmath
+		\color{blue}
+		\begin{equation*}
+			-\ln(1+e^x) + \frac{1}{1+e^x} + x + C
+		\end{equation*}
+		}
 	\end{solution}
 \end{questions}
 
