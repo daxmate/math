@@ -229,11 +229,54 @@
 				      (b - \frac{a}{2})^2 + (\frac{\sqrt{3}}{2}a)^2 = ab \\
 				      b^2 - ab + \frac{1}{4}a^2 + \frac34a^2 = ab        \\
 				      (b-a)^2 = 0                                        \\
-					  a = b
+				      a = b
 			      \end{align*}
-				  所以假设不成立，三角形为T等边三角形，所以三角形的三内角都是$60^\circ$
+			      所以假设不成立，三角形为等边三角形，所以三角形的三内角都是$60^\circ$
 		      \end{solution}
 	\end{enumerate}
+	\question 在两条平行直线 $AB$ 和 $CD$ 上分别取定一点 $M$ 和 $N$, 在直线 $AB$ 上取 一定线段 $ME = a$; 在线段
+	$MN$上取一点 $K$, 连结 $EK$ 并延长交 $CD$ 于 $F$. 试问 $K$ 取在哪里时, $\triangle{EMK}$ 与 $\triangle{FNK}$ 的面积之和最小? 最小值是多少?
+
+	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}[scale=2]
+				\tkzDefPoints{0/0/A, 3/0/B, 0/2/C, 3/2/D, 1/0/M, 2/2/N, 2/0/E}
+				\tkzDefPointOnLine[pos=0.4](M,N) \tkzGetPoint{K}
+				\tkzInterLL(E,K)(C,D) \tkzGetPoint{F}
+				\tkzDefLine[orthogonal=through K](A,B) \tkzGetPoint{x}
+				\tkzInterLL(K,x)(A,B) \tkzGetPoint{G}
+				\tkzInterLL(K,x)(C,D) \tkzGetPoint{H}
+
+				\tkzDrawSegments(A,B C,D M,N E,F)
+				\tkzLabelPoint[below left](M){$M$}
+				\tkzLabelPoint[below right](E){$E$}
+				\tkzLabelPoints[above](F,N)
+				\tkzLabelPoint[right](K){$K$}
+				\tkzMarkSegment[dim={$a$, -16pt, above=6pt}, mark=](M,E)
+				\tkzDrawSegment(G,H)
+				\tkzLabelPoint[above right](G){$G$}
+				\tkzLabelPoint[above](H){$H$}
+				\tkzMarkSegment[dim={$h$, 36pt, right=12pt}, mark=](H,G)
+			\end{tikzpicture}
+		\end{center}
+
+		假设$KG=xh$，则$HK=(1-x)h$。由$\triangle{MKE} \sim \triangle{NKF}$可得$FN =
+			\frac{1-x}{x}a$，则$\triangle{EMK}$与$\triangle{NKF}$的面积和为：
+		\begin{align*}
+			\frac12axh + \frac12\cdot\frac{1-x}{x}a\cdot(1-x)h
+			\\     & = \frac12ah(x + \frac{(1-x)^2}{x})
+			\\     & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
+			\\   & = \frac12ah\frac{2x^2 - 2x + 1}{x}
+			\\ & = \frac12ah(2x -2 + \frac1x)
+		\end{align*}
+		对其求导数得：
+		\begin{align*}
+			\frac12ah(2 - \frac{1}{x^2})
+		\end{align*}
+		此导数在$x =
+			\frac{\sqrt{2}}{2}$时等于$0$，所以此时面积有极值。所以$K$在$MN$的$\frac{\sqrt{2}}{2}$处$\triangle{EMK}$和$\triangle{NKF}$有最小值。
+
+	\end{solution}
 \end{questions}
 
 \end{document}
