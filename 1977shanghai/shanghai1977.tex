@@ -1,0 +1,32 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\input{../mathheader.tex}
+
+\begin{document}
+\begin{center}
+	\textbf{1977普通高等学校招生考试（上海卷）}
+
+	\textbf{\Huge 理科数学}
+\end{center}
+\begin{questions}
+	\question
+	\begin{enumerate}[label=(\arabic*)]
+		\item 化简：
+		      \begin{math} \displaystyle
+			      \left(\frac{a}{a+b} - \frac{a^2}{a^2 + 2ab + b^2}\right) \div \left(\frac{a}{a+b} - \frac{a^2}{a^2 - b^2}\right)
+		      \end{math}.
+		      \begin{solution}
+			      \begin{align*}
+				      \left(\frac{a}{a+b} - \frac{a^2}{a^2 + 2ab + b^2}\right) \div \left(\frac{a}{a+b} - \frac{a^2}{a^2 - b^2}\right)
+				       & = \left[ \frac{a(a+b)}{(a+b)^2} - \frac{a^2}{(a+b)^2} \right] \div \frac{a(a-b) - a^2}{a^2-b^2}
+				      \\
+				       & = \frac{ab}{(a+b)^2} \cdot \frac{a^2 - b^2}{-ab}                                                \\
+				       & = \frac{b-a}{a+b}
+			      \end{align*}
+		      \end{solution}
+
+	\end{enumerate}
+
+\end{questions}
+
+\end{document}
