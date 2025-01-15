@@ -1,6 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
 \input{../mathheader.tex}
+\usepackage[lua]{tkz-euclide}
 
 \begin{document}
 \begin{center}
@@ -70,8 +71,39 @@
 			      \end{align*}
 			      因此原式成立。
 		      \end{solution}
-
 	\end{enumerate}
+	\question 在$\triangle{ABC}$中，$\angle{C}$的平分线交$AB$于$D$，过$D$作$BC$的平行线交$AC$于$E$，已知$BC=a, AC=b$，求$DE$的长。
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}
+			\tkzDefPoints{0/0/A, 3/0/C, 2/2.5/B}
+			\tkzDefLine[bisector](B,C,A) \tkzGetPoint{x}
+			\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
+			\tkzDefLine[parallel=through D](B,C) \tkzGetPoint{x}
+			\tkzInterLL(D,x)(A,C) \tkzGetPoint{E}
+
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawSegments(D,E D,C)
+
+			\tkzLabelPoints[below](A,E,C)
+			\tkzLabelPoints[above left](D,B)
+		\end{tikzpicture}
+	\end{figure}
+
+	\begin{solution}
+		\begin{align*}
+			 & \because \angle{ACD} = \angle{BCD}                  \\
+			 & \therefore AD = BD                                  \\
+			 & \because DE \parallel BC                            \\
+			 & \therefore
+			\begin{cases}
+				AE = EC \\
+				\frac{DE}{BC} = \frac{AE}{AC}
+			\end{cases}                           \\
+			 & \therefore DE = BC\frac{\frac{1}{2}a}{a} = \frac12b
+		\end{align*}
+	\end{solution}
 
 \end{questions}
 
