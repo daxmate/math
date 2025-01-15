@@ -41,10 +41,34 @@
 		      \begin{solution}
 			      将$i$代入方程得：
 			      \begin{align*}
-				      2i^4 + 3i^3 - 3x^2 + 3x - 5 & = 2 - 3i + 3  + 3i - 5 \\ 
-												  &= 0
+				      2i^4 + 3i^3 - 3x^2 + 3x - 5 & = 2 - 3i + 3  + 3i - 5 \\
+				                                  & = 0
 			      \end{align*}
-				  所以$i$是原方程的解。
+			      所以$i$是原方程的解。
+		      \end{solution}
+		\item 求证：$\displaystyle
+			      \frac{\sin\left(\frac{\pi}{4} + \theta \right)}{\sin \left( \frac{\pi}{4} - \theta \right)} +
+			      \frac{\cos\left(\frac{\pi}{4} + \theta \right)}{\cos \left( \frac{\pi}{4} - \theta \right)} =
+			      \frac{2}{\cos2\theta}
+		      $.
+		      \begin{solution}
+			      根据和角公式 $\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta,
+				      \cos(\alpha+\beta)=\cos\alpha\cos\beta - \sin\alpha\sin\beta$及差角公式$\sin(\alpha-\beta) =
+				      \sin\alpha\cos\beta - \cos\alpha\sin\beta, \cos(\alpha-\beta)=\cos\alpha\cos\beta +
+				      \sin\alpha\sin\beta$来化简等式的左边得：
+			      \begin{align*}
+				       & = 	\frac{\sin\frac{\pi}{4}\cos\theta +
+					      \cos\frac{\pi}{4}\sin\theta}{\sin\frac{\pi}{4}\cos\theta-\cos\frac{\pi}{4}\sin\theta} +
+				      \frac{\cos\frac{\pi}{4}\cos\theta - \sin\frac{\pi}{4}\sin\theta}{\cos\frac{\pi}{4}\cos\theta +
+				      \sin\frac{\pi}{4}\sin\theta}                                                              \\
+				       & =
+				      \frac{\sin\theta + \cos\theta}{\cos\theta - \sin\theta} + \frac{\cos\theta -
+				      \sin\theta}{\cos\theta + \sin\theta}                                                      \\
+				       & =
+				      \frac{1 + 2\sin\theta\cos\theta + 1 - 2\sin\theta\cos\theta}{\cos^2\theta - \sin^2\theta} \\
+				       & = \frac{2}{\cos2\theta}
+			      \end{align*}
+			      因此原式成立。
 		      \end{solution}
 
 	\end{enumerate}
