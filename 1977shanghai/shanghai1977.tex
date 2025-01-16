@@ -53,10 +53,19 @@
 			      \frac{2}{\cos2\theta}
 		      $.
 		      \begin{solution}
-			      根据和角公式 $\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta,
-				      \cos(\alpha+\beta)=\cos\alpha\cos\beta - \sin\alpha\sin\beta$及差角公式$\sin(\alpha-\beta) =
-				      \sin\alpha\cos\beta - \cos\alpha\sin\beta, \cos(\alpha-\beta)=\cos\alpha\cos\beta +
-				      \sin\alpha\sin\beta$来化简等式的左边得：
+			      根据和角公式
+			      \[
+				      \begin{array}{l}
+					      \sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta, \\
+					      \cos(\alpha+\beta)=\cos\alpha\cos\beta - \sin\alpha\sin\beta
+				      \end{array}
+			      \]
+			      及差角公式$$
+				      \begin{array}{l}
+					      \sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta, \\
+					      \cos(\alpha-\beta)=\cos\alpha\cos\beta + \sin\alpha\sin\beta
+				      \end{array}
+			      $$来化简等式的左边得：
 			      \begin{align*}
 				       & = 	\frac{\sin\frac{\pi}{4}\cos\theta +
 					      \cos\frac{\pi}{4}\sin\theta}{\sin\frac{\pi}{4}\cos\theta-\cos\frac{\pi}{4}\sin\theta} +
@@ -97,12 +106,68 @@
 			 & \therefore AD = BD                                  \\
 			 & \because DE \parallel BC                            \\
 			 & \therefore
-			\begin{cases}
+			\begin{array}{l}
 				AE = EC \\
-				\frac{DE}{BC} = \frac{AE}{AC}
-			\end{cases}                           \\
+				\dfrac{DE}{BC} = \dfrac{AE}{AC}
+			\end{array}                         \\
 			 & \therefore DE = BC\frac{\frac{1}{2}a}{a} = \frac12b
 		\end{align*}
+	\end{solution}
+	\pagebreak
+	\question
+	已知圆$A$的直径为$2\sqrt{3}$，圆$B$的直径为$4-2\sqrt{3}$，圆$C$的直径为$2$，圆$A$与圆$B$外切，圆$A$又与圆$C$外切，$\angle{A}=60^\circ$，求$BC$及$\angle{C}$。
+
+	\begin{figure*}[ht]
+		\centering
+		\begin{tikzpicture}
+			\tkzDefPoints{{sqrt(3)}/0/A, {sqrt(3)-2}/0/B, 0/0/O}
+			\tkzDefShiftPoint[A](120:{sqrt(3)+1}){C}
+			\tkzDefLine[orthogonal=through C](B,A) \tkzGetPoint{x}
+			\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
+			\tkzInterLC(A,C)(A,O) \tkzGetSecondPoint{x}
+
+			\tkzDrawCircles(A,O B,O)
+			\tkzDrawCircle(C,x)
+			\tkzDrawPolygon(A,B,C)
+
+			\tkzLabelPoints(B,A,D)
+			\tkzLabelPoint[above](C){$C$}
+			\tkzMarkAngle[size=.5](C,A,B)
+			\tkzLabelAngle(C,A,B){$60^\circ$}
+
+			\tkzDrawSegment[dashed](C,D)
+		\end{tikzpicture}
+	\end{figure*}
+
+	\begin{solution}
+		由题意得：
+		\begin{align*}
+			AB & = 2            \\
+			AC & = 1 + \sqrt{3}
+		\end{align*}
+		由余弦定理有：
+		\begin{align*}
+			BC^2 & = AB^2 + AC^2 - 2\cdot AB \cdot AC \cdot \cos60^\circ           \\
+			     & = 4 + 2\sqrt{3} + 4 - 2\cdot 2 \cdot (1+\sqrt{3}) \cdot \frac12 \\
+			     & = 6
+		\end{align*}
+		所以
+		\begin{equation*}
+			BC = \sqrt{6}
+		\end{equation*}
+
+		再由余弦定理有：
+		\begin{align*}
+			\cos{C} & = \frac{AC^2 + BC^2 - AB^2}{2AC\cdot BC}                            \\
+			        & = \frac{(1+\sqrt{3})^2 + (\sqrt{6})^2 - 2^2}{2(1+\sqrt{3})\sqrt{6}} \\
+			        & = \frac{4 + 2\sqrt{3} + 6 - 4}{2\sqrt{2}(3+\sqrt{3})}               \\
+			        & = \frac{2(3+\sqrt{3})}{2\sqrt{2}(3+\sqrt{3})}                       \\
+			        & = \frac{\sqrt{2}}{2}
+		\end{align*}
+		所以有：
+		\begin{equation*}
+			\angle{C} = 45^\circ
+		\end{equation*}
 	\end{solution}
 
 \end{questions}
