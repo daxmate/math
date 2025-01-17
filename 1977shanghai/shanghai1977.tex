@@ -170,6 +170,111 @@
 		\end{equation*}
 	\end{solution}
 
+	\question 正六棱锥$V-ABCDEF$的高为$2$cm，底面边长为$2$cm。
+	\begin{enumerate}[label=(\arabic*)]
+		\item 按$1:1$画出它的二视图；
+		\item 求其侧面积；
+		\item 求它的侧棱和底面的夹角。
+	\end{enumerate}
+
+	\begin{solution}
+
+		\begin{minipage}[b]{0.4\textwidth}
+			\tdplotsetmaincoords{90}{0}
+			\centering
+			\begin{tikzpicture}[tdplot_main_coords]
+				\tkzDefPoint(0:2){A}
+				\tkzDefPoint(60:2){B}
+				\tkzDefPoint(120:2){C}
+				\tkzDefPoint(180:2){D}
+				\tkzDefPoint(240:2){E}
+				\tkzDefPoint(300:2){F}
+				\coordinate(V) at (0,0,2);
+
+				\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+				\tkzDrawSegments(V,A V,B V,C V,D V,E V,F)
+
+			\end{tikzpicture}
+			\captionof*{figure}{正视图}
+
+		\end{minipage}
+		\begin{minipage}[b]{0.4\textwidth}
+			\centering
+			\tdplotsetmaincoords{0}{0}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\tkzDefPoint(0:2){A}
+				\tkzDefPoint(60:2){B}
+				\tkzDefPoint(120:2){C}
+				\tkzDefPoint(180:2){D}
+				\tkzDefPoint(240:2){E}
+				\tkzDefPoint(300:2){F}
+				\coordinate(V) at (0,0,2);
+
+				\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+				\tkzDrawSegments(V,A V,B V,C V,D V,E V,F)
+			\end{tikzpicture}
+			\captionof*{figure}{顶视图}
+		\end{minipage}
+
+		\begin{minipage}{\textwidth}
+			\tdplotsetmaincoords{70}{120}
+			\centering
+			\begin{tikzpicture}[tdplot_main_coords, scale=2]
+				\tkzDefPoint(0,0){O}
+				\tkzDefPoint(0:2){A}
+				\tkzDefPoint(60:2){B}
+				\tkzDefPoint(120:2){C}
+				\tkzDefPoint(180:2){D}
+				\tkzDefPoint(240:2){E}
+				\tkzDefPoint(300:2){F}
+				\coordinate(V) at (0,0,2);
+				\tkzDefPointOnLine[pos=0.5](B,C) \tkzGetPoint{G}
+
+				\draw (F) -- (A) -- (B) -- (C);
+				\draw[dashed] (C)-- (D) -- (E) -- (F);
+				\tkzDrawSegment[blue](V,G)
+				\tkzDrawSegment[dashed, blue](O,G)
+				\tkzDrawSegments(V,A V,B V,C  V,F)
+				\tkzDrawSegments[dashed](V,D V,E)
+				\tkzDrawSegments[dashed](V,O O,A O,B)
+				\tkzLabelSegment[above, sloped](O,V){$h=2\text{cm}$}
+				\tkzLabelSegment[above, sloped](O,A){$2\text{cm}$}
+				\tkzLabelPoint(O){$O$}
+				\tkzLabelPoint(G){$G$}
+				\tkzLabelPoint(B){$B$}
+				\tkzLabelPoint(A){$A$}
+				\tkzLabelPoint(C){$C$}
+				\tkzLabelPoint[above](V){$V$}
+			\end{tikzpicture}
+		\end{minipage}
+
+		\begin{align*}
+			 & \because \text{底面是正六边形}                         \\
+			 & \therefore \angle{AOB} = 60^\circ                      \\
+			 & \because AO = BO                                       \\
+			 & \therefore \triangle{AOB} \text{是正三角形}            \\
+			 & \therefore AO = AB = 2cm                               \\
+			 & \because \angle{AOV} = 90^\circ                        \\
+			 & \therefore VA = \sqrt{2^2 + 2^2} = 2\sqrt{2} \text{cm} \\
+			 & \therefore \text{侧棱长为}2\sqrt{2}\mathrm{cm}
+		\end{align*}
+
+		取$BC$的中点为$G$，连接$OG$和$VG$。
+		\begin{align*}
+			 & \because \angle{BOG} = 30^\circ                                              \\
+			 & \therefore BG = 2\sin30^\circ = 1 \text{cm}                                  \\
+			 & \therefore VG = \sqrt{VG^2 - BG^2} = \sqrt{7}\text{cm}                       \\
+			 & \therefore S_{\text{侧}} = \frac12VG\cdot BC \times 6 = 6\sqrt{7}\text{cm}^2 \\
+			 & \because
+			\begin{array}{l}
+				VO = OA \\
+				\angle{VOA} = 90^\circ
+			\end{array}                                                           \\
+			 & \therefore \triangle{VOA}\text{是等腰直角三角形}                             \\
+			 & \therefore \angle{VAO} = 45^\circ (\text{即侧棱与底面的夹角为}45^\circ)
+		\end{align*}
+	\end{solution}
+
 \end{questions}
 
 \end{document}
