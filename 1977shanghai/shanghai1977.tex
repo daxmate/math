@@ -249,10 +249,10 @@
 		\end{minipage}
 
 		\begin{align*}
-			 & \because \text{底面是正六边形}                         \\
+			 & \because \text{底面是正六边形}                                \\
 			 & \therefore \angle{AOB} = 60^\circ                      \\
 			 & \because AO = BO                                       \\
-			 & \therefore \triangle{AOB} \text{是正三角形}            \\
+			 & \therefore \triangle{AOB} \text{是正三角形}                 \\
 			 & \therefore AO = AB = 2cm                               \\
 			 & \because \angle{AOV} = 90^\circ                        \\
 			 & \therefore VA = \sqrt{2^2 + 2^2} = 2\sqrt{2} \text{cm} \\
@@ -261,18 +261,63 @@
 
 		取$BC$的中点为$G$，连接$OG$和$VG$。
 		\begin{align*}
-			 & \because \angle{BOG} = 30^\circ                                              \\
-			 & \therefore BG = 2\sin30^\circ = 1 \text{cm}                                  \\
-			 & \therefore VG = \sqrt{VG^2 - BG^2} = \sqrt{7}\text{cm}                       \\
+			 & \because \angle{BOG} = 30^\circ                                             \\
+			 & \therefore BG = 2\sin30^\circ = 1 \text{cm}                                 \\
+			 & \therefore VG = \sqrt{VG^2 - BG^2} = \sqrt{7}\text{cm}                      \\
 			 & \therefore S_{\text{侧}} = \frac12VG\cdot BC \times 6 = 6\sqrt{7}\text{cm}^2 \\
 			 & \because
 			\begin{array}{l}
 				VO = OA \\
 				\angle{VOA} = 90^\circ
-			\end{array}                                                           \\
-			 & \therefore \triangle{VOA}\text{是等腰直角三角形}                             \\
+			\end{array}                                                          \\
+			 & \therefore \triangle{VOA}\text{是等腰直角三角形}                                    \\
 			 & \therefore \angle{VAO} = 45^\circ (\text{即侧棱与底面的夹角为}45^\circ)
 		\end{align*}
+	\end{solution}
+
+	\question 解不等式： 	\begin{math}
+		\begin{cases}
+			16 - x^2 \geqslant 0 \\
+			x^2 - x - 6 > 0
+		\end{cases}，并在数轴上把它的解表示出来。
+	\end{math}
+	\begin{solution}
+		\begin{enumerate}[label=\Roman*.]
+			\item 解不等式$16 - x^2 \geqslant 0$
+			      \begin{align*}
+				      16  \geqslant x^2 \\
+				      -4 \leqslant x \leqslant 4
+			      \end{align*}
+			\item 解不等式$x^2 - x - 6 > 0$
+			      \begin{align*}
+				      (x-3)(x+2) > 0 \\
+				      x > 3, x < -2
+			      \end{align*}
+			\item 绘制数轴
+
+			      \begin{tikzpicture}
+				      % 绘制数轴
+				      \draw[->] (-5,0) -- (5,0) node[right] {$x$};
+
+				      % 标记关键点
+				      \foreach \x in {-4, -2, 3, 4} {
+						      \path  (\x, 0) node[below] {\x};
+					      }
+
+				      % 绘制闭合圆圈
+				      \filldraw[black] (-4,0) circle (1pt);
+				      \filldraw[black] (4,0) circle (1pt);
+
+				      % 绘制开口圆圈
+				      \draw[black] (-2,0) circle (1pt);
+				      \draw[black] (3,0) circle (1pt);
+
+				      % 绘制范围
+				      \draw[thick] (-4,0)--(-4,0.5) -- (-2,0.5) -- (-2,0);
+				      \draw[thick] (3,0)--(3,0.5) -- (4,0.5) -- (4,0);
+
+			      \end{tikzpicture}
+		\end{enumerate}
 	\end{solution}
 
 \end{questions}
