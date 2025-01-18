@@ -332,6 +332,44 @@
 		曲线是长半轴为$4$，短半轴为$2$的椭圆。
 	\end{solution}
 
+	\question 等腰梯形的周长为$60$，底角为\ang{60}，问这梯形各边长为多少时，面积最大？
+	\begin{figure*}[ht]
+		\centering
+		\begin{tikzpicture}
+			\tkzDefPoints{0/0/A, 4/0/D}
+			\tkzDefPoint(60:2){B}
+			\tkzDefShiftPoint[D](120:2){C}
+			\tkzDefLine[perpendicular=through B](A,D) \tkzGetPoint{x}
+			\tkzInterLL(x,B)(A,D) \tkzGetPoint{E}
+
+			\tkzDrawPolygon(A,B,C,D)
+			\tkzDrawSegment[dashed](B,E)
+
+			\tkzLabelPoints(A,D,E)
+			\tkzLabelPoints[above](B,C)
+		\end{tikzpicture}
+	\end{figure*}
+
+	\begin{solution}
+		从$B$向$AD$作垂线，垂足为$E$，令$AE=x$，则有$BE=\sqrt{3}x, AB=2x$。
+		由周长等于$60$得
+		\begin{equation*}
+			6x + 2BC = 60
+		\end{equation*}
+		解得$BC = 30 - 3x$
+		则面积为：
+		\begin{align*}
+			S & = \frac12(60-6x + 2x)\cdot\sqrt{3}x \\
+			  & = \sqrt{3}(30x - 2x^2)
+		\end{align*}
+		此函数在$x=-\frac{b}{2a} = \frac{15}{2}$处有最大值。
+
+		则梯形的各边长为：
+		\begin{equation*}
+			AB = CD = 15, BC = \frac{15}{2}, AD = \frac{45}{2}
+		\end{equation*}
+	\end{solution}
+
 \end{questions}
 
 \end{document}
