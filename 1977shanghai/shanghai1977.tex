@@ -403,6 +403,78 @@
 		因为$k\geqslant 0$，所以$k=12$。
 	\end{solution}
 
+	\begin{center}
+		\textbf{附加题}
+	\end{center}
+
+	\question
+	如图所示，半圆$O$的直径为$2$，$A$为半圆直径的延长线上的一点，且$OA=2$，$B$为半圆上任一点，以$AB$为边作等边$\triangle{ABC}$，问$B$在什么地方时，四边形$OACB$的面积最大？并求出这个面积的最大值。
+	\begin{figure*}[ht]
+		\centering
+		\begin{tikzpicture}
+			\tkzDefPoints{-1/0/E, 0/0/O, 1/0/D, 2/0/A}
+			\tkzDefPoint(110:1){B}
+			\tkzDefTriangle[equilateral](B,A) \tkzGetPoint{C}
+
+			\tkzDrawSemiCircle(O,D)
+			\tkzDrawSegment(E,A)
+			\tkzDrawPolygon(A,B,C)
+
+			\tkzLabelPoint(O){$O$}
+			\tkzLabelPoint[right](A){$A$}
+			\tkzLabelPoint[above left](B){$B$}
+			\tkzLabelPoint[above](C){$C$}
+		\end{tikzpicture}
+	\end{figure*}
+	\begin{solution}
+		以$O$为坐标系的原点，设$B$的坐标为$(x,y)$，则坐标应该满足方程：
+		\begin{equation*}
+			x^2 + y^2 = 1 \qquad (y \geqslant 0)
+		\end{equation*}
+		四边形$OACB$的面积由$\triangle{OAB}$和等边$\triangle{ABC}$组成，下面分别求解：
+		\begin{enumerate}[label=\zhnum*、]
+			\item $\triangle{OBA}$的面积可以表示为：
+			      \begin{equation*}
+				      S_{OBA} = \frac12 OA \cdot y = y
+			      \end{equation*}
+			\item $\triangle{ABC}$的面积可以表示为：
+			      \begin{equation*}
+				      S_{ABC} = \frac12BA\cdot\frac{\sqrt{3}}{2}BA = \frac{\sqrt{3}}{4}BA^2
+			      \end{equation*}
+			      $BA^2$可以表示为：
+			      \begin{equation*}
+				      y^2 + (2-x)^2
+			      \end{equation*}
+			      所以
+			      \begin{equation*}
+				      S_{ABC} = \frac{\sqrt{3}}{4}[y^2 + (2-x)^2]
+			      \end{equation*}
+			\item 四边形$OACB$的面积可以表示为
+			      \begin{align*}
+				      S_{OACB} = \frac{\sqrt{3}}{4}[y^2 + (2-x)^2] + y
+			      \end{align*}
+			\item 将圆方程代入面积公式得：
+			      \begin{align*}
+				      S_{OACB} & = \frac{\sqrt{3}}{4}(1-x^2 + x^2 - 4x + 4) + \sqrt{1-x^2} \\
+				               & = -\sqrt{3}x + \frac{5\sqrt{3}}{4} + \sqrt{1-x^2}         \\
+			      \end{align*}
+			\item 对面积公式求导得：
+			      \begin{align*}
+				      S_{OACB}' & = -\sqrt{3}  + \frac{1}{2\sqrt{1-x^2}}(-2x) \\
+				                & =  -\sqrt{3} - \frac{x}{\sqrt{1-x^2}}
+			      \end{align*}
+			\item 令导数等于$0$并整理得：
+			      \begin{align*}
+				      \sqrt{3} & = \frac{x}{\sqrt{1-x^2}} \\
+				      3        & = \frac{x^2}{1-x^2}      \\
+				      4x^2     & = 3                      \\
+				      x^2      & = \frac34                \\
+			      \end{align*}
+				  所以面积在$x^2 = \frac34$时有极值，代入面积公式检验得$x=-\frac{\sqrt{3}}{2}$时面积有最大值$2 +
+				  \frac{5\sqrt{3}}{4}$，此时$y=\frac12$。
+		\end{enumerate}
+	\end{solution}
+
 \end{questions}
 
 \end{document}
