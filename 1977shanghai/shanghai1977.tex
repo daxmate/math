@@ -323,13 +323,13 @@
 	\question
 	已知两定点$A(-4,0)$、$B(4,0)$，一动点$P(x,y)$与两定点$A$、$B$的连线$PA$、$PB$的斜率的乘积为$-\frac14$。求点$P$的轨迹方程，并把它化为标准方程，指出是什么曲线。
 	\begin{solution}
-		$PA$的斜率为$k_1 = \dfrac{y}{x+4}$，$PB$的斜率为$k_2 = \dfrac{y}{x-4}$，由斜率的乘积为$-\frac14$得：
+		$PA$的斜率为$k_1 = \dfrac{y}{x+4}(x \neq -4)$，$PB$的斜率为$k_2 = \dfrac{y}{x-4}(x \neq 4)$，由斜率的乘积为$-\frac14$得：
 		\begin{align*}
 			\frac{y}{x+4}\cdot\frac{y}{x-4}   & = -\frac14 \\
 			4y^2 + x^2                        & = 16       \\
 			\frac{y^2}{2^2} + \frac{x^2}{4^2} & = 1
 		\end{align*}
-		曲线是长半轴为$4$，短半轴为$2$的椭圆。
+		曲线是长半轴为$4$，短半轴为$2$的椭圆(不含左右端点)。
 	\end{solution}
 
 	\question 等腰梯形的周长为$60$，底角为\ang{60}，问这梯形各边长为多少时，面积最大？
@@ -368,6 +368,39 @@
 		\begin{equation*}
 			AB = CD = 15, BC = \frac{15}{2}, AD = \frac{45}{2}
 		\end{equation*}
+	\end{solution}
+
+	\question 当$k$为何值时，方程组 \begin{math}
+		\left\{
+		\begin{array}{lr}
+			x - \sqrt{y - 2} = 0 & (1) \\
+			kx - y - 2k - 10 = 0 & (2)
+		\end{array}
+		\right. 有两组相同的解？并求出它的解。
+	\end{math}
+
+	\begin{solution}
+		方程$(1)$移项并平方得：
+		\begin{equation*}
+			y=x^2 + 2 (x \geqslant 0) \tag{3}
+		\end{equation*}
+		这是一个抛物线的右半边。
+		方程$(2)$整理得
+		\begin{equation*}
+			y=kx - (2k + 10) \tag{4}
+		\end{equation*}
+		此直线必须与上面的抛物线的右半边相切才会有两组相同的解，因此$k$必须大于等于0。
+		将式$(3)$和式$(4)$求解：
+		\begin{equation*}
+			x^2 - kx + (2k + 12) = 0
+		\end{equation*}
+		则有：
+		\begin{align*}
+			\Delta & = k^2 - 4(2k + 12) \\
+			       & = k^2 - 8k - 48    \\
+			       & = (k-12)(k+4)
+		\end{align*}
+		因为$k\geqslant 0$，所以$k=12$。
 	\end{solution}
 
 \end{questions}
