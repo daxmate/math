@@ -345,6 +345,200 @@
 
 		如果$PF_1$的中点在$y$轴上，则可知$P$点的$x$坐标为$3$。此时$\triangle{F_1F_2P}$是一个直角三角形，其中$|F_1F_2|=6$，$|PF_2|=\dfrac{\sqrt{3}}{2}$，则$|PF_1|=\sqrt{6^2+\frac{3}{4}}=\frac72\sqrt{3}$，所以答案选A。
 	\end{solution}
+
+	\question
+	球面上有$3$个点，其中任意两点的球面距离都等于大圆周长的$\frac16$，经过这$3$个点的小圆的周长为$4\pi$，那么这个球的半径为
+	\hfill (\hspace{1cm})
+
+	\begin{oneparchoices}
+		\choice $4\sqrt{3}$
+		\CorrectChoice $2\sqrt{3}$
+		\choice $2$
+		\choice $\sqrt{3}$
+	\end{oneparchoices}
+
+	\begin{solution}
+		经过三个点的小圆的周长为$4\pi$，则小圆的半径$r=2$。则可进一步推算出小圆内接等边三角形的边长为$2\sqrt{3}$。因为任意两点的球面距离是大圆的周长的$\frac16$，所以两个点之间的夹角为$\ang{60}$，因此球心与其中两个点的组成一个等边三角形，所以球的半径等于两点之间的距离$2\sqrt{3}$。
+	\end{solution}
+
+	\question 一个直角三角形三内角的正弦值成等比数列，其最小内角为\hfill (\hspace{1cm})
+
+	\begin{oneparchoices}
+		\choice $\arccos\dfrac{\sqrt{5}-1}{2}$
+		\CorrectChoice $\arcsin\dfrac{\sqrt{5}-1}{2}$
+		\choice $\arccos\dfrac{1-\sqrt{5}}{2}$
+		\choice $\arcsin\dfrac{1-\sqrt{5}}{2}$
+	\end{oneparchoices}
+
+	\begin{solution}
+		根据正弦定理有$\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}$，所以三条边也成等比数列。
+		\begin{equation*}
+			\frac{a}{b} = \frac{b}{c} \tag{1}
+		\end{equation*}
+		又因为三角形是直角三角形，所以有
+		\begin{equation*}
+			a^2 + b^2 = c^2 \tag{2}
+		\end{equation*}
+		将式$(1)$转化为$b^2=ac$并代入式$(2)$可得：
+		\begin{equation*}
+			a^2 + ac = c^2
+		\end{equation*}
+		两边都除以$ac$得：
+		\begin{equation*}
+			\frac{a}{c} + 1 = \frac{c}{a}
+		\end{equation*}
+
+		设$\sin{A}=\frac{a}{c}=x$则原式可以表示为：
+		\begin{align*}
+			x + 1 = \frac{1}{x} \\
+			x^2 + x - 1 = 0     \\
+			x_1,x_2 = \frac{-1\pm\sqrt{5}}{2}
+		\end{align*}
+		因为$\angle{A}<\ang{90}$，所以$\sin{A}=\frac{-1+\sqrt{5}}{2}$，所以$\angle{A}$可以表示为$\arcsin{\frac{-1+\sqrt{5}}{2}}$。
+	\end{solution}
+
+	\question 在等比数列${a_n}$中，$a_1>1$，且前$n$项和$S_n$满足$\displaystyle
+		\lim_{n\to\infty}S_n=\frac{1}{a_1}$，那么$a_1$的取值范围是 \hfill (\hspace{1cm})
+
+	\begin{oneparchoices}
+		\choice $(1,+\infty)$
+		\choice $(1,4)$
+		\choice $(1,2)$
+		\CorrectChoice $(1,\sqrt{2})$
+	\end{oneparchoices}
+
+	\begin{solution}
+		\begin{align*}
+			\lim_{n\to\infty}S_n & = \lim_{n\to\infty}a_1\frac{1-q^n}{1-q} \\
+			                     & = a_1\frac{1}{1-q}\qquad (|q|< 1)       \\
+			                     & = a_1
+		\end{align*}
+		整理得：
+		\begin{equation*}
+			a_1^2 = 1 - q \qquad (|q|<1)
+		\end{equation*}
+		则有$0<a_1^2<2$，结合题中$a_1>1$可得$a_1$的取值范围为$(1,\sqrt{2})$。
+	\end{solution}
+
+	\question 设圆过双曲线$\frac{x^2}{9} -
+		\frac{y^2}{16}=1$的一个顶点和一个焦点，圆心在此双曲线上，则圆心到双曲线中心的距离是\underline{\hspace{2cm}}。
+
+	\begin{solution}
+		双曲线的顶点为$(-3,0)$和$(3,0)$，焦点为$(-5,0)$和$(5,0)$，由圆的特性可知圆心必在过顶点和焦点中心的垂直线上。这样可以推断出圆是过同一侧的顶点和焦点，因为如果不在同一侧，中心线分别为$x=\pm1$，与双曲线没有交点。
+
+		那么可以考察右侧的顶点和焦点，则圆心在$x=4$上，代入双曲线方程可以计算得$y^2=\dfrac{112}{9}$，则圆心到双曲线中心$(0,0)$的距离为：
+		\begin{align*}
+			\sqrt{x^2 + y^2} & = \sqrt{4^2 + \frac{112}{9}} \\
+			                 & = \frac{16}{3}
+		\end{align*}
+	\end{solution}
+
+	\question $(x+2)^{10}(x^2-1)$的展开式中$x^{10}$的系数为\fillin[179][2cm]。（用数字作答）
+
+	\begin{solution}
+		根据二项式定理$(x+2)^{10}$可以展开为
+		\begin{equation*}
+			\sum_{n=0}^{10}\binom{10}{n}x^{10-n}2^{n}
+		\end{equation*}
+		则有$x^10$的系数为$1$，$x^8$的系数为$\binom{10}{2}2^2 =
+			180$，再乘以$(x^2-1)$后原来的$x^{10}$的系数变为$-1$，原来$x^8$变为$x^{10}$，系数为$180$不变，则有展开式的$x^{10}$的系数为$179$。
+	\end{solution}
+
+	\question 在直四棱柱$A_1B_1C_1D_1-ABCD$中，当底面四边形$ABCD$满足条件\fillin[正方形或菱形][2cm]时，有$A_1C\perp
+		B_1D_1$。（注：填上你认为正确的一种条件即可，不必考虑所有可能的情形）
+
+	\begin{solution}
+		\tdplotsetmaincoords{60}{110}
+		\begin{tikzpicture}[tdplot_main_coords]
+			\tkzDefPoints{0/0/A,2/0/B,2/2/C,0/2/D}
+			\coordinate (A1) at (0,0,4);
+			\coordinate (B1) at (2,0,4);
+			\coordinate (C1) at (2,2,4);
+			\coordinate (D1) at (0,2,4);
+
+			\tkzDrawPolygon(A1,B1,C1,D1)
+			\tkzDrawSegments(B,B1 C,C1 D,D1 B,C C,D)
+			\tkzDrawSegments[dashed](A,A1 B,A A,D A1,C)
+
+			\tkzLabelPoints(A,B,C,D)
+			\tkzLabelPoints[above](A1,B1,C1,D1)
+
+			\tkzDrawSegments(B1,D1 A1,C1)
+
+		\end{tikzpicture}
+		可以看到$A_1C$在四边形$A_1B_1C_1D_1$上的投影为$A_1C_1$，如果$A_1C_1 \perp B_1D_1$，则有$A_1C \perp
+			B_1D_1$，所以底面四边形$ABCD$如果是正方形或者菱形即可。
+	\end{solution}
+
+	\question 关于函数$f(x)=4\sin \left( 2x + \dfrac{\pi}{3} \right)\quad (x\in \mathbf{R})$，有下列命题：
+	\begin{enumerate}[label=\protect\circled{\arabic*}]
+		\item 由$f(x_1) = f(x_2) = 0$可得$x_1 - x_2$必是$\pi$的整数倍；
+		\item $y=f(x)$的表达式可改写为$y=4\cos \left( 2x - \dfrac{\pi}{6} \right)$；
+		\item $y=f(x)$的图像关于点$\left( -\dfrac{\pi}{6}, 0\right)$对称；
+		\item $y=f(x)$的图像关于直线$x=-\dfrac{\pi}{6}$对称。
+	\end{enumerate}
+	其中正确的命题的序号是\fillin[\circled{2}][2cm]。（注：把你认为正确的序号都填上）
+
+	\begin{solution}
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
+			\item 由$f(x_1) = f(x_2) = 0$可知$2x_1 + \frac{\pi}{3} - 2x_2 - \frac{\pi}{3} = 2(x_1-x_2) =
+				      k\pi$，所以$x_1-x_2=\frac{k}{2}\pi$  \textcolor{red}{\times}
+			\item $y=4\sin \left( 2x + \dfrac{\pi}{3} \right)=4\cos \left( \dfrac{\pi}{2} - 2x - \dfrac{\pi}{3} \right)
+				      = 4\cos \left( \dfrac{\pi}{6} - 2x \right) = 4\cos \left( 2x - \dfrac{\pi}{6} \right)$ \textcolor{red}{\checkmark}
+			\item 如图，所以\circled{3}、\circled{4}错误。
+
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[
+							      axis lines=middle,
+							      xlabel = $x$,
+							      ylabel = $y$,
+							      xlabel style={right},
+							      ylabel style={above},
+							      ymax = 5,
+							      ymin = -5,
+							      samples = 100,
+							      ticks = none
+						      ]
+						      \addplot[thick, domain=-2*pi:2*pi]{4*sin(deg(2*x + pi/3))};
+						      \draw[draw=red, fill=red]({-pi/6}, 0)node[above left]{$-\frac{\pi}{6}$}circle(2pt);
+					      \end{axis}
+
+				      \end{tikzpicture}
+			      \end{center}
+
+		\end{enumerate}
+	\end{solution}
+	\question 在$\triangle{ABC}$中，$a$，$b$，$c$分别是角$A,B,C$的对边，设$a+c=2b,
+		A-C=\dfrac{\pi}{3}$，求$\sin{B}$的值。
+
+	\begin{solution}
+		由正弦定理有$\dfrac{a}{\sin{A}}=\dfrac{b}{\sin{B}}=\dfrac{c}{\sin{C}}$和题中的$a+c=2b$可得：
+		\begin{equation*}
+			\sin{A} + \sin{C} = 2\sin{B}
+		\end{equation*}
+		由和差化积公式$\sin\alpha + \sin\beta = 2\sin{\dfrac{\alpha+\beta}{2}}\cos{\dfrac{\alpha-\beta}{2}}$可得：
+		\begin{align*}
+			\sin{A} + \sin{C} & = 2\sin \left( \frac{A+C}{2} \right)\cos \left( \frac{A-C}{2} \right) \\
+			                  & = 2\sin \left( \frac{A+C+B - B}{2} \right) \cos{\frac{\pi}{6}}        \\
+			                  & = \sqrt{3}\sin(\ang{90}-\frac{B}{2})                                  \\
+			                  & = \sqrt{3}\cos\left(\frac{B}{2}\right)
+		\end{align*}
+		又因为$\sin{B}=2\sin\left(\dfrac{B}{2}\right)\cos\left(\dfrac{B}{2}\right)$，代入得：
+		\begin{align*}
+			4\sin\left(\frac{B}{2}\right)\cos\left(\frac{B}{2}\right) = \sqrt{3}\cos\left(\frac{B}{2}\right) \\
+			\sin\left(\frac{B}{2}\right) = \frac{\sqrt{3}}{4}
+		\end{align*}
+		因为$\frac{B}{2}$肯定为锐角，所以
+		\begin{equation*}
+			\cos\left(\frac{B}{2}\right) = \sqrt{1 - \sin^2 \left(\frac{B}{2}\right)}= \frac{\sqrt{13}}{4}
+		\end{equation*}
+		则有：
+		\begin{equation*}
+			\sin{B} = 2\sin{\left( \frac{B}{2} \right)} \cos{\left( \frac{B}{2}
+				\right)}=2\cdot\frac{\sqrt{3}}{4}\cdot\frac{\sqrt{13}}{4} = \frac{\sqrt{39}}{8}
+		\end{equation*}
+	\end{solution}
 \end{questions}
 
 \end{document}
