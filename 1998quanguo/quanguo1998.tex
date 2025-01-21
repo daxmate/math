@@ -576,9 +576,9 @@
 			\item 过$A$点作垂线到$l_2$，垂足为$D$
 			      \begin{align*}
 				       & \because AD = AN = 3                                                  \\
-				       & \therefore A \text{点横坐标为} 3-p                                    \\
+				       & \therefore A \text{点横坐标为} 3-p                                         \\
 				       & \therefore  |DM| = \sqrt{|AM|^2 - |DA|^2} = \sqrt{17 - 9} = 2\sqrt{2} \\
-				       & \therefore A\text{点的纵坐标为}2\sqrt{2}                              \\
+				       & \therefore A\text{点的纵坐标为}2\sqrt{2}                                    \\
 			      \end{align*}
 			\item 将$A$点坐标$(3-p, 2\sqrt{2})$代入抛物线方程得：
 			      \begin{align*}
@@ -602,6 +602,86 @@
 			      \end{equation*}
 		\end{enumerate}
 
+	\end{solution}
+
+	\question
+	如图，为处理含有某种杂质的污水，要制造一底宽为$2$米的均长方体沉淀箱，污水从$A$孔流入，经沉淀后从$B$孔流出。设箱体的长度为$a$米，调试为$b$米。已知流出的水中该杂质的质量分数与$a,b$的乘积$ab$成反比。现有制箱材料$60$平方米。问当$a,b$各为多少米时，经沉淀后流出的水路该杂质的质量分数最小。（$A$、$B$孔的面积忽略不计）
+
+	\begin{figure*}[ht]
+		\centering
+		\begin{tikzpicture}[scale=.5]
+			\coordinate(A) at (0,0);
+			\coordinate(B) at (5,0);
+			\coordinate(C) at (5,3);
+			\coordinate(D) at (0,3);
+			\coordinate(A') at (0,0,3);
+			\coordinate(B') at (5,0,3);
+			\coordinate(C') at (5,3,3);
+			\coordinate(D') at (0,3,3);
+
+			\draw [dashed](D) -- (A) -- (B) ;
+			\draw (B)	-- (C) -- (D);
+			\draw (A') -- (B') -- (C') -- (D')--cycle;
+			\draw[dashed](A) -- (A');
+			\draw(B) -- (B');
+			\draw(C) -- (C');
+			\draw(D) -- (D');
+
+			\draw (0,1.5,1.5) circle (2pt);
+			\draw (5,1.5,1.5) circle (2pt);
+			\node[below] at(0,1.5,1.5) {$A$};
+			\node[above] at(5,1.5,1.5) {$B$};
+
+			\tkzLabelSegment(A',B'){$a$}
+			\tkzLabelSegment(B,B'){$2$}
+			\tkzLabelSegment[left](C',B'){$b$}
+		\end{tikzpicture}
+	\end{figure*}
+
+	\begin{solution}
+		根据总面积为$60$平方米可得如下关系：
+		\begin{equation*}
+			60 = 2a + 2ab + 4b
+		\end{equation*}
+		化简得：
+		\begin{equation*}
+			30 = a + ab + 2b \tag{a}
+		\end{equation*}
+		设$y=ab$，则有$b=\frac{y}{a}$，代入上面的式子中可得：
+		\begin{align*}
+			30 = a + y + \frac{2}{a}y           \\
+			(1+\frac2a)y = 30 - a               \\
+			y = \frac{30-a}{1 + \frac2a}        \\
+			y = \frac{a(30-a)}{a+2}     \tag{b} \\
+		\end{align*}
+		\subsection*{解法一}
+		对式$(b)$求导：
+		\begin{align*}
+			y' & = \left( \frac{a(30-a)}{a+2} \right)'              \\
+			   & = \frac{(30-2a)(a+2) - a(30-a)}{(a+2)^2}           \\
+			   & = \frac{30a + 60 - 2a^2 - 4a - 30a + a^2}{(a+2)^2} \\
+			   & = \frac{60 - 4a - a^2}{(a+2)^2}                    \\
+			   & = \frac{(10+a)(6-a)}{(a+2)^2}
+		\end{align*}
+		因为$a>0$，所以只有$a=6$时$y'=0$，即此时$y=ab$有最大值。将$a=6$代入面积关系式$(a)$中可得：
+		\begin{equation*}
+			30 = 6 + 6b + 2b
+		\end{equation*}
+		解得$b=3$米。
+
+		综上，当$a=6$米、$b=3$米时质量分数最小。
+
+		\subsection*{解法二}
+		化简式$(b)$:
+		\begin{align*}
+			y & = \frac{30a -a^2}{a+2}                      \\
+			  & = \frac{30a + 4 + 4a - (4 + 4a + a^2)}{a+2} \\
+			  & = \frac{34a + 4 - (a+2)^2}{a+2}             \\
+			  & = \frac{34(a+2) -64 - (a+2)^2}{a+2}         \\
+			  & = 34 - \frac{64}{a+2} - (a+2)               \\
+		\end{align*}
+		$\dfrac{64}{a+2} + (a+2) \geqslant \sqrt{\dfrac{64}{a+2}\cdot(a+2)} = 8$当且仅当$\dfrac{64}{a+2} =
+		a+2$时有最小值，即$(a+2)^2 = 64$，因为$a>0$所以$a=6$，代入式$(a)$中求得$b=3$。
 	\end{solution}
 \end{questions}
 
