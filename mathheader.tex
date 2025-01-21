@@ -48,6 +48,9 @@
 {\begin{enumerate}[label=\arabic*.]}
 		{\end{enumerate}}
 
+\newenvironment{penum}
+{\begin{enumerate}[label=(\arabic*)]}
+		{\end{enumerate}}
 \makeatletter
 \providecommand\@gobblethree[3]{}
 \patchcmd{\over@under@arc}

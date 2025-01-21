@@ -681,7 +681,81 @@
 			  & = 34 - \frac{64}{a+2} - (a+2)               \\
 		\end{align*}
 		$\dfrac{64}{a+2} + (a+2) \geqslant \sqrt{\dfrac{64}{a+2}\cdot(a+2)} = 8$当且仅当$\dfrac{64}{a+2} =
-		a+2$时有最小值，即$(a+2)^2 = 64$，因为$a>0$所以$a=6$，代入式$(a)$中求得$b=3$。
+			a+2$时有最小值，即$(a+2)^2 = 64$，因为$a>0$所以$a=6$，代入式$(a)$中求得$b=3$。
+	\end{solution}
+
+	\question
+	已知斜三棱柱$ABC-A_1B_1C_1$的侧面$A_1ACC_1$与底面$ABC$垂直，$\angle{ABC}=\ang{90}$，$BC=2,AC=2\sqrt{3}$，且$AA_1
+		\perp A_1C, AA_1=A_1C$。
+	\begin{penum}
+		\item 求侧棱$A_1A$与底面$ABC$所成角的大小；
+		\item 求侧面$A_1ABB_1$与底面$ABC$所成二面角的大小；
+		\item 求顶点$C$到侧面$A_1ABB_1$的距离。
+	\end{penum}
+	\begin{figure*}[ht]
+		\centering
+		\tdplotsetmaincoords{60}{140}
+		\begin{tikzpicture}[tdplot_main_coords, scale=2]
+			\coordinate (A) at ({2*sqrt(3)},0);
+			\coordinate (B) at (25:2);
+			\coordinate (C) at (0,0);
+			\coordinate (A1) at ({2*sqrt(3)-2},0,2);
+			\coordinate (B1) at (B);
+			\path (B1) ++(-2,0,2) coordinate (B1);
+			\coordinate (C1) at (-2,0,2);
+
+			\tkzDrawSegments(A,B B,C C,C1 C1,A1 A1,B1 B1,B A1,A B1,C1)
+			\tkzDrawSegments[dashed](A,C A1,C)
+
+			\tkzLabelPoints(A,B,C)
+			\tkzLabelPoint[left](A1){$A_1$}
+			\tkzLabelPoint[above](B1){$B_1$}
+			\tkzLabelPoint[right](C1){$C_1$}
+
+			\tkzMarkRightAngle[blue](C,B,A)
+			\tkzMarkRightAngle[blue](A,A1,C)
+			\tkzMarkSegments[mark=||](A,A1 A1,C)
+			\tkzLabelSegment(B,C){$2$}
+			\tkzLabelSegment[above right=.3cm, sloped](A,C){$2\sqrt{3}$}
+
+			\coordinate(D) at (2,0,0);
+			\tkzDrawSegments[dashed, red](A1,D D,B A1,B)
+			\tkzMarkRightAngle[dashed, red](A,D,A1)
+			\tkzMarkRightAngle[dashed, red](B,D,A1)
+			\tkzLabelPoint(D){$D$}
+		\end{tikzpicture}
+	\end{figure*}
+
+	\begin{solution}
+		\begin{penum}
+			\item
+			\begin{align*}
+				 & \because A_1ACC_1 \perp ABC                         \\
+				 & \therefore AA_1\text{与}ABC\text{的夹角等于}\angle{A_1AC} \\
+				 & \because
+				\begin{array}{l}
+					AA_1 = A_1C \\
+					AA_1 \perp A_1C
+				\end{array}                                        \\
+				 & \therefore \triangle{A_1AC}\text{为等腰直角三角形}          \\
+				 & \therefore \angle{A_1AC} = \ang{45}
+			\end{align*}
+			$A_1A$与底面$ABC$所成角的大小为$\ang{45}$
+			\item 从点$A_1$向$AC$作垂线，垂足为$E$，连接$BD$和$A_1B$.
+			\begin{align*}
+				 & \because \triangle{AA_1C}\text{是等腰直角三角形}        \\
+				 & \therefore A_1D = \sqrt{3}                      \\
+				 & \because BD\text{是直角}\triangle{ABC}\text{斜边的中线} \\
+				 & \therefore BD = \frac12AC = \sqrt{3}            \\
+				 & \therefore BD = A_1D                            \\
+				 & \therefore \triangle{A_1DB}\text{是等腰直角三角形}      \\
+				 & \therefore \angle{A_1BD} = \ang{45}
+			\end{align*}
+			侧面$A_1ABB_1$与底面$ABC$所成的二面角为$\ang{45}$。
+			\item
+			从$C$点作垂线到侧面$A_1ABB_1$，垂足为$E$，则有$\triangle{BCE}$为等腰直角三角形。所以$C$到侧面$A_1ABB_1$的距离等于$\dfrac{\sqrt{2}}{2}BC
+				= \sqrt{2}$。
+		\end{penum}
 	\end{solution}
 \end{questions}
 
