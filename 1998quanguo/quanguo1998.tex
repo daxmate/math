@@ -539,6 +539,70 @@
 				\right)}=2\cdot\frac{\sqrt{3}}{4}\cdot\frac{\sqrt{13}}{4} = \frac{\sqrt{39}}{8}
 		\end{equation*}
 	\end{solution}
+
+	\question 如图，直线$l_1$和$l_2$相交于点$M$，$l_1 \perp l_2$，点$N\in
+		l_1$。以$A,B$为端点的曲线段$C$上的任一点到$l_2$的距离与点$N$的距离相等。若$\triangle{AMN}$为锐角三角形，$|AM|=\sqrt{17},|AN|=3,$且$|BN|=6$。建立适当的坐标系，求曲线$C$的方程。
+	\begin{figure*}[htbp]
+		\centering
+		\begin{tikzpicture}[scale=0.5]
+			\tkzDefPoints{0/0/M, 3/0/N, 0/3/P}
+			\tkzDefPoint(40:{sqrt(17)}){A}
+			\tkzDefPoint(6,5){B}
+			\tkzInit[xmin=-2, xmax=6]
+			\tkzDrawX
+
+			\tkzDefLine[orthogonal=through A](M,P) \tkzGetPoint{x}
+			\tkzInterLL(M,P)(A,x) \tkzGetPoint{D}
+
+			\tkzDrawSegments[add=.5 and .5](M,N M,P)
+			\tkzDrawSegments(A,M A,N B,N)
+			\draw[shorten >= -1cm , shorten <= -1cm, -Latex] ([xshift=1.5cm]M) --([xshift=1.5cm]P) node[above=1cm]{$y$};
+			\draw[very thin] (A) .. controls (4,5) and (5.5,5) .. (B);
+			\tkzDrawSegment[dashed](A,D)
+
+			\tkzLabelSegment[right=1.5cm, below](M,N){$l_1$}
+			\tkzLabelSegment[above=1.5cm](M,P){$l_2$}
+			\tkzLabelPoint[below left](M){$M$}
+			\tkzLabelPoint[below](N){$N$}
+			\tkzLabelPoint[above left](A){$A$}
+			\tkzLabelPoint[above right](B){$B$}
+			\tkzLabelPoint[left](D){$D$}
+		\end{tikzpicture}
+	\end{figure*}
+
+	\begin{solution}
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
+			\item 以$l_1$为$x$轴，过$MN$的中线为$y$轴，设抛物线的方程为$x=\dfrac{y^2}{4p}$。
+			\item 过$A$点作垂线到$l_2$，垂足为$D$
+			      \begin{align*}
+				       & \because AD = AN = 3                                                  \\
+				       & \therefore A \text{点横坐标为} 3-p                                    \\
+				       & \therefore  |DM| = \sqrt{|AM|^2 - |DA|^2} = \sqrt{17 - 9} = 2\sqrt{2} \\
+				       & \therefore A\text{点的纵坐标为}2\sqrt{2}                              \\
+			      \end{align*}
+			\item 将$A$点坐标$(3-p, 2\sqrt{2})$代入抛物线方程得：
+			      \begin{align*}
+				      3-p = \frac{(2\sqrt{2})^2}{4p} \\
+				      p^2 -3p + 2 = 0                \\
+				      (p-2)(p-1) = 0
+			      \end{align*}
+			      则有$p_1 = 1, p_2 = 2$
+			\item 当$p=1$时，$MN=2$，此时有$|AM|^2 > |AN|^2 +
+				      |MN|^2$，可以判定$\triangle{AMN}$是钝角三角形，与条件不符，所以$p=2$，即曲线的方程为$x=\dfrac{y^2}{8}$。
+			\item 根据题意可知$B$点的横坐标为$6-p=4$，代入曲线方程得：
+			      \begin{align*}
+				      4 = \frac{y^2}{8}
+				      y = \pm4\sqrt{2}
+			      \end{align*}
+			      因为曲线段$C$在第一象限，所以$B$点坐标为$(4,4\sqrt{2})$
+
+			\item 综上，曲线的方程为：
+			      \begin{equation*}
+				      x = \frac{y^2}{8} \quad (1 \leqslant x \leqslant 4, y>0)
+			      \end{equation*}
+		\end{enumerate}
+
+	\end{solution}
 \end{questions}
 
 \end{document}
