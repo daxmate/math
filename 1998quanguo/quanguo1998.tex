@@ -753,9 +753,108 @@
 				 & \therefore \sin\angle{A_1ED} = \frac{\sqrt{3}}{\sqrt{1^2 + (\sqrt{3})^2}} = \frac{\sqrt{3}}{2} \\
 				 & \therefore \angle{A_1BD} = \ang{60}
 			\end{align*}
-			侧面$A_1ABB_1$与底面$ABC$所成的二面角为$\ang{60}$。
+			侧面$A_1ABB_1$与底面$ABC$所成的二面角为$\ang{60}$.
 			\item
-			从$C$点作垂线到侧面$A_1ABB_1$，垂足为$F$，则有$\triangle{BCF}$中有$\angle{CBF}=\ang{60}$。所以$C$到侧面$A_1ABB_1$的距离等于$\sin{\ang{60}} \cdot BC = \sqrt{3}$。
+			从$C$点作垂线到侧面$A_1ABB_1$，垂足为$F$，则有$\triangle{BCF}$中有$\angle{CBF}=\ang{60}$.所以$C$到侧面$A_1ABB_1$的距离等于$\sin{\ang{60}} \cdot BC = \sqrt{3}$.
+		\end{penum}
+	\end{solution}
+	\question 设曲线$C$的方程是$y=x^3-x$，将$C$沿$x$轴、$y$轴正向分别平行移动$t$、$s$单位长度后得曲线$C_1$.
+	\begin{penum}
+		\item 写出曲线$C_1$的方程.
+		\item 证明曲线$C$与$C_1$关于点$A \left( \frac{t}{2},\frac{s}{2} \right)$对称.
+		\item 如果曲线$C$与$C_1$有且仅有一个公共点，证明$s=\frac{t^3}{4}-t$且$t\neq0$.
+
+		\begin{solution}
+			\begin{penum}
+				\item $C_1$的方程为:
+				\begin{equation*}
+					y - s = (x-t)^3 - (x-t)
+				\end{equation*}
+				整理得
+				\begin{equation*}
+					y = (x-t)^3 - x + s +t
+				\end{equation*}
+				\item
+				如果$C$和$C_1$关于点$(\frac{t}{2},\frac{s}{2})$对称,对于$C$上的任意一点$P(x_1,y_1)$,其关于点$A$的对称点$P'(t-x_1,
+					s-y_1)$必定在$C_1$上.将$P'$坐标代入$C_1$的方程中得:
+				\begin{align*}
+					s-y_1 = (-x_1)^3 +x_1 - t + s +t \\
+					y_1 = x_1^3 - x_1
+				\end{align*}
+				所以$C$和$C_1$关于点$A$对称.
+				\item 设$C$和$C_1$的交点坐标为$(x,y)$,则有
+				\begin{math}
+					\begin{cases}
+						y = x^3 - x \\
+						y = (x-t)^3 - x + s + t
+					\end{cases}
+				\end{math}
+
+				消去$y$得到:
+				\begin{align*}
+					x^3 - x = x^3 - 3tx^2 + 3t^2x - t^3 - x + s + t \\
+					3tx^2 - 3t^2x + t^3 - s - t = 0
+				\end{align*}
+				因为只有一个交点,所以
+				\begin{align*}
+					\Delta = 9t^4 - 4\cdot 3t(t^3 - s - t) = 0 (t\neq0)
+				\end{align*}
+				进一步化简得
+				\begin{equation*}
+					t^3 - 4t - 4s = 0
+				\end{equation*}
+				所以
+				$s=\frac14t^3 - t\quad (t\neq0)$.
+			\end{penum}
+		\end{solution}
+	\end{penum}
+	\question 已知数列$\{b_n\}$是等差数列,$b_1=1, b_1+b_2+\cdots+b_{10}=145$.
+	\begin{penum}
+		\item 求数列$\{b_n\}$的通项$b_n$;
+		\item 设数列$\{a_n\}$的通项$a_n = \log_a \left( 1 + \frac{1}{b_n}
+			\right)$(其中$a>0$,且$a\neq1$),记$S_n$是数列$\{a_n\}$的前$n$项和.试比较$S_n$与$\frac13\log_ab_{n+1}$的大小,并证明你的结论.
+	\end{penum}
+
+	\begin{solution}
+		\begin{penum}
+			\item 设通项$b_n$为$b_n = b_1 + (n-1)d$,则其前$n$项和可以表示为
+			\begin{math}
+				\frac{n(b_1 + b_n)}{2}
+			\end{math}.
+
+			则有
+			\begin{math}
+				10(1+b_{10})/2=145
+			\end{math},求得$b_{10}=28$
+			将$n=10, b_{10}=28$代入通项公式得$d=3$,所以通项公式为:
+			\begin{equation*}
+				b_n = 3n - 2
+			\end{equation*}
+			\item 根据题意有
+			\begin{equation*}
+				S_n = \sum_{i=1}^n\log_a(1+\frac{1}{3i-2})
+			\end{equation*}
+			将上式两边同乘以$3$:
+			\begin{align*}
+				3S_n & = \sum_{i=1}^n3\log_a(1+\frac1{3i-2})                                        \\
+				     & = \sum_{i=1}^n\log_a(1+\frac1{3i-2})^3                                       \\
+				     & = \sum_{i=1}^n\log_a[1+\frac{3}{3i-2}+\frac{3}{(3i-2)^2} + \frac1{(3i-2)^3}]
+			\end{align*}
+			因为$3i-2>0$,所以$\frac3{(3i-2)^2} > 0, \frac1{(3i-2)^3}>0$,所以有
+			\begin{align*}
+				3S_n & > \sum_{i=1}^n\log_a(1+\frac3{3i-2})     \\
+				     & = \sum_{i=1}^n\log_a\frac{3i+1}{3i-2}    \\
+				     & = \log_a(\frac{3\times1 + 1}{3\times1-2}
+				\cdot\frac{3\times2+1}{3\times2-2})
+				\cdots
+				\frac{3(n-1) +1}{3(n-1)+2}
+				\cdot \frac{3n + 1}{3n-2}                       \\
+				     & = \log_a(3n+1)
+			\end{align*}
+			所以有:
+			\begin{equation*}
+				S_n > \frac13\log_a(3n+1)
+			\end{equation*}
 		\end{penum}
 	\end{solution}
 \end{questions}
