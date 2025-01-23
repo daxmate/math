@@ -1,0 +1,38 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\input{../mathheader.tex}
+\usepackage{tkz-euclide}
+
+\begin{document}
+\begin{center}
+	\textbf{1997年普通高等学校招生考试(全国卷)}
+
+	\textbf{\Large 理科数学}
+\end{center}
+\begin{questions}
+	\question 设集合$M=\{x|0 \leqslant x < 2\}$,集合$N=\{x|x^2 - 2x - 3 <0\}$,集合$M\cap N=$ \hfill (\hspace{2cm})
+	\begin{oneparchoices}
+		\choice $\{x|0\leqslant x < 1\}$
+		\CorrectChoice $\{x|0\leqslant x < 2\}$
+		\choice $\{x|0\leqslant x \leqslant 1\}$
+		\choice $\{x|0\leqslant x \leqslant 2\}$
+	\end{oneparchoices}
+
+	\begin{solution}
+		集合$N=\{x|-1 < x < 3\}$,两个集合的范围如下图所示:
+
+		\begin{tikzpicture}
+			\tkzInit[xmin=-4, xmax=4]
+			\tkzDrawX
+
+			\draw[rounded corners=2pt, thick] (-1,0) |- (3,.5) -- (3,0);
+			\draw[thick, pattern=north east lines, rounded corners=2pt] (0,0) |- (2,.8) -- (2,0);
+			\draw [fill=white](-1,0) circle (1pt);
+			\draw [fill=white](3,0) circle (1pt);
+			\draw [fill=black](0,0) circle (1pt);
+			\draw [fill=white](2,0) circle (1pt);
+		\end{tikzpicture}
+	\end{solution}
+
+\end{questions}
+\end{document}
