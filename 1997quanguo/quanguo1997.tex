@@ -51,5 +51,43 @@
 		所以答案为$a=-6$
 	\end{solution}
 
+	\question
+	已知三棱锥$D-ABC$的三个侧面与底面全等,且$AB=AC=\sqrt{3}$,$BC=2$,则以$BC$为棱,以面$BCD$与面$BCA$为面的二面角的大小是
+	\hfs
+
+	\begin{oneparchoices}
+		\choice $\arccos\dfrac{\sqrt{3}}{3}$
+		\choice $\arccos\dfrac{1}{3}$
+		\CorrectChoice $\dfrac{\pi}{2}$
+		\choice $\dfrac{2\pi}{3}$
+	\end{oneparchoices}
+
+	\begin{solution}
+
+		\tdplotsetmaincoords{20}{120}
+		\begin{center}
+			\begin{tikzpicture}[tdplot_main_coords, baseline=(current bounding box.north)]
+				\coordinate(A) at ({sqrt(2)}, 0);
+				\coordinate(B) at (0,1);
+				\coordinate(C) at (0,-1);
+				\coordinate(D) at (0,0,{sqrt(2)});
+
+				\draw(A)node[below]{$A$} -- (B)node[below]{$B$};
+				\draw[dashed](B)-- (C)node[above]{$C$};
+				\draw(C)-- (A);
+				\draw(D)node[above]{$D$} -- (A);
+				\draw(D) -- (B);
+				\draw(D) -- (C);
+
+				\draw[blue, dashed](A) -- (0,0)node[below right]{$O$} -- (D);
+			\end{tikzpicture}
+		\end{center}
+
+		取$BC$的中点为$O$,连接$AO$和$DO$.
+		因为$AC=AB$,所以有$AO\perp BC$.因为$\triangle{BCD}\cong\triangle{BCA}$,所以也有$DO\perp
+			BC$.计算可得$AO=DO=\sqrt{2}$.另外有$AD=2$.可以看出有$AO^2 + DO^2 =
+			AD^2$,所以$\triangle{AOD}$是直角三角形,即二面角为$\ang{90}$.
+	\end{solution}
+
 \end{questions}
 \end{document}
