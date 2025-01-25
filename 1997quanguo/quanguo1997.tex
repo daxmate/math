@@ -212,7 +212,57 @@
 
 	\begin{solution}
 		点$(0,0)$在直线$y=x$上,并且也在函数$y=\log_2(x+1)$上,所以应该也在$y=2^x$平移后的图像上,可以得到平移后的图像为$y=2^x
-		- 1$才能满足点$(0,0)$在图像上.
+			- 1$才能满足点$(0,0)$在图像上.
+	\end{solution}
+
+	\question 长方体一个顶点上三条棱的长分别是$3,4,5$,且它的八个顶点都在同一个球面上,这个球的表面积是
+
+	\hfs
+
+	\begin{oneparchoices}
+		\choice $20\sqrt{2}\pi$
+		\choice $25\sqrt{2}\pi$
+		\choice $50\pi$
+		\choice $200\pi$
+	\end{oneparchoices}
+
+	\begin{solution}
+
+		\tdplotsetmaincoords{60}{120}
+		\begin{center}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (3,0);
+				\coordinate (C) at (3,4);
+				\coordinate (D) at (0,4);
+				\coordinate (A') at (0,0,5);
+				\coordinate (B') at (3,0,5);
+				\coordinate (C') at (3,4,5);
+				\coordinate (D') at (0,4,5);
+
+				\draw (B) -- (C) -- (D);
+				\draw[dashed] (A) -- (B) (D) -- (A);
+				\draw (A') -- (B') -- (C') -- (D') -- cycle;
+				\draw[dashed] (A) -- (A');
+				\draw (B) -- (B');
+				\draw (C) -- (C');
+				\draw (D) -- (D');
+				\draw[dashed] (A) -- (C');
+				\draw[dashed] (A) -- (C);
+
+				\tkzLabelPoint[left](A){$A$}
+				\tkzLabelPoint[left](B){$B$}
+				\tkzLabelPoint[below](C){$C$}
+				\tkzLabelPoint[above](C'){$C'$}
+			\end{tikzpicture}
+		\end{center}
+
+		\begin{align*}
+			AB = 3, BC = 4, CC'= 5             \\
+			AC = \sqrt{3^2 + 4^2} = 5          \\
+			AC' = \sqrt{5^2 + 5^2} = 5\sqrt{2} \\
+		\end{align*}
+		则球体的半径为$\frac12AC'=\frac{5\sqrt{2}}{2}$, 球体的表面积为$4\pi \left( \frac{5\sqrt{2}}{2} \right)^2=50\pi$.
 	\end{solution}
 
 \end{questions}
