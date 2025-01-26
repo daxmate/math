@@ -593,5 +593,24 @@
 		\end{equation*}
 	\end{solution}
 
+	\question
+	甲、乙两地相距$S$千米,汽车从甲地匀速行驶到乙地,速度不得超过$c$千米/时.已知汽车每小时的运输成本(以元为单位)由可变部分和固定部分组成:可变部分与速度$v$(千米/时)的平方成正比,比例系数为$b$;固定部分为$a$元.
+	\begin{enumerate}[label=(\arabic*)]
+		\item 把全程运输成本$y$(元)表示为速度$v$(千米/时)的函数,并指出这个函数的定义域;
+		\item 为了使全程运输成本最小,汽车应以多大速度行驶?
+	\end{enumerate}
+
+	\begin{solution}
+		\begin{enumerate}[label=(\arabic*)]
+			\item 运输成本可表示为:
+			      \begin{align*}
+				      y & = (a + bv^2)\cdot \frac{S}{v} \qquad(v < c) \\
+				        & = S(\frac{a}{v}+ bv)
+			      \end{align*}
+			\item $\frac{a}{v} + bv \geqslant 2\sqrt{\frac{a}{v}bv} = 2\sqrt{ab}$,当且仅当$\frac{a}{v} =
+				      bv$时取最小值,此时 $v=\sqrt{\frac{a}{b}}$
+		\end{enumerate}
+
+	\end{solution}
 \end{questions}
 \end{document}
