@@ -516,13 +516,82 @@
 	$\triangle{OPQ}$是等腰直角三角形(其中$O$为原点).
 
 	\begin{solution}
-		计算可知$z,\omega$的模长均为$1$.由三角关系可知$z$的幅角是$-\dfrac{\pi}{6}$,$\omega$的幅度是$\dfrac{\pi}{4}$. 
+		计算可知$z,\omega$的模长均为$1$.由三角关系可知$z$的幅角是$-\dfrac{\pi}{6}$,$\omega$的幅度是$\dfrac{\pi}{4}$.
 
-		则可知$\overline{z\omega}$是幅角为$-\dfrac{\pi}{12}$的单位向量. 
+		则可知$\overline{z\omega}$是幅角为$-\dfrac{\pi}{12}$的单位向量.
 
 		$z^2\omega^3$是$-\dfrac{\pi}{6}\cdot2 + \dfrac{\pi}{4}\cdot3=\dfrac{5\pi}{12}$的单位向量.
-		
+
 		可见,$\overline{z\omega}$与$z^2\omega^3$中间的夹角是$\dfrac{\pi}{2}$,所以$\triangle{OPQ}$是直角三角形.
 	\end{solution}
+
+	\question 已知数列$\{a_n\}， \{b_n\}$都是由正数组成的等比数列，公比分别为$p,q$，其中$p>q$，且$p\neq1, q\neq1$.设$c_n
+		= a_n+b_n$， $S_n$为数列$\{c_n\}$的前$n$项和。求$\displaystyle\lim_{n\to\infty}\dfrac{S_n}{S_{n-1}}$.
+
+	\begin{solution}
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}}
+			 & = \lim_{n\to\infty}\frac{a_1\frac{1-p^n}{1-p}+b_1\frac{1-q^n}{1-q}}{a_1\frac{1-p^{n-1}}{1-p}+b_1\frac{1-q^{n-1}}{1-q}} \\
+		\end{align*}
+		\circled{1}若$q>1$
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}}
+			 & =\lim_{n\to\infty}\frac{a_1\frac{\frac{1}{q^{n-1}}- p\left( \frac{p}{q} \right)^{n-1}}{1-p} +
+				b_1\frac{\frac{1}{q{n-1}}-q}{1-q}}
+			{a_1\frac{\frac{1}{q^{n-1}}- \left( \frac{p}{q} \right)^{n-1}}{1-p} + b_1\frac{\frac{1}{q^{n-1}}-1}{1-q}}
+			\tag{1}
+		\end{align*}
+		此时有$\displaystyle\lim_{n\to\infty}\frac{1}{q^{n-1}}=0$,则式$(1)$可以进一步化简为:
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} = \lim_{n\to\infty}\frac{a_1\frac{-p \left( \frac{p}{q}
+					\right)^{n-1}}{1-p} + b_1\frac{-q}{1-q}}
+			{a_1\frac{-\left( \frac{p}{q} \right)^{n-1}}{1-p} + b_1\frac{-1}{1-q}}
+		\end{align*}
+		因为$p>q$,所以有$\displaystyle\lim_{n\to\infty}\left( \frac{p}{q} \right)^{n-1}$趋于无穷,所以有:
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & = \lim_{n\to\infty}\frac{a_1\frac{-p \left( \frac{p}{q}
+			\right)^{n-1}}{1-p}}{a_1\frac{-\left( \frac{p}{q}\right)^{n-1}}{1-p}}                          \\
+			                                     & = p
+		\end{align*}
+		\circled{2}若$q<1$
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}}
+			 & = \lim_{n\to\infty}\frac{a_1\frac{\frac{1}{p^{n-1}}-p}{1-p} + b_1\frac{\frac{1}{p^{n-1}}-q \left(
+					\frac{q}{p} \right)^{n-1}}{1-q}}
+			{a_1\frac{\frac{1}{p^{n-1}}-1}{1-p} + b_1\frac{\frac{1}{p^{n-1}}- \left( \frac{q}{p} \right)^{n-1}}{1-q}}
+			\tag{3}
+		\end{align*}
+		因为$p> q$所以$\displaystyle\lim_{n\to\infty}\left(  \frac{q}{p}\right)^{n-1} = 0$
+		式$(3)$可以进一步化简为
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & =
+			\lim_{n\to\infty}\frac{a_1\frac{\frac{1}{p^{n-1}}-p}{1-p}+b_1\frac{\frac{1}{p^{n-1}}}{1-q}}
+			{a_1\frac{\frac{1}{p^{n-1}}-1}{1-p} + b_1\frac{\frac{1}{p^{n-1}}}{1-q}} \tag{4}
+		\end{align*}
+		\circled{a}若$p>1$,则有$\displaystyle\lim_{n\to\infty}\frac{1}{p^{n-1}} = 0$, 式$(4)$可进一步化简为:
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & = \lim_{n\to\infty}\frac{a_1\frac{-p}{1-p}}{a_1\frac{-1}{1-p}} \\
+			                                     & = p
+		\end{align*}
+		\circled{b}若$p<1$,则有$\displaystyle\lim_{n\to\infty}p^n=0$.进一步化简式$(4)$得:
+		\begin{align*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & =
+			\lim_{n\to\infty}\frac{a_1\frac{1-p^n}{1-p} + b_1\frac{1}{1-q}}{a_1\frac{1-p^{n-1}}{1-p} + b_1\frac1{1-q}}
+			\\
+			                                     & = \lim_{n\to\infty}\frac{a_1\frac{1}{1-p}
+			+b_1\frac1{1-q}}{a_1\frac{1}{1-p} + b_1\frac1{1-q}}                              \\
+			                                     & = 1
+		\end{align*}
+		综上:
+		\begin{equation*}
+			\lim_{n\to\infty}\frac{S_n}{S_{n-1}}  =
+			\begin{cases}
+				p \qquad (q >1)              \\
+				p \qquad (q < 1 \land p > 1) \\
+				1 \qquad (q < 1 \land p < 1)
+			\end{cases}
+		\end{equation*}
+	\end{solution}
+
 \end{questions}
 \end{document}
