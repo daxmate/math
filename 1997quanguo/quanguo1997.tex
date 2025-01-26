@@ -433,5 +433,19 @@
 		从$10$个点中取$4$个点一共有$\binom{10}{4}=\frac{10\times9\times8\times7}{4\times3\times2\times1}=210$种.四面体上一个面上有规定的$6$个点,从这$6$个点中取$4$个点的取法有$\binom{6}{4}=15$种,一共有$4$个面,所以取得在同一个面上的$4$个点的取法有$60$种.则取$4$个不共面的点的取法共有$150$种.
 	\end{solution}
 
+	\question 已经$\left( \dfrac{a}{x} -\sqrt{\dfrac{x}{2}}
+		\right)^9$的展开式中$x^3$的系数为$\frac94$,常数$a$的值为\fillin[36][2cm].
+
+	\begin{solution}
+		\begin{align*}
+			\left( \frac{a}{x} - \sqrt{\frac{x}{2}} \right)^9
+			 & = \sum_{r=0}^9\binom{9}{r} \left( \frac{a}{x} \right)^{9-r} \left( -\sqrt{\frac{x}{2}} \right)^r \\
+			 & = \sum_{r=0}^{9}\binom{9}{r} a^{9-r}(-1)^r2^{-\frac{r}{2}}x^{r-9 + \frac{r}{2}}
+		\end{align*}
+		$x$的指数为$3$时有$r-9+\frac{r}{2} = 3$,计算得$r=8$.此时系数为$a^{9-8}(-1)^82^{-\frac{8}{2}} = \frac94$. 
+
+		$a=36$.
+	\end{solution}
+
 \end{questions}
 \end{document}
