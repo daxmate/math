@@ -57,7 +57,7 @@
 		\pgfplotsset{
 			xlabel={$x$},
 			ylabel={$y$},
-			x label style={at={(current axis.right of origin)}, anchor=north},
+			% x label style={at={(current axis.right of origin)}, anchor=north},
 			axis lines=center,
 			samples=100,
 			ticks=none
@@ -695,6 +695,68 @@
 				V_{F-A_1ED_1} & = \frac13 \times \sqrt{5} \times \frac35\sqrt{5} \\
 				              & = 1
 			\end{align*}
+		\end{penum}
+	\end{solution}
+
+	\question 设二次函数$f(x)=ax^2+bx+c(a>0)$,方程$f(x) - x = 0$的两个根$x_1,x_2$满足$0<x_1<x_2<\frac1a$.
+	\begin{penum}
+		\item 当$x\in(0,x_1)$时,证明$x<f(x)<x_1$;
+		\item 设函数$f(x)$的图像关于直线$x=x_0$对称,证明$x_0<\frac{x_1}{2}$.
+	\end{penum}
+
+	\begin{solution}
+		\begin{penum}
+			\item 因为$a>0$,方程$f(x)-x=0$的图像大概的形状应该是:
+			\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[xmin=-2,
+							xmax=5,
+							axis lines=center,
+							ymin=-2,
+							ymax=5,
+							xlabel=$x$,
+							ylabel=$y$,
+							ticks=none
+						]
+						\addplot[domain=-1:4]{x^2/3-x +2/3};
+						\node[below left] at (0,0) {$O$};
+						\node[below] at (1,0) {$x_1$};
+						\node[below] at (2,0) {$x_2$};
+						\filldraw[red] (3,0) node[below, black] {$1/a$} circle(1pt);
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			可以看到$f(x) -x > 0$,所以有$f(x) > x$.
+
+			因为$f(x) = x < x_1$,所以得证:
+			\begin{equation*}
+				x  < f(x) < x_1
+			\end{equation*}
+
+			\item
+			\begin{enumerate}[label=\protect\circled{\arabic*}]
+				\item $f(x)$关于直线$x=-\frac{b}{2a}$ 对称,即$x_0 = -\frac{b}{2a}$.
+				\item $x_1, x_2=\frac{-b + 1 \pm \sqrt{(b-1)^2-4ac}}{2a}$
+				\item 命题转换为证明:
+				      \begin{equation*}
+					      -\frac{b}{2a} < \frac{-b + 1 - \sqrt{(b-1)^2 - 4ac}}{4a} \tag{1}
+				      \end{equation*}
+				\item 将式$(1)$两边同乘以$4a$:
+				      \begin{align*}
+					      -2b < -b + 1 - \sqrt{(b-1)^2 - 4ac} \\
+					      b + 1 > \sqrt{(b-1)^2 - 4ac}        \\
+					      b^2 + 2b + 1 > b^2 - 2b + 1 - 4ac   \\
+					      b + ac > 0                          \\
+				      \end{align*}
+				\item 由$x_2 < \frac1a$得
+				      \begin{align*}
+					      \frac{-b + 1 + \sqrt{(b-1)^2 - 4ac}}{2a} < \frac1a \\
+					      -b + 1 + \sqrt{(b-1)^2 - 4ac} < 2                  \\
+					      (b-1)^2 - 4ac < (b+1)^2                            \\
+					      b + ac > 0
+				      \end{align*}
+				\item 得证.
+			\end{enumerate}
 		\end{penum}
 	\end{solution}
 

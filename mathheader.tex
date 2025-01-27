@@ -7,7 +7,6 @@
 \usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{tikz, pgfplots, tikz-3dplot}
-\usepackage[lua]{tkz-euclide}
 \usetikzlibrary{
 	angles,
 	backgrounds,
@@ -31,7 +30,7 @@
 \newcounter{total}
 \renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
 
-\pgfplotsset{compat=1.5}
+\pgfplotsset{compat=1.17}
 
 \CorrectChoiceEmphasis{\color{blue!70!green}\bfseries}
 \renewcommand{\solutiontitle}{\textbf{解:}}
