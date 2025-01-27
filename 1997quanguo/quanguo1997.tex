@@ -612,5 +612,91 @@
 		\end{enumerate}
 
 	\end{solution}
+
+	\question 如图,在正方体$ABCD-A_1B_1C_1D_1$中,$E,F$分别是$BB_1,CD$的中点.
+	\begin{penum}
+		\item 证明:$AD\perp D_1F$;
+		\item 求$AE$与$D_1F$所成的角;
+		\item 证明:面$AED\perp$面$A_1FD_1$;
+		\item 设$AA_1=2$,求三棱锥$F-A_1ED_1$的体积.
+	\end{penum}
+
+	\tdplotsetmaincoords{80}{5}
+	\begin{center}
+		\begin{tikzpicture}[tdplot_main_coords, scale=1.3]
+			\coordinate(A) at(0,0);
+			\coordinate(B) at(2,0);
+			\coordinate(C) at(2,2);
+			\coordinate(D) at(0,2);
+			\coordinate(A1) at(0,0,2);
+			\coordinate(B1) at(2,0,2);
+			\coordinate(C1) at(2,2,2);
+			\coordinate(D1) at(0,2,2);
+			\coordinate(E) at (2,0,1);
+			\coordinate(F) at (1,2);
+			\coordinate(G) at (2,2,1);
+			\coordinate(H) at (0.8,2,0.4);
+
+			\tkzDrawPolygon(A,B,B1,A1)
+			\draw[very thin] (A1) -- (D1) -- (C1) -- (B1) (C1) -- (C) -- (B) (A)--(E);
+			\draw[very thin, dashed] (D) -- (C) (D) -- (A) (D) -- (D1) (D) -- (E) -- (F) -- (A) (D1)--(F)--(A1) (D)--(G);
+			\tkzLabelPoints(A,B)
+			\tkzLabelPoints[right](C,C1)
+			\tkzLabelPoint[above left](D1){$D_1$}
+			\tkzLabelPoint[left](A1){$A_1$}
+			\tkzLabelPoint[above left](D){$D$}
+			\tkzLabelPoint[right](E){$E$}
+			\tkzLabelPoint[right](G){$G$}
+			\tkzLabelPoint[above right](H){$H$}
+			\tkzLabelPoint[below right](F){$F$}
+			\draw[fill=gray](H) circle (1pt);
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{solution}
+		\begin{penum}
+			\item
+			\begin{align*}
+				 & \because ABCD-A_1B_1C_1D_1\text{是正方体} \\
+				 & \therefore AD \perp CDD_1C_1          \\
+				 & \therefore AD \perp D_1F
+			\end{align*}
+			\item
+			取$C_1C$的中点$G$,连接$DG$与$D_1F$交于$H$.
+			\begin{align*}
+				 & \because \triangle{DFD_1} \cong \triangle{CGD}  \\
+				 & \therefore \angle{DD_1F} = \angle{CDG}          \\
+				 & \because \angle{DFD_1} = \angle{D_1FD}          \\
+				 & \therefore \angle{DHF}=\angle{D_1DF} = \ang{90} \\
+				 & \therefore DG \text{与} D_1F \text{成}\ang{90}    \\
+				 & \because DG \text{是}AE\text{在}DCC_1D1上的投影       \\
+				 & \therefore AE \perp D_1F
+			\end{align*}
+			\item
+			\begin{align*}
+				 & \because D_1F \perp DG \land D_1F \perp DA \\
+				 & \therefore D_1F \perp ADE                  \\
+				 & \therefore AED \perp A_1FD_1
+			\end{align*}
+			\item
+			\begin{align*}
+				V_{F-A_1ED_1} & = V_{E-A_1D_1F}                        \\
+				              & = \frac13S_{\triangle{A_1FD_1}}\cdot h \\
+			\end{align*}
+			\begin{align*}
+				S_{\triangle{A_1FD_1}} & = \frac12A_1D_1\cdot D_1F          \\
+				                       & = \frac12 \times 2 \times \sqrt{5} \\
+				                       & = \sqrt{5}
+			\end{align*}
+			因为平面$AEGD \perp$ 平面$A_1FD_1$,所以$h=HG=DG - DH = \sqrt{5} - \frac25{\sqrt{5}} = \frac35\sqrt{5}$
+
+			所以体积为:
+			\begin{align*}
+				V_{F-A_1ED_1} & = \frac13 \times \sqrt{5} \times \frac35\sqrt{5} \\
+				              & = 1
+			\end{align*}
+		\end{penum}
+	\end{solution}
+
 \end{questions}
 \end{document}
