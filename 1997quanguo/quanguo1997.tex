@@ -222,7 +222,7 @@
 	\begin{oneparchoices}
 		\choice $20\sqrt{2}\pi$
 		\choice $25\sqrt{2}\pi$
-		\choice $50\pi$
+		\CorrectChoice $50\pi$
 		\choice $200\pi$
 	\end{oneparchoices}
 
@@ -430,7 +430,7 @@
 	\end{oneparchoices}
 
 	\begin{solution}
-		从$10$个点中取$4$个点一共有$\binom{10}{4}=\frac{10\times9\times8\times7}{4\times3\times2\times1}=210$种.四面体上一个面上有规定的$6$个点,从这$6$个点中取$4$个点的取法有$\binom{6}{4}=15$种,一共有$4$个面,所以取得在同一个面上的$4$个点的取法有$60$种.则取$4$个不共面的点的取法共有$150$种.
+		从$10$个点中取$4$个点一共有$\binom{10}{4}=\frac{10\times9\times8\times7}{4\times3\times2\times1}=210$种.四面体上一个面上有规定的$6$个点,从这$6$个点中取$4$个点的取法有$\binom{6}{4}=15$种,一共有$4$个面,所以取得在同一个面上的$4$个点的取法有$60$种.另外,如果三个点在同一条棱上,第四点在这第棱所在的平面上,也会是同面.这种情况有9种.则取$4$个不共面的点的取法共有$141$种.
 	\end{solution}
 
 	\question 已经$\left( \dfrac{a}{x} -\sqrt{\dfrac{x}{2}}
@@ -442,9 +442,9 @@
 			 & = \sum_{r=0}^9\binom{9}{r} \left( \frac{a}{x} \right)^{9-r} \left( -\sqrt{\frac{x}{2}} \right)^r \\
 			 & = \sum_{r=0}^{9}\binom{9}{r} a^{9-r}(-1)^r2^{-\frac{r}{2}}x^{r-9 + \frac{r}{2}}
 		\end{align*}
-		$x$的指数为$3$时有$r-9+\frac{r}{2} = 3$,计算得$r=8$.此时系数为$a^{9-8}(-1)^82^{-\frac{8}{2}} = \frac94$.
+		$x$的指数为$3$时有$r-9+\frac{r}{2} = 3$,计算得$r=8$.此时系数为$\binom{9}{8}a^{9-8}(-1)^82^{-\frac{8}{2}} = \frac94$.
 
-		$a=36$.
+		$a=4$.
 	\end{solution}
 	\question 已知直线的极坐标方程为$\rho\sin \left( \theta + \dfrac{\pi}{4} \right) =
 		\dfrac{\sqrt{2}}{2}$,则极点到该直线的距离是 \fillin[$\dfrac{\sqrt{2}}{2}$][2cm].
@@ -604,11 +604,23 @@
 		\begin{enumerate}[label=(\arabic*)]
 			\item 运输成本可表示为:
 			      \begin{align*}
-				      y & = (a + bv^2)\cdot \frac{S}{v} \qquad(v < c) \\
+				      y & = (a + bv^2)\cdot \frac{S}{v} \qquad(v \in (0,c]) \\
 				        & = S(\frac{a}{v}+ bv)
 			      \end{align*}
 			\item $\frac{a}{v} + bv \geqslant 2\sqrt{\frac{a}{v}bv} = 2\sqrt{ab}$,当且仅当$\frac{a}{v} =
 				      bv$时取最小值,此时 $v=\sqrt{\frac{a}{b}}$
+			      \begin{enumerate}[label=\protect\circled{\arabic*}]
+				      \item 若$c<\sqrt{\frac{a}{b}}$
+				            \begin{align*}
+					            y' & = S(b - \frac{a}{v^2})                            \\
+					               & \leqslant S(b - \frac{a}{c^2})                    \\
+					               & \leqslant S(b - \frac{a}{(\sqrt{\frac{a}{b}})^2}) \\
+					               & = 0
+				            \end{align*}
+							即在$(0,c]$中运输成本单调递减,所以$v$应该取最大值$c$以保持运输成本最低.
+						\item 若$c\geqslant\sqrt{\frac{a}{b}}$
+							$v=\sqrt{\frac{a}{b}}$时成本最低.
+			      \end{enumerate}
 		\end{enumerate}
 
 	\end{solution}
