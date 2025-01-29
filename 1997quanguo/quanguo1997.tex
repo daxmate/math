@@ -423,14 +423,56 @@
 	\question 四面体的顶点和各棱中点共$10$个点,在其中取$4$个不共面的点,不同的取法共有 \hfs
 
 	\begin{oneparchoices}
-		\CorrectChoice $150$种
+		\choice $150$种
 		\choice $147$种
 		\choice $144$种
-		\choice $141$种
+		\CorrectChoice $141$种
 	\end{oneparchoices}
 
 	\begin{solution}
-		从$10$个点中取$4$个点一共有$\binom{10}{4}=\frac{10\times9\times8\times7}{4\times3\times2\times1}=210$种.四面体上一个面上有规定的$6$个点,从这$6$个点中取$4$个点的取法有$\binom{6}{4}=15$种,一共有$4$个面,所以取得在同一个面上的$4$个点的取法有$60$种.另外,如果三个点在同一条棱上,第四点在这第棱所在的平面上,也会是同面.这种情况有9种.则取$4$个不共面的点的取法共有$141$种.
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
+			\item 从$10$个点中取$4$个点一共有$\binom{10}{4}=\frac{10\times9\times8\times7}{4\times3\times2\times1}=210$种.
+			\item 四面体上一个面上有规定的$6$个点,从这$6$个点中取$4$个点的取法有$\binom{6}{4}=15$种,一共有$4$个面,所以取得在同一个面上的$4$个点的取法有$60$种.
+			\item 下面考虑不是现有的四个面上但是也在一个平面的情况:
+			      \begin{enumerate}[label=\Roman*]
+				      \item 一条棱边上的三个点与其对面的棱的中点所成的平面,这种情况有6种(棱边有6条);
+				      \item 一个侧面的两个侧棱中点的连线与底面中对应的两条棱边中点连线是平行的,因为也共面.这样的情况有三种.
+				            \begin{center}
+					            \tdplotsetmaincoords{60}{120}
+					            \begin{tikzpicture}[tdplot_main_coords]
+						            \coordinate(A) at (0,0);
+						            \coordinate(C') at (1.5,0);
+						            \coordinate(B) at (3,0);
+						            \coordinate(B') at (1.5, 2);
+						            \coordinate(C) at (0,4);
+						            \coordinate(A') at (0,2);
+						            \coordinate(D) at (2,2,5);
+
+						            \coordinate(D1) at ($(D)!0.5!(A)$);
+						            \coordinate(D2) at ($(D)!0.5!(B)$);
+						            \coordinate(D3) at ($(D)!0.5!(C)$);
+
+						            \draw[dashed] (A) -- (B) (A) -- (C) (D) -- (A);
+						            \draw[dashed, red](D2) --  (C') -- (A')--(D3) (B) -- (D1) -- (C);
+						            \draw[dashed, blue](B) -- (D1) -- (C);
+						            \draw (D) -- (B) (D) -- (C) (B) -- (C) (D2) -- (C) (D2) -- (D3);
+						            \tkzLabelPoint(A){$A$}
+						            \tkzLabelPoint(B){$B$}
+						            \tkzLabelPoint(C){$C$}
+						            \tkzLabelPoint[right](D1){$D_1$}
+						            \tkzLabelPoint[left](D2){$D_2$}
+						            \tkzLabelPoint[right](D3){$D_3$}
+						            \tkzLabelPoint[above, sloped](A'){$A'$}
+						            \tkzLabelPoint(B'){$B'$}
+						            \tkzLabelPoint[above, sloped](C'){$C'$}
+						            \tkzDrawPoints[color=blue, fill=blue](A',B',C',D1,D2,D3)
+						            \tkzLabelPoint[above](D){$D$}
+
+					            \end{tikzpicture}
+				            \end{center}
+			      \end{enumerate}
+		\end{enumerate}
+		另外,如果三个点在同一条棱上,第四点在这第棱所在的平面上,也会是同面.这种情况有9种.则取$4$个不共面的点的取法共有$141$种.
 	\end{solution}
 
 	\question 已经$\left( \dfrac{a}{x} -\sqrt{\dfrac{x}{2}}
@@ -617,9 +659,9 @@
 					               & \leqslant S(b - \frac{a}{(\sqrt{\frac{a}{b}})^2}) \\
 					               & = 0
 				            \end{align*}
-							即在$(0,c]$中运输成本单调递减,所以$v$应该取最大值$c$以保持运输成本最低.
-						\item 若$c\geqslant\sqrt{\frac{a}{b}}$
-							$v=\sqrt{\frac{a}{b}}$时成本最低.
+				            即在$(0,c]$中运输成本单调递减,所以$v$应该取最大值$c$以保持运输成本最低.
+				      \item 若$c\geqslant\sqrt{\frac{a}{b}}$
+				            $v=\sqrt{\frac{a}{b}}$时成本最低.
 			      \end{enumerate}
 		\end{enumerate}
 
