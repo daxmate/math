@@ -1,0 +1,101 @@
+%!tex program = lualatex
+\documentclass[answers]{exam}
+\pagestyle{empty}
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font}
+\WarningFilter{latex}{Label `question}
+\WarningFilter{latex}{There were multiply-defined labels}
+\usepackage[punct=quanjiao]{ctex}
+\usepackage{
+amsmath,
+amssymb,
+amsthm,
+csquotes,
+arcs,
+enumitem,
+tikz,
+pgfplots,
+tikz-3dplot,
+tkz-euclide,
+siunitx,
+titlesec,
+caption,
+}
+\titleformat{\section}
+  {\centering\bfseries} % 格式：居中、大号字体、加粗
+  {\thesection}              % 编号样式
+  {1em}                      % 编号与标题间距
+  {}                         % 标题前无额外内容
+  \newcommand\maintitle[1]{
+	  \begin{center}
+		\Huge\textbf{#1}
+	  \end{center}
+  }
+
+\usepackage[margin=2cm]{geometry}
+
+\renewcommand{\choicelabel}{(\Alph{choice})}
+
+\newenvironment{mathenum}
+{\begin{enumerate}[label=\arabic*.]}
+		{\end{enumerate}}
+
+\newenvironment{penum}
+{\begin{enumerate}[label=(\arabic*)]}
+		{\end{enumerate}}
+\makeatletter
+\providecommand\@gobblethree[3]{}
+\patchcmd{\over@under@arc}
+{\@gobbletwo}
+{\@gobblethree}
+{}{}
+\makeatother
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\setlength{\answerclearance}{6pt}
+\newcommand\hfs{\hfill (\hspace{2cm})}
+\CorrectChoiceEmphasis{\color{magenta}\bfseries}
+\usetikzlibrary{
+	angles,
+	backgrounds,
+	calc,
+	decorations.pathmorphing,
+	decorations.pathreplacing,
+	decorations.text,
+	intersections,
+	patterns,
+	petri,
+	positioning,
+	quotes,
+	shapes,
+	shapes.symbols,
+}
+\pgfplotsset{compat=1.17}
+\renewcommand{\solutiontitle}{\textbf{解:}}
+\begin{document}
+\include{beijing1977}
+\include{fujian1977}
+\include{hebei1977}
+\include{heilongjiang1977}
+\include{jiangsu1977}
+\include{shanghai1977}
+\include{quanguo1997}
+\include{quanguo1998}
+\end{document}
+\usepackage{graphicx, wrapfig}
+\usepackage{caption}
+\newcounter{xcord}
+\newcounter{ycord}
+\newcounter{total}
+\renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
+
+\renewcommand{\choicelabel}{(\Alph{choice})}
+
+\usepackage{array, tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{B}{>{\centering\bfseries\arraybackslash}X}
+
+\usepackage{fontawesome5}
+\newcommand\regularHandPointRight{\faHandPointRight[regular]}

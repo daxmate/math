@@ -1,13 +1,6 @@
-%!tex program = lualatex
-\documentclass[answers]{exam}
-\input{../mathheader}
-\usepackage[lua]{tkz-euclide}
-\begin{document}
-\begin{center}
-	\textbf{1977年普通高等学校招生考试(福建卷)}
+\section*{1977年普通高等学校招生考试(福建卷)}
 
-	\textbf{\huge{理科数学}}
-\end{center}
+\maintitle{理科数学}
 \begin{questions}
 	\question
 	\begin{enumerate}[label=(\arabic*)]
@@ -15,10 +8,10 @@
 		      \begin{solution}
 			      \begin{align*}
 				      \text{原式} & = 5 - 3 \times \left[ (-3\frac38)^{-\frac13} + 1031 \times 0 \right] \div 1 \\
-				                  & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
-				                  & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
-				                  & = 5 + 2                                                                     \\
-				                  & = 7
+				                & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
+				                & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
+				                & = 5 + 2                                                                     \\
+				                & = 7
 			      \end{align*}
 		      \end{solution}
 
@@ -85,20 +78,20 @@
 		      \begin{solution}
 			      \begin{align*}
 				       & \because MN \parallel PQ \parallel AB \text{并且} DM = MP = PA \\
-				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}       \\
-				       & \text{将数值代入得:}                                          \\
-				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                  \\
-				       & \text{则有:} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7    \\
-				       & MN = \sqrt[3]{14}                                              \\
-				       & PQ = \sqrt[3]{14^2} / 2                                        \\
+				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}     \\
+				       & \text{将数值代入得:}                                               \\
+				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                \\
+				       & \text{则有:} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7      \\
+				       & MN = \sqrt[3]{14}                                            \\
+				       & PQ = \sqrt[3]{14^2} / 2                                      \\
 			      \end{align*}
 		      \end{solution}
 		\item 已经 \( \lg3=0.4771, \lg{x}=-3.5229 \),求 \( x \).
 		      \begin{solution}
 			      \begin{align*}
-				       & \because \lg3                              = 0.4771                   \\
-				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229   \\
-				       & \text{另有} \lg0.001                       = -3                       \\
+				       & \because \lg3                              = 0.4771                  \\
+				       & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229  \\
+				       & \text{另有} \lg0.001                       = -3                        \\
 				       & \text{则} \lg(0.001 \times \frac{3}{10} )  = -3 + (-0.5229) = -3.5229 \\
 				       & \therefore x = \frac{3}{10000}
 			      \end{align*}
@@ -277,7 +270,7 @@
 		\begin{enumerate}[label=\zhnum{*}、]
 			\item 半径为$R$的圆的内接正六边形的边长也为$R$,所以第一个正六边形的边长为$6R$.
 			\item
-			      以第一个正六边形的边的中点连接而成的第二个正六边形的边长,根据三角关系得到边长为$\frac{\sqrt{3}}{2}R$,则边长为$3\sqrt{3}R$
+			      以第一个正六边形的边的中点连接而成的第二个正六边形的边长,根据三角关系得到边长为\\$\dfrac{\sqrt{3}}{2}R$,则边长为$3\sqrt{3}R$
 			\item 则前$n$个正六边形的周长之和为:
 			      \begin{align*}
 				      S_n & = 6R + 3\sqrt{3}R + \cdots +  (\frac{\sqrt{3}}{2})^{n-1}R \\
@@ -549,4 +542,3 @@
 		\end{enumerate}
 	\end{solution}
 \end{questions}
-\end{document}

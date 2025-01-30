@@ -1,14 +1,6 @@
-%!tex program = lualatex
-\documentclass[answers]{exam}
-\input{../mathheader.tex}
-\usepackage{tkz-euclide}
+\section*{1997年普通高等学校招生考试(全国卷)}
 
-\begin{document}
-\begin{center}
-	\textbf{1997年普通高等学校招生考试(全国卷)}
-
-	\textbf{\Large 理科数学}
-\end{center}
+\maintitle{理科数学}
 \begin{questions}
 	\question 设集合$M=\{x|0 \leqslant x < 2\}$,集合$N=\{x|x^2 - 2x - 3 <0\}$,集合$M\cap N=$ \hfill (\hspace{2cm})
 	\begin{oneparchoices}
@@ -145,12 +137,12 @@
 		\CorrectChoice $\dfrac{\pi}{2}$
 		\choice $\dfrac{2\pi}{3}$
 	\end{oneparchoices}
-
+	\pagebreak
 	\begin{solution}
 
 		\tdplotsetmaincoords{20}{120}
 		\begin{center}
-			\begin{tikzpicture}[tdplot_main_coords, baseline=(current bounding box.north)]
+			\begin{tikzpicture}[tdplot_main_coords, baseline=(current bounding box.north), scale=1.5]
 				\coordinate(A) at ({sqrt(2)}, 0);
 				\coordinate(B) at (0,1);
 				\coordinate(C) at (0,-1);
@@ -225,9 +217,8 @@
 		\CorrectChoice $50\pi$
 		\choice $200\pi$
 	\end{oneparchoices}
-
+	\pagebreak
 	\begin{solution}
-
 		\tdplotsetmaincoords{60}{120}
 		\begin{center}
 			\begin{tikzpicture}[tdplot_main_coords]
@@ -872,4 +863,3 @@
 	\end{solution}
 
 \end{questions}
-\end{document}
