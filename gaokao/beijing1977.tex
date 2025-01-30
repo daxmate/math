@@ -40,18 +40,55 @@
 
 	\question 证明: \( (1 + \tan\alpha)^2 = \dfrac{1 + \sin2\alpha}{\cos^2\alpha} \).
 	\begin{solution}
-		\begin{align*}
-			(1+\tan\alpha)^2
-			           & = \left(1 + \frac{\sin\alpha}{\cos\alpha}\right)^2  \text{（将 \(\tan\alpha = \frac{\sin\alpha}{\cos\alpha}\) 代入）} \\
-			           & = \left(\frac{\cos\alpha + \sin\alpha}{\cos\alpha}\right)^2 \text{（通分并化简分母）}                                     \\
-			           & = \frac{(\cos\alpha + \sin\alpha)^2}{\cos^2\alpha}                                                               \\
-			           & = \frac{\cos^2\alpha + 2\cos\alpha\sin\alpha + \sin^2\alpha}{\cos^2\alpha}                                       \\
-			           & = \frac{1 + 2\cos\alpha\sin\alpha}{\cos^2\alpha}                                                                 \\
-			           & \text{（根据三角恒等式 \(\cos^2\alpha + \sin^2\alpha = 1\) 化简）}                                                          \\
-			           & = \frac{1 + \sin2\alpha}{\cos^2\alpha}                                                                           \\
-			           & \text{（利用 \(\sin2\alpha = 2\cos\alpha\sin\alpha\)）}                                                              \\
-			\therefore & \, (1+\tan\alpha)^2 = \frac{1 + \sin2\alpha}{\cos^2\alpha}.
-		\end{align*}
+		\begin{cenum}
+			\item \textbf{展开左边表达式}
+
+			由三角恒等式 $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$，代入左边：
+			\[
+				(1 + \tan\alpha)^2 = \left(1 + \dfrac{\sin\alpha}{\cos\alpha}\right)^2.
+			\]
+
+			\item \textbf{通分并化简}
+
+			将括号内通分：
+			\[
+				= \left(\dfrac{\cos\alpha + \sin\alpha}{\cos\alpha}\right)^2.
+			\]
+			平方后展开分子：
+			\[
+				= \dfrac{(\cos\alpha + \sin\alpha)^2}{\cos^2\alpha}.
+			\]
+
+			\item \textbf{展开分子多项式}
+
+			应用完全平方公式：
+			\[
+				(\cos\alpha + \sin\alpha)^2 = \cos^2\alpha + 2\cos\alpha\sin\alpha + \sin^2\alpha.
+			\]
+			因此：
+			\[
+				= \dfrac{\cos^2\alpha + 2\cos\alpha\sin\alpha + \sin^2\alpha}{\cos^2\alpha}.
+			\]
+
+			\item \textbf{应用基本恒等式}
+
+			利用 $\cos^2\alpha + \sin^2\alpha = 1$：
+			\[
+				= \dfrac{1 + 2\cos\alpha\sin\alpha}{\cos^2\alpha}.
+			\]
+
+			\item \textbf{引入倍角公式}
+
+			根据 $\sin2\alpha = 2\cos\alpha\sin\alpha$，替换分子：
+			\[
+				= \dfrac{1 + \sin2\alpha}{\cos^2\alpha}.
+			\]
+			\item 因此，原式得证：
+			\[
+				(1 + \tan\alpha)^2 = \dfrac{1 + \sin2\alpha}{\cos^2\alpha}.
+			\]
+		\end{cenum}
+
 	\end{solution}
 
 	\question 求过两直线 \( x + y - 7 = 0 \) 和 \( 3x - y - 1 = 0 \) 的交点且过 \( (1, 1) \) 点的直线方程.

@@ -54,6 +54,8 @@ caption,
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\newenvironment{cenum} {\begin{enumerate}[label=\protect\circled{\arabic*}]} {\end{enumerate}}
+
 \setlength{\answerclearance}{6pt}
 \newcommand\hfs{\hfill (\hspace{2cm})}
 \CorrectChoiceEmphasis{\color{magenta}\bfseries}
@@ -90,8 +92,6 @@ caption,
 \newcounter{ycord}
 \newcounter{total}
 \renewcommand{\labelenumi}{\textbf{\ifnum\value{enumi}<10 0\fi\arabic{enumi})}}
-
-\renewcommand{\choicelabel}{(\Alph{choice})}
 
 \usepackage{array, tabularx}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
