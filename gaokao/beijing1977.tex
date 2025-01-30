@@ -41,14 +41,14 @@
 	\question 证明: \( (1 + \tan\alpha)^2 = \dfrac{1 + \sin2\alpha}{\cos^2\alpha} \).
 	\begin{solution}
 		\begin{cenum}
-			\item \textbf{展开左边表达式}
+			\item 展开左边表达式
 
 			由三角恒等式 $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$，代入左边：
 			\[
 				(1 + \tan\alpha)^2 = \left(1 + \dfrac{\sin\alpha}{\cos\alpha}\right)^2.
 			\]
 
-			\item \textbf{通分并化简}
+			\item 通分并化简
 
 			将括号内通分：
 			\[
@@ -59,7 +59,7 @@
 				= \dfrac{(\cos\alpha + \sin\alpha)^2}{\cos^2\alpha}.
 			\]
 
-			\item \textbf{展开分子多项式}
+			\item 展开分子多项式
 
 			应用完全平方公式：
 			\[
@@ -70,14 +70,14 @@
 				= \dfrac{\cos^2\alpha + 2\cos\alpha\sin\alpha + \sin^2\alpha}{\cos^2\alpha}.
 			\]
 
-			\item \textbf{应用基本恒等式}
+			\item 应用基本恒等式
 
 			利用 $\cos^2\alpha + \sin^2\alpha = 1$：
 			\[
 				= \dfrac{1 + 2\cos\alpha\sin\alpha}{\cos^2\alpha}.
 			\]
 
-			\item \textbf{引入倍角公式}
+			\item 引入倍角公式
 
 			根据 $\sin2\alpha = 2\cos\alpha\sin\alpha$，替换分子：
 			\[
@@ -93,17 +93,60 @@
 
 	\question 求过两直线 \( x + y - 7 = 0 \) 和 \( 3x - y - 1 = 0 \) 的交点且过 \( (1, 1) \) 点的直线方程.
 	\begin{solution}
-		\begin{align*}
-			 & \begin{cases}
-				   x + y - 7 = 0, \\
-				   3x - y - 1 = 0
-			   \end{cases}                                                                \\
-			 & \text{解得:} x = 2, \, y = 5,\text{即交点为 } (2, 5).                               \\
-			 & \text{过点 } (2,5) \text{ 和 } (1,1) \text{ 的直线斜率:} k = \frac{5 - 1}{2 - 1} = 4. \\
-			 & \text{设直线方程为:} y = 4x + a,\text{将 } (1,1) \text{ 代入,得:}                       \\
-			 & a = -3.                                                                       \\
-			 & \text{因此,所求直线方程为:} y = 4x - 3.
-		\end{align*}
+		\begin{cenum}
+			\item{求两直线的交点}
+			联立方程组：
+			\[
+				\begin{cases}
+					x + y - 7 = 0, \\
+					3x - y - 1 = 0
+				\end{cases}
+			\]
+			将第一式化为 $y = 7 - x$，代入第二式：
+			\[
+				3x - (7 - x) - 1 = 0,
+			\]
+			化简得：
+			\[
+				4x - 8 = 0 \quad \Rightarrow \quad x = 2.
+			\]
+			将 $x = 2$ 代入 $y = 7 - x$，得：
+			\[
+				y = 7 - 2 = 5.
+			\]
+			因此，两直线的交点为 $(2, 5)$。
+
+			\item{求经过点 $(2,5)$ 和 $(1,1)$ 的直线方程}
+			两点间直线的斜率公式为：
+			\[
+				k = \frac{y_2 - y_1}{x_2 - x_1}.
+			\]
+			将 $(x_1, y_1) = (1,1)$、$(x_2, y_2) = (2,5)$ 带入，得：
+			\[
+				k = \frac{5 - 1}{2 - 1} = 4.
+			\]
+
+			\item{写出直线方程}
+			根据点斜式方程，设直线方程为：
+			\[
+				y - y_1 = k(x - x_1).
+			\]
+			将 $k = 4$、$(x_1, y_1) = (1,1)$ 带入，得：
+			\[
+				y - 1 = 4(x - 1).
+			\]
+			化简后得：
+			\[
+				y = 4x - 3.
+			\]
+
+			\item{结论}
+
+			所求直线的方程为：
+			\[
+				y = 4x - 3.
+			\]
+		\end{cenum}
 	\end{solution}
 
 	\question 某工厂今年七月份的产值为 \( 100 \)万元,以后每月产值比上月增加 \( 20\%
