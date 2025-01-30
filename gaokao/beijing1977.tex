@@ -264,20 +264,20 @@
 
 		\end{center}
 
-		\begin{itemize}
+		\begin{cenum}
 			\item 计算$\angle{A}$和$\angle{B}$
 
-			      很明显$\angle{A}=\ang{45}$, 则有$\angle{B}=\ang{180}-\ang{45} - \ang{90} - \ang{15}=\ang{30}$.
+			很明显$\angle{A}=\ang{45}$, 则有$\angle{B}=\ang{180}-\ang{45} - \ang{90} - \ang{15}=\ang{30}$.
 			\item 由正弦定理:
-			      \begin{equation*}
-				      \frac{a}{\sin\angle{A}} = \frac{b}{\sin\angle{B}} = \frac{c}{\sin\angle{C}}
-			      \end{equation*}得
-			      \begin{align*}
-				      BC & = \frac{AC}{\sin\angle{B}}\sin\angle{A} \\
-				         & = \frac{20}{\frac12}\frac{\sqrt{2}}{2}  \\
-						 & = 20\sqrt{2}(\text{海里})
-			      \end{align*}
-		\end{itemiz}
+			\begin{equation*}
+				\frac{a}{\sin\angle{A}} = \frac{b}{\sin\angle{B}} = \frac{c}{\sin\angle{C}}
+			\end{equation*}得
+			\begin{align*}
+				BC & = \frac{AC}{\sin\angle{B}}\sin\angle{A} \\
+				   & = \frac{20}{\frac12}\frac{\sqrt{2}}{2}  \\
+				   & = 20\sqrt{2}(\text{海里})
+			\end{align*}
+		\end{cenum}
 	\end{solution}
 
 	\question 一个圆内接三角形 \( ABC \),$\angle A$的平分线交$BC$于$D$,交外接圆于$E$,求证: \( AD \cdot AE = AC \cdot
@@ -309,23 +309,19 @@
 				\tkzLabelPoint[above left](D){$D$}
 				\tkzLabelPoint[right](E){$E$}
 
-				\tkzDrawSegment[dashed, red](B,E)
 				\tkzDrawSegment[dashed, red](C,E)
 			\end{tikzpicture}
 		\end{minipage}
 		\begin{minipage}{0.55\textwidth}
-			\begin{math}
-				\because \angle{ACB}\text{和}\angle{AEB}\text{都是弦}AB\text{对应的圆周角} \\
-				\therefore \angle{ACB} = \angle{AEB}                                       \\
-				\because \angle{CDA}\text{和}\angle{BDE}是对顶角                        \\
-				\therefore \angle{CDA} = \angle{BDE}                                       \\
-				\therefore \triangle{CDA} \sim \triangle{EDB} \\
-				\therefore \dfrac{AC}{AD} = \dfrac{BE}{BD} \\
-				\because \angle{EBD} = \angle{EAB}, \angle{AEB} = \angle{BEA}\\
-				\therefore \triangle{ABE} \sim \triangle{BDE} \\
-				\therefore \dfrac{AB}{AE} = \dfrac{BD}{BE} = \dfrac{AD}{AC} \\
-				\therefore AD \cdot AE = AC \cdot AB.
-			\end{math}
+			连接$CE$
+			\begin{align*}
+				 & \because \angle{AEC}\text{和}\angle{ABC}\text{都是弦}AC\text{对应的圆周角} \\
+				 & \therefore \angle{AEC} = \angle{ABC}                             \\
+				 & \because \angle{CAE}=\angle{BAD}                                 \\
+				 & \therefore \triangle{BAD} \sim \triangle{EAC}                    \\
+				 & \therefore \frac{AC}{AE} = \frac{AD}{AB}                         \\
+				 & \therefore AD \cdot AE = AC \cdot AB.
+			\end{align*}
 		\end{minipage}
 
 	\end{solution}
