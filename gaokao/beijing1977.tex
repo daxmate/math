@@ -260,97 +260,24 @@
 				\draw (C)-- (B)node[right]{$B$};
 				\draw[dashed, name path=CE] (E) -- (C);
 				\pic["$15^\circ$", draw, angle eccentricity=2] {angle=B--C--E};
-				\path [name intersections={of=AB and CE, by=F}];
-				\node[above left] at (F) {$F$};
-				\coordinate(G) at ($(C)!(F)!(B)$);
-				\draw (F) -- (G)node[right]{$G$};
 			\end{tikzpicture}
-			\begin{tikzpicture}
-				\tkzDefPoint(0,0){A}  % 定义点 A
-				\tkzDefPoint(4,4){B}  % 定义点 B
-				\tkzDefPoint(2,0){C}  % 定义点 C
-				\tkzDefPoint(0,4){D}  % 定义点 D
-				\tkzDefPoint(2,4){E}  % 定义点 E
 
-				% 绘制点
-				\tkzDrawPoints(A,B,C,D,E)
-
-				% 绘制线段
-				\tkzDrawSegments(A,B B,C C,D)
-				\tkzDrawSegment[draw,dashed](A,D)  % 虚线
-				\tkzDrawSegment[draw,dashed](C,E)  % 虚线
-
-				% 标记角度
-				\tkzMarkAngle[draw=blue,fill=blue,angle radius=1cm](B,A,D)
-				\tkzLabelAngle[sloped, pos=1.5](B,A,D){$45^\circ$}
-				\tkzMarkAngle[draw=red,fill=red,angle radius=1cm](B,C,E)
-				\tkzLabelAngle[sloped, pos=1.5](B,C,E){$15^\circ$}
-
-				% 在某些点上标记标签
-				\tkzLabelPoint[below left](A){$A$}
-				\tkzLabelPoint[above right](B){$B$}
-				\tkzLabelPoint[below](C){$C$}
-				\tkzLabelPoint[above](D){$D$}
-				\tkzLabelPoint[above](E){$E$}
-
-				% 绘制带有标签的标注
-				\tkzDrawSegment(A,C)
-				\tkzLabelSegment[below](A,C){20}
-
-				% 寻找交点 F,并绘制直线
-				\tkzInterLL(A,B)(C,E) \tkzGetPoint{F}
-				\tkzDrawPoints(F)
-				\tkzLabelPoint[above left](F){$F$}
-
-				% 绘制直线 FG
-				\tkzDefPointBy[projection=onto B--C](F) \tkzGetPoint{G}
-				\tkzDrawSegment(F,G)
-				\tkzLabelPoint[right](G){$G$}
-			\end{tikzpicture}
 		\end{center}
 
 		\begin{itemize}
-			\item \textbf{确定三角形} $\triangle{ACF}$ 是等腰直角三角形,得出:
-			      \[
-				      CF = AC = 20 \text{（海里）}.
-			      \]
-			\item \textbf{角度关系}:设 $\alpha = 15^\circ$,则:
-			      \[
-				      FG = \sin{\alpha} \cdot FC, \quad CG = \cos{\alpha} \cdot FC.
-			      \]
-			\item \textbf{角度推导}:由三角形角度关系得:
-			      \[
-				      \angle ABC = 180^\circ - \angle CAB - 90^\circ - 15^\circ = 30^\circ.
-			      \]
-			\item \textbf{计算 BG}:使用三角关系得:
-			      \[
-				      BG = \sqrt{3} \cdot FG.
-			      \]
-			\item \textbf{求解BC}: 综合前述公式得:
-			      \[
-				      BC = BG + CG = \sqrt{3} \cdot 20 \cdot \sin{\alpha} + 20 \cdot \cos{\alpha}.
-			      \]
-			\item \textbf{最终结果}:
-			      \[
-				      BC^2 = 400 \left( 3 \sin^2{\alpha} + 2\sqrt{3} \sin{\alpha} \cos{\alpha} + \cos^2{\alpha} \right).
-			      \]
-			\item \textbf{化简倍角公式}:
-			      \[
-				      \text{倍角公式:} \sin{2\alpha} = 2 \sin{\alpha} \cos{\alpha}, \quad \sin^2{\alpha} + \cos^2{\alpha} = 1,
-			      \]
-			      得到:
-			      \[
-				      BC^2 = 400 \left( 2 \sin^2{\alpha} + \sqrt{3} \sin{2\alpha} + 1 \right).
-			      \]
-			\item \textbf{最后化简}:
-			      \[
-				      BC^2 = 400 \left( 1 - \frac{\sqrt{3}}{2} + \frac{\sqrt{3}}{2} + 1 \right),
-			      \]
-			      最终得出:
-			      \[
-				      BC = 20\sqrt{2} \text{（海里）}.
-			      \]
-		\end{itemize}
+			\item 计算$\angle{A}$和$\angle{B}$
+
+			      很明显$\angle{A}=\ang{45}$, 则有$\angle{B}=\ang{180}-\ang{45} - \ang{90} - \ang{15}=\ang{30}$.
+			\item 由正弦定理:
+			      \begin{equation*}
+				      \frac{a}{\sin\angle{A}} = \frac{b}{\sin\angle{B}} = \frac{c}{\sin\angle{C}}
+			      \end{equation*}得
+			      \begin{align*}
+				      BC & = \frac{AC}{\sin\angle{B}}\sin\angle{A} \\
+				         & = \frac{20}{\frac12}\frac{\sqrt{2}}{2}  \\
+						 & = 20\sqrt{2}(\text{海里})
+			      \end{align*}
+		\end{itemiz}
 	\end{solution}
 
 	\question 一个圆内接三角形 \( ABC \),$\angle A$的平分线交$BC$于$D$,交外接圆于$E$,求证: \( AD \cdot AE = AC \cdot
