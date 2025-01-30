@@ -177,42 +177,66 @@
 	\begin{enumerate}[label=(\arabic*)]
 		\item 求出它的图像的顶点坐标和对称轴方程；
 		\item 画出它的图像；
-		\item 分别求出它的图像和 \( x \)轴、$ y $的交点坐标.
+		\item 分别求出它的图像和 \( x \)轴、$ y $轴的交点坐标.
 	\end{enumerate}
 
 	\begin{solution}
 		\begin{enumerate}[label=(\arabic*)]
 			\item
-			      \begin{align*}
-				      \text{对称轴的方程为} x = -\frac{b}{2a} & = 3,  \\
-				      \text{将} x = 3 \text{代入得:} y     & = -4, \\
-			      \end{align*}
-			\item
-			      \begin{center}
-				      \begin{tikzpicture}
-					      \begin{axis}[
-							      axis lines=middle,          % 坐标轴通过原点
-							      xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
-							      grid=major,                 % 显示网格
-							      xmin=-2, xmax=8,            % x轴范围
-							      ymin=-5, ymax=10,           % y轴范围
-							      domain=-4:8,                % 定义函数绘制范围
-							      samples=100,                % 样本点数,越大曲线越平滑
-							      enlargelimits=true,         % 扩展范围
-						      ]
-						      % 绘制抛物线 y = ax^2 + bx + c
-						      \addplot[smooth, thick, blue] {x^2 - 6*x + 5};
-						      % 添加图例
-						      \addlegendentry{$y = x^2 - 6x + 5$}
-					      \end{axis}
-				      \end{tikzpicture}
-			      \end{center}
+			      根据对称轴的方程
+			      \begin{equation*}
+				      x = -\frac{b}{2a}
+			      \end{equation*}
+			      代入
+			      \begin{equation*}
+				      a=1, b = -6
+			      \end{equation*}
+			      得对称轴的方程为:
+			      \begin{equation*}
+				      x = 3
+			      \end{equation*}
+			      顶点位于对称轴上，将$x=3$代入函数方程得:
+			      \begin{equation*}
+				      y = -4
+			      \end{equation*}
+			      所以顶点的坐标为$(3,-4)$.
 
-			\item \begin{align*}
-				      y & = x^2 - 6x + 5                            \\
-				        & = (x - 1)(x - 5)                          \\
-				        & \text{则有两个交点分别为:} (1, 0) \text{和} (5, 0).
-			      \end{align*}
+			\item
+			      \hfill
+			      \begin{tikzpicture}[baseline=(current bounding box.north)]
+				      \begin{axis}[
+						      axis lines=middle,          % 坐标轴通过原点
+						      xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
+						      grid=major,                 % 显示网格
+						      xmin=-2, xmax=8,            % x轴范围
+						      ymin=-5, ymax=10,           % y轴范围
+						      domain=-4:8,                % 定义函数绘制范围
+						      samples=100,                % 样本点数,越大曲线越平滑
+						      enlargelimits=true,         % 扩展范围
+					      ]
+					      % 绘制抛物线 y = ax^2 + bx + c
+					      \addplot[smooth, thick, blue] {x^2 - 6*x + 5};
+					      % 添加图例
+					      \addlegendentry{$y = x^2 - 6x + 5$}
+				      \end{axis}
+			      \end{tikzpicture}
+			      \hfill{}
+
+			\item
+			      \begin{enumerate}[label=\protect\circled{\arabic*}]
+				      \item 与$x$轴相交时$y=0$,即:
+				            \begin{align*}
+					            x^2 - 6x + 5 = 0 \\
+					            (x-1)(x-5) = 0   \\
+					            x_1=1, x_2=5
+				            \end{align*}
+				            所以与$x$轴有两个交点,$(1,0)$和$(5,0)$.
+				      \item 与$y$轴相交时$x=0$,即:
+				            \begin{equation*}
+					            y=0^2 - 6\times0 + 5 = 5
+				            \end{equation*}
+				            所以与$y$轴的交点为:$(0,5)$.
+			      \end{enumerate}
 		\end{enumerate}
 
 	\end{solution}
