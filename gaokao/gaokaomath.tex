@@ -111,20 +111,153 @@ tocloft,	 	% 格式化目录
 
 
 % TODO 设计封面样式
-\title{历年高考数学试卷及答案}
-\author{收集于网络 by 大象同学}
+% \title{历年高考数学试卷及答案}
+% \author{收集于网络 by 大象同学}
 
-% \includeonly{fujian1977}
+\includeonly{fujian1977}
 \begin{document}
-\maketitle
+% \maketitle
+\begin{titlepage}
+	\centering
+
+	\begin{tikzpicture}[remember picture, overlay]
+		% 1. 绘制柔和背景
+		\fill[green!10] (current page.south west) rectangle (current page.north east); % 浅绿背景
+
+		% 2. 添加几何图案
+		% 左侧三角形
+		% \fill[orange!30] (current page.south west) -- ++(6,18) -- ++(-6,0) -- cycle;
+		% 右侧三角形
+		% \fill[yellow!30] (current page.south east) -- ++(-6,18) -- ++(6,0) -- cycle;
+
+		% 圆形装饰
+		\draw[fill=cyan!30, draw=none] ($(current page.center)+(5,-5)$) circle (3cm);
+		\draw[fill=magenta!40, draw=none, rounded corners=5pt] ($(current page.center)+(-5,-8)$) rectangle +(5cm, 3cm);
+		\begin{scope}[shift=($(current page.west)$)]
+			\tkzDefPoints{0/0/c,1/0/d,3/0/a0}
+			\def\tkzRadius{1}
+			\tkzDrawCircle(c,d)
+			\foreach \an in {0,10,...,350}
+				{
+					\tkzDefPointBy[rotation=center c angle \an](a0) \tkzGetPoint{a}
+					\tkzDefLine[tangent from = a](c,d)
+					\tkzGetPoints{e}{f}
+					\tkzDrawLines[white, very thick](a,f a,e)
+					\tkzDrawSegments[white, very thick](c,e c,f)
+				}
+		\end{scope}
+
+		\begin{scope}[yshift=-4cm]
+			\tkzInit[ymin=-3,ymax=5,xmin=-5,xmax=7]
+			\tkzClip
+			\tkzDefPoints{-2.5/-2/A,2/4/B,5/-1/C}
+			\tkzFindAngle(C,A,B)
+			\tkzGetAngle{anglea}
+			\tkzDefPointBy[rotation=center A angle 1*\anglea/3](C)
+			\tkzGetPoint{TA1}
+			\tkzDefPointBy[rotation=center A angle 2*\anglea/3](C)
+			\tkzGetPoint{TA2}
+			\tkzFindAngle(A,B,C)
+			\tkzGetAngle{angleb}
+			\tkzDefPointBy[rotation=center B angle 1*\angleb/3](A)
+			\tkzGetPoint{TB1}
+			\tkzDefPointBy[rotation=center B angle 2*\angleb/3](A)
+			\tkzGetPoint{TB2}
+			\tkzFindAngle(B,C,A)
+			\tkzGetAngle{anglec}
+			\tkzDefPointBy[rotation=center C angle 1*\anglec/3](B)
+			\tkzGetPoint{TC1}
+			\tkzDefPointBy[rotation=center C angle 2*\anglec/3](B)
+			\tkzGetPoint{TC2}
+			\tkzInterLL(A,TA1)(B,TB2)
+			\tkzGetPoint{U1}
+			\tkzInterLL(A,TA2)(B,TB1)
+			\tkzGetPoint{V1}
+			\tkzInterLL(B,TB1)(C,TC2)
+			\tkzGetPoint{U2}
+			\tkzInterLL(B,TB2)(C,TC1)
+			\tkzGetPoint{V2}
+			\tkzInterLL(C,TC1)(A,TA2)
+			\tkzGetPoint{U3}
+			\tkzInterLL(C,TC2)(A,TA1)
+			\tkzGetPoint{V3}
+			\tkzDrawPolygons(A,B,C U1,U2,U3 V1,V2,V3)
+			\tkzDrawLines[add=2 and 2,very thin,dashed](A,TA1 B,TB1 C,TC1 A,TA2 B,TB2 C,TC2)
+			\tkzDrawPoints(U1,U2,U3,V1,V2,V3)
+			\tkzLabelPoint[left](V1){$s_a$}
+			\tkzLabelPoint[right](V2){$s_b$}
+			\tkzLabelPoint[below](V3){$s_c$}
+			\tkzLabelPoint[above left](A){$A$}
+			\tkzLabelPoints[above right](B,C)
+			\tkzLabelPoint(U1){$t_a$}
+			\tkzLabelPoint[below left](U2){$t_b$}
+			\tkzLabelPoint[above](U3){$t_c$}
+		\end{scope}
+
+		\begin{scope}[yshift=-17cm, xshift=-5cm, color=green!30!red!30]
+			\begin{axis}[axis lines=middle, 
+				ticks = none, 
+				xmin = -1.5*pi, 
+				xmax = 1.5*pi, 
+				ymin = -1.5, 
+				ymax = 1.5, 
+				xlabel = $x$, 
+				ylabel = $y$,
+				xlabel style={anchor=west},
+				ylabel style={anchor=south},
+				samples=100,
+				]
+				\addplot[domain=-pi:pi]{sin(deg(x))};
+				\path node[below] at ({pi}, 0){$\pi$};
+				\path node[above] at ({-pi}, 0){$-\pi$};
+			\end{axis}
+		\end{scope}
+
+		% 3. 添加代数方程
+		\node[anchor=south west, text=blue!50!black, font=\large, rotate=30] at ($(current page.center)+(-7,5)$) {
+			$y = ax^2 + bx + c$
+		};
+		\node[anchor=north east, text=white, font=\large, rotate=90] at ($(current page.center)+(7,-3)$) {
+			$e^{i\pi}+1=0$
+		};
+		\node[anchor=north west, text=blue!50!black, font=\large] at ($(current page.center)+(-6,-6)$) {
+			$\int_a^b f(x)\,\mathrm{d}x$
+		};
+
+		% 4. 添加标题文字
+		\node [
+			text=green!50!blue,
+			font=\bfseries\zihao{0},
+			align=center
+		] at ($(current page.center)+(0,4)$) {历年高考数学真题集};
+
+		% 副标题文字
+		\node [
+			text=black,
+			font=\Large,
+			align=center
+		] at ($(current page.center)+(0,1.5)$) {精选全国各省市试卷};
+
+		% 出版社信息
+		\node [
+			text=gray,
+			font=\normalsize,
+			align=center
+		] at ($(current page.center)+(0,-10)$) {大象同学整理};
+
+		% 5. 添加装饰线条
+		% \draw[line width=1mm, blue!50] ($(current page.center)+(-8,-8)$) -- ($(current page.center)+(8,8)$);
+		% \draw[line width=1mm, orange!50] ($(current page.center)+(-8,8)$) -- ($(current page.center)+(8,-8)$);
+	\end{tikzpicture}
+\end{titlepage}
 \thispagestyle{empty}
 \pagebreak
 \setlength{\columnsep}{1cm}
 % \begin{multicols}{2}
 % TODO 设置目录样式
 {\color{cyan}
-\tableofcontents
-\thispagestyle{empty}
+	\tableofcontents
+	\thispagestyle{empty}
 }
 % \end{multicols}
 
