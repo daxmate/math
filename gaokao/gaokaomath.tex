@@ -131,8 +131,8 @@ tocloft,	 	% 格式化目录
 		% \fill[yellow!30] (current page.south east) -- ++(-6,18) -- ++(6,0) -- cycle;
 
 		% 圆形装饰
-		\draw[fill=cyan!30, draw=none] ($(current page.center)+(5,-5)$) circle (3cm);
-		\draw[fill=magenta!40, draw=none, rounded corners=5pt] ($(current page.center)+(-5,-8)$) rectangle +(5cm, 3cm);
+		\draw[fill=cyan, draw=none, opacity=.25] ($(current page.center)+(5,-5)$) circle (3cm);
+		\draw[fill=magenta, draw=none, rounded corners=25pt, opacity=.15] ($(current page.center)+(-5,-8)$) rectangle +(5cm, 3cm);
 		\begin{scope}[shift=($(current page.west)$)]
 			\tkzDefPoints{0/0/c,1/0/d,3/0/a0}
 			\def\tkzRadius{1}
@@ -194,30 +194,60 @@ tocloft,	 	% 格式化目录
 			\tkzLabelPoint[above](U3){$t_c$}
 		\end{scope}
 
-		\begin{scope}[yshift=-17cm, xshift=-5cm, color=green!30!red!30]
-			\begin{axis}[axis lines=middle, 
-				ticks = none, 
-				xmin = -1.5*pi, 
-				xmax = 1.5*pi, 
-				ymin = -1.5, 
-				ymax = 1.5, 
-				xlabel = $x$, 
-				ylabel = $y$,
-				xlabel style={anchor=west},
-				ylabel style={anchor=south},
-				samples=100,
-				]
-				\addplot[domain=-pi:pi]{sin(deg(x))};
-				\path node[below] at ({pi}, 0){$\pi$};
-				\path node[above] at ({-pi}, 0){$-\pi$};
-			\end{axis}
+		% \begin{scope}[yshift=-17cm, xshift=-5cm, color=green!30!red!30]
+		% 	\begin{axis}[axis lines=middle,
+		% 			ticks = none,
+		% 			xmin = -1.5*pi,
+		% 			xmax = 1.5*pi,
+		% 			ymin = -1.5,
+		% 			ymax = 1.5,
+		% 			xlabel = $x$,
+		% 			ylabel = $y$,
+		% 			xlabel style={anchor=west},
+		% 			ylabel style={anchor=south},
+		% 			samples=100,
+		% 		]
+		% 		\addplot[domain=-pi:pi]{sin(deg(x))};
+		% 		\path node[below] at ({pi}, 0){$\pi$};
+		% 		\path node[above] at ({-pi}, 0){$-\pi$};
+		% 	\end{axis}
+		% \end{scope}
+
+		\tdplotsetmaincoords{65}{165}
+		\begin{scope}[tdplot_main_coords, yshift=-16cm, scale=2.3, color=black!55]
+				\draw[tdplot_screen_coords] (0,0) circle [radius=1];
+				\foreach \t in {0, 10, ..., 350}{
+						\tdplotsetrotatedcoords{90}{\t}{0}
+						\draw[tdplot_rotated_coords,very thin] (0,0) circle [radius=1];
+						\tdplotsetrotatedcoords{180}{90}{0}
+						\draw[tdplot_rotated_coords,very thin] (0,0,{sin(\t)}) circle [radius={cos(\t)}];
+					}
+				\clip[tdplot_screen_coords] (-5,-3) rectangle (5,3);
+				\draw[tdplot_screen_coords,white] (-4.9,-2.9) rectangle (4.9,2.9);
+				\foreach \k in {10,20,...,80}{
+						% steiner circles on the plane
+						\draw[] ({1/cos(\k)},0) circle [radius={sqrt(1/(cos(\k)^2)-cos(\k))}];
+						\draw[] (0,{-sin(\k)/cos(\k)}) circle [radius={1/cos(\k)}];
+					}
+				\foreach \k in {100,110,...,170}{
+						% steiner circles on the plane
+						\draw[] ({1/cos(\k)},0) circle [radius={sqrt(1/(abs(cos(\k))^2)-abs(cos(\k)))}];
+						\draw[] (0,{-sin(\k)/cos(\k)}) circle [radius={1/cos(\k)}];
+					}
+				\draw[] (0,0) circle [radius=1]; % central steiner circle
+				\draw[] (0,-7,0) -- (0,7,0); % circle at infinity
+				\draw[] (-7,0,0) -- (7,0,0); % circle at infinity
+				% axes
+				\draw[-latex,thick] (-2,0,0) -- (2,0,0) node[pos=1,below left]{$x,\xi$}; % x-axis
+				\draw[-latex,thick] (0,-3.5,0) -- (0,3.5,0) node[pos=1,below right]{$y,\eta$}; % y-axis
+				\draw[-latex,thick] (0,0,-2) -- (0,0,1.5) node[pos=1,above right]{$z,\zeta$}; % z-axis
 		\end{scope}
 
 		% 3. 添加代数方程
 		\node[anchor=south west, text=blue!50!black, font=\large, rotate=30] at ($(current page.center)+(-7,5)$) {
 			$y = ax^2 + bx + c$
 		};
-		\node[anchor=north east, text=white, font=\large, rotate=90] at ($(current page.center)+(7,-3)$) {
+	\node[anchor=north east, text=black!55, font=\zihao{1}, rotate=90] at ($(current page.center)+(5,-3)$) {
 			$e^{i\pi}+1=0$
 		};
 		\node[anchor=north west, text=blue!50!black, font=\large] at ($(current page.center)+(-6,-6)$) {
