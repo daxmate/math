@@ -1,49 +1,65 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
+% exam文档中题解的标题设置
+\renewcommand{\solutiontitle}{\textbf{解:}}
+% 修改选项标号的样式
+\renewcommand{\choicelabel}{(\Alph{choice})}
+% 设置填空题答案与横线之间的间距
+\setlength{\answerclearance}{6pt}
+% hfs用于添加水平空白于选择题干与答案之间,最后加上一个2cm的括号
+\newcommand\hfs{\hfill (\hspace{2cm})}
+% 设置正确答案的样式
+\CorrectChoiceEmphasis{\color{magenta}\bfseries}
+% 将页面风格设置为空,去除页眉页脚和页码等
 \pagestyle{empty}
+% 屏蔽掉一些不影响的警告
 \usepackage{silence}
 \WarningFilter{latexfont}{Font shape}
 \WarningFilter{latexfont}{Some font}
 \WarningFilter{latex}{Label `question}
 \WarningFilter{latex}{There were multiply-defined labels}
-\usepackage[punct=quanjiao]{ctex}
+\usepackage{ctex}
 \usepackage{
-amsmath,
-amssymb,
-amsthm,
-csquotes,
-arcs,
-enumitem,
-tikz,
-pgfplots,
-tikz-3dplot,
-tkz-euclide,
-siunitx,
-titlesec,
-caption,
+ctex, % 中文支持
+amsmath, % ams数学包
+amssymb, % ams数学符号
+amsthm,  % ams定理环境
+csquotes,% 处理引号
+arcs,	 % 添加弧的符号
+enumitem,% 列表环境增强
+tikz,	 % 绘图工具
+pgfplots,% 绘制函数曲线
+tikz-3dplot, % 3D 图像
+tkz-euclide, % 简单几何绘图
+siunitx,	 % 数字单位处理
+titlesec,	 % 标题设置
+caption,	 % 图表标题
+multicol,	 % 目录多列
+hyperref, 	 % 处理超链接
 }
-\titleformat{\section}
-  {\centering\bfseries} % 格式：居中、大号字体、加粗
-  {\thesection}              % 编号样式
-  {1em}                      % 编号与标题间距
-  {}                         % 标题前无额外内容
-  \newcommand\maintitle[1]{
-	  \begin{center}
-		\Huge\textbf{#1}
-	  \end{center}
-  }
 
+% 修改section的标题样式
+\titleformat{name=\section}
+  {\centering\bfseries} % 格式：居中、大号字体、加粗
+  {}              		% 编号样式
+  {0pt}                 % 编号与标题间距
+  {}                    % 标题前无额外内容
+
+% 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
 
-\renewcommand{\choicelabel}{(\Alph{choice})}
-
+% 定义一个数字加点标号的列表环境
 \newenvironment{mathenum}
 {\begin{enumerate}[label=\arabic*.]}
 		{\end{enumerate}}
 
+% 定义一个括号数字标号的列表环境
 \newenvironment{penum}
 {\begin{enumerate}[label=(\arabic*)]}
 		{\end{enumerate}}
+
+% 解决弧标记显示的问题
+% TODO 这个要了解一下有没有其他实现的方式
 \makeatletter
 \providecommand\@gobblethree[3]{}
 \patchcmd{\over@under@arc}
@@ -52,13 +68,14 @@ caption,
 {}{}
 \makeatother
 
+
+% 带圈数字用tikz实现
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+% 定义一个带圈数字标号的列表环境
 \newenvironment{cenum} {\begin{enumerate}[label=\protect\circled{\arabic*}]} {\end{enumerate}}
 
-\setlength{\answerclearance}{6pt}
-\newcommand\hfs{\hfill (\hspace{2cm})}
-\CorrectChoiceEmphasis{\color{magenta}\bfseries}
+% 加载tikz库
 \usetikzlibrary{
 	angles,
 	backgrounds,
@@ -74,9 +91,23 @@ caption,
 	shapes,
 	shapes.symbols,
 }
-\pgfplotsset{compat=1.17}
-\renewcommand{\solutiontitle}{\textbf{解:}}
+% 设置pgfplots兼容最新的功能
+\pgfplotsset{compat=1.18}
+
+
+\title{历年高考数学试卷及答案}
+\author{收集于网络 by 大象同学}
+
+% \includeonly{beijing1977}
 \begin{document}
+\maketitle
+\pagebreak
+\begin{multicols}{2}
+	% TODO 设置目录样式
+	\color{cyan}
+	\tableofcontents
+\end{multicols}
+
 \include{beijing1977}
 \include{fujian1977}
 \include{hebei1977}
