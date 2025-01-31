@@ -1,6 +1,5 @@
-\section*{1977 年普通高等学校招生考试（北京卷） }
+\section[1977年高考数学试卷及答案(北京)理科]{1977 年普通高等学校招生考试（北京卷）\\\Huge{理科数学} }
 
-\maintitle{理科数学}
 \begin{questions}
 	\question 解方程: \( \sqrt{x - 1} = 3 - x \).
 	\begin{solution}
@@ -149,6 +148,7 @@
 		\end{cenum}
 	\end{solution}
 
+	\pagebreak
 	\question 某工厂今年七月份的产值为 \( 100 \)万元,以后每月产值比上月增加 \( 20\%
 	\),问今年七月份到十月份总产值是多少？
 
@@ -200,7 +200,7 @@
 				      y = -4
 			      \end{equation*}
 			      所以顶点的坐标为$(3,-4)$.
-
+			      \pagebreak
 			\item
 			      \hfill
 			      \begin{tikzpicture}[baseline=(current bounding box.north)]
@@ -360,9 +360,11 @@
 				\begin{axis}[
 						axis lines=middle,          % 坐标轴通过原点
 						xlabel={$x$}, ylabel={$y$}, % 坐标轴标签
-						grid=major,                 % 显示网格
+						% grid=major,                 % 显示网格
 						xmin=-8, xmax=8,            % x轴范围
-						ymin=-8, ymax=8,           % y轴范围
+						ymin=-8, ymax=8,            % y轴范围
+						xlabel style={anchor=west}, % x轴标签位置
+						ylabel style={anchor=south},% y轴标签位置
 						domain=-8:8,                % 定义函数绘制范围
 						samples=100,                % 样本点数,越大曲线越平滑
 						enlargelimits=true,         % 扩展范围
@@ -399,7 +401,7 @@
 			      \end{cenum}
 			      综上:
 			      \begin{math}
-					  f'(x) = \left\{\begin{array}{ll}
+				      f'(x) = \left\{\begin{array}{ll}
 					      2x\sin\frac{\pi}{x} + x^2\cos\frac{\pi}{x} & (x \neq 0) \\
 					      0                                          & (x = 0)
 				      \end{array}\right.
@@ -409,7 +411,7 @@
 		\item 求椭圆 \( \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \)绕 $x$轴旋转而成的旋转体体积.
 		      \begin{solution}
 			      用切片法对旋转体垂直于 \( x \)轴方向的圆盘进行积分来计算旋转体的体积:\\
-			      每个圆盘的面积为: \( \pi y^2 = \pi (1-\frac{x^2}{a^2})b^2 \) \\
+			      每个圆盘的面积为: \[ \pi y^2 = \pi (1-\frac{x^2}{a^2})b^2 \] \\
 			      则体积为:
 			      \begin{align*}
 				      \int_{-a}^{a}\pi(1-\frac{x^2}{a^2})b^2 & = 2\pi ab^2 - \frac{\pi b^2\cdot 2a^3}{3a^2} \\
@@ -423,6 +425,11 @@
 	\question
 	\begin{enumerate}[label=(\arabic*)]
 		\item 试用 \( \epsilon - \delta \)语言叙述\enquote{函数 \( f(x) \)在点 \( x = x_0 \)处连续}的定义.
+		      \begin{solution}
+			      若对于任给的正数,总存在某一正数$\epsilon$,使得当$x-x_0<\delta$时, 总有$|f(x)-f(x_0)| <
+				      \epsilon$，则称函数$f(x)$在点$x_0$处连续.
+		      \end{solution}
+		\item 试证明: 若 $f(x)$ 在点 $x = x_0$ 处连续, 且 $f(x_0) > 0$, 则存在一个 $x_0$ 的 $(x_0 − \delta, x_0 + \delta)$, 在这个邻域内, 处处有 $f(x) > 0$.
 	\end{enumerate}
 
 \end{questions}
