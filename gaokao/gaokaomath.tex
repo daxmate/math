@@ -1,5 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers, addpoints]{examz}
+% 将页面风格设置为空,去除页眉页脚和页码等
+\pagestyle{empty}
 % exam文档中题解的标题设置
 \renewcommand{\solutiontitle}{\textbf{解:}}
 % 修改选项标号的样式
@@ -23,15 +25,12 @@
 {\renewcommand{\solutiontitle}{\textbf{证明：}}\begin{solution}} % 环境开始部分
 {\end{solution}}            % 环境结束部分
 
-% 将页面风格设置为空,去除页眉页脚和页码等
-\pagestyle{empty}
 % 屏蔽掉一些不影响的警告
 \usepackage{silence}
 \WarningFilter{latexfont}{Font shape}
 \WarningFilter{latexfont}{Some font}
 \WarningFilter{latex}{Label `question}
 \WarningFilter{latex}{There were multiply-defined labels}
-\usepackage{ctex}
 \usepackage{
 ctex, 	 		% 中文支持
 amsmath, 		% ams数学包
@@ -49,14 +48,17 @@ titlesec,	 	% 标题设置
 caption,	 	% 图表标题
 multicol,	 	% 多列环境
 hyperref, 	 	% 处理超链接
+tocloft,	 	% 格式化目录
 }
-
 % 修改section的标题样式
 \titleformat{name=\section}
   {\centering\bfseries} % 格式：居中、大号字体、加粗
   {}              		% 编号样式
   {0pt}                 % 编号与标题间距
   {}                    % 标题前无额外内容
+\setcounter{secnumdepth}{0} % 取消section的计数
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % 设置目录中用点线连接目录内容与页码
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries} % 设置目录标题的样式
 
 % 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
@@ -112,15 +114,19 @@ hyperref, 	 	% 处理超链接
 \title{历年高考数学试卷及答案}
 \author{收集于网络 by 大象同学}
 
-\includeonly{beijing1977}
+% \includeonly{fujian1977}
 \begin{document}
 \maketitle
+\thispagestyle{empty}
 \pagebreak
-\begin{multicols}{2}
-	% TODO 设置目录样式
-	\color{cyan}
-	\tableofcontents
-\end{multicols}
+\setlength{\columnsep}{1cm}
+% \begin{multicols}{2}
+% TODO 设置目录样式
+{\color{cyan}
+\tableofcontents
+\thispagestyle{empty}
+}
+% \end{multicols}
 
 \include{beijing1977}
 \include{fujian1977}
@@ -132,7 +138,6 @@ hyperref, 	 	% 处理超链接
 \include{quanguo1998}
 \end{document}
 \usepackage{graphicx, wrapfig}
-\usepackage{caption}
 \newcounter{xcord}
 \newcounter{ycord}
 \newcounter{total}
