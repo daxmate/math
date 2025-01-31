@@ -427,10 +427,21 @@
 	\begin{enumerate}[label=(\arabic*)]
 		\item 试用 \( \epsilon - \delta \)语言叙述\enquote{函数 \( f(x) \)在点 \( x = x_0 \)处连续}的定义.
 		      \begin{solution}
-			      若对于任给的正数,总存在某一正数$\epsilon$,使得当$x-x_0<\delta$时, 总有$|f(x)-f(x_0)| <
+			      若对于任给的正数,总存在某一正数$\epsilon$,使得当$|x-x_0|<\delta$时, 总有$|f(x)-f(x_0)| <
 				      \epsilon$，则称函数$f(x)$在点$x_0$处连续.
 		      \end{solution}
 		\item 试证明: 若 $f(x)$ 在点 $x = x_0$ 处连续, 且 $f(x_0) > 0$, 则存在一个 $x_0$ 的 $(x_0 − \delta, x_0 + \delta)$, 在这个邻域内, 处处有 $f(x) > 0$.
+		      \begin{proofsolution}
+			      根据定义设$\epsilon=\frac{f(x)}{2}>0$,必存在$\delta>0$,当$|x-x_0|<\delta$时有:
+			      \begin{equation*}
+				      |f(x) - f(x_0)| < \epsilon = \frac{f(x_0)}{2}
+			      \end{equation*}
+			      解不等式有:
+			      \begin{equation*}
+				      0 < \frac{f(x_0)}{2} < f(x) < \frac{3f(x_0)}{2}
+			      \end{equation*}
+			      所以在邻域$(x_0-\delta, x_0 + \delta)$内处处有$f(x)>0$.
+		      \end{proofsolution}
 	\end{enumerate}
 
 \end{questions}
