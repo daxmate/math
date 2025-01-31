@@ -1,5 +1,5 @@
 %!tex program = lualatex
-\documentclass[answers]{exam}
+\documentclass[answers, addpoints]{examz}
 % exam文档中题解的标题设置
 \renewcommand{\solutiontitle}{\textbf{解:}}
 % 修改选项标号的样式
@@ -10,8 +10,19 @@
 \newcommand\hfs{\hfill (\hspace{2cm})}
 % 设置正确答案的样式
 \CorrectChoiceEmphasis{\color{magenta}\bfseries}
-% 设置分数的中文名
+% 汉化
+% 因为文档类型本身的限制,在有多个questions环境时,计分表无法使用
+% TODO 以后看能不能解决这个问题
 \pointname{分}
+\hsword{得分}
+\hqword{题目}
+\hpword{分值}
+\htword{总计}
+% 定义 proofsolution 环境
+\newenvironment{proofsolution}
+{\renewcommand{\solutiontitle}{\textbf{证明：}}\begin{solution}} % 环境开始部分
+{\end{solution}}            % 环境结束部分
+
 % 将页面风格设置为空,去除页眉页脚和页码等
 \pagestyle{empty}
 % 屏蔽掉一些不影响的警告
