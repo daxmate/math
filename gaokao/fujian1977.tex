@@ -439,7 +439,7 @@
 
 	\question 某大队在农田基本建设的规划中,要测定被障碍物隔开的两点$A,
 		P$之间的距离,他们土法上马,在障碍物的两侧,选取两点$B$和$C$(如图),测得$AB=AC=50$m,$ \angle{BAC}=60^\circ,
-		\angle{ACP}=120^\circ, \angle{ACP}=135^\circ$,求$A$和$P$之间的距离.(答案可用最简根式表示).
+		\angle{ABP}=120^\circ, \angle{ACP}=135^\circ$,求$A$和$P$之间的距离.(答案可用最简根式表示).
 
 	\begin{figure}[htbp]
 		\centering
@@ -466,9 +466,15 @@
 			\tkzMarkAngle[size=.5, mark=s|](C,P,E)
 			\tkzLabelAngle[pos=.8](C,P,E){$45^\circ$}
 
-			\tkzMarkAngle[size=.6](B,C,E)
-			\tkzLabelAngle[pos=.8](B,C,E){$30^\circ$}
+			\tkzMarkAngle[size=.4](B,C,E)
+			\tkzLabelAngle[pos=.6](B,C,E){$30^\circ$}
 			\tkzMarkRightAngle[red](A,C,E)
+
+			\tkzMarkAngle[size=0.3](B,A,C)
+			\tkzLabelAngle[pos=.5](B,A,C){\ang{60}}
+
+			\tkzMarkAngle[size=0.3](P,B,A)
+			\tkzLabelAngle[pos=.5](P,B,A){\ang{120}}
 
 			\tkzLabelPoint[left](A){$A$}
 			\tkzLabelPoint[below](B){$B$}
@@ -485,7 +491,7 @@
 	\end{figure}
 
 	\begin{solution}
-		\begin{enumerate}[label=\zhnum{*}、, noitemsep]
+		\begin{enumerate}[label=\protect\circled{\arabic*}, noitemsep]
 			\item 为了书写方便,将$AC$的长度记为$x$
 			\item 由于 \( AB=AC\)且\( \angle{BAC}=60^\circ \),得 \( \triangle{ABC}是等边三角形 \),并有 \( BC=AB=AC=x \)
 			\item 从$C$点作垂线到$BP$并与$BP$,垂足记为$E$,$CE$与$AP$交于$O$点
@@ -504,17 +510,28 @@
 				      \frac{x}{\frac{\sqrt{3}}{2}x} & = \frac{CO}{OE} = \frac{AO}{OP}= \frac{2}{\sqrt{3}} \\
 			      \end{align*}
 			\item 因为 \( CE=\frac{\sqrt{3}}{2}x \),则有 \( CO = (2\sqrt{3} - 3)x, OE = \frac{6 - 3\sqrt{3}}{2}x \)
-			\item 则有 \( AO = \sqrt{AC^2 + CO^2} = \sqrt{x^2 - (2\sqrt{3} - 3)^2x^2} = \sqrt{12\sqrt{3} - 20}x \)
-			\item
+			\item \( AO = \sqrt{AC^2 + CO^2} = \sqrt{x^2 + (2\sqrt{3} - 3)^2x^2} = \sqrt{22 - 12\sqrt{3}}x \)
+			\item 因为$OP=\dfrac{\sqrt{3}}{2}AO$,所以有:
 			      \begin{align*}
-				      OP & = \frac{\sqrt{3}}{2} \cdot AO               \\
-				      AP & = AO + OP                                   \\
-				         & = (1+\frac{\sqrt{3}}{2})AO                  \\
-				         & = \frac{2+\sqrt{3}}{2}\sqrt{12\sqrt{3}-20}x \\
-				         & = \sqrt{\sqrt{3} + 1}x                      \\
-				         & = 50\sqrt{\sqrt{3} + 1}
+				      AP & = AO + OP                                     \\
+				         & = (1+\frac{\sqrt{3}}{2})AO                    \\
+				         & = \frac{2+\sqrt{3}}{2}\sqrt{22 - 12\sqrt{3}}x \\
+				         & = \frac{\sqrt{10 + 4\sqrt{3}}}{2}x            \\
+				         & = 25\sqrt{10 + 4\sqrt{3}}
 			      \end{align*}
-
+			\item 故$A,P$两点间的距离为$25\sqrt{10+4\sqrt{3}}\unit{\meter}$.
+		\end{enumerate}
+		\hrule
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
+			\color{green!50!blue}
+			\item 在上面的解法中计算得到$BP=BE+EP=\dfrac{1+\sqrt{3}}{2}x$后,直接利用余弦定理计算$AP$:
+			      \begin{align*}
+				      AP^2 & = AB^2 + BP^2 - 2AB\cdot BP\cos\ang{120}                                                     \\
+				           & = x^2 + \left( \frac{1+\sqrt{3}}{2}x \right)^2 - 2x\cdot\frac{1+\sqrt{3}}{2}x\cdot(-\frac12) \\
+				           & = \frac{8+2\sqrt{3}}{4}x^2 + \frac{2+2\sqrt{3}}{4}x^2                                        \\
+				           & = \frac{10+4\sqrt{3}}{4}x^2
+			      \end{align*}
+			  \item 所以$A,P$两点为之间的距离为$25\sqrt{10+4\sqrt{3}}\unit{\meter}$.
 		\end{enumerate}
 	\end{solution}
 
