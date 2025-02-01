@@ -399,19 +399,18 @@
 		\item 所有这些正六边形的周长之和$S$.
 	\end{enumerate}
 	\begin{solution}
-		\begin{enumerate}[label=\zhnum{*}、]
+		\begin{enumerate}[label=\protect\circled{\arabic{*}}]
 			\item 半径为$R$的圆的内接正六边形的边长也为$R$,所以第一个正六边形的边长为$6R$.
-			\item
-			      以第一个正六边形的边的中点连接而成的第二个正六边形的边长,根据三角关系得到边长为\\$\dfrac{\sqrt{3}}{2}R$,则边长为$3\sqrt{3}R$
+			\item 以第一个正六边形的边的中点连接而成的第二个正六边形的边长,根据三角关系得到边长为\\$\dfrac{\sqrt{3}}{2}R$,则边长为$3\sqrt{3}R$
 			\item 则前$n$个正六边形的周长之和为:
 			      \begin{align*}
-				      S_n & = 6R + 3\sqrt{3}R + \cdots +  (\frac{\sqrt{3}}{2})^{n-1}R \\
-				          & = 12\frac{1-(\frac{\sqrt{3}}{2})^n}{2-\sqrt{3}}R          \\
+				      S_n & = 6R + 3\sqrt{3}R + \cdots +  (\frac{\sqrt{3}}{2})^{n-1}R               \\
+				          & = 12\frac{1-(\frac{\sqrt{3}}{2})^n}{2-\sqrt{3}}R                        \\
+				          & = 12(2+\sqrt{3})\left[ 1 - \left( \frac{\sqrt{3}}{2} \right)^n \right]R
 			      \end{align*}
 			\item 所有这些正六边形的周长之和:
 			      \begin{align*}
-				      S & = \lim_{n\to\infty}12\frac{1-(\frac{\sqrt{3}}{2})^n}{2-\sqrt{3}}R \\
-				        & = \frac{12}{2-\sqrt{3}}R                                          \\
+				      S & = \lim_{n\to\infty}12(2+\sqrt{3})\left[ 1 - \left( \frac{\sqrt{3}}{2} \right)^n \right]R \\
 				        & = 12(2+\sqrt{3})R
 			      \end{align*}
 		\end{enumerate}
