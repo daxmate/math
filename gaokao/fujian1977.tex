@@ -602,7 +602,7 @@
 
 			\item 将 \( m = \dfrac{20\sqrt{3}}{3} \)代入式(a)得:
 			      \begin{equation*}
-					  r = \sqrt{\dfrac{112}{3}}=\dfrac43\sqrt{21}
+				      r = \sqrt{\dfrac{112}{3}}=\dfrac43\sqrt{21}
 			      \end{equation*}
 
 		\end{enumerate}
@@ -611,38 +611,50 @@
 	\question 设数列 $1,2,4, \cdots$前$n$项和是$S_n = a + bn + cn^2 +
 		dn^3$,求这数列的通项$a_n$的公式,并确定$a,b,c,d$的值.
 	\begin{solution}
-		\begin{enumerate}[label=\arabic*.]
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
 			\item $a_n = S_n - S_{n-1}$
 			      代入并化简:
 			      \begin{align*}
 				      a_n & = a + bn + cn^2 + dn^3 - a - b(n-1) - c(n-1)^2 - d(n-1)^3 \\
-				          & = b + 2cn -c + dn^3 -d(n^3 -3n^2 + 3n - 1)                \\
-				          & = b - c + d + (2c - 3d)n + 3dn^2
+				          & = b + (2n-1)c + (3n^2 - 3n + 1)d
 			      \end{align*}
 			\item 根据题目中的条件有:
 			      \begin{align*}
-				      a_0 & = 1 = b - c + d \tag{1}                               \\
-				      a_1 & = 2 = b - c + d + 2c - 3d + 3d = b + c + d\tag{2}     \\
-				      a_2 & = 4 = b - c + d + 4c - 6d + 12d = b + 3c + 7d \tag{3}
+				      a_1 & = 1 = b + c + d \tag{1}    \\
+				      a_2 & = 2 = b + 3c + 7d\tag{2}   \\
+				      a_3 & = 4 = b + 5c + 19d \tag{3}
 			      \end{align*}
-			      式(2) - 式(1)得 \[c=\frac12 \tag{4}\]
-			      将$c=\frac12$代入式(1)得 \[b+d=\frac32\tag{5}\]
-			      综合式(3)、(4)、(5)得
-			      \begin{align*}
-				      b & = \frac43 \\
-				      d & = \frac16
-			      \end{align*}
-			      另外因为$a_0 = a$,所以$a=1$.
+			      式(2) - 式(1)得
+			      \begin{equation*}
+				      2c + 6d =1 \tag{4}
+			      \end{equation*}
+			      式$(3)-$式$(2)$得
+			      \begin{equation*}
+				      2c + 12d = 2 \tag{5}
+			      \end{equation*}
+			      式$(5)-$式$(4)$得
+			      \begin{equation*}
+				      d = \frac16
+			      \end{equation*}
+			      将$d=\frac16$代入式$(4)$中得
+			      \begin{equation*}
+				      c = 0
+			      \end{equation*}
+			      将$c,d$代入式$(1)$中可得
+			      \begin{equation*}
+				      b = \frac56
+			      \end{equation*}
+			      另外因为$S_1 = 1 = a+b+c+d$,所以$a=0$.
 			\item 综上,$a,b,c,d$的值分别为:
 			      \begin{align*}
-				      a & = 1       \\
-				      b & = \frac43 \\
-				      c & = \frac12 \\
+				      a & = 0       \\
+				      b & = \frac56 \\
+				      c & = 0       \\
 				      d & = \frac16
 			      \end{align*}
 			      $a_n$的通项公式为:
 			      \begin{equation*}
-				      a_n = \frac12n^2 + \frac12n + 1
+				      a_n = \frac12n^2 - \frac12n + 1
 			      \end{equation*}
 
 		\end{enumerate}
