@@ -53,7 +53,7 @@
 		      \begin{minipage}[t]{0.5\textwidth}
 			      如图,在梯形 \( ABCD \)中, \( DM = MP = PA, MN \parallel PQ \parallel AB \), \( DC = 2\text{cm}, AB = 3.5\text{cm} \),求 \( MN \)和 \( PQ \)的长.
 		      \end{minipage}\hspace{5em}
-		      \begin{tikzpicture}[baseline=(current bounding box.north)]
+		      \begin{tikzpicture}[baseline=(current bounding box.center)]
 			      \tkzDefPoints{0/0/A, 3/0/B, 0.5/3/D, 2.5/3/C}
 			      \tkzDefPointOnLine[pos={1/3}](A,D)\tkzGetPoint{P}
 			      \tkzDefPointOnLine[pos={2/3}](A,D)\tkzGetPoint{M}
@@ -63,8 +63,8 @@
 			      \tkzDrawPolygon(A,B,C,D)
 			      \tkzDrawSegments(P,Q M,N)
 
-			      \tkzLabelSegment[above](D,C){$2$}
-			      \tkzLabelSegment[below](A,B){$3.5$}
+			      \tkzLabelSegment[above](D,C){$2$cm}
+			      \tkzLabelSegment[below](A,B){$3.5$cm}
 
 			      \tkzLabelPoints[left](D,M,P,A)
 			      \tkzLabelPoints[right](C,N,Q,B)
@@ -72,15 +72,17 @@
 		      \end{tikzpicture}
 
 		      \begin{solution}
-			      \begin{align*}
-				       & \because MN \parallel PQ \parallel AB \text{并且} DM = MP = PA \\
-				       & \therefore \frac{DC}{MN} = \frac{MN}{PQ} = \frac{PQ}{AB}     \\
-				       & \text{将数值代入得:}                                               \\
-				       & \frac{2}{MN} = \frac{MN}{PQ} = \frac{PQ}{3.5}                \\
-				       & \text{则有:} PQ = \frac{MN^2}{2} \text{和} PQ \cdot MN = 7      \\
-				       & MN = \sqrt[3]{14}                                            \\
-				       & PQ = \sqrt[3]{14^2} / 2                                      \\
-			      \end{align*}
+			      根据梯形的性质有:
+			      \begin{equation*}
+				      \begin{cases}
+					      DC + PQ = 2MN \\
+					      MN + AB = 2PQ
+				      \end{cases}
+			      \end{equation*}
+			      计算得:
+			      \begin{equation*}
+				      MN = 2.5\text{cm}, PQ = 3\text{cm}.
+			      \end{equation*}
 		      \end{solution}
 		\item 已经 \( \lg3=0.4771, \lg{x}=-3.5229 \),求 \( x \).
 		      \begin{solution}
