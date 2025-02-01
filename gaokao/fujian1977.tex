@@ -16,29 +16,26 @@
 
 		\item \( y = \dfrac{\cos{160^\circ} - \cos{170^\circ}}{\tan{155^\circ}} \)的值是正的还是负的？为什么？
 		      \begin{solution}
-			      \begin{tikzpicture}[scale=3]
-				      \tkzDefPoints{0/0/O, 1/0/A, -1/0/A'}
-				      \tkzDefShiftPointCoord[O](160:1){B}
-				      \tkzDefShiftPointCoord[O](170:1){C}
-				      \tkzDefShiftPointCoord[O](155:1){D}
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[
+							      xmin=-1, xmax=2.5*pi,
+							      ymin=-2, ymax=2,
+							      legend entries={$\cos{x}$, $\tan{x}$},
+							      title=$\cos{x}$和$\tan{x}$的函数图像,
+							      title style={anchor=north, yshift=-6cm}
+						      ]
+						      \addplot[domain=0:2*pi, color=blue, thick]{cos(deg(x))};
+						      \addplot[domain=0:2*pi, color=red, thick]{tan(deg(x))};
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
 
-				      \tkzDefLine[orthogonal=through B](O,A) \tkzGetPoint{x}
-				      \tkzInterLL(B,x)(O,A) \tkzGetPoint{B'}
-				      \tkzDefLine[orthogonal=through C](O,A) \tkzGetPoint{x}
-				      \tkzInterLL(C,x)(O,A) \tkzGetPoint{C'}
-				      \tkzDefLine[orthogonal=through D](O,A) \tkzGetPoint{x}
-				      \tkzInterLL(D,x)(O,A) \tkzGetPoint{D'}
-
-				      \tkzDrawSegments(A,A' O,B)
-				      \tkzDrawSegment[dim={$\cos{160^\circ}$, .25cm, below=2pt}](O,B')
-				      \tkzDrawSegments(A,O O,C)
-				      \tkzDrawSegment[dim={$\cos{170^\circ}$, .75cm, below=2pt}](O,C')
-				      \tkzDrawSegments(A,O O,D)
-				      \tkzDrawSegments[blue, thick](D,D' D',O)
-			      \end{tikzpicture}
-
-			      由三角函数的定义有\( \cos{160^\circ} < 0, \cos{170^\circ} < 0, \tan{155^\circ} < 0 \),并且有 \(
-			      \cos{160^\circ} > \cos{170^\circ} \),则分子为正数,而且分母为负数,所以 \( y \)的值为负.
+			      \begin{enumerate}[label=\protect\circled{\arabic*}]
+				      \item 余弦函数在第二象限单调递减,所以$\cos\ang{160} - \cos\ang{170} > 0$;
+				      \item 正切函数在第二象限小于零,所以$\tan\ang{155} < 0$;
+				      \item 综上,$y<0$.
+			      \end{enumerate}
 		      \end{solution}
 
 		\item 求函数 \( y = \dfrac{\lg(2-x)}{\sqrt{x-1}} \)的定义域.
