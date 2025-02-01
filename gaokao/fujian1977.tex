@@ -185,7 +185,7 @@
 				      \coordinate(D4) at (2,2,1);
 
 				      \draw[dashed] (B) -- (A) -- (D) (A) -- (A1) (A3) -- (A4) -- (B4) -- (B3) -- (B2) (B3) -- (C3) (B4)
-						  -- (C4);
+				      -- (C4);
 				      \draw(B) -- (C) -- (D) ;
 				      \draw(B) -- (B1) (C) -- (C1) (D) -- (D1);
 				      \draw(B1) -- (C1) -- (C2) -- (C3) -- (C4) -- (D4) -- (D3) -- (D2) -- (D1) -- (A1) -- (A2) -- (A3)
@@ -220,7 +220,7 @@
 				      \coordinate(D4) at (2,2,1);
 
 				      \draw (B) -- (A) -- (D) (A) -- (A1) (A3) -- (A4) -- (B4) -- (B3) -- (B2) (B3) -- (C3) (B4)
-						  -- (C4);
+				      -- (C4);
 				      \draw(B) -- (C) -- (D) ;
 				      \draw(B) -- (B1) (C) -- (C1) (D) -- (D1);
 				      \draw(B1) -- (C1) -- (C2) -- (C3) -- (C4) -- (D4) -- (D3) -- (D2) -- (D1) -- (A1) -- (A2) -- (A3)
@@ -293,16 +293,29 @@
 	\end{enumerate}
 	\question
 	\begin{enumerate}[label=(\arabic*)]
-		\item 解不等式: \( \frac{x^2 - x - 6}{x^2 + 2x + 2} < 0 \).
+		\item 解不等式: \( \dfrac{x^2 - x - 6}{x^2 + 2x + 2} < 0 \).
 		      \begin{solution}
-			      化简得:
-			      \begin{math}
-				      \frac{x^2 - x - 6}{x^2 + 2x + 2}  = \frac{(x-3)(x+2)}{(x+1)^2 + 1}
-			      \end{math}
+			      \begin{enumerate}[label=\protect\circled{\arabic*}]
+				      \item 化简得:
+				            \begin{equation*}
+					            \frac{x^2 - x - 6}{x^2 + 2x + 2}  = \frac{(x-3)(x+2)}{(x+1)^2 + 1}
+				            \end{equation*}
 
-			      因为分母 \( (x+1)^2 + 1  \)肯定大于0,所以有 \( (x-3)(x+2) < 0 \)
+				      \item 因为分母
+				            \begin{equation*}
+					            (x+1)^2 + 1 > 0
+				            \end{equation*}
 
-			      因此有 \( -2 < x < 3 \)
+				      \item 所以有
+				            \begin{equation*}
+					            (x-3)(x+2) < 0
+				            \end{equation*}
+
+				      \item 因此有
+				            \begin{equation*}
+					            -2 < x < 3
+				            \end{equation*}
+			      \end{enumerate}
 		      \end{solution}
 
 		\item 证明: \( \dfrac{2\cos\theta - \sin2\theta}{2\cos\theta + \sin2\theta} = \tan^2\left(\dfrac{90^\circ -
