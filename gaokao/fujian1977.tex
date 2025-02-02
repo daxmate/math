@@ -612,39 +612,75 @@
 		dn^3$,求这数列的通项$a_n$的公式,并确定$a,b,c,d$的值.
 	\begin{solution}
 		\begin{enumerate}[label=\protect\circled{\arabic*}]
-			\item $a_n = S_n - S_{n-1}$
-			      代入并化简:
-			      \begin{align*}
-				      a_n & = a + bn + cn^2 + dn^3 - a - b(n-1) - c(n-1)^2 - d(n-1)^3 \\
-				          & = b + (2n-1)c + (3n^2 - 3n + 1)d
-			      \end{align*}
 			\item 根据题目中的条件有:
-			      \begin{align*}
-				      a_1 & = 1 = b + c + d \tag{1}    \\
-				      a_2 & = 2 = b + 3c + 7d\tag{2}   \\
-				      a_3 & = 4 = b + 5c + 19d \tag{3}
-			      \end{align*}
-			      式(2) - 式(1)得
-			      \begin{equation*}
-				      2c + 6d =1 \tag{4}
-			      \end{equation*}
-			      式$(3)-$式$(2)$得
-			      \begin{equation*}
-				      2c + 12d = 2 \tag{5}
-			      \end{equation*}
-			      式$(5)-$式$(4)$得
-			      \begin{equation*}
-				      d = \frac16
-			      \end{equation*}
-			      将$d=\frac16$代入式$(4)$中得
-			      \begin{equation*}
+			      \begin{align}
+				      S_1 & = a + b + c + d     & = 1\label{eq:s1} \\
+				      S_2 & = a + 2b + 4c + 8d  & = 3\label{eq:s2} \\
+				      S_3 & = a + 3b + 9c + 27d & = 7\label{eq:s3}
+			      \end{align}
+			      \eqref{eq:s2} - \eqref{eq:s1}得
+			      \begin{equation}
+				      b + 3c + 7d =2 \label{eq:s2-s1}
+			      \end{equation}
+			      \eqref{eq:s3} - \eqref{eq:s2}得
+			      \begin{equation}
+				      b + 5c + 19d = 4
+				      \label{eq:s3-s2}
+			      \end{equation}
+			      \eqref{eq:s3-s2}-\eqref{eq:s2-s1}得
+			      \begin{align}
+				      2c + 12d & = 2 \nonumber \\
+				      c + 6d   & = 1
+				      \label{eq:c+6d=1}
+			      \end{align}
+			      将\eqref{eq:c+6d=1}代入\eqref{eq:s1}得
+			      \begin{equation}
+				      a+b = 5d
+				      \label{eq:a+b=5d}
+			      \end{equation}
+			      将\eqref{eq:c+6d=1}代入\eqref{eq:s2-s1}得
+			      \begin{equation}
+				      b+c = 5d
+				      \label{eq:b+c=5d}
+			      \end{equation}
+			      根据\eqref{eq:a+b=5d}和\eqref{eq:b+c=5d}得
+			      \begin{equation}
+				      a = c
+				      \label{eq:a=c}
+			      \end{equation}
+			      在$n>1$时有
+			      \begin{align}
+				      a_n & = S_n - S_{n-1} \nonumber                                           \\
+				          & = a + bn + cn^2 + dn^3 - a - b(n-1) - c(n-1)^2 - d(n-1)^3 \nonumber \\
+				          & = b + c(2n-1) + d(3n^2 - 3n + 1)
+				      \label{eq:an}
+			      \end{align}
+			      而此式也需要满足$n=1$,代入得
+			      \begin{equation}
+				      a_1 = b+c+d
+				      \label{eq:a1}
+			      \end{equation}
+			      而$S_1= a_1$,所以
+			      \begin{equation}
+				      a= 0
+				      \label{eq:a}
+			      \end{equation}
+			      根据\eqref{eq:a=c}得
+			      \begin{equation}
 				      c = 0
-			      \end{equation*}
-			      将$c,d$代入式$(1)$中可得
-			      \begin{equation*}
+				      \label{eq:c}
+			      \end{equation}
+			      根据\eqref{eq:c+6d=1}得
+			      \begin{equation}
+				      d = \frac16
+				      \label{eq:d}
+			      \end{equation}
+			      根据\eqref{eq:a+b=5d}和\eqref{eq:a}得:
+			      \begin{equation}
 				      b = \frac56
-			      \end{equation*}
-			      另外因为$S_1 = 1 = a+b+c+d$,所以$a=0$.
+				      \label{eq:b}
+			      \end{equation}
+
 			\item 综上,$a,b,c,d$的值分别为:
 			      \begin{align*}
 				      a & = 0       \\

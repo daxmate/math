@@ -66,6 +66,8 @@ tocloft,	 	% 格式化目录
 {\setcounter{equation}{0}
 \oldsolution}
 {\oldendsolution}
+% 重新定义eqref命令
+\renewcommand{\eqref}[1]{式~(\ref{#1})}
 
 % 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
