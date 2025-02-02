@@ -59,6 +59,13 @@ tocloft,	 	% 格式化目录
 \setcounter{secnumdepth}{0} % 取消section的计数
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % 设置目录中用点线连接目录内容与页码
 \renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries} % 设置目录标题的样式
+% 在solution环境内重置公式计数器
+\NewCommandCopy\oldsolution\solution
+\NewCommandCopy\oldendsolution\endsolution
+\renewenvironment{solution}
+{\setcounter{equation}{0}
+\oldsolution}
+{\oldendsolution}
 
 % 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
