@@ -33,6 +33,7 @@
 \WarningFilter{latexfont}{Some font}
 \WarningFilter{latex}{Label `question}
 \WarningFilter{latex}{There were multiply-defined labels}
+\WarningFilter{latex}{Label `part}
 \usepackage{
 ctex, 	 		% 中文支持
 amsmath, 		% ams数学包
@@ -70,6 +71,8 @@ tocloft,	 	% 格式化目录
 {\oldendsolution}
 % 重新定义eqref命令
 \renewcommand{\eqref}[1]{式~(\ref{#1})}
+% 允许公式环境换页
+% \allowdisplaybreaks
 
 % 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
@@ -133,7 +136,7 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 % \title{历年高考数学试卷及答案}
 % \author{收集于网络 by 大象同学}
 
-\includeonly{fujian1977}
+\includeonly{hebei1977}
 \begin{document}
 % \maketitle
 \begin{titlepage}
