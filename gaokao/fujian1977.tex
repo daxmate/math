@@ -716,26 +716,29 @@
 		\end{align*}
 	\end{solution}
 
-	\question 求定积分:$\int_0^1\left(xe^{x^2} + x^2e^2\right)\mathrm{d}x$
+	\question 求定积分:$\int_0^1\left(xe^{x^2} + x^2e^x\right)\mathrm{d}x$
 	\begin{solution}
-		\begin{enumerate}[label=\arabic*.]
+		\begin{enumerate}[label=\protect\circled{\arabic*}]
 			\item 根据和差积分法则有:
 			      \begin{equation*}
-				      \int_0^1\left(xe^{x^2} + x^2e^2\right)\mathrm{d}x  = \int_0^1(xe^{x^2})\,\mathrm{d}x + \int_0^1(x^2e^2)\,\mathrm{d}x
+				      \int_0^1\left(xe^{x^2} + x^2e^2\right)\mathrm{d}x  = \int_0^1(xe^{x^2})\,\mathrm{d}x + \int_0^1(x^2e^x)\,\mathrm{d}x
 			      \end{equation*}
 			\item 先求解 $\int_0^1(xe^{x^2})\,\mathrm{d}x $,设 $u=x^2$,则有$\mathrm{d}u=2x\mathrm{d}x$,则有
 			      \begin{align*}
 				      \int_0^1(xe^{x^2})\mathrm{d}x & = \frac12\int_0^1e^u\mathrm{d}u \\
 				                                    & = \frac12(e-1)
 			      \end{align*}
-			\item 再来求解 $\int_0^1(x^2e^2)\,\mathrm{d}x$
+			\item 再来求解 $\int_0^1(x^2e^x)\,\mathrm{d}x$
 			      \begin{align*}
-				      \int_0^1(x^2e^2)\,\mathrm{d}x & = e^2\int_0^1x^2\mathrm{d}x \\
-				                                    & = \frac{e^2}{3}
+				      \int_0^1(x^2e^x)\,\mathrm{d}x & = \int_0^1 x^2\mathrm{d}e^x                                \\
+				                                    & = \left[x^2e^x\right]_0^1 - \int_0^1e^x\,\mathrm{d}x^2     \\
+				                                    & = e - \int_0^12x\,\mathrm{d}e^x                            \\
+				                                    & = e - \left[ 2xe^x \right]_0^1 + \int_0^1e^x\,\mathrm{d}2x \\
+				                                    & = e-2
 			      \end{align*}
 			\item 将两部分加起来得到总的积分值:
 			      \begin{equation*}
-				      \frac12(e-1) + \frac{e^2}{3}
+				      \frac12(e-1) + e - 2 = \frac32e - \frac52
 			      \end{equation*}
 		\end{enumerate}
 	\end{solution}
