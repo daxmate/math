@@ -2,130 +2,130 @@
 
 \begin{questions}
 	\question 解答下列各题:
-	\begin{enumerate}[label=(\arabic*)]
-		\item 解方程:$\sqrt{3x+4} = 4$.
-		      \begin{solution}
-			      方程两边平方得:
-			      \begin{math}
-				      3x + 4 = 16
-			      \end{math}
-			      移项整理得
-			      \begin{align*}
-				      3x & = 12 \\
-				      x  & = 4
-			      \end{align*}
+	\begin{parts}
+		\part[6] 解方程:$\sqrt{3x+4} = 4$.
+			\begin{solution}
+				方程两边平方得:
+				\begin{math}
+					3x + 4 = 16
+				\end{math}
+				移项整理得
+				\begin{align*}
+					3x & = 12 \\
+					x  & = 4
+				\end{align*}
 
-		      \end{solution}
-		\item 解不等式:$|x| < 5$
-		      \begin{solution}
-			      \begin{math}
-				      -5 < x < 5
-			      \end{math}
+			\end{solution}
+		\part[6] 解不等式:$|x| < 5$
+			\begin{solution}
+				\begin{math}
+					-5 < x < 5
+				\end{math}
 
-		      \end{solution}
-		\item 已知正三角形的外接圆半径为$6\sqrt{3}$cm,求它的边长.
-		      \begin{solution}
-			      \begin{tikzpicture}[scale=.3]
-				      \tkzDefPoints{0/0/O, 6sqrt(3)/0/A}
-				      \tkzDefPoint(90:6sqrt(3)){B}
-				      \tkzDefPoint(210:6sqrt(3)){C}
-				      \tkzDefPoint(330:6sqrt(3)){D}
-				      \tkzDefLine[orthogonal=through O](B,C) \tkzGetPoint{x}
-				      \tkzInterLL(O,x)(B,C) \tkzGetPoint{E}
+			\end{solution}
+		\part[6] 已知正三角形的外接圆半径为$6\sqrt{3}$cm,求它的边长.
+			\begin{solution}
+				\begin{tikzpicture}[scale=.3]
+					\tkzDefPoints{0/0/O, 6sqrt(3)/0/A}
+					\tkzDefPoint(90:6sqrt(3)){B}
+					\tkzDefPoint(210:6sqrt(3)){C}
+					\tkzDefPoint(330:6sqrt(3)){D}
+					\tkzDefLine[orthogonal=through O](B,C) \tkzGetPoint{x}
+					\tkzInterLL(O,x)(B,C) \tkzGetPoint{E}
 
-				      \tkzDrawCircle(O,A)
-				      \tkzDrawPolygon(B,C,D)
-				      \tkzDrawPoint(O)
-				      \tkzLabelPoint[below right](O){$O$}
-				      \tkzDrawSegments(B,O C,O O,E)
+					\tkzDrawCircle(O,A)
+					\tkzDrawPolygon(B,C,D)
+					\tkzDrawPoint(O)
+					\tkzLabelPoint[below right](O){$O$}
+					\tkzDrawSegments(B,O C,O O,E)
 
-				      \tkzMarkSegment[dim={$6\sqrt{3}$, 16pt, right=6pt}, mark=](B,O)
-				      \tkzMarkAngle[size=2](C,B,O)
-				      \tkzLabelAngle[pos=3.5](C,B,O){$30^\circ$}
-				      \tkzLabelPoint[left](E){$E$}
-				      \tkzLabelPoint[above](B){$B$}
-			      \end{tikzpicture}
-			      可以计算出$BE=6$,则正三角形的边长为$12$.
-		      \end{solution}
+					\tkzMarkSegment[dim={$6\sqrt{3}$, 16pt, right=6pt}, mark=](B,O)
+					\tkzMarkAngle[size=2](C,B,O)
+					\tkzLabelAngle[pos=3.5](C,B,O){$30^\circ$}
+					\tkzLabelPoint[left](E){$E$}
+					\tkzLabelPoint[above](B){$B$}
+				\end{tikzpicture}
+				可以计算出$BE=6$,则正三角形的边长为$12$.
+			\end{solution}
 
-	\end{enumerate}
+	\end{parts}
 
 	\question 计算下列各题:
-	\begin{enumerate}[label=(\arabic*)]
-		\item $\sqrt{m^2 - 2ma + a^2} $
-		      \begin{solution}
-			      \begin{align*}
-				      \sqrt{m^2 - 2ma + a^2} & = \sqrt{(m-a)^2} \\
-				                             & = |m-a|
-			      \end{align*}
-		      \end{solution}
-		\item $\cos78^\circ\cdot\cos3^\circ + \cos12^\circ\cdot\sin3^\circ$.
-		      \begin{solution}
-			      \begin{align*}
-				      \cos78^\circ & = \cos(90^\circ - 12^\circ)                           \\
-				                   & = \cos90^\circ\cos12^\circ + \sin90^\circ\sin12^\circ \\
-				                   & = \sin12^\circ
-			      \end{align*}
-			      代入原式得:
-			      \begin{align*}
-				      \cos78^\circ\cdot\cos3^\circ + \cos12^\circ\cdot\sin3^\circ
-				       & = \sin12^\circ\cos3^\circ + \cos12^\circ\sin3^\circ \\
-				       & = \sin15^\circ                                      \\
-				       & = \sin\left(\frac{30^\circ}{2}\right)               \\
-				       & = \sqrt{\frac{1-\cos30^\circ}{2}}                   \\
-				       & = \frac{\sqrt{2-\sqrt{3}}}{2}
-			      \end{align*}
-		      \end{solution}
-		\item $\arcsin\left(\cos\dfrac\pi6\right)$.
-		      \begin{solution}
-			      \begin{align*}
-				      \arcsin\left(\cos\dfrac\pi6\right) & = \arcsin(\dfrac{\sqrt{3}}2) \\
-				                                         & = \frac{\pi}{3}
-			      \end{align*}
-		      \end{solution}
-	\end{enumerate}
+	\begin{parts}
+		\part[6] $\sqrt{m^2 - 2ma + a^2} $
+			\begin{solution}
+				\begin{align*}
+					\sqrt{m^2 - 2ma + a^2} & = \sqrt{(m-a)^2} \\
+					                       & = |m-a|
+				\end{align*}
+			\end{solution}
+		\part[6] $\cos78^\circ\cdot\cos3^\circ + \cos12^\circ\cdot\sin3^\circ$.
+			\begin{solution}
+				\begin{align*}
+					\cos78^\circ & = \cos(90^\circ - 12^\circ)                           \\
+					             & = \cos90^\circ\cos12^\circ + \sin90^\circ\sin12^\circ \\
+					             & = \sin12^\circ
+				\end{align*}
+				代入原式得:
+				\begin{align*}
+					\cos78^\circ\cdot\cos3^\circ + \cos12^\circ\cdot\sin3^\circ
+					 & = \sin12^\circ\cos3^\circ + \cos12^\circ\sin3^\circ \\
+					 & = \sin15^\circ                                      \\
+					 & = \sin\left(\frac{30^\circ}{2}\right)               \\
+					 & = \sqrt{\frac{1-\cos30^\circ}{2}}                   \\
+					 & = \frac{\sqrt{2-\sqrt{3}}}{2}
+				\end{align*}
+			\end{solution}
+		\part[6] $\arcsin\left(\cos\dfrac\pi6\right)$.
+			\begin{solution}
+				\begin{align*}
+					\arcsin\left(\cos\dfrac\pi6\right) & = \arcsin(\dfrac{\sqrt{3}}2) \\
+					                                   & = \frac{\pi}{3}
+				\end{align*}
+			\end{solution}
+	\end{parts}
 	\question 解下列各题:
-	\begin{enumerate}[label=(\arabic*)]
-		\item 解方程: $3^{x+1} - 9^{\frac{x}{2}} = 18$.
-		      \begin{solution}
-			      \begin{align*}
-				      3^{x+1} - 9^{\frac{x}{2}}        & = 18 \\
-				      3\cdot 3^x - (3^2)^{\frac{x}{2}} & = 18 \\
-				      3^x                              & = 9  \\
-				      x                                & = 2
-			      \end{align*}
-		      \end{solution}
-		\item 求数列$2,4,8,16,\cdots $前十项的和.
-		      \begin{solution}
-			      \begin{align*}
-				      S_n    & = a_0\frac{1-q^n}{1-q}, (q=2, a_0=2) \\
-				      S_{10} & = 2\frac{1-2^{10}}{1-2}              \\
-				             & = 2^{11} - 2                         \\
-				             & = 2046
-			      \end{align*}
-		      \end{solution}
-	\end{enumerate}
+	\begin{parts}
+		\part[8] 解方程: $3^{x+1} - 9^{\frac{x}{2}} = 18$.
+			\begin{solution}
+				\begin{align*}
+					3^{x+1} - 9^{\frac{x}{2}}        & = 18 \\
+					3\cdot 3^x - (3^2)^{\frac{x}{2}} & = 18 \\
+					3^x                              & = 9  \\
+					x                                & = 2
+				\end{align*}
+			\end{solution}
+		\part[8] 求数列$2,4,8,16,\cdots $前十项的和.
+			\begin{solution}
+				\begin{align*}
+					S_n    & = a_0\frac{1-q^n}{1-q}, (q=2, a_0=2) \\
+					S_{10} & = 2\frac{1-2^{10}}{1-2}              \\
+					       & = 2^{11} - 2                         \\
+					       & = 2046
+				\end{align*}
+			\end{solution}
+	\end{parts}
 
 	\question 解下列各题:
-	\begin{enumerate}[label=(\arabic*)]
-		\item 圆锥的高为$6$cm,母线和底面半径的夹角为$30^\circ$,求它的侧面积.
-		      \begin{solution}
-			      根据题目中提供的信息可计算得底面半径为$r = 6\sqrt{3}$,母线的长度为$l = 12$,则侧面积为
-			      \begin{math}
-				      S = \pi r l = 72\sqrt{3} \text{cm}^2
-			      \end{math}
-		      \end{solution}
-		\item 求过点$(1,4)$且与直线$2x - 5y + 3 = 0$垂直的直线方程.
-		      \begin{solution}
-			      直线$2x - 5y + 3 + 0$的斜率$k=\frac25$,则与之垂直的直线的斜率为$-\frac52$.
+	\begin{parts}
+		\part[8] 圆锥的高为$6$cm,母线和底面半径的夹角为$30^\circ$,求它的侧面积.
+			\begin{solution}
+				根据题目中提供的信息可计算得底面半径为$r = 6\sqrt{3}$,母线的长度为$l = 12$,则侧面积为
+				\begin{math}
+					S = \pi r l = 72\sqrt{3} \text{cm}^2
+				\end{math}
+			\end{solution}
+		\part[8] 求过点$(1,4)$且与直线$2x - 5y + 3 = 0$垂直的直线方程.
+			\begin{solution}
+				直线$2x - 5y + 3 + 0$的斜率$k=\frac25$,则与之垂直的直线的斜率为$-\frac52$.
 
-			      设所求直线方程为$y =
-				      -\frac52x+b$, 并将点$(1,4)$代入得$b = \frac{13}{2}$.
-			      所以直线方程为:$2y + 5x - 13 = 0$.
-		      \end{solution}
-	\end{enumerate}
+				设所求直线方程为$y =
+					-\frac52x+b$, 并将点$(1,4)$代入得$b = \frac{13}{2}$.
+				所以直线方程为:$2y + 5x - 13 = 0$.
+			\end{solution}
+	\end{parts}
 
-	\question 如果$\triangle{ABC}$的$\angle{A}$的平分线交$BC$于$D$,交它的外接圆于$E$,那么$AB\cdot AC = AD \cdot AE$.
+	\question[8] 如果$\triangle{ABC}$的$\angle{A}$的平分线交$BC$于$D$,交它的外接圆于$E$,那么$AB\cdot AC = AD \cdot AE$.
 	\begin{figure*}[htbp]
 		\centering
 		\begin{tikzpicture}
@@ -149,28 +149,27 @@
 
 		\end{tikzpicture}
 	\end{figure*}
-	\begin{solution}
-		\begin{mathenum}
+	\begin{proofsolution}
+		\begin{cenum}
 			\item 作辅助线$CE$和$BE$
 			\item \because $\overset{\frown}{CE}$对应圆周角$\angle{CAE}$和$\angle{CBE}$
-			\\ \therefore\ $\angle{CAE} = \angle{CBE}$
-			\\ \because\ $\angle{CDA} = \angle{EDB} $
-			\\ \therefore\ $\triangle{CAD} \sim \triangle{EBD}$
+			      \\ \therefore\ $\angle{CAE} = \angle{CBE}$
+			      \\ \because\ $\angle{CDA} = \angle{EDB} $
+			      \\ \therefore\ $\triangle{CAD} \sim \triangle{EBD}$
 			\item \because\ $\overset{\frown}{BE}$对应圆周角$\angle{BAE} = \angle{BCE}$
-			\\ \therefore\ $\angle{BAE} = \angle{EAC}$
-			\\ \because $\angle{BAE} = \angle{BAC}$
-			\\ \therefore\ $\overset{\frown}{CE} = \overset{\frown}{BE}$
-			\\ \therefore\ $\angle{BCE} = \angle{CBE}$
-			\\ \therefore\ $\angle{EBD} = \angle{BAE}$
-			\\ \because\ $\angle{BEA} = \angle{AEB}$
-			\\ \therefore\ $\triangle{EBD} \sim \triangle{EAB}$
-			\\ \therefore\ $\triangle{EAB} \sim \triangle{CAD}$
-			\\ \therefore\ $\dfrac{AC}{AE}={AD}{AB}$
-			\\ \therefore\ $AC\cdot AB = AD\cdot AE$
-		\end{mathenum}
-
-	\end{solution}
-	\question
+			      \\ \therefore\ $\angle{BAE} = \angle{EAC}$
+			      \\ \because $\angle{BAE} = \angle{BAC}$
+			      \\ \therefore\ $\overset{\frown}{CE} = \overset{\frown}{BE}$
+			      \\ \therefore\ $\angle{BCE} = \angle{CBE}$
+			      \\ \therefore\ $\angle{EBD} = \angle{BAE}$
+			      \\ \because\ $\angle{BEA} = \angle{AEB}$
+			      \\ \therefore\ $\triangle{EBD} \sim \triangle{EAB}$
+			      \\ \therefore\ $\triangle{EAB} \sim \triangle{CAD}$
+			      \\ \therefore\ $\dfrac{AC}{AE}={AD}{AB}$
+			      \\ \therefore\ $AC\cdot AB = AD\cdot AE$
+		\end{cenum}
+	\end{proofsolution}
+	\question[8]
 	前进大队响应毛主席关于\enquote{绿化祖国}的伟大号召,1975年造林$200$亩,又知1975年到1977年三年内共造林$728$亩,求后两年造林面积的年平均增长率是多少？
 	\begin{solution}
 		设年平均增长率为$q$,根据等比数列求和公式
@@ -190,7 +189,7 @@
 		因为$q > 0$所以$q=1.2$
 	\end{solution}
 
-	\question 解方程:
+	\question[8] 解方程:
 	\begin{math}
 		\lg(2^x + 2x - 16) = x(1-\lg5)
 	\end{math}.
@@ -205,7 +204,7 @@
 		\end{align*}
 	\end{solution}
 
-	\question 已知三角形的三边成等差数列,周长为$80$cm,面积为$54$cm$^2$,求三边的长.
+	\question[8] 已知三角形的三边成等差数列,周长为$80$cm,面积为$54$cm$^2$,求三边的长.
 	\begin{solution}
 		% \begin{tikzpicture}[scale=.5,baseline=(current bounding box.north)]
 		% 	\tkzDefPoints{0/0/A, 12/0/B}
@@ -243,7 +242,7 @@
 	\end{solution}
 
 	\begin{center}
-		\subsubsection*{附加题}
+		\large\bf 附加题
 	\end{center}
 
 	\question
