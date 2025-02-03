@@ -16,21 +16,31 @@
 		\part[6] 求函数$y=\sqrt{x-2} + \dfrac{1}{x-3} + \lg(5-x)$的定义域.
 			\begin{solution}
 				根据题意有:
-				\begin{math}
+				\begin{equation*}
 					\begin{cases}
 						x - 2 >= 0   \\
 						x - 3 \neq 0 \\
 						5 - x > 0
 					\end{cases}
-				\end{math}
+				\end{equation*}
 				则有定义域为$[2,3),(3,5]$
 
 			\end{solution}
 		\part[8] 解方程:$ 5^{x^2+2x} = 125 $.
 			\begin{solution}
-				由 $5^{x^2 + 2x} = 125 = 5^3 $得: $x^2 + 2x = 3$
+				由 $5^{x^2 + 2x} = 125 = 5^3 $得:
+				\begin{equation*}
+					x^2 + 2x = 3
+				\end{equation*}
 
-				分解因式得$(x+3)(x-1) = 0$,所以$x_1 = -3, x_2 = 1$
+				分解因式得
+				\begin{equation*}
+					(x+3)(x-1) = 0
+				\end{equation*}
+				所以
+				\begin{equation*}
+					x_1 = -3, x_2 = 1
+				\end{equation*}
 			\end{solution}
 		\part[8] 计算:$-\log_3(\log_3\sqrt[3]{\sqrt[3]{\sqrt[3]{3}}})$
 			\begin{solution}
@@ -90,40 +100,65 @@
 	\question[8] 过抛物线$ y^2 = 4x
 	$的焦点作倾斜角为$\frac34\pi$的直线,它与抛物线相交于$A$、$B$两点.求$A$、$B$两点间的距离.
 	\begin{solution}
-		抛物线的焦点为$(0,1)$,斜角为$\frac34\pi$的直线的斜率为$-1$,设直线的方程为$ y = -x + b $,将点$(0,1)$代入解得
-		$b = 1$,则直线方程为$ y=-x+1 $.将直线方程代入抛物线方程得:
-		\begin{equation*}
-			(-x + 1)^2 = 4x
-		\end{equation*}
-		展开得
-		\begin{align*}
-			x^2 - 2x + 1 & = 4x \\
-			x^2 -6x + 1  & = 0  \\
-		\end{align*}
-		解得$ x_1,x_2 = \frac{6 \pm \sqrt{32}}{2} = 3 \pm 2\sqrt{2} $,代入直线方程可得$ y_1,y_2 = -(3\pm2\sqrt{2}) +
-			1$,则点$A$的坐标为$(3+2\sqrt{2}, -2 - 2\sqrt{2})$,$B$点的坐标为$(3-2\sqrt{2}, -2 + 2\sqrt{2})$,$AB$的距离为:
-		\begin{align*}
-			\sqrt{(3-2\sqrt{2} - 3 - 2\sqrt{2})^2 + (-2 + 2\sqrt{2} + 2 + 2\sqrt{2})^2}
-			 & = \sqrt{32 + 32} \\
-			 & = 8
-		\end{align*}
+		\begin{cenum}
+			\item 抛物线的焦点为$(1,0)$;
+			\item 斜角为$\frac34\pi$的直线的斜率为$-1$;
+			\item 设直线的方程为
+			      \begin{equation*}
+				      y = -x + b
+			      \end{equation*}
+			      将点$(1,0)$代入解得
+			      \begin{equation*}
+				      b = 1
+			      \end{equation*}
+			      则直线方程为
+			      \begin{equation}
+				      y = -x + 1
+			      \end{equation}
+			\item 将直线方程代入抛物线方程得:
+			      \begin{equation*}
+				      (-x + 1)^2 = 4x
+			      \end{equation*}
+			      展开得
+			      \begin{equation*}
+				      x^2 -6x + 1  = 0
+			      \end{equation*}
+			      解得
+			      \begin{equation*}
+				      x_1,x_2 = \frac{6 \pm \sqrt{32}}{2} = 3 \pm 2\sqrt{2}
+			      \end{equation*}
+			      代入直线方程可得
+			      \begin{equation*}
+				      y_1,y_2 = -(3\pm2\sqrt{2}) + 1
+			      \end{equation*}
+			      则点$A$的坐标为$(3+2\sqrt{2}, -2 - 2\sqrt{2})$,$B$点的坐标为$(3-2\sqrt{2}, -2 + 2\sqrt{2})$
+			\item $AB$的距离为:
+			      \begin{align*}
+				      \sqrt{(3-2\sqrt{2} - 3 - 2\sqrt{2})^2 + (-2 + 2\sqrt{2} + 2 + 2\sqrt{2})^2}
+				       & = \sqrt{32 + 32} \\
+				       & = 8
+			      \end{align*}
+		\end{cenum}
 	\end{solution}
 	\question[8] 在直角三角形$ \triangle{ABC} $中,$ \angle{ACB} = 90^\circ
 	$,$CD$、$CE$分别为斜边$AB$上的高和中线,且$\angle{BCD}$与$\angle{ACD}$之比为$3:1$,求证:$CD=DE$.
 
-	\begin{tikzpicture}
-		\tkzDefPoints{-1/0/A, 0/0/D, 0/2/C}
-		\tkzDefLine[orthogonal=through C](A,C) \tkzGetPoint{x}
-		\tkzInterLL(C,x)(A,D) \tkzGetPoint{B}
-		\tkzDefPointOnLine[pos=0.5](A,B) \tkzGetPoint{E}
+	\begin{center}
+		\begin{tikzpicture}
+			\tkzDefPoints{-1/0/A, 0/0/D, 0/2/C}
+			\tkzDefLine[orthogonal=through C](A,C) \tkzGetPoint{x}
+			\tkzInterLL(C,x)(A,D) \tkzGetPoint{B}
+			\tkzDefPointOnLine[pos=0.5](A,B) \tkzGetPoint{E}
 
-		\tkzDrawPolygon(A,B,C)
-		\tkzDrawSegments(C,D C,E)
+			\tkzDrawPolygon(A,B,C)
+			\tkzDrawSegments(C,D C,E)
 
-		\tkzLabelPoints[below](A,D,E,B)
-		\tkzLabelPoint[above](C){$C$}
-	\end{tikzpicture}
-	\begin{solution}
+			\tkzLabelPoints[below](A,D,E,B)
+			\tkzLabelPoint[above](C){$C$}
+		\end{tikzpicture}
+	\end{center}
+
+	\begin{proofsolution}
 		\begin{align*}
 			 & \text{设}\angle{ACD} = \alpha                               \\
 			 & \because CE\text{是直角三角形的中线}                                \\
@@ -137,8 +172,7 @@
 			 & \therefore DE = DC
 		\end{align*}
 
-	\end{solution}
-	\pagebreak
+	\end{proofsolution}
 	\question[8] 在周长为 $300$ cm 的圆周上, 有甲、乙两球以大小不等的速度作匀速圆周 运动. 甲球从 $A
 	$点出发按逆时针方向运动, 乙球从 $B$ 点出发按顺时针方向 运动, 两球相遇于 $C$ 点相遇后, 两球各自反方向作匀速圆周运动,
 	但这时 甲球速度的大小是原来的 $2$ 倍, 乙球速度的大小是原来的一半, 以后他们 第二次相遇于 $D$ 点. 已知
@@ -177,34 +211,36 @@
 		\end{equation*}
 		整理可得
 		\begin{equation*}
-			(a-40)(a+240) = 0
+			(a-80)(a-120) = 0
 		\end{equation*}
-		所以 $a = 40$厘米.
+		所以可得$a=80$或$a=120$.如果\overarc{$ACB$}的长度为\qty{80}{\cm}则两球的初始速度相同,与题目中的条件不符.所以\overarc{$ACB$}的长度为\qty{120}{\cm}.
 	\end{solution}
 	\question
 	\begin{parts}
 		\part[8] 若三角形三内角成等差数列,求证:必有一内角为$60^\circ$
-			\begin{solution}
+			\begin{proofsolution}
 				因为三个内角成等差数列,可以设中间的角为$x$,则其余两个角可以分别表示为$x-a,
 					x+a$,那么三个角的和可以表示为$x-a + x + x + a = 3x = 180^\circ$,则有$x=60^\circ$
-			\end{solution}
+			\end{proofsolution}
 		\part[8] 若三角形三内角成等差数列,而且三边又成等比数列,求证:三角形三内角都是$60^\circ$.
-			\begin{solution}
-				\begin{tikzpicture}
-					\tkzDefPoints{0/0/A, 2/0/B}
-					\tkzDefPoint(60:2){C}
-					\tkzDefLine[orthogonal=through C](A,B) \tkzGetPoint{x}
-					\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
+			\begin{proofsolution}
+				\begin{center}
+					\begin{tikzpicture}
+						\tkzDefPoints{0/0/A, 2/0/B}
+						\tkzDefPoint(60:2){C}
+						\tkzDefLine[orthogonal=through C](A,B) \tkzGetPoint{x}
+						\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
 
-					\tkzDrawPolygon(A,B,C)
-					\tkzDrawSegment[dashed](C,D)
+						\tkzDrawPolygon(A,B,C)
+						\tkzDrawSegment[dashed](C,D)
 
-					\tkzLabelPoints(A,B,D)
-					\tkzLabelPoint[above](C){$C$}
-					\tkzMarkAngle[size=0.5](B,A,C)
-					\tkzLabelAngle(B,A,C){$60^\circ$}
-					\tkzLabelSegment[above, sloped](A,C){$a$}
-				\end{tikzpicture}
+						\tkzLabelPoints(A,B,D)
+						\tkzLabelPoint[above](C){$C$}
+						\tkzMarkAngle[size=0.5](B,A,C)
+						\tkzLabelAngle(B,A,C){$60^\circ$}
+						\tkzLabelSegment[above, sloped](A,C){$a$}
+					\end{tikzpicture}
+				\end{center}
 
 				假设三角形不是等边三角形,并假设$\angle{A} = 60^\circ,
 					AC=a$,且$AC$是最短的一条边,则$AB$为最长边设其长为$b$.从$C$点作垂线交$AB$于$D$.根据题目中的信息有:
@@ -223,7 +259,7 @@
 					a = b
 				\end{align*}
 				所以假设不成立,三角形为等边三角形,所以三角形的三内角都是$60^\circ$
-			\end{solution}
+			\end{proofsolution}
 	\end{parts}
 	\question[8] 在两条平行直线 $AB$ 和 $CD$ 上分别取定一点 $M$ 和 $N$, 在直线 $AB$ 上取 一定线段 $ME = a$; 在线段
 	$MN$上取一点 $K$, 连结 $EK$ 并延长交 $CD$ 于 $F$. 试问 $K$ 取在哪里时, $\triangle{EMK}$ 与 $\triangle{FNK}$ 的面积之和最小? 最小值是多少?
@@ -255,9 +291,9 @@
 			\frac{1-x}{x}a$,则$\triangle{EMK}$与$\triangle{NKF}$的面积和为:
 		\begin{align*}
 			\frac12axh + \frac12\cdot\frac{1-x}{x}a\cdot(1-x)h
-			\\                                    & = \frac12ah(x + \frac{(1-x)^2}{x})
-			\\                                    & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
-			\\                                  & = \frac12ah\frac{2x^2 - 2x + 1}{x}
+			\\                                                         & = \frac12ah(x + \frac{(1-x)^2}{x})
+			\\                                                         & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
+			\\                                                       & = \frac12ah\frac{2x^2 - 2x + 1}{x}
 			\\ & = \frac12ah(2x -2 + \frac1x)
 		\end{align*}
 		对其求导数得:
