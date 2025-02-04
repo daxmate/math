@@ -61,8 +61,7 @@
 	\end{parts}
 	\question[10] 在$\triangle{ABC}$中,$\angle{C}$的平分线交$AB$于$D$,过$D$作$BC$的平行线交$AC$于$E$,已知$BC=a, AC=b$,求$DE$的长.
 
-	\begin{figure}[htbp]
-		\centering
+	\begin{center}
 		\begin{tikzpicture}
 			\tkzDefPoints{0/0/A, 3/0/C, 2/2.5/B}
 			\tkzDefLine[bisector](B,C,A) \tkzGetPoint{x}
@@ -76,7 +75,7 @@
 			\tkzLabelPoints[below](A,E,C)
 			\tkzLabelPoints[above left](D,B)
 		\end{tikzpicture}
-	\end{figure}
+	\end{center}
 
 	\begin{solution}
 		\begin{align*}
@@ -89,7 +88,6 @@
 			 & \therefore DE = \frac{ab}{a+b}
 		\end{align*}
 	\end{solution}
-	\pagebreak
 	\question[10]
 	已知圆$A$的直径为$2\sqrt{3}$,圆$B$的直径为$4-2\sqrt{3}$,圆$C$的直径为$2$,圆$A$与圆$B$外切,圆$A$又与圆$C$外切,$\angle{A}=60^\circ$,求$BC$及$\angle{C}$.
 
@@ -154,7 +152,6 @@
 	\begin{solution}
 
 		\begin{minipage}[b]{0.4\textwidth}
-			\centering
 			\tdplotsetmaincoords{0}{0}
 			\begin{tikzpicture}[tdplot_main_coords]
 				\tkzDefPoint(0:2){A}
@@ -173,7 +170,6 @@
 
 		\begin{minipage}[b]{0.4\textwidth}
 			\tdplotsetmaincoords{90}{0}
-			\centering
 			\begin{tikzpicture}[tdplot_main_coords]
 				\tkzDefPoint(0:2){A}
 				\tkzDefPoint(60:2){B}
@@ -191,7 +187,6 @@
 
 		\end{minipage}
 		\begin{minipage}[b]{0.4\textwidth}
-			\centering
 			\tdplotsetmaincoords{90}{90}
 			\begin{tikzpicture}[tdplot_main_coords]
 				\tkzDefPoint(0:2){A}
@@ -208,9 +203,8 @@
 			\captionof*{figure}{侧视图}
 		\end{minipage}
 
-		\begin{minipage}{\textwidth}
+		\begin{center}
 			\tdplotsetmaincoords{70}{120}
-			\centering
 			\begin{tikzpicture}[tdplot_main_coords, scale=2]
 				\tkzDefPoint(0,0){O}
 				\tkzDefPoint(0:2){A}
@@ -238,7 +232,7 @@
 				\tkzLabelPoint(C){$C$}
 				\tkzLabelPoint[above](V){$V$}
 			\end{tikzpicture}
-		\end{minipage}
+		\end{center}
 
 		\begin{align*}
 			 & \because \text{底面是正六边形}                                \\
@@ -327,8 +321,7 @@
 	\end{solution}
 
 	\question[10] 等腰梯形的周长为$60$,底角为\ang{60},问这梯形各边长为多少时,面积最大？
-	\begin{figure*}[ht]
-		\centering
+	\begin{center}
 		\begin{tikzpicture}
 			\tkzDefPoints{0/0/A, 4/0/D}
 			\tkzDefPoint(60:2){B}
@@ -340,7 +333,7 @@
 			\tkzLabelPoints(A,D)
 			\tkzLabelPoints[above](B,C)
 		\end{tikzpicture}
-	\end{figure*}
+	\end{center}
 
 	\begin{solution}
 		\begin{center}
@@ -418,8 +411,7 @@
 
 	\question
 	如图所示,半圆$O$的直径为$2$,$A$为半圆直径的延长线上的一点,且$OA=2$,$B$为半圆上任一点,以$AB$为边作等边$\triangle{ABC}$,问$B$在什么地方时,四边形$OACB$的面积最大？并求出这个面积的最大值.
-	\begin{figure*}[ht]
-		\centering
+	\begin{center}
 		\begin{tikzpicture}
 			\tkzDefPoints{-1/0/E, 0/0/O, 1/0/D, 2/0/A}
 			\tkzDefPoint(110:1){B}
@@ -434,7 +426,8 @@
 			\tkzLabelPoint[above left](B){$B$}
 			\tkzLabelPoint[above](C){$C$}
 		\end{tikzpicture}
-	\end{figure*}
+	\end{center}
+
 	\begin{solution}
 		以$O$为坐标系的原点,设$B$的坐标为$(x,y)$,则坐标应该满足方程:
 		\begin{equation*}
@@ -489,7 +482,6 @@
 		\item 分别求出曲线在交点的切线的斜率；
 		\item 求出曲线与直线所围成的图形的面积.
 	\end{enumerate}
-	\pagebreak
 	\begin{solution}
 		\begin{center}
 			\begin{tikzpicture}

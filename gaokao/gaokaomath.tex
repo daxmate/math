@@ -1,7 +1,9 @@
 %!tex program = lualatex
-\documentclass[answers, addpoints]{examz}
+\documentclass[answers]{exam}
 % 横向超过10pt之内不警告
 \hfuzz=10pt
+% 纵向超过10pt之内不警告
+\vfuzz=10pt
 % 将页面风格设置为空,去除页眉页脚和页码等
 \pagestyle{empty}
 % exam文档中题解的标题设置
@@ -318,7 +320,6 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 	\end{tikzpicture}
 \end{titlepage}
 \thispagestyle{empty}
-\pagebreak
 \setlength{\columnsep}{1cm}
 % \begin{multicols}{2}
 % TODO 设置目录样式

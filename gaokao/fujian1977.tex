@@ -441,8 +441,7 @@
 		P$之间的距离,他们土法上马,在障碍物的两侧,选取两点$B$和$C$(如图),测得$AB=AC=50$m,$ \angle{BAC}=60^\circ,
 		\angle{ABP}=120^\circ, \angle{ACP}=135^\circ$,求$A$和$P$之间的距离.(答案可用最简根式表示).
 
-	\begin{figure}[htbp]
-		\centering
+	\begin{center}
 		\begin{tikzpicture}[scale=1.5]
 			\tkzDefPoint(0,0){A}
 			\tkzDefShiftPointCoord[A](30:2){C}
@@ -463,8 +462,7 @@
 			\tkzLabelPoint[right](P){$P$}
 
 		\end{tikzpicture}
-	\end{figure}
-	\pagebreak
+	\end{center}
 	\begin{solution}
 		\begin{center}
 			\begin{tikzpicture}[scale=1.5]
@@ -543,19 +541,20 @@
 			      \end{align*}
 			\item 故$A,P$两点间的距离为$25\sqrt{10+4\sqrt{3}}\unit{\meter}$.
 		\end{enumerate}
-		\pagebreak
-		\hrule
-		\begin{enumerate}[label=\protect\circled{\arabic*}]
-			\color{green!50!blue}
-			\item 在上面的解法中计算得到$BP=BE+EP=\dfrac{1+\sqrt{3}}{2}x$后,直接利用余弦定理计算$AP$:
-			      \begin{align*}
-				      AP^2 & = AB^2 + BP^2 - 2AB\cdot BP\cos\ang{120}                                                     \\
-				           & = x^2 + \left( \frac{1+\sqrt{3}}{2}x \right)^2 - 2x\cdot\frac{1+\sqrt{3}}{2}x\cdot(-\frac12) \\
-				           & = \frac{8+2\sqrt{3}}{4}x^2 + \frac{2+2\sqrt{3}}{4}x^2                                        \\
-				           & = \frac{10+4\sqrt{3}}{4}x^2
-			      \end{align*}
-			\item 所以$A,P$两点为之间的距离为$25\sqrt{10+4\sqrt{3}}\unit{\meter}$.
-		\end{enumerate}
+		\begin{minipage}{\textwidth}
+			\color{blue!50!green}
+			\begin{enumerate}[label=\protect\circled{\arabic*}]
+				\item 在上面的解法中计算得到$BP=BE+EP=\dfrac{1+\sqrt{3}}{2}x$后,直接利用余弦定理计算$AP$:
+				      \begin{align*}
+					      AP^2 & = AB^2 + BP^2 - 2AB\cdot BP\cos\ang{120}                                                     \\
+					           & = x^2 + \left( \frac{1+\sqrt{3}}{2}x \right)^2 - 2x\cdot\frac{1+\sqrt{3}}{2}x\cdot(-\frac12) \\
+					           & = \frac{8+2\sqrt{3}}{4}x^2 + \frac{2+2\sqrt{3}}{4}x^2                                        \\
+					           & = \frac{10+4\sqrt{3}}{4}x^2
+				      \end{align*}
+				\item 所以$A,P$两点为之间的距离为$25\sqrt{10+4\sqrt{3}}\unit{\meter}$.
+			\end{enumerate}
+		\end{minipage}
+
 	\end{solution}
 
 	\question[8] 已知双曲线 \( \frac{x^2}{24\tan\alpha} - \frac{y^2}{16\cot\alpha} = 1 (\alpha\text{为锐角})\)和圆 \( (x-m)^2 +
@@ -637,36 +636,32 @@
 		\begin{enumerate}[label=\protect\circled{\arabic*}]
 			\item 根据题目中的条件有:
 			      \begin{align}
-				      S_1 & = a + b + c + d     & = 1\label{eq:s1} \\
-				      S_2 & = a + 2b + 4c + 8d  & = 3\label{eq:s2} \\
-				      S_3 & = a + 3b + 9c + 27d & = 7\label{eq:s3}
+				      S_1 & = a + b + c + d      = 1 \\
+				      S_2 & = a + 2b + 4c + 8d   = 3 \\
+				      S_3 & = a + 3b + 9c + 27d  = 7
 			      \end{align}
-			      \eqref{eq:s2} - \eqref{eq:s1}得
+			      $S_2 - S_1$得
 			      \begin{equation}
-				      b + 3c + 7d =2 \label{eq:s2-s1}
+				      b + 3c + 7d =2
 			      \end{equation}
-			      \eqref{eq:s3} - \eqref{eq:s2}得
+			      $S_3 - S_2$得
 			      \begin{equation}
 				      b + 5c + 19d = 4
-				      \label{eq:s3-s2}
 			      \end{equation}
-			      \eqref{eq:s3-s2}-\eqref{eq:s2-s1}得
+			      式(5)- 式(4)得
 			      \begin{align}
 				      2c + 12d & = 2 \nonumber \\
 				      c + 6d   & = 1
-				      \label{eq:c+6d=1}
 			      \end{align}
-			      将\eqref{eq:c+6d=1}代入\eqref{eq:s1}得
+			      将式(6)代入$S_1$得
 			      \begin{equation}
 				      a+b = 5d
-				      \label{eq:a+b=5d}
 			      \end{equation}
-			      将\eqref{eq:c+6d=1}代入\eqref{eq:s2-s1}得
+			      将式(6)代入式(4)得
 			      \begin{equation}
 				      b+c = 5d
-				      \label{eq:b+c=5d}
 			      \end{equation}
-			      根据\eqref{eq:a+b=5d}和\eqref{eq:b+c=5d}得
+			      根据式(7)和式(8)得
 			      \begin{equation}
 				      a = c
 				      \label{eq:a=c}
@@ -676,32 +671,26 @@
 				      a_n & = S_n - S_{n-1} \nonumber                                           \\
 				          & = a + bn + cn^2 + dn^3 - a - b(n-1) - c(n-1)^2 - d(n-1)^3 \nonumber \\
 				          & = b + c(2n-1) + d(3n^2 - 3n + 1)
-				      \label{eq:an}
 			      \end{align}
 			      而此式也需要满足$n=1$,代入得
 			      \begin{equation}
 				      a_1 = b+c+d
-				      \label{eq:a1}
 			      \end{equation}
 			      而$S_1= a_1$,所以
 			      \begin{equation}
 				      a= 0
-				      \label{eq:a}
 			      \end{equation}
-			      根据\eqref{eq:a=c}得
+			      因为$a=c$,所以
 			      \begin{equation}
 				      c = 0
-				      \label{eq:c}
 			      \end{equation}
-			      根据\eqref{eq:c+6d=1}得
+			      从$c+6d=1$得
 			      \begin{equation}
 				      d = \frac16
-				      \label{eq:d}
 			      \end{equation}
-			      根据\eqref{eq:a+b=5d}和\eqref{eq:a}得:
+			      根据式(7)和式(12)得:
 			      \begin{equation}
 				      b = \frac56
-				      \label{eq:b}
 			      \end{equation}
 
 			\item $a_n$的通项公式为:
