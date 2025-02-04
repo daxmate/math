@@ -10,9 +10,7 @@
 			\end{math}.
 			\begin{solution}
 				\begin{align*}
-					\left(\frac{a}{a+b} - \frac{a^2}{a^2 + 2ab + b^2}\right) \div \left(\frac{a}{a+b} - \frac{a^2}{a^2 - b^2}\right)
-					 & = \left[ \frac{a(a+b)}{(a+b)^2} - \frac{a^2}{(a+b)^2} \right] \div \frac{a(a-b) - a^2}{a^2-b^2}
-					\\
+					 & = \left[ \frac{a(a+b)}{(a+b)^2} - \frac{a^2}{(a+b)^2} \right] \div \frac{a(a-b) - a^2}{a^2-b^2} \\
 					 & = \frac{ab}{(a+b)^2} \cdot \frac{a^2 - b^2}{-ab}                                                \\
 					 & = \frac{b-a}{a+b}
 				\end{align*}
@@ -27,7 +25,7 @@
 					 & = \frac12\lg5^2 + \lg2 - \lg(10)^{-\frac12} - \log_23^2 \times \log_32 \\
 					 & = \lg5 + \lg2 + \frac12 - 2 \log_23 \times \log_32                     \\
 					 & = \frac32 - 2 \cdot \frac{\ln3}{\ln2}\cdot \frac{\ln2}{\ln3}           \\
-					 & = \frac12
+					 & = -\frac12
 				\end{align*}
 			\end{solution}
 		\part $\sqrt{-1} = i$,验算$i$是否方程$2x^4 + 3x^3 - 3x^2 + 3x - 5 = 0$的解.
@@ -45,19 +43,7 @@
 				\frac{2}{\cos2\theta}
 			$.
 			\begin{solution}
-				根据和角公式
-				\[
-					\begin{array}{l}
-						\sin(\alpha+\beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta, \\
-						\cos(\alpha+\beta)=\cos\alpha\cos\beta - \sin\alpha\sin\beta
-					\end{array}
-				\]
-				及差角公式$$
-					\begin{array}{l}
-						\sin(\alpha-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta, \\
-						\cos(\alpha-\beta)=\cos\alpha\cos\beta + \sin\alpha\sin\beta
-					\end{array}
-				$$来化简等式的左边得:
+				根据和角公式 及差角公式来化简等式的左边得:
 				\begin{align*}
 					 & = 	\frac{\sin\frac{\pi}{4}\cos\theta +
 						\cos\frac{\pi}{4}\sin\theta}{\sin\frac{\pi}{4}\cos\theta-\cos\frac{\pi}{4}\sin\theta} +
@@ -94,44 +80,40 @@
 
 	\begin{solution}
 		\begin{align*}
-			 & \because \angle{ACD} = \angle{BCD}                  \\
-			 & \therefore AD = BD                                  \\
-			 & \because DE \parallel BC                            \\
-			 & \therefore
-			\begin{array}{l}
-				AE = EC \\
-				\dfrac{DE}{BC} = \dfrac{AE}{AC}
-			\end{array}                         \\
-			 & \therefore DE = BC\frac{\frac{1}{2}a}{a} = \frac12b
+			 & \because \angle{ACD} = \angle{BCD} \land DE \parallel BC \\
+			 & \therefore \angle{ACD}=\angle{EDC}                       \\
+			 & \therefore DE = EC                                       \\
+			 & \because \triangle{ADE} \sim \triangle{ABC}              \\
+			 & \therefore \frac{DE}{BC} = \frac{AE}{AC}                 \\
+			 & \therefore \frac{DE}{a} = \frac{b-DE}{b}                 \\
+			 & \therefore DE = \frac{ab}{a+b}
 		\end{align*}
 	\end{solution}
 	\pagebreak
 	\question[10]
 	已知圆$A$的直径为$2\sqrt{3}$,圆$B$的直径为$4-2\sqrt{3}$,圆$C$的直径为$2$,圆$A$与圆$B$外切,圆$A$又与圆$C$外切,$\angle{A}=60^\circ$,求$BC$及$\angle{C}$.
 
-	\begin{figure*}[ht]
-		\centering
-		\begin{tikzpicture}
-			\tkzDefPoints{{sqrt(3)}/0/A, {sqrt(3)-2}/0/B, 0/0/O}
-			\tkzDefShiftPoint[A](120:{sqrt(3)+1}){C}
-			\tkzDefLine[orthogonal=through C](B,A) \tkzGetPoint{x}
-			\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
-			\tkzInterLC(A,C)(A,O) \tkzGetSecondPoint{x}
-
-			\tkzDrawCircles(A,O B,O)
-			\tkzDrawCircle(C,x)
-			\tkzDrawPolygon(A,B,C)
-
-			\tkzLabelPoints(B,A,D)
-			\tkzLabelPoint[above](C){$C$}
-			\tkzMarkAngle[size=.5](C,A,B)
-			\tkzLabelAngle(C,A,B){$60^\circ$}
-
-			\tkzDrawSegment[dashed](C,D)
-		\end{tikzpicture}
-	\end{figure*}
-
 	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzDefPoints{{sqrt(3)}/0/A, {sqrt(3)-2}/0/B, 0/0/O}
+				\tkzDefShiftPoint[A](120:{sqrt(3)+1}){C}
+				\tkzDefLine[orthogonal=through C](B,A) \tkzGetPoint{x}
+				\tkzInterLL(C,x)(A,B) \tkzGetPoint{D}
+				\tkzInterLC(A,C)(A,O) \tkzGetSecondPoint{x}
+
+				\tkzDrawCircles(A,O B,O)
+				\tkzDrawCircle(C,x)
+				\tkzDrawPolygon(A,B,C)
+
+				\tkzLabelPoints(B,A,D)
+				\tkzLabelPoint[above](C){$C$}
+				\tkzMarkAngle[size=.5](C,A,B)
+				\tkzLabelAngle(C,A,B){$60^\circ$}
+
+				\tkzDrawSegment[dashed](C,D)
+			\end{tikzpicture}
+		\end{center}
 		由题意得:
 		\begin{align*}
 			AB & = 2            \\
@@ -164,12 +146,30 @@
 
 	\question[10] 正六棱锥$V-ABCDEF$的高为$2$cm,底面边长为$2$cm.
 	\begin{enumerate}[label=(\arabic*)]
-		\item 按$1:1$画出它的二视图；
+		\item 按$1:1$画出它的三视图；
 		\item 求其侧面积；
 		\item 求它的侧棱和底面的夹角.
 	\end{enumerate}
 
 	\begin{solution}
+
+		\begin{minipage}[b]{0.4\textwidth}
+			\centering
+			\tdplotsetmaincoords{0}{0}
+			\begin{tikzpicture}[tdplot_main_coords]
+				\tkzDefPoint(0:2){A}
+				\tkzDefPoint(60:2){B}
+				\tkzDefPoint(120:2){C}
+				\tkzDefPoint(180:2){D}
+				\tkzDefPoint(240:2){E}
+				\tkzDefPoint(300:2){F}
+				\coordinate(V) at (0,0,2);
+
+				\draw[very thin] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+				% \tkzDrawSegments(V,A V,B V,C V,D V,E V,F)
+			\end{tikzpicture}
+			\captionof*{figure}{顶视图}
+		\end{minipage}
 
 		\begin{minipage}[b]{0.4\textwidth}
 			\tdplotsetmaincoords{90}{0}
@@ -183,8 +183,8 @@
 				\tkzDefPoint(300:2){F}
 				\coordinate(V) at (0,0,2);
 
-				\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
-				\tkzDrawSegments(V,A V,B V,C V,D V,E V,F)
+				\draw[very thin] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+				\tkzDrawSegments(V,A V,D)
 
 			\end{tikzpicture}
 			\captionof*{figure}{正视图}
@@ -192,7 +192,7 @@
 		\end{minipage}
 		\begin{minipage}[b]{0.4\textwidth}
 			\centering
-			\tdplotsetmaincoords{0}{0}
+			\tdplotsetmaincoords{90}{90}
 			\begin{tikzpicture}[tdplot_main_coords]
 				\tkzDefPoint(0:2){A}
 				\tkzDefPoint(60:2){B}
@@ -202,10 +202,10 @@
 				\tkzDefPoint(300:2){F}
 				\coordinate(V) at (0,0,2);
 
-				\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
-				\tkzDrawSegments(V,A V,B V,C V,D V,E V,F)
+				\draw[very thin] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+				\tkzDrawSegments(V,C  V,F)
 			\end{tikzpicture}
-			\captionof*{figure}{顶视图}
+			\captionof*{figure}{侧视图}
 		\end{minipage}
 
 		\begin{minipage}{\textwidth}
@@ -222,8 +222,8 @@
 				\coordinate(V) at (0,0,2);
 				\tkzDefPointOnLine[pos=0.5](B,C) \tkzGetPoint{G}
 
-				\draw (F) -- (A) -- (B) -- (C);
-				\draw[dashed] (C)-- (D) -- (E) -- (F);
+				\draw[very thin] (F) -- (A) -- (B) -- (C);
+				\draw[dashed, very thin] (C)-- (D) -- (E) -- (F);
 				\tkzDrawSegment[blue](V,G)
 				\tkzDrawSegment[dashed, blue](O,G)
 				\tkzDrawSegments(V,A V,B V,C  V,F)
@@ -275,7 +275,7 @@
 		\end{cases},并在数轴上把它的解表示出来.
 	\end{equation*}
 	\begin{solution}
-		\begin{enumerate}[label=\Roman*.]
+		\begin{cenum}
 			\item 解不等式$16 - x^2 \geqslant 0$
 			      \begin{align*}
 				      16  \geqslant x^2 \\
@@ -288,33 +288,34 @@
 			      \end{align*}
 			\item 绘制数轴
 
-			      \begin{tikzpicture}
-				      % 绘制数轴
-				      \draw[->] (-5,0) -- (5,0) node[right] {$x$};
+			      \begin{center}
+				      \begin{tikzpicture}
+					      % 绘制数轴
+					      \draw[-Stealth, thick] (-5,0) -- (5,0) node[right] {$x$};
 
-				      % 标记关键点
-				      \foreach \x in {-4, -2, 3, 4} {
-						      \path  (\x, 0) node[below] {\x};
-					      }
+					      % 标记关键点
+					      \foreach \x in {-4, -2, 3, 4} {
+							      \path  (\x, 0) node[below] {\x};
+						      }
 
-				      % 绘制闭合圆圈
-				      \filldraw[black] (-4,0) circle (1pt);
-				      \filldraw[black] (4,0) circle (1pt);
+					      \draw[rounded corners=2pt](-4,0) |- (4,.5) -- (4,0);
+					      \draw[rounded corners=2pt](3,0) |- (4.5,.8);
+					      \draw[rounded corners=2pt](-2,0) |- (-4.5,.8);
+					      \draw[pattern=north east lines, rounded corners=2pt](-4,0) rectangle (-2,.5);
+					      \draw[pattern=north east lines, rounded corners=2pt](3,0) rectangle (4,.5);
+					      \filldraw(-4,0) circle(1pt);
+					      \filldraw(4,0) circle(1pt);
+					      \filldraw[fill=white](-2,0) circle(1pt);
+					      \filldraw[fill=white](3,0) circle(1pt);
 
-				      % 绘制开口圆圈
-				      \draw[black] (-2,0) circle (1pt);
-				      \draw[black] (3,0) circle (1pt);
+				      \end{tikzpicture}
+			      \end{center}
 
-				      % 绘制范围
-				      \draw[thick] (-4,0)--(-4,0.5) -- (-2,0.5) -- (-2,0);
-				      \draw[thick] (3,0)--(3,0.5) -- (4,0.5) -- (4,0);
-
-			      \end{tikzpicture}
-		\end{enumerate}
+		\end{cenum}
 	\end{solution}
 
 	\question[10]
-	已知两定点$A(-4,0)$、$B(4,0)$,一动点$P(x,y)$与两定点$A$、$B$的连线$PA$、$PB$的斜率的乘积为$-\frac14$.求点$P$的轨迹方程,并把它化为标准方程,指出是什么曲线.
+	已知两定点$A(-4,0)$、$B(4,0)$,一动点$P(x,y)$与两定点$A$、$B$的连线$PA$、$PB$的斜率的乘积为$-\dfrac14$.求点$P$的轨迹方程,并把它化为标准方程,指出是什么曲线.
 	\begin{solution}
 		$PA$的斜率为$k_1 = \dfrac{y}{x+4}(x \neq -4)$,$PB$的斜率为$k_2 = \dfrac{y}{x-4}(x \neq 4)$,由斜率的乘积为$-\frac14$得:
 		\begin{align*}
@@ -336,7 +337,6 @@
 			\tkzInterLL(x,B)(A,D) \tkzGetPoint{E}
 
 			\tkzDrawPolygon(A,B,C,D)
-			\tkzDrawSegment[dashed](B,E)
 
 			\tkzLabelPoints(A,D,E)
 			\tkzLabelPoints[above](B,C)
@@ -344,6 +344,22 @@
 	\end{figure*}
 
 	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzDefPoints{0/0/A, 4/0/D}
+				\tkzDefPoint(60:2){B}
+				\tkzDefShiftPoint[D](120:2){C}
+				\tkzDefLine[perpendicular=through B](A,D) \tkzGetPoint{x}
+				\tkzInterLL(x,B)(A,D) \tkzGetPoint{E}
+
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzDrawSegment[dashed](B,E)
+
+				\tkzLabelPoints(A,D,E)
+				\tkzLabelPoints[above](B,C)
+			\end{tikzpicture}
+		\end{center}
+
 		从$B$向$AD$作垂线,垂足为$E$,令$AE=x$,则有$BE=\sqrt{3}x, AB=2x$.
 		由周长等于$60$得
 		\begin{equation*}
@@ -394,6 +410,7 @@
 			       & = (k-12)(k+4)
 		\end{align*}
 		因为$k\geqslant 0$,所以$k=12$.
+		此时$x=6, y=38$.
 	\end{solution}
 
 	\begin{center}
@@ -425,7 +442,7 @@
 			x^2 + y^2 = 1 \qquad (y \geqslant 0)
 		\end{equation*}
 		四边形$OACB$的面积由$\triangle{OAB}$和等边$\triangle{ABC}$组成,下面分别求解:
-		\begin{enumerate}[label=\zhnum*、]
+		\begin{cenum}
 			\item $\triangle{OBA}$的面积可以表示为:
 			      \begin{equation*}
 				      S_{OBA} = \frac12 OA \cdot y = y
@@ -465,7 +482,7 @@
 			      \end{align*}
 			      所以面积在$x^2 = \frac34$时有极值,代入面积公式检验得$x=-\frac{\sqrt{3}}{2}$时面积有最大值$2 +
 				      \frac{5\sqrt{3}}{4}$,此时$y=\frac12$.
-		\end{enumerate}
+		\end{cenum}
 	\end{solution}
 
 	\question 已知曲线$y=x^2-2x+3$与直线$y=x+3$相交于点$P(0,3)$、$Q(3,6)$两点.
@@ -473,7 +490,26 @@
 		\item 分别求出曲线在交点的切线的斜率；
 		\item 求出曲线与直线所围成的图形的面积.
 	\end{enumerate}
+	\pagebreak
 	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-3, xmax=5,
+						ymin=-1, ymax=11,
+					]
+					\addplot[domain=-2:4, name path=A]{x+3};
+					\addplot[domain=-2:4, name path=B]{x^2-2*x + 3};
+					\addplot[gray] fill between [of=A and B,
+							split,
+							every segment no 0/.style={pattern=none},
+							every segment no 1/.style={pattern=north east lines},
+							every segment no 2/.style={pattern=none},
+						];
+
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
 		对曲线求导得:
 		\begin{equation*}
 			y' = 2x - 2

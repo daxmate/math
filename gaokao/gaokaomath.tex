@@ -130,6 +130,18 @@ ylabel style={anchor=south}, % 坐标轴符号的位置
 samples = 100, 				% 采样率,数目越大曲线越平滑
 }
 
+% 修复pgfplots的fillbetween出现missing characters的警告
+\makeatletter
+\patchcmd\pgfplotsforeachtodomain@@{\ifnum}{\ifdim}{}{\fail}
+\makeatother
+\usepgfplotslibrary{
+	fillbetween,  		% 在两个曲线之间填充
+}
+
+\hypersetup{
+	hidelinks,
+}
+
 
 
 % TODO 设计封面样式
