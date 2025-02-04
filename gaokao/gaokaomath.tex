@@ -1,5 +1,7 @@
 %!tex program = lualatex
 \documentclass[answers, addpoints]{examz}
+% 横向超过10pt之内不警告
+\hfuzz=10pt
 % 将页面风格设置为空,去除页眉页脚和页码等
 \pagestyle{empty}
 % exam文档中题解的标题设置
@@ -149,7 +151,7 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 % \title{历年高考数学试卷及答案}
 % \author{收集于网络 by 大象同学}
 
-\includeonly{quanguo1998}
+% \includeonly{quanguo1998}
 \begin{document}
 % \maketitle
 \begin{titlepage}

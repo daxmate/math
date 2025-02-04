@@ -1,4 +1,4 @@
-\section[1977年高考数学试卷及答案(河北卷)理科]{1977年普通高等学校招生考试(河北卷)\\\Huge{理科数字}}
+\section[1977年高考数学试卷及答案(河北卷)理科]{1977年普通高等学校招生考试(河北卷)\\\Huge{理科数学}}
 
 \begin{questions}
 	\question 解答下列各题
@@ -63,12 +63,6 @@
 		\tkzDrawSegment(C,O)
 		\tkzDrawSegment(A,D)
 		\tkzDrawSegment(C,D)
-		\tkzDrawSegment[dashed, red](D,O)
-
-		\tkzMarkAngle[mark=|, size=15pt](O,A,D)
-		\tkzMarkAngle[mark=|, size=15pt](B,O,C)
-		\tkzMarkAngle[mark=||, size=20pt](A,D,O)
-		\tkzMarkAngle[mark=||, size=20pt](C,O,D)
 
 		\tkzLabelPoint[left](A){$A$}
 		\tkzLabelPoint[right](B){$B$}
@@ -77,7 +71,33 @@
 		\tkzLabelPoint[left](D){$D$}
 	\end{tikzpicture}
 
-	\begin{solution}
+	\begin{proofsolution}
+		\begin{center}
+			\begin{tikzpicture}[scale=.5, baseline=(current bounding box.center)]
+				\tkzDefPoints{-2/0/A, 0/0/O, 2/0/B, 2/5/C}
+				\tkzDefLine[parallel=through A](O,C) \tkzGetPoint{x}
+				\tkzInterLC(A,x)(O,B) \tkzGetPoints{D}{A}
+
+				\tkzDrawCircle(O,B)
+				\tkzDrawSegment(A,B)
+				\tkzDrawSegment(C,B)
+				\tkzDrawSegment(C,O)
+				\tkzDrawSegment(A,D)
+				\tkzDrawSegment(C,D)
+				\tkzDrawSegment[dashed, red](D,O)
+
+				\tkzMarkAngle[mark=|, size=15pt](O,A,D)
+				\tkzMarkAngle[mark=|, size=15pt](B,O,C)
+				\tkzMarkAngle[mark=||, size=20pt](A,D,O)
+				\tkzMarkAngle[mark=||, size=20pt](C,O,D)
+
+				\tkzLabelPoint[left](A){$A$}
+				\tkzLabelPoint[right](B){$B$}
+				\tkzLabelPoint[above](C){$C$}
+				\tkzLabelPoint[below](O){$O$}
+				\tkzLabelPoint[left](D){$D$}
+			\end{tikzpicture}
+		\end{center}
 		\begin{enumerate}[label=\protect\circled{\arabic*}]
 			\item 因为 $CB$ 是圆 $O$ 的切线且切点为 $B$,所以有 $AB \perp CB$.
 			\item 由于 $AD \parallel OC$,可以得到 $\angle DAO = \angle COB$.
@@ -93,7 +113,7 @@
 			\item 由 $\triangle BOC \cong \triangle DOC$,可以得到 $\angle ODC = \angle CBO = 90^\circ$.
 			\item 因为 $\angle ODC = 90^\circ$,所以 $DC$ 是圆 $O$ 的切线.
 		\end{enumerate}
-	\end{solution}
+	\end{proofsolution}
 	\pagebreak
 	\question[10] 证明: $\dfrac{\sin2\alpha + 1}{1+\cos2\alpha + \sin2\alpha} = \dfrac12\tan\alpha + \dfrac12$.
 	\begin{proofsolution}
@@ -143,16 +163,30 @@
 		\tkzDefLine[orthogonal=through B](A,B) \tkzGetPoint{y}
 		\tkzInterLL(D,x)(B,y) \tkzGetPoint{C}
 
-		\tkzDefLine[orthogonal=through D](A,B) \tkzGetPoint{x}
-		\tkzInterLL(D,x)(A,B) \tkzGetPoint{E}
-
 		\tkzDrawPolygon(A,B,C,D)
-		\tkzLabelPoints[below](A,B,E)
+		\tkzLabelPoints[below](A,B)
 		\tkzLabelPoints[above](C,D)
-		\tkzDrawSegment[blue, dashed](D,E)
 	\end{tikzpicture}
 
 	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}[baseline=(current bounding box.north)]
+				\tkzDefPoints{0/0/A, 3/0/B}
+				\tkzDefPoint(45:2){D}
+				\tkzDefLine[parallel=through D](A,B) \tkzGetPoint{x}
+				\tkzDefLine[orthogonal=through B](A,B) \tkzGetPoint{y}
+				\tkzInterLL(D,x)(B,y) \tkzGetPoint{C}
+
+				\tkzDefLine[orthogonal=through D](A,B) \tkzGetPoint{x}
+				\tkzInterLL(D,x)(A,B) \tkzGetPoint{E}
+
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzLabelPoints[below](A,B,E)
+				\tkzLabelPoints[above](C,D)
+				\tkzDrawSegment[blue, dashed](D,E)
+			\end{tikzpicture}
+		\end{center}
+
 		\begin{cenum}
 			\item 从$D$点向$AB$作垂线,垂足为$E$.
 			\item 从条件可知$AE=ED=BC$
@@ -322,22 +356,22 @@
 	\end{solution}
 
 	【乙】已知菱形的一对内角各为$60^\circ$,边长为$4$,以菱形为对角线所在的直线为坐标轴建立直角坐标系,以菱形$60^\circ$角的两个顶点为焦点,并且过菱形的另外两个顶点作椭圆,求椭圆方程.
-	\begin{center}
-		\begin{tikzpicture}
-			\tkzInit[xmax=5,xmin=-5, ymax=2.5, ymin=-2.5]
-			\tkzDrawX\tkzDrawY
-			\tkzDefPoints{{2sqrt(3)}/0/A,{-2sqrt(3)}/0/C, 0/2/B, 0/-2/D, 0/0/O}
 
-			\tkzDrawPolygon(A,B,C,D)
-			\tkzMarkSegment[dim={$4$, 16pt, right=6pt}, mark=](B,A)
-			\tkzMarkSegment[dim={$2\sqrt{3}$, -16pt, below=6pt}, mark=](O,A)
-			\tkzMarkSegment[dim={$2$, 16pt, left=6pt}, mark=](O,B)
-
-			\draw[x radius=4, y radius=2] ellipse;
-		\end{tikzpicture}
-	\end{center}
 	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzInit[xmax=5,xmin=-5, ymax=2.5, ymin=-2.5]
+				\tkzDrawX\tkzDrawY
+				\tkzDefPoints{{2sqrt(3)}/0/A,{-2sqrt(3)}/0/C, 0/2/B, 0/-2/D, 0/0/O}
 
+				\tkzDrawPolygon(A,B,C,D)
+				\tkzMarkSegment[dim={$4$, 16pt, right=6pt}, mark=](B,A)
+				\tkzMarkSegment[dim={$2\sqrt{3}$, -16pt, below=6pt}, mark=](O,A)
+				\tkzMarkSegment[dim={$2$, 16pt, left=6pt}, mark=](O,B)
+
+				\draw[x radius=4, y radius=2] ellipse;
+			\end{tikzpicture}
+		\end{center}
 		设椭圆的方程为:
 		\begin{equation*}
 			\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1

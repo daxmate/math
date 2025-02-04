@@ -1,4 +1,4 @@
-\section[1977年高考数学试卷及答案(黑龙江)理科]{1977年普通高等学校招生考试（黑龙江卷）\\\Huge{理科数字}}
+\section[1977年高考数学试卷及答案(黑龙江)理科]{1977年普通高等学校招生考试（黑龙江卷）\\\Huge{理科数学}}
 
 \begin{questions}
 	\question 解答下列各题:
@@ -150,11 +150,32 @@
 			\tkzLabelPoint[above left](D){$D$}
 			\tkzLabelPoint[right](E){$E$}
 
-			\tkzDrawSegments[red, dashed](C,E E,B)
-
 		\end{tikzpicture}
 	\end{figure*}
 	\begin{proofsolution}
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzDefPoints{0/0/A, 3/0/B, 2.5/2.5/C}
+				\tkzDefLine[bisector](B,A,C) \tkzGetPoint{x}
+				\tkzDefCircle(A,B,C) \tkzGetPoint{O}
+				\tkzInterLL(A,x)(B,C) \tkzGetPoint{D}
+				\tkzInterLC(A,x)(O,A) \tkzGetSecondPoint{E}
+
+				\tkzDrawPolygon(A,B,C)
+				\tkzDrawCircle(O,A)
+				\tkzDrawSegment(A,E)
+
+				\tkzLabelPoint[left](A){$A$}
+				\tkzLabelPoint[right](B){$B$}
+				\tkzLabelPoint[above](C){$C$}
+				\tkzLabelPoint[above left](D){$D$}
+				\tkzLabelPoint[right](E){$E$}
+
+				\tkzDrawSegments[red, dashed](C,E E,B)
+
+			\end{tikzpicture}
+		\end{center}
+
 		\begin{cenum}
 			\item 作辅助线$CE$和$BE$
 			\item

@@ -20,16 +20,12 @@
 
 	\begin{oneparchoices}
 		\choice
-		\begin{tikzpicture}[scale=0.45]
+		\begin{tikzpicture}
 			\begin{axis}[
-					axis lines=middle,
-					xlabel = $x$,
-					ylabel = $y$,
 					domain = -3:3,
-					samples = 100,
-					ymin = -1,
+					ymin = -2,
 					ymax = 5,
-					ticks = none
+					scale=.35
 				]
 				\addplot[thick, domain=0:3]{2^x - 1};
 				\addplot[thick, domain=-3:0]{2^(-x) - 1};
@@ -37,35 +33,27 @@
 			\end{axis}
 		\end{tikzpicture}
 		\CorrectChoice
-		\begin{tikzpicture}[scale=0.45]
+		\begin{tikzpicture}
 			\begin{axis}[
-					axis lines=middle,
-					xlabel = $x$,
-					ylabel = $y$,
 					domain = -3:3,
-					samples = 100,
-					ymin = -1,
+					ymin = -2,
 					ymax = 5,
-					ticks = none
+					scale=.35
 				]
 				\addplot[thick, domain=0:3]{2^x};
 				\addplot[thick, domain=-3:0]{2^(-x)};
 				\node[below left] at(0,0) {$O$};
-				\node[below left] at(0,1) {$1$};
+				\node[above left] at(0,1) {$1$};
 			\end{axis}
 		\end{tikzpicture}
 
 		\choice
-		\begin{tikzpicture}[scale=0.45]
+		\begin{tikzpicture}
 			\begin{axis}[
-					axis lines=middle,
-					xlabel = $x$,
-					ylabel = $y$,
 					domain = -3:3,
-					samples = 100,
-					ymin = -1,
+					ymin = -2,
 					ymax = 5,
-					ticks = none
+					scale=.4
 				]
 				\addplot[thick, domain=0:3]{2^(-x)};
 				\addplot[thick, domain=-3:0]{2^(x)};
@@ -75,21 +63,17 @@
 		\end{tikzpicture}
 
 		\choice
-		\begin{tikzpicture}[scale=0.45]
+		\begin{tikzpicture}
 			\begin{axis}[
-					axis lines=middle,
-					xlabel = $x$,
-					ylabel = $y$,
 					domain = -3:3,
-					samples = 100,
-					ymin = -1,
+					ymin = -2,
 					ymax = 5,
-					ticks = none
+					scale=.4
 				]
 				\addplot[thick, domain=0:3]{2-2^(-x)};
 				\addplot[thick, domain=-3:0]{2-2^(x)};
 				\node[below left] at(0,0) {$O$};
-				\node[below left] at(0,1) {$1$};
+				\node[above left] at(0,1) {$1$};
 			\end{axis}
 		\end{tikzpicture}
 	\end{oneparchoices}
@@ -211,27 +195,28 @@
 		一维方向上有 $\sqrt{S_0} = \frac{\sqrt{S} + \sqrt{S'}}{2}$,所以选择A.
 	\end{solution}
 
-	\question 向高为$H$的水瓶中注水,注满为止,如果注水量$V$与水深$h$的函数关系的图像如下图所示,那么水瓶的形状是 \hfill
-	(\hspace{1cm})
+	\question 向高为$H$的水瓶中注水,注满为止,如果注水量$V$与水深$h$的函数关系的图像如下图所示,那么水瓶的形状是 \hfs
 
-	\begin{tikzpicture}[scale=0.45]
-		\begin{axis}[
-				axis lines=middle,
-				xlabel = $h$,
-				ylabel = $V$,
-				domain = -3:3,
-				samples = 100,
-				ymin = -1,
-				ymax = 5,
-				xmax = 3,
-				xmin = -1,
-				ticks = none
-			]
-			\addplot[thick, domain=0:2]{-x^2+ 4*x};
-			\node[below left] at(0,0) {$O$};
-			\draw [dashed] (2,4)  -- (2,0) node[below]{$H$};
-		\end{axis}
-	\end{tikzpicture}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+					axis lines=middle,
+					xlabel = $h$,
+					ylabel = $V$,
+					xlabel style = {anchor=west},
+					ylabel style = {anchor=south},
+					ymin = -1,
+					ymax = 5,
+					xmax = 3,
+					xmin = -1,
+					scale = .5
+				]
+				\addplot[thick, domain=0:2]{-x^2+ 4*x};
+				\node[below left] at(0,0) {$O$};
+				\draw [dashed] (2,4)  -- (2,0) node[below]{$H$};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
 
 	\tdplotsetmaincoords{80}{0}
 	\begin{oneparchoices}
@@ -305,8 +290,9 @@
 		由函数图像可以看出斜率是逐渐下降的,所以选择B.
 	\end{solution}
 
-	\question $3$名医生和$6$名护士被分配到$3$所学校为学生体检,每校分配$1$名医生和$2$名护士,不同的分配方法共有\hfill
-	(\hspace{1cm})
+	\question $3$名医生和$6$名护士被分配到$3$所学校为学生体检,每校分配$1$名医生和$2$名护士,不同的分配方法共有
+
+	\hfs
 
 	\begin{oneparchoices}
 		\choice $90$种
@@ -324,7 +310,9 @@
 	\end{solution}
 
 	\question 椭圆$\dfrac{x^2}{12} + \dfrac{y^2}{3} =
-		1$的焦点为$F_1$和$F_2$,点$P$在椭圆上,如果线段$PF_1$的中点在$y$轴上,那么$|PF_1|$是$|PF_2|$的\hfs
+		1$的焦点为$F_1$和$F_2$,点$P$在椭圆上,如果线段$PF_1$的中点在$y$轴上,那么$|PF_1|$是$|PF_2|$的
+
+	\hfs
 
 	\begin{oneparchoices}
 		\CorrectChoice $7$倍
@@ -433,7 +421,7 @@
 		\begin{equation*}
 			\sum_{n=0}^{10}\binom{10}{n}x^{10-n}2^{n}
 		\end{equation*}
-		则有$x^10$的系数为$1$,$x^8$的系数为$\binom{10}{2}2^2 =
+		则有$x^{10}$的系数为$1$,$x^8$的系数为$\binom{10}{2}2^2 =
 			180$,再乘以$(x^2-1)$后原来的$x^{10}$的系数变为$-1$,原来$x^8$变为$x^{10}$,系数为$180$不变,则有展开式的$x^{10}$的系数为$179$.
 	\end{solution}
 
