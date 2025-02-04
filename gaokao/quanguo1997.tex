@@ -12,17 +12,21 @@
 	\begin{solution}
 		集合$N=\{x|-1 < x < 3\}$,两个集合的范围如下图所示:
 
-		\begin{tikzpicture}
-			\tkzInit[xmin=-4, xmax=4]
-			\tkzDrawX
+		\begin{center}
+			\begin{tikzpicture}
+				\tkzInit[xmin=-4, xmax=4]
+				\tkzDrawX
 
-			\draw[rounded corners=2pt, thick, black!50] (-1,0) |- (3,.5) -- (3,0);
-			\draw[black!50, thick, pattern=north east lines,pattern color=black!50, rounded corners=2pt] (0,0) |- (2,.8) -- (2,0);
-			\draw [fill=white](-1,0) circle (1pt);
-			\draw [fill=white](3,0) circle (1pt);
-			\draw [fill=black](0,0) circle (1pt);
-			\draw [fill=white](2,0) circle (1pt);
-		\end{tikzpicture}
+				\draw[rounded corners=2pt, thick, black!50] (-1,0) |- (3,.5) -- (3,0);
+				\draw[black!50, thick,  rounded corners=2pt] (0,0) |- (2,.8) -- (2,0);
+				\draw[black!50, thick, pattern=north east lines, pattern color=black!50] (0,0) |- (2,.5) -- (2,0);
+				\draw [fill=white](-1,0) circle (1pt);
+				\draw [fill=white](3,0) circle (1pt);
+				\draw [fill=black](0,0) circle (1pt);
+				\draw [fill=white](2,0) circle (1pt);
+			\end{tikzpicture}
+		\end{center}
+
 	\end{solution}
 
 	\question 如果直线$ax+2y+2=0$与直线$3x-y-2=0$平行,那么系数$a=$ \hfs
@@ -591,16 +595,16 @@
 			 & = \lim_{n\to\infty}\frac{a_1\frac{\frac{1}{p^{n-1}}-p}{1-p} + b_1\frac{\frac{1}{p^{n-1}}-q \left(
 					\frac{q}{p} \right)^{n-1}}{1-q}}
 			{a_1\frac{\frac{1}{p^{n-1}}-1}{1-p} + b_1\frac{\frac{1}{p^{n-1}}- \left( \frac{q}{p} \right)^{n-1}}{1-q}}
-			\tag{3}
+			\tag{2}
 		\end{align*}
 		因为$p> q$所以$\displaystyle\lim_{n\to\infty}\left(  \frac{q}{p}\right)^{n-1} = 0$
-		式$(3)$可以进一步化简为
+		式$(2)$可以进一步化简为
 		\begin{align*}
 			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & =
 			\lim_{n\to\infty}\frac{a_1\frac{\frac{1}{p^{n-1}}-p}{1-p}+b_1\frac{\frac{1}{p^{n-1}}}{1-q}}
-			{a_1\frac{\frac{1}{p^{n-1}}-1}{1-p} + b_1\frac{\frac{1}{p^{n-1}}}{1-q}} \tag{4}
+			{a_1\frac{\frac{1}{p^{n-1}}-1}{1-p} + b_1\frac{\frac{1}{p^{n-1}}}{1-q}} \tag{3}
 		\end{align*}
-		\circled{a}若$p>1$,则有$\displaystyle\lim_{n\to\infty}\frac{1}{p^{n-1}} = 0$, 式$(4)$可进一步化简为:
+		\circled{a}若$p>1$,则有$\displaystyle\lim_{n\to\infty}\frac{1}{p^{n-1}} = 0$, 式$(3)$可进一步化简为:
 		\begin{align*}
 			\lim_{n\to\infty}\frac{S_n}{S_{n-1}} & = \lim_{n\to\infty}\frac{a_1\frac{-p}{1-p}}{a_1\frac{-1}{1-p}} \\
 			                                     & = p
@@ -618,9 +622,8 @@
 		\begin{equation*}
 			\lim_{n\to\infty}\frac{S_n}{S_{n-1}}  =
 			\begin{cases}
-				p \qquad (q >1)              \\
-				p \qquad (q < 1 \land p > 1) \\
-				1 \qquad (q < 1 \land p < 1)
+				p \qquad (p >1) \\
+				1 \qquad (p < 1)
 			\end{cases}
 		\end{equation*}
 	\end{solution}
@@ -633,7 +636,7 @@
 	\end{enumerate}
 
 	\begin{solution}
-		\begin{enumerate}[label=(\arabic*)]
+		\begin{penum}
 			\item 运输成本可表示为:
 			      \begin{align*}
 				      y & = (a + bv^2)\cdot \frac{S}{v} \qquad(v \in (0,c]) \\
@@ -653,7 +656,7 @@
 				      \item 若$c\geqslant\sqrt{\frac{a}{b}}$
 				            $v=\sqrt{\frac{a}{b}}$时成本最低.
 			      \end{enumerate}
-		\end{enumerate}
+		\end{penum}
 
 	\end{solution}
 
@@ -700,45 +703,45 @@
 	\begin{solution}
 		\begin{penum}
 			\item
-			\begin{align*}
-				 & \because ABCD-A_1B_1C_1D_1\text{是正方体} \\
-				 & \therefore AD \perp CDD_1C_1          \\
-				 & \therefore AD \perp D_1F
-			\end{align*}
+			      \begin{align*}
+				       & \because ABCD-A_1B_1C_1D_1\text{是正方体} \\
+				       & \therefore AD \perp CDD_1C_1          \\
+				       & \therefore AD \perp D_1F
+			      \end{align*}
 			\item
-			取$C_1C$的中点$G$,连接$DG$与$D_1F$交于$H$.
-			\begin{align*}
-				 & \because \triangle{DFD_1} \cong \triangle{CGD}  \\
-				 & \therefore \angle{DD_1F} = \angle{CDG}          \\
-				 & \because \angle{DFD_1} = \angle{D_1FD}          \\
-				 & \therefore \angle{DHF}=\angle{D_1DF} = \ang{90} \\
-				 & \therefore DG \text{与} D_1F \text{成}\ang{90}    \\
-				 & \because DG \text{是}AE\text{在}DCC_1D1上的投影       \\
-				 & \therefore AE \perp D_1F
-			\end{align*}
+			      取$C_1C$的中点$G$,连接$DG$与$D_1F$交于$H$.
+			      \begin{align*}
+				       & \because \triangle{DFD_1} \cong \triangle{CGD}  \\
+				       & \therefore \angle{DD_1F} = \angle{CDG}          \\
+				       & \because \angle{DFD_1} = \angle{D_1FD}          \\
+				       & \therefore \angle{DHF}=\angle{D_1DF} = \ang{90} \\
+				       & \therefore DG \text{与} D_1F \text{成}\ang{90}    \\
+				       & \because DG \text{是}AE\text{在}DCC_1D1上的投影       \\
+				       & \therefore AE \perp D_1F
+			      \end{align*}
 			\item
-			\begin{align*}
-				 & \because D_1F \perp DG \land D_1F \perp DA \\
-				 & \therefore D_1F \perp ADE                  \\
-				 & \therefore AED \perp A_1FD_1
-			\end{align*}
+			      \begin{align*}
+				       & \because D_1F \perp DG \land D_1F \perp DA \\
+				       & \therefore D_1F \perp ADE                  \\
+				       & \therefore AED \perp A_1FD_1
+			      \end{align*}
 			\item
-			\begin{align*}
-				V_{F-A_1ED_1} & = V_{E-A_1D_1F}                        \\
-				              & = \frac13S_{\triangle{A_1FD_1}}\cdot h \\
-			\end{align*}
-			\begin{align*}
-				S_{\triangle{A_1FD_1}} & = \frac12A_1D_1\cdot D_1F          \\
-				                       & = \frac12 \times 2 \times \sqrt{5} \\
-				                       & = \sqrt{5}
-			\end{align*}
-			因为平面$AEGD \perp$ 平面$A_1FD_1$,所以$h=HG=DG - DH = \sqrt{5} - \frac25{\sqrt{5}} = \frac35\sqrt{5}$
+			      \begin{align*}
+				      V_{F-A_1ED_1} & = V_{E-A_1D_1F}                        \\
+				                    & = \frac13S_{\triangle{A_1FD_1}}\cdot h \\
+			      \end{align*}
+			      \begin{align*}
+				      S_{\triangle{A_1FD_1}} & = \frac12A_1D_1\cdot D_1F          \\
+				                             & = \frac12 \times 2 \times \sqrt{5} \\
+				                             & = \sqrt{5}
+			      \end{align*}
+			      因为平面$AEGD \perp$ 平面$A_1FD_1$,所以$h=HG=DG - DH = \sqrt{5} - \frac25{\sqrt{5}} = \frac35\sqrt{5}$
 
-			所以体积为:
-			\begin{align*}
-				V_{F-A_1ED_1} & = \frac13 \times \sqrt{5} \times \frac35\sqrt{5} \\
-				              & = 1
-			\end{align*}
+			      所以体积为:
+			      \begin{align*}
+				      V_{F-A_1ED_1} & = \frac13 \times \sqrt{5} \times \frac35\sqrt{5} \\
+				                    & = 1
+			      \end{align*}
 		\end{penum}
 	\end{solution}
 
@@ -751,56 +754,56 @@
 	\begin{solution}
 		\begin{penum}
 			\item 因为$a>0$,方程$f(x)-x=0$的图像大概的形状应该是:
-			\begin{center}
-				\begin{tikzpicture}
-					\begin{axis}[xmin=-2,
-							xmax=5,
-							axis lines=center,
-							ymin=-2,
-							ymax=5,
-							xlabel=$x$,
-							ylabel=$y$,
-							ticks=none
-						]
-						\addplot[domain=-1:4]{x^2/3-x +2/3};
-						\node[below left] at (0,0) {$O$};
-						\node[below] at (1,0) {$x_1$};
-						\node[below] at (2,0) {$x_2$};
-						\filldraw[red] (3,0) node[below, black] {$1/a$} circle(1pt);
-					\end{axis}
-				\end{tikzpicture}
-			\end{center}
-			可以看到$f(x) -x > 0$,所以有$f(x) > x$.
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[xmin=-2,
+							      xmax=5,
+							      axis lines=center,
+							      ymin=-2,
+							      ymax=5,
+							      xlabel=$x$,
+							      ylabel=$y$,
+							      ticks=none
+						      ]
+						      \addplot[domain=-1:4]{x^2/3-x +2/3};
+						      \node[below left] at (0,0) {$O$};
+						      \node[below] at (1,0) {$x_1$};
+						      \node[below] at (2,0) {$x_2$};
+						      \filldraw[red] (3,0) node[below, black] {$1/a$} circle(1pt);
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
+			      可以看到$f(x) -x > 0$,所以有$f(x) > x$.
 
-			因为$f(x) = x < x_1$,所以得证:
-			\begin{equation*}
-				x  < f(x) < x_1
-			\end{equation*}
+			      因为$f(x) = x < x_1$,所以得证:
+			      \begin{equation*}
+				      x  < f(x) < x_1
+			      \end{equation*}
 
 			\item
-			\begin{enumerate}[label=\protect\circled{\arabic*}]
-				\item $f(x)$关于直线$x=-\frac{b}{2a}$ 对称,即$x_0 = -\frac{b}{2a}$.
-				\item $x_1, x_2=\frac{-b + 1 \pm \sqrt{(b-1)^2-4ac}}{2a}$
-				\item 命题转换为证明:
-				      \begin{equation*}
-					      -\frac{b}{2a} < \frac{-b + 1 - \sqrt{(b-1)^2 - 4ac}}{4a} \tag{1}
-				      \end{equation*}
-				\item 将式$(1)$两边同乘以$4a$:
-				      \begin{align*}
-					      -2b < -b + 1 - \sqrt{(b-1)^2 - 4ac} \\
-					      b + 1 > \sqrt{(b-1)^2 - 4ac}        \\
-					      b^2 + 2b + 1 > b^2 - 2b + 1 - 4ac   \\
-					      b + ac > 0                          \\
-				      \end{align*}
-				\item 由$x_2 < \frac1a$得
-				      \begin{align*}
-					      \frac{-b + 1 + \sqrt{(b-1)^2 - 4ac}}{2a} < \frac1a \\
-					      -b + 1 + \sqrt{(b-1)^2 - 4ac} < 2                  \\
-					      (b-1)^2 - 4ac < (b+1)^2                            \\
-					      b + ac > 0
-				      \end{align*}
-				\item 得证.
-			\end{enumerate}
+			      \begin{enumerate}[label=\protect\circled{\arabic*}]
+				      \item $f(x)$关于直线$x=-\frac{b}{2a}$ 对称,即$x_0 = -\frac{b}{2a}$.
+				      \item $x_1, x_2=\frac{-b + 1 \pm \sqrt{(b-1)^2-4ac}}{2a}$
+				      \item 命题转换为证明:
+				            \begin{equation*}
+					            -\frac{b}{2a} < \frac{-b + 1 - \sqrt{(b-1)^2 - 4ac}}{4a} \tag{1}
+				            \end{equation*}
+				      \item 将式$(1)$两边同乘以$4a$:
+				            \begin{align*}
+					            -2b < -b + 1 - \sqrt{(b-1)^2 - 4ac} \\
+					            b + 1 > \sqrt{(b-1)^2 - 4ac}        \\
+					            b^2 + 2b + 1 > b^2 - 2b + 1 - 4ac   \\
+					            b + ac > 0                          \\
+				            \end{align*}
+				      \item 由$x_2 < \frac1a$得
+				            \begin{align*}
+					            \frac{-b + 1 + \sqrt{(b-1)^2 - 4ac}}{2a} < \frac1a \\
+					            -b + 1 + \sqrt{(b-1)^2 - 4ac} < 2                  \\
+					            (b-1)^2 - 4ac < (b+1)^2                            \\
+					            b + ac > 0
+				            \end{align*}
+				      \item 得证.
+			      \end{enumerate}
 		\end{penum}
 	\end{solution}
 
@@ -855,7 +858,7 @@
 
 			      此时圆方程为:
 			      \begin{align*}
-				      (x-1)^2 + (y-1)^2 = 2 \\
+					  (x-1)^2 + (y-1)^2 = 2 \text{或}\\
 				      (x+1)^2 + (y+1)^2 = 2
 			      \end{align*}
 		\end{enumerate}
