@@ -1,24 +1,46 @@
 \section[1977年高考数学试卷及答案（天津卷）理科]{1977年普通高等学校招生考试（天津卷）\\\Huge 数学试卷}
 
 \begin{questions}
-\question 
-\begin{parts}
-  \part 在什么条件下,$\dfrac{y}{2x}$ 
-  \begin{cenum}
-	\item 是正数;
-	\item 是负数;
-	\item 等于零;
-	\item 没有意义?
-  \end{cenum}
+	\question
+	\begin{parts}
+		\part 在什么条件下,$\dfrac{y}{2x}$
+			\begin{cenum}
+				\item 是正数;
+				\item 是负数;
+				\item 等于零;
+				\item 没有意义?
+			\end{cenum}
 
-\begin{solution}
-  \begin{cenum}
-  \item $\sgn(x)=\sgn(y)$且$x\neq 0$;
-  \item $\sgn(x)\neq\sgn(y)$且$x\neq 0$;
-  \item $y=0$且$x\neq 0$;
-  \item $x=0$
-  \end{cenum} 
-\end{solution}
+			\begin{solution}
+				\begin{cenum}
+					\item $\sgn(x)=\sgn(y)$且$x\neq 0$;
+					\item $\sgn(x)\neq\sgn(y)$且$x\neq 0$;
+					\item $y=0$且$x\neq 0$;
+					\item $x=0$
+				\end{cenum}
+			\end{solution}
 
-\end{parts}
+		\part 比较下列各组数的大小，并说明理由.
+			\begin{cenum}
+				\item $\cos\ang{31}$与$\cos\ang{30}$.
+				      \begin{solution}
+					      \begin{center}
+						      \begin{tikzpicture}
+							      \begin{axis}[
+									      xmin = -pi/2, xmax = 2.5*pi,
+									      ymin = -1.5, ymax = 1.5,
+								      ]
+								      \addplot[domain=0:2*pi]{cos(deg(x))};
+								      \addlegendentry{$\cos(x)$}
+
+								      \node[above] at ({pi/2},0) {$\frac{\pi}{2}$};
+							      \end{axis}
+						      \end{tikzpicture}
+					      \end{center}
+					      可以看到余弦函数在第一象限是单调递减的,所以$\cos\ang{31} < \cos\ang{30}$.
+
+				      \end{solution}
+			\end{cenum}
+
+	\end{parts}
 \end{questions}
