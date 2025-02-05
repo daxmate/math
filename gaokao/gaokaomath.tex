@@ -30,6 +30,11 @@
 % 定义 proofsolution 环境
 {\renewcommand{\solutiontitle}{\textbf{证明：}}\begin{solution}} % 环境开始部分
 {\end{solution}}            % 环境结束部分
+\renewcommand{\parallel}{
+	\mathrel{ %设置平行符号为数学中的关系符
+		\tikz \draw[baseline=(base)] (0,0) -- (70:.8em) [xshift=2pt](0,0) -- (70:.8em);
+	}
+}
 
 % 屏蔽掉一些不影响的警告
 \usepackage{silence}
