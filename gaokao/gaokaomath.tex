@@ -79,6 +79,9 @@ tocloft,	 	% 格式化目录
 % 允许公式环境换页
 % \allowdisplaybreaks
 
+% 定义sgn为操作符
+\DeclareMathOperator{\sgn}{sgn}
+
 % 设置页面的边距为2cm
 \usepackage[margin=2cm]{geometry}
 
@@ -153,7 +156,7 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 % \title{历年高考数学试卷及答案}
 % \author{收集于网络 by 大象同学}
 
-% \includeonly{quanguo1998}
+\includeonly{tianjing1977}
 \begin{document}
 % \maketitle
 \begin{titlepage}
@@ -335,6 +338,7 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 \include{heilongjiang1977}
 \include{jiangsu1977}
 \include{shanghai1977}
+\include{tianjing1977}
 \include{quanguo1997}
 \include{quanguo1998}
 \end{document}
