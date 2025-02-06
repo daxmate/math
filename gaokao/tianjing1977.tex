@@ -186,4 +186,60 @@
 		\end{align*}
 		所以$a,b,c$成等差数列.
 	\end{proofsolution}
+
+	\question
+	\begin{parts}
+		\part
+			如图，为求河对岸某建筑的高$AB$,在地面上引一条基线$CD=a$,测得$\angle{ACB}=\alpha,\angle{BCD}=\beta,\angle{BDC=\gamma}$,求$AB$.
+
+			\begin{center}
+				\begin{tikzpicture}
+					\coordinate(A) at (0,1);
+					\coordinate(B) at (0,0);
+					\coordinate(C) at (3,-2.5);
+					\coordinate(D) at (4,0);
+					\draw[fill=gray!10, very thin](3,2) -- (4.5,1.2) to[out=210, in=80] (.5, -2.7) -- (-1, -2) to[out=35, in=250]
+					(3,2);
+					\draw(C)node[below]{$C$} -- (A)node[above]{$A$} -- (B)node[left]{$B$} -- (C) --
+					(D)node[right]{$D$};
+					\draw[dashed] (0,0) -- (4,0);
+				\end{tikzpicture}
+			\end{center}
+
+			\begin{solution}
+				\begin{center}
+					\begin{tikzpicture}
+						\coordinate(A) at (0,1);
+						\coordinate(B) at (0,0);
+						\coordinate(C) at (3,-2.5);
+						\coordinate(D) at (4,0);
+						\draw[fill=gray!10, very thin](3,2) -- (4.5,1.2) to[out=210, in=80] (.5, -2.7) -- (-1, -2) to[out=35, in=250]
+						(3,2);
+						\draw(C)node[below]{$C$} -- (A)node[above]{$A$} -- (B)node[left]{$B$} -- (C) --node[midway,
+							right]{$a$} (D)node[right]{$D$};
+						\draw[dashed] (0,0) -- (4,0);
+
+						\pic[draw=red, angle radius=16mm, angle eccentricity=1.2, "$\alpha$"]{angle=A--C--B};
+						\pic[draw=blue, angle radius=4mm, angle eccentricity=1.5, "$\beta$"]{angle=D--C--B};
+						\pic[draw=green, angle radius=4mm, angle eccentricity=1.5, "$\gamma$"]{angle=B--D--C};
+					\end{tikzpicture}
+				\end{center}
+				根据正弦定理有:
+				\begin{equation*}
+					\frac{a}{\sin(\pi-\gamma-\beta)} = \frac{BC}{\sin\gamma}
+				\end{equation*}
+				解得
+				\begin{equation*}
+					BC = \frac{a\sin\gamma}{\sin{(\pi - \gamma - \beta)}}
+				\end{equation*}
+				由三角关系得:
+				\begin{equation*}
+					AB = BC\cdot \tan\alpha
+				\end{equation*}
+				代入$BC$得:
+				\begin{equation*}
+					AB = \frac{a\sin\gamma\tan\alpha}{\sin(\pi - \gamma - \beta)}
+				\end{equation*}
+			\end{solution}
+	\end{parts}
 \end{questions}
