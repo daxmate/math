@@ -129,5 +129,49 @@
 					S_{max} = \frac{25}{2}(50 - 2\times\frac{25}2) = \qty{312.5}{\meter\squared}
 				\end{equation*}
 			\end{solution}
+
+		\part 如图,已知$AB$、$DE$是圆$O$的直径,$AC$是弦,$AC\parallel DE$,求证:$CE=EB$.
+			\begin{center}
+				\begin{tikzpicture}[scale=1.3]
+					\draw (0,0) circle (1);
+					\draw (0,1) -- (0,-1) (50:1) -- (230:1) -- (130:1);
+
+					\node[above] at (0,1) {$E$};
+					\node[below] at (0,-1) {$D$};
+					\node[above right] at (50:1) {$B$};
+					\node[below left] at (230:1) {$A$};
+					\node[above] at (130:1) {$C$};
+				\end{tikzpicture}
+			\end{center}
+
+			\begin{proofsolution}
+				\begin{center}
+					\begin{tikzpicture}[scale=1.3]
+						\draw (0,0) circle (1);
+						\draw (0,1) -- (0,-1) (50:1) -- (230:1) -- (130:1);
+
+						\node[above] at (0,1) {$E$};
+						\node[below] at (0,-1) {$D$};
+						\node[above right] at (50:1) {$B$};
+						\node[below left] at (230:1) {$A$};
+						\node[above] at (130:1) {$C$};
+
+						\draw[dashed, red](0,0) -- (130:1);
+						\node[right] at (0,0) {$O$};
+					\end{tikzpicture}
+				\end{center}
+				\begin{cenum}
+					\item 连接圆心$O$和$C$点;
+					\item
+					      \begin{align*}
+						       & \because CO = AO                                                 \\
+						       & \therefore \angle{A} = \angle{C}                                 \\
+						       & \because AC \parallel ED                                         \\
+						       & \therefore \angle{C} = \angle{COE} \land \angle{A} = \angle{EOB} \\
+						       & \therefore \angle{COE} = \angle{EOB}                             \\
+						       & \therefore CE = EB
+					      \end{align*}
+				\end{cenum}
+			\end{proofsolution}
 	\end{parts}
 \end{questions}

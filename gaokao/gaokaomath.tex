@@ -33,7 +33,7 @@
 % 添加中式有点倾斜的平行符号
 \renewcommand{\parallel}{
 	\mathrel{ %设置平行符号为数学中的关系符
-		\tikz \draw[baseline=(base)] (0,0) -- (70:.8em) [xshift=2pt](0,0) -- (70:.8em);
+		\tikz[baseline=1pt] \draw (0,0) -- (70:1em) [xshift=2.5pt](0,0) -- (70:1em);
 	}
 }
 
