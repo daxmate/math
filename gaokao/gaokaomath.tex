@@ -1,5 +1,33 @@
 %!tex program = lualatex
 \documentclass[answers]{exam}
+% 屏蔽掉一些不影响的警告
+\usepackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font}
+\WarningFilter{latex}{Label `question}
+\WarningFilter{latex}{There were multiply-defined labels}
+\WarningFilter{latex}{Label `part}
+\WarningFilter{latex}{Command `\theHfootnote'}
+\usepackage{
+ctex, 	 		% 中文支持
+amsmath, 		% ams数学包
+amssymb, 		% ams数学符号
+amsthm,  		% ams定理环境
+csquotes,		% 处理引号
+arcs,	 		% 添加弧的符号
+enumitem,		% 列表环境增强
+tikz,	 		% 绘图工具
+pgfplots,		% 绘制函数曲线
+tikz-3dplot, 	% 3D 图像
+tkz-euclide, 	% 简单几何绘图
+siunitx,	 	% 数字单位处理
+titlesec,	 	% 标题设置
+caption,	 	% 图表标题
+multicol,	 	% 多列环境
+hyperref, 	 	% 处理超链接
+tocloft,	 	% 格式化目录
+}
+
 % 横向超过10pt之内不警告
 \hfuzz=10pt
 % 纵向超过10pt之内不警告
@@ -37,33 +65,6 @@
 	}
 }
 
-% 屏蔽掉一些不影响的警告
-\usepackage{silence}
-\WarningFilter{latexfont}{Font shape}
-\WarningFilter{latexfont}{Some font}
-\WarningFilter{latex}{Label `question}
-\WarningFilter{latex}{There were multiply-defined labels}
-\WarningFilter{latex}{Label `part}
-\WarningFilter{latex}{Command `\theHfootnote'}
-\usepackage{
-ctex, 	 		% 中文支持
-amsmath, 		% ams数学包
-amssymb, 		% ams数学符号
-amsthm,  		% ams定理环境
-csquotes,		% 处理引号
-arcs,	 		% 添加弧的符号
-enumitem,		% 列表环境增强
-tikz,	 		% 绘图工具
-pgfplots,		% 绘制函数曲线
-tikz-3dplot, 	% 3D 图像
-tkz-euclide, 	% 简单几何绘图
-siunitx,	 	% 数字单位处理
-titlesec,	 	% 标题设置
-caption,	 	% 图表标题
-multicol,	 	% 多列环境
-hyperref, 	 	% 处理超链接
-tocloft,	 	% 格式化目录
-}
 % 修改section的标题样式
 \titleformat{name=\section}
   {\centering\bfseries} % 格式：居中、大号字体、加粗
