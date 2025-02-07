@@ -305,6 +305,24 @@
 					y + 3x + 2 = 0
 				\end{equation*}
 			\end{solution}
-
 	\end{parts}
+
+	\section*{附加题}
+
+	\question 求 \begin{math}
+		\lim_{x\to0}\frac{e^x - e^{-x} - 2x}{x - \sin{nx}} 的值.
+	\end{math}
+
+	\begin{solution}
+		应用洛必达法则:
+		\begin{align*}
+			\lim_{x\to0}\frac{\mathrm{e}^x - \mathrm{e}^{-x} - 2x}{x - \sin{nx}}
+			 & = \lim_{x\to0}\frac{(\mathrm{e}^x - \mathrm{e}^{-x} - 2x)'}{(x - \sin(nx))'} \\
+			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x} - 2}{1 - n\cos{nx}}       \\
+			 & = \lim_{x\to0}\frac{\mathrm{e}^x - \mathrm{e}^{-x}}{n^2\sin{nx}}             \\
+			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x}}{n^3\cos{nx}}             \\
+			 & = \frac{2}{n^3}
+		\end{align*}
+	\end{solution}
+
 \end{questions}
