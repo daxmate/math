@@ -325,4 +325,19 @@
 		\end{align*}
 	\end{solution}
 
+	\question 计算: $\displaystyle \int_0^4\frac{x+2}{\sqrt{2x+1}}\,\mathrm{d}x$.
+
+	\begin{solution}
+		设$t=2x+1$,则有$\mathrm{d}t = 2\mathrm{d}x$,即$\mathrm{d}x =
+			\frac12\mathrm{d}t$,并有$x=\frac{t-1}2$,另有$x=0$时$t=1$, $x=4$时$t=9$,
+		代入原式得:
+		\begin{align*}
+			 & = \int_1^9\frac{\frac{t-1}{2}+2}{\sqrt{t}}\cdot\frac{\mathrm{d}t}{2}            \\
+			 & = \int_1^9\frac{t+3}{4\sqrt{t}}\,\mathrm{d}t                                    \\
+			 & = \int_1^9(\frac{\sqrt{t}}{4} + \frac{3}{4\sqrt{t}})\mathrm{d}t                 \\
+			 & = \left[\frac{t^{\frac32}}{6}\right]_1^9 + \left[\frac{3\sqrt{t}}{2}\right]_1^9 \\
+			 & = \frac{27}{6} - \frac{1}{6} + \frac{9}{2} - \frac{3}{2}                        \\
+			 & = \frac{22}{3}
+		\end{align*}
+	\end{solution}
 \end{questions}
