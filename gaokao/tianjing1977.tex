@@ -13,8 +13,8 @@
 
 			\begin{solution}
 				\begin{cenum}
-					\item $\sgn(x)=\sgn(y)$且$x\neq 0$;
-					\item $\sgn(x)\neq\sgn(y)$且$x\neq 0$;
+					\item $xy>0$;
+					\item $xy<0$;
 					\item $y=0$且$x\neq 0$;
 					\item $x=0$
 				\end{cenum}
@@ -63,8 +63,8 @@
 				\item $(-2)^0 \times (0.01)^\frac12$.
 				      \begin{solution}
 					      \begin{align*}
-						       & = 1 \times 1^{-2\times\frac12} \\
-						       & = 1
+						       & = 1 \times 10^{-2\times\frac12} \\
+						       & = 0.1
 					      \end{align*}
 				      \end{solution}
 			\end{cenum}
@@ -179,9 +179,8 @@
 	\begin{proofsolution}
 		因为方程有两个相等的实数根,所以其判别式$\Delta=0$:
 		\begin{align*}
-			\Delta  = \sqrt{16b^2 - 4b\cdot2(a+c)} = 0 \\
-			16b^2 - 8b(a+c) = 0                        \\
-			2b = a+ c                                  \\
+			16b^2 - 8b(a+c) = 0 \\
+			2b = a+ c           \\
 			b - a = c - b
 		\end{align*}
 		所以$a,b,c$成等差数列.
@@ -248,7 +247,7 @@
 					AB & = \frac{33\sin\ang{45}\tan\ang{30}}{\sin(\ang{180}-\ang{45} -\ang{75})} \\
 					   & = \frac{33\frac{\sqrt{2}}{2}\frac{\sqrt{3}}{3}}{\frac{\sqrt{3}}{2}}     \\
 					   & = 11\sqrt{2}                                                            \\
-					   & = \qty{15.4}{米}
+					   & = \qty{15.6}{米}
 				\end{align*}
 			\end{solution}
 	\end{parts}
@@ -274,10 +273,10 @@
 				\end{equation*}
 				即 $x=-1$,代入式$(1)$中得:
 				\begin{equation*}
-					y = 1
+					y = -1
 				\end{equation*}
 
-				所以交点的坐标为$(-1,1)$.
+				所以交点的坐标为$(-1,-1)$.
 
 			\end{solution}
 
@@ -286,23 +285,23 @@
 			\begin{solution}
 				直线$x+3y+4=0$的斜率为:
 				\begin{equation*}
-					k_1 = \frac13
+					k_1 = -\frac13
 				\end{equation*}
 				两条垂直的直线的斜率的乘积为$-1$,所以得所求直线的斜率为:
 				\begin{equation*}
-					k_2 = -3
+					k_2 = 3
 				\end{equation*}
 				设所求直线方程为:
 				\begin{equation*}
-					y = -3x + b
+					y = 3x + b
 				\end{equation*}
-				将上述的交点$(-1,1)$代入直线方程得:
+				将上述的交点$(-1,-1)$代入直线方程得:
 				\begin{equation*}
-					b = -2
+					b = 2
 				\end{equation*}
 				所以所求直线方程为:
 				\begin{equation*}
-					y + 3x + 2 = 0
+					y - 3x - 2 = 0
 				\end{equation*}
 			\end{solution}
 	\end{parts}
@@ -318,11 +317,20 @@
 		\begin{align*}
 			\lim_{x\to0}\frac{\mathrm{e}^x - \mathrm{e}^{-x} - 2x}{x - \sin{nx}}
 			 & = \lim_{x\to0}\frac{(\mathrm{e}^x - \mathrm{e}^{-x} - 2x)'}{(x - \sin(nx))'} \\
-			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x} - 2}{1 - n\cos{nx}}       \\
-			 & = \lim_{x\to0}\frac{\mathrm{e}^x - \mathrm{e}^{-x}}{n^2\sin{nx}}             \\
-			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x}}{n^3\cos{nx}}             \\
-			 & = \frac{2}{n^3}
+			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x} - 2}{1 - n\cos(nx)}
 		\end{align*}
+		\begin{penum}
+			\item 若$n\neq1$
+			      \begin{equation*}
+				      \lim_{x\to0}\frac{e^x+e^{-x} - 2}{1-n\cos(nx)} = \frac{0}{1-n} = 0
+			      \end{equation*}
+			\item 若$n=1$
+			      \begin{align*}
+				      \lim_{x\to0}\frac{e^x+e^{-x} - 2}{1-\cos{x}} & = \lim_{x\to0}\frac{e^x - e^{-x}}{\sin{x}} \\
+				                                                   & = \lim_{x\to0}\frac{e^x + e^{-x}}{\cos{x}} \\
+				                                                   & = 2
+			      \end{align*}
+		\end{penum}
 	\end{solution}
 
 	\question 计算: $\displaystyle \int_0^4\frac{x+2}{\sqrt{2x+1}}\,\mathrm{d}x$.
