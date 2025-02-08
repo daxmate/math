@@ -1,4 +1,4 @@
-\section[1977年高考数学试卷及答案（天津卷）理科]{1977年普通高等学校招生考试（天津卷）\\\Huge 数学试卷}
+\section[1977年高考数学试卷及答案(天津卷)理科]{1977年普通高等学校招生考试（天津卷）\\\Huge 数学试卷}
 
 \begin{questions}
 	\question
@@ -309,40 +309,40 @@
 	\section*{附加题}
 
 	\question 求 \begin{math}
-		\lim_{x\to0}\frac{e^x - e^{-x} - 2x}{x - \sin{nx}} 的值.
+		\lim_{x\to0}\frac{\ue^x - \ue^{-x} - 2x}{x - \sin{nx}} 的值.
 	\end{math}
 
 	\begin{solution}
 		应用洛必达法则:
 		\begin{align*}
-			\lim_{x\to0}\frac{\mathrm{e}^x - \mathrm{e}^{-x} - 2x}{x - \sin{nx}}
-			 & = \lim_{x\to0}\frac{(\mathrm{e}^x - \mathrm{e}^{-x} - 2x)'}{(x - \sin(nx))'} \\
-			 & = \lim_{x\to0}\frac{\mathrm{e}^x + \mathrm{e}^{-x} - 2}{1 - n\cos(nx)}
+			\lim_{x\to0}\frac{\ue^x - \ue^{-x} - 2x}{x - \sin{nx}}
+			 & = \lim_{x\to0}\frac{(\ue^x - \ue^{-x} - 2x)'}{(x - \sin(nx))'} \\
+			 & = \lim_{x\to0}\frac{\ue^x + \ue^{-x} - 2}{1 - n\cos(nx)}
 		\end{align*}
 		\begin{penum}
 			\item 若$n\neq1$
 			      \begin{equation*}
-				      \lim_{x\to0}\frac{e^x+e^{-x} - 2}{1-n\cos(nx)} = \frac{0}{1-n} = 0
+				      \lim_{x\to0}\frac{\ue^x+\ue^{-x} - 2}{1-n\cos(nx)} = \frac{0}{1-n} = 0
 			      \end{equation*}
 			\item 若$n=1$
 			      \begin{align*}
-				      \lim_{x\to0}\frac{e^x+e^{-x} - 2}{1-\cos{x}} & = \lim_{x\to0}\frac{e^x - e^{-x}}{\sin{x}} \\
-				                                                   & = \lim_{x\to0}\frac{e^x + e^{-x}}{\cos{x}} \\
+				      \lim_{x\to0}\frac{\ue^x+\ue^{-x} - 2}{1-\cos{x}} & = \lim_{x\to0}\frac{\ue^x - \ue^{-x}}{\sin{x}} \\
+				                                                   & = \lim_{x\to0}\frac{\ue^x + \ue^{-x}}{\cos{x}} \\
 				                                                   & = 2
 			      \end{align*}
 		\end{penum}
 	\end{solution}
 
-	\question 计算: $\displaystyle \int_0^4\frac{x+2}{\sqrt{2x+1}}\,\mathrm{d}x$.
+	\question 计算: $\displaystyle \int_0^4\frac{x+2}{\sqrt{2x+1}}\,\ud{x}$.
 
 	\begin{solution}
-		设$t=2x+1$,则有$\mathrm{d}t = 2\mathrm{d}x$,即$\mathrm{d}x =
-			\frac12\mathrm{d}t$,并有$x=\frac{t-1}2$,另有$x=0$时$t=1$, $x=4$时$t=9$,
+		设$t=2x+1$,则有$\ud{t} = 2\ud{x}$,即$\ud{x} =
+			\frac12\ud{t}$,并有$x=\frac{t-1}2$,另有$x=0$时$t=1$, $x=4$时$t=9$,
 		代入原式得:
 		\begin{align*}
-			 & = \int_1^9\frac{\frac{t-1}{2}+2}{\sqrt{t}}\cdot\frac{\mathrm{d}t}{2}            \\
-			 & = \int_1^9\frac{t+3}{4\sqrt{t}}\,\mathrm{d}t                                    \\
-			 & = \int_1^9(\frac{\sqrt{t}}{4} + \frac{3}{4\sqrt{t}})\mathrm{d}t                 \\
+			 & = \int_1^9\frac{\frac{t-1}{2}+2}{\sqrt{t}}\cdot\frac{\ud{t}}{2}            \\
+			 & = \int_1^9\frac{t+3}{4\sqrt{t}}\,\ud{t}                                    \\
+			 & = \int_1^9(\frac{\sqrt{t}}{4} + \frac{3}{4\sqrt{t}})\ud{t}                 \\
 			 & = \left[\frac{t^{\frac32}}{6}\right]_1^9 + \left[\frac{3\sqrt{t}}{2}\right]_1^9 \\
 			 & = \frac{27}{6} - \frac{1}{6} + \frac{9}{2} - \frac{3}{2}                        \\
 			 & = \frac{22}{3}

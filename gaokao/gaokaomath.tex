@@ -65,6 +65,9 @@ tocloft,	 	% 格式化目录
 	}
 }
 
+\newcommand\ud[1]{\mathop{}\!\mathrm{d}#1}
+\newcommand\ue{\mathrm{e}}
+
 % 修改section的标题样式
 \titleformat{name=\section}
   {\centering\bfseries} % 格式：居中、大号字体、加粗
@@ -157,13 +160,15 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 	hidelinks,
 }
 
+\sisetup{
+mode=math}
 
 
 % TODO 设计封面样式
 % \title{历年高考数学试卷及答案}
 % \author{收集于网络 by 大象同学}
 
-\includeonly{tianjing1977}
+% \includeonly{tianjing1977}
 \begin{document}
 % \maketitle
 \begin{titlepage}

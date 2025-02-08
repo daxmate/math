@@ -7,10 +7,10 @@
 			\begin{solution}
 				\begin{align*}
 					\text{原式} & = 5 - 3 \times \left[ (-3\frac38)^{-\frac13} + 1031 \times 0 \right] \div 1 \\
-					          & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
-					          & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
-					          & = 5 + 2                                                                     \\
-					          & = 7
+					            & = 5 - 3 \times (-\frac{8}{27})^{\frac13}                                    \\
+					            & = 5 - \sqrt[3]{3^3 \times (-\frac{8}{27}})                                  \\
+					            & = 5 + 2                                                                     \\
+					            & = 7
 				\end{align*}
 			\end{solution}
 
@@ -87,9 +87,9 @@
 		\part[4] 已经 \( \lg3=0.4771, \lg{x}=-3.5229 \),求 \( x \).
 			\begin{solution}
 				\begin{align*}
-					 & \because \lg3                              = 0.4771                  \\
-					 & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229  \\
-					 & \text{另有} \lg0.001                       = -3                        \\
+					 & \because \lg3                              = 0.4771                   \\
+					 & \therefore \lg{\frac{3}{10}}               = \lg3 - \lg10 = -0.5229   \\
+					 & \text{另有} \lg0.001                       = -3                       \\
 					 & \text{则} \lg(0.001 \times \frac{3}{10} )  = -3 + (-0.5229) = -3.5229 \\
 					 & \therefore x = \frac{3}{10000}
 				\end{align*}
@@ -704,46 +704,46 @@
 	\begin{center}
 		\section*{附加题}
 	\end{center}
-	\question 求函数 $y = e^{-2x}\sin\left(5x+\dfrac{\pi}{4}\right)$的导数.
+	\question 求函数 $y = \ue^{-2x}\sin\left(5x+\dfrac{\pi}{4}\right)$的导数.
 	\begin{solution}
 		\begin{align*}
-			y' & =  (e^{-2x})'\sin\left(5x + \frac{\pi}{4}\right) + e^{-2x}\sin'\left(5x +
-			\frac{\pi}{4}\right)                                                           \\
-			   & = -2e^{-2x}\sin\left(5x+\frac{\pi}{4}\right) +
-			5e^{-2x}\cos\left(5x+\frac{\pi}{4}\right)                                      \\
-			   & = e^{-2x}\left[-2\sin\left(5x + \frac{\pi}{4}\right) + 5\cos\left(5x +
-			\frac{\pi}{4}\right)\right]                                                    \\
-			   & = e^{-2x}\left[-2\sin5x\cos\frac{\pi}{4} - 2\cos5x\sin\frac{\pi}{4} +
-			5\cos(5x)\cos(\frac{\pi}{4}) - 5\sin(5x)\sin(\frac{\pi}{4})\right]             \\
-			   & = -\frac{\sqrt{2}}{2}e^{-2x}[7\sin(5x) - 3\cos(5x)]                       \\
-			   & = -\frac{\sqrt{2}}{2}e^{-2x}\cdot \sqrt{58}\sin({5x-\arctan{\frac37}})    \\
-			   & = -\sqrt{29}e^{-2x}\sin(5x-\arctan\frac37)
+			y' & =  (\ue^{-2x})'\sin\left(5x + \frac{\pi}{4}\right) + \ue^{-2x}\sin'\left(5x +
+			\frac{\pi}{4}\right)                                                               \\
+			   & = -2\ue^{-2x}\sin\left(5x+\frac{\pi}{4}\right) +
+			5\ue^{-2x}\cos\left(5x+\frac{\pi}{4}\right)                                        \\
+			   & = \ue^{-2x}\left[-2\sin\left(5x + \frac{\pi}{4}\right) + 5\cos\left(5x +
+			\frac{\pi}{4}\right)\right]                                                        \\
+			   & = \ue^{-2x}\left[-2\sin5x\cos\frac{\pi}{4} - 2\cos5x\sin\frac{\pi}{4} +
+			5\cos(5x)\cos(\frac{\pi}{4}) - 5\sin(5x)\sin(\frac{\pi}{4})\right]                 \\
+			   & = -\frac{\sqrt{2}}{2}\ue^{-2x}[7\sin(5x) - 3\cos(5x)]                         \\
+			   & = -\frac{\sqrt{2}}{2}\ue^{-2x}\cdot \sqrt{58}\sin({5x-\arctan{\frac37}})      \\
+			   & = -\sqrt{29}\ue^{-2x}\sin(5x-\arctan\frac37)
 		\end{align*}
 	\end{solution}
 
-	\question 求定积分:$\int_0^1\left(xe^{x^2} + x^2e^x\right)\mathrm{d}x$
+	\question 求定积分:$\int_0^1\left(x\ue^{x^2} + x^2\ue^x\right)\ud{x}$
 	\begin{solution}
 		\begin{enumerate}[label=\protect\circled{\arabic*}]
 			\item 根据和差积分法则有:
 			      \begin{equation*}
-				      \int_0^1\left(xe^{x^2} + x^2e^2\right)\mathrm{d}x  = \int_0^1(xe^{x^2})\,\mathrm{d}x + \int_0^1(x^2e^x)\,\mathrm{d}x
+				      \int_0^1\left(x\ue^{x^2} + x^2\ue^2\right)\ud{x}  = \int_0^1(x\ue^{x^2})\,\ud{x} + \int_0^1(x^2\ue^x)\,\ud{x}
 			      \end{equation*}
-			\item 先求解 $\int_0^1(xe^{x^2})\,\mathrm{d}x $,设 $u=x^2$,则有$\mathrm{d}u=2x\mathrm{d}x$,则有
+			\item 先求解 $\int_0^1(x\ue^{x^2})\,\ud{x} $,设 $u=x^2$,则有$\ud{u}=2x\ud{x}$,则有
 			      \begin{align*}
-				      \int_0^1(xe^{x^2})\mathrm{d}x & = \frac12\int_0^1e^u\mathrm{d}u \\
-				                                    & = \frac12(e-1)
+				      \int_0^1(x\ue^{x^2})\ud{x} & = \frac12\int_0^1\ue^u\ud{u} \\
+				                                 & = \frac12(\ue-1)
 			      \end{align*}
-			\item 再来求解 $\int_0^1(x^2e^x)\,\mathrm{d}x$
+			\item 再来求解 $\int_0^1(x^2\ue^x)\,\ud{x}$
 			      \begin{align*}
-				      \int_0^1(x^2e^x)\,\mathrm{d}x & = \int_0^1 x^2\mathrm{d}e^x                                \\
-				                                    & = \left[x^2e^x\right]_0^1 - \int_0^1e^x\,\mathrm{d}x^2     \\
-				                                    & = e - \int_0^12x\,\mathrm{d}e^x                            \\
-				                                    & = e - \left[ 2xe^x \right]_0^1 + \int_0^1e^x\,\mathrm{d}2x \\
-				                                    & = e-2
+				      \int_0^1(x^2\ue^x)\,\ud{x} & = \int_0^1 x^2\ud{\ue^x}                                    \\
+				                                 & = \left[x^2\ue^x\right]_0^1 - \int_0^1\ue^x\,\ud{x}^2       \\
+				                                 & = \ue - \int_0^12x\,\ud{\ue^x}                              \\
+				                                 & = \ue - \left[ 2x\ue^x \right]_0^1 + \int_0^1\ue^x\,\ud{2x} \\
+				                                 & = \ue-2
 			      \end{align*}
 			\item 将两部分加起来得到总的积分值:
 			      \begin{equation*}
-				      \frac12(e-1) + e - 2 = \frac32e - \frac52
+				      \frac12(\ue-1) + \ue - 2 = \frac32\ue - \frac52
 			      \end{equation*}
 		\end{enumerate}
 	\end{solution}

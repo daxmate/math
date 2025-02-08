@@ -42,15 +42,16 @@
 					x_1 = -3, x_2 = 1
 				\end{equation*}
 			\end{solution}
-		\part[8] 计算:$-\log_3(\log_3\sqrt[3]{\sqrt[3]{\sqrt[3]{3}}})$
+		\part[8] 计算:$\displaystyle-\log_3\left(\log_3\sqrt[3]{\mathstrut\sqrt[3]{\mathstrut\sqrt[3]{3}}}\right)$.
 			\begin{solution}
 				\begin{align*}
-					-\log_3(\log_3\sqrt[3]{\sqrt[3]{\sqrt[3]{3}}}) & = -\log_3(\log_3\sqrt[3]{\sqrt[3]{3^\frac13}}) \\
-					                                               & = -\log_3(\log_3\sqrt[3]{3^\frac19})           \\
-					                                               & = -\log_3(\log_33^\frac1{27})                  \\
-					                                               & = -\log_3\left(\frac{1}{27}\right)             \\
-					                                               & = -\log_3\left(3^{-3}\right)                   \\
-					                                               & = 3
+					-\log_3\left(\log_3\sqrt[3]{\sqrt[3]{\sqrt[3]{3}}}\right)
+					 & = -\log_3\left(\log_3\sqrt[3]{\sqrt[3]{3^\frac13}}\right) \\
+					 & = -\log_3\left(\log_3\sqrt[3]{3^\frac19}\right)           \\
+					 & = -\log_3\left(\log_33^\frac1{27}\right)                  \\
+					 & = -\log_3\left(\frac{1}{27}\right)                        \\
+					 & = -\log_3\left(3^{-3}\right)                              \\
+					 & = 3
 				\end{align*}
 			\end{solution}
 		\part[8] 把直角坐标方程 \( (x-3)^2 + y^2 = 9 \)化为极坐标方程.
@@ -76,7 +77,7 @@
 					\rho = 6\cos\theta
 				\end{equation*}
 			\end{solution}
-		\part[8] 计算: \( \displaystyle \lim_{n\to\infty}\frac{1+2+3+\cdots+n}{n^2} \)
+		\part[8] 计算: \( \displaystyle \lim_{n\to\infty}\frac{1+2+3+\cdots+n}{n^2} \).
 			\begin{solution}
 				根据等差数列求和公式得
 				\begin{equation*}
@@ -160,8 +161,8 @@
 
 	\begin{proofsolution}
 		\begin{align*}
-			 & \text{设}\angle{ACD} = \alpha                               \\
-			 & \because CE\text{是直角三角形的中线}                                \\
+			 & \text{设}\angle{ACD} = \alpha                              \\
+			 & \because CE\text{是直角三角形的中线}                       \\
 			 & \therefore CE = EB                                         \\
 			 & \therefore \angle{ECB} = \angle{CBE}                       \\
 			 & \because \angle{DCB} = 3\angle{ACD}                        \\
@@ -290,9 +291,9 @@
 			\frac{1-x}{x}a$,则$\triangle{EMK}$与$\triangle{NKF}$的面积和为:
 		\begin{align*}
 			\frac12axh + \frac12\cdot\frac{1-x}{x}a\cdot(1-x)h
-			\\                                                         & = \frac12ah(x + \frac{(1-x)^2}{x})
-			\\                                                         & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
-			\\                                                       & = \frac12ah\frac{2x^2 - 2x + 1}{x}
+			\\                                                           & = \frac12ah(x + \frac{(1-x)^2}{x})
+			\\                                                           & = \frac12ah(\frac{x^2 + 1 - 2x + x^2}{x})
+			\\                                                         & = \frac12ah\frac{2x^2 - 2x + 1}{x}
 			\\ & = \frac12ah(2x -2 + \frac1x)
 		\end{align*}
 		对其求导数得:
@@ -312,17 +313,17 @@
 	\begin{solution}
 		\begin{align*}
 			\text{原式} & = \lim_{n\to\infty}\frac{\sqrt{x}}{\sqrt{x+1} + \sqrt{x}} \\
-			          & = \lim_{n\to\infty}\frac{1}{\sqrt{1 + \frac1x} + 1}       \\
-			          & = \frac12
+			            & = \lim_{n\to\infty}\frac{1}{\sqrt{1 + \frac1x} + 1}       \\
+			            & = \frac12
 		\end{align*}
 	\end{solution}
-	\question 求不定积分:$\int\dfrac{\mathrm{d}x}{(1+e^x)^2}$.
+	\question 求不定积分:$\int\dfrac{\ud{x}}{(1+e^x)^2}$.
 	\begin{solution}
-		设$u = 1 + e^x$,则有$\mathrm{d}u = e^x\mathrm{d}x$,即$\mathrm{d}x = \frac{\mathrm{d}u}{u-1}$
+		设$u = 1 + \ue^x$,则有$\ud{u} = \ue^x\ud{x}$,即$\ud{x} = \frac{\ud{u}}{u-1}$
 
 		代入得:
 		\begin{align*}
-			\int\frac{\mathrm{d}x}{(1+e^x)^2} & = \int\frac{1}{(u-1)u^2}\mathrm{d}u
+			\int\frac{\ud{x}}{(1+\ue^x)^2} & = \int\frac{1}{(u-1)u^2}\ud{u}
 		\end{align*}
 		对于$\frac{1}{(u-1)u^2}$进行因式分解,假设分解后的形式为:
 		\begin{equation*}
@@ -346,24 +347,24 @@
 		\end{equation*}
 		因此
 		\begin{align*}
-			\int\frac{1}{(u-1)u^2}\mathrm{d}u
-			 & = \int\left(-\frac{1}{u} - \frac{1}{u^2} + \frac{1}{u-1}\right)\mathrm{d}u \\
-			 & = \int\left(-\frac1u\right)\mathrm{d}u +
-			\int\left(-\frac1{u^2}\right)\mathrm{d}u +
-			\int\left(\frac1{u-1}\right)\mathrm{d}u                                       \\
+			\int\frac{1}{(u-1)u^2}\ud{u}
+			 & = \int\left(-\frac{1}{u} - \frac{1}{u^2} + \frac{1}{u-1}\right)\ud{u} \\
+			 & = \int\left(-\frac1u\right)\ud{u} +
+			\int\left(-\frac1{u^2}\right)\ud{u} +
+			\int\left(\frac1{u-1}\right)\ud{u}                                       \\
 			 & = -\ln|u| + \frac1u + \ln|u-1| + C
 		\end{align*}
-		将$u=1+e^x$代入得
+		将$u=1+\ue^x$代入得
 		\begin{equation*}
-			-\ln|1+e^x| + \frac{1}{1+e^x} + \ln|e^x| + C
-			= -\ln(1+e^x) + \frac{1}{1+e^x} + x + C
+			-\ln|1+\ue^x| + \frac{1}{1+\ue^x} + \ln|\ue^x| + C
+			= -\ln(1+\ue^x) + \frac{1}{1+\ue^x} + x + C
 		\end{equation*}
 		所以不定积分为:
 		{
 		\boldmath
 		\color{blue}
 		\begin{equation*}
-			-\ln(1+e^x) + \frac{1}{1+e^x} + x + C
+			-\ln(1+\ue^x) + \frac{1}{1+\ue^x} + x + C
 		\end{equation*}
 		}
 	\end{solution}

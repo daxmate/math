@@ -303,9 +303,9 @@
 
 	\begin{solution}
 		\begin{align*}
-			 & \because \angle{AMP} = \angle{PMA} \text{并且有} \angle{MAB} = \angle{MPN} = \ang{90}                     \\
+			 & \because \angle{AMP} = \angle{PMA} \text{并且有} \angle{MAB} = \angle{MPN} = \ang{90}                  \\
 			 & \therefore \triangle{AMB} \sim \triangle{PMN}                                                          \\
-			 & \because \angle{PNM} = \angle{MNP} \text{和} \angle{MPN} = \angle{DAN} = \ang{90}                       \\
+			 & \because \angle{PNM} = \angle{MNP} \text{和} \angle{MPN} = \angle{DAN} = \ang{90}                      \\
 			 & \therefore \triangle{PMN} \sim \triangle{ADN}                                                          \\
 			 & \therefore \triangle{AMB} \sim \triangle{ADN}                                                          \\
 			 & \therefore \frac{AB}{MA} = \frac{AN}{AD}                                                               \\
@@ -397,9 +397,9 @@
 	\begin{center}
 		\large\bf 附加题
 	\end{center}
-	\question 将函数$f(x)=e^x$展开为$x$的幂级数,并求出收敛区间.($e=2.718$为自然对数的底数)
+	\question 将函数$f(x)=\ue^x$展开为$x$的幂级数,并求出收敛区间.($\ue=2.718$为自然对数的底数)
 	\begin{solution}
-		$e^x$的幂级数展开式为$\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$,使用比值判别法:
+		$\ue^x$的幂级数展开式为$\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$,使用比值判别法:
 		\begin{equation*}
 			\lim_{n\to\infty}\left| \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}}\right| =
 			\lim_{n\to\infty}\left|\frac{x}{n+1}\right|
@@ -411,20 +411,20 @@
 	\question 利用定积分计算椭圆$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 (a > b > 0)$所围成的面积.
 	\begin{solution}
 		对于任意一处的$x$对应的$y=\pm b\sqrt{1 -
-				\frac{x^2}{a^2}}$,则在此处的形成的宽度为$\mathrm{d}x$,高度为$2|y|$的微小矩形的面积表达式为:$2b\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x$,则椭圆的面积为
+				\frac{x^2}{a^2}}$,则在此处的形成的宽度为$\ud{x}$,高度为$2|y|$的微小矩形的面积表达式为:$2b\sqrt{1-\frac{x^2}{a^2}}\ud{x}$,则椭圆的面积为
 		\begin{equation*}
-			A = \int_{-a}^{a}2b\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x
+			A = \int_{-a}^{a}2b\sqrt{1-\frac{x^2}{a^2}}\ud{x} = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\ud{x}
 		\end{equation*}
-		令$x=a\sin\theta$,则$\mathrm{d}x = a\cos\theta\mathrm{d}\theta$,其中$\theta \in [0, \frac\pi2]$.
+		令$x=a\sin\theta$,则$\ud{x} = a\cos\theta\ud{\theta}$,其中$\theta \in [0, \frac\pi2]$.
 		代入得:
 		\begin{align*}
-			A = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\mathrm{d}x
+			A = 4b\int_{0}^{a}\sqrt{1-\frac{x^2}{a^2}}\ud{x}
 			 & = 4b\int_0^{\frac\pi2}\sqrt{1 -
-			\frac{a^2\sin^2\theta}{a^2}}a\cos\theta\mathrm{d}\theta                              \\
-			 & = 4ab\int_0^{\frac\pi2}\cos^2\theta\mathrm{d}\theta                               \\
-			 & = 4ab\int_0^{\frac\pi2}\frac{1+\cos(2\theta)}{2}\mathrm{d}\theta                  \\
-			 & = 4ab\left(\int_0^{\frac\pi2}\frac12\mathrm{d}\theta +
-			\int_0^{\frac\pi2}\frac{\cos(2\theta)}{2}\mathrm{d}\theta\right)                     \\
+			\frac{a^2\sin^2\theta}{a^2}}a\cos\theta\ud{\theta}                                   \\
+			 & = 4ab\int_0^{\frac\pi2}\cos^2\theta\ud{\theta}                                    \\
+			 & = 4ab\int_0^{\frac\pi2}\frac{1+\cos(2\theta)}{2}\ud{\theta}                       \\
+			 & = 4ab\left(\int_0^{\frac\pi2}\frac12\ud{\theta} +
+			 \int_0^{\frac\pi2}\frac{\cos(2\theta)}{2}\ud{\theta}\right)                     \\
 			 & = 4ab\left(\frac\pi4  + \left[\frac{\sin(2\theta)}{4}\right]_0^{\frac\pi2}\right) \\
 			 & = \pi ab
 		\end{align*}

@@ -113,12 +113,12 @@
 
 	\question 解下列各题:
 	\begin{parts}
-		\part[8] 圆锥的高为$6$cm,母线和底面半径的夹角为$30^\circ$,求它的侧面积.
+		\part[8] 圆锥的高为\qty{6}{\cm},母线和底面半径的夹角为$30^\circ$,求它的侧面积.
 			\begin{solution}
 				根据题目中提供的信息可计算得底面半径为$r = 6\sqrt{3}$,母线的长度为$l = 12$,则侧面积为
-				\begin{math}
-					S = \pi r l = 72\sqrt{3} \text{cm}^2
-				\end{math}
+				\begin{equation*}
+					S = \pi r l = \qty[parse-numbers=false]{72\sqrt{3}}{\cm}
+				\end{equation*}
 			\end{solution}
 		\part[8] 求过点$(1,4)$且与直线$2x - 5y + 3 = 0$垂直的直线方程.
 			\begin{solution}
@@ -289,8 +289,8 @@
 	\question 求曲线$y=\sin{x}$在$[0,\pi]$上的曲边梯形绕$x$轴旋转一周所形成的旋转体的体积.
 	\begin{solution}
 		\begin{align*}
-			V & = \int_0^{\pi}\pi \sin^2{x}\mathrm{d}x                              \\
-			  & = \pi\int_0^{\pi}\frac{1-\cos{2x}}{2}\mathrm{d}x                    \\
+			V & = \int_0^{\pi}\pi \sin^2{x}\ud{x}                              \\
+			  & = \pi\int_0^{\pi}\frac{1-\cos{2x}}{2}\ud{x}                    \\
 			  & = \pi(\left[\frac{x}{2}\right]_0^{\pi} - \frac12[\sin(2x)]_0^{\pi}) \\
 			  & = \frac{\pi^2}{2}
 		\end{align*}
