@@ -31,6 +31,37 @@
 				\end{align*}
 			\end{solution}
 
+		\part 求函数$y=\sqrt{\lg(2+x)}$的定义域.
+
+			\begin{solution}
+				\begin{cenum}
+					\item 由$\lg(2+x) \geqslant 0$得:
+					      \begin{align*}
+						      2+x \geqslant 1 \\
+						      x \geqslant -1
+					      \end{align*}
+
+					      \begin{center}
+						      \begin{tikzpicture}
+							      \begin{axis}[
+									      xmin = -4, xmax = 4,
+									      ticks=both
+								      ]
+								      \addplot[domain=-3:3, blue!70, thick]{log10(x+2)};
+								      \addlegendentry{$\lg(x+2)$}
+							      \end{axis}
+						      \end{tikzpicture}
+					      \end{center}
+
+					\item 由$2+x > 0$得:
+					      \begin{equation*}
+						      x > -2
+					      \end{equation*}
+					\item 综上,函数的定义域为$\{x|x\geqslant-1\}$.
+
+				\end{cenum}
+			\end{solution}
+
 	\end{parts}
 
 \end{questions}
