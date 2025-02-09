@@ -81,7 +81,42 @@
 					 & = \frac4{25}\sqrt{b}
 				\end{align*}
 			\end{solution}
-
 	\end{parts}
+
+	\question 已知方程$kx^2 + y^2 =
+		4$,其中$k$为实数,对于不同范围的$k$值,分别指出方程所代表图形的类型,并画出显示其数量特征的草图.
+
+	\begin{solution}
+		\begin{penum}
+			\item $k = 0$时,$y=\pm2$,这是两条平行于$x$轴的直线;
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[xmin=-3, xmax=3, ymax=3, ymin=-3]
+						      \addplot[domain=-2:2, green!50!blue, thick]{2};
+						      \addplot[domain=-2:2, red!50!blue, thick]{-2};
+						      \addlegendentry{$y=2$}
+						      \addlegendentry{$y=-2$}
+						      \node[below left] at (0,2) {$2$};
+						      \node[below left] at (0,-2) {$-2$};
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
+
+			\item $k > 0$时,图形是半轴分别为$\frac{2}{\sqrt{k}}$和$2$的椭圆,其中当$k = 1$时,长短轴相等形状为圆形;
+			\item $k < 0$时,图形是双曲线.
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[xmin=-3, xmax=3, ymax=3, ymin=-3, 
+							  legend style={at={(axis cs:2,-2)}, anchor=west}]
+						      \addplot[domain=0:360, green!50!blue, thick]({cos(x)}, {2*sin(x)});
+						      \addlegendentry{$kx^2 + y^2 = 4 \quad(k>0)$}
+						      \addlegendentry{$kx^2 + y^2 = 4 \quad(k<0)$}
+						      \addplot[domain=-2:2, red!50!blue, thick]({cosh(x)}, {2*sinh(x)});
+						      \addplot[domain=-2:2, red!50!blue, thick]({-cosh(x)}, {2*sinh(x)});
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
+		\end{penum}
+	\end{solution}
 
 \end{questions}
