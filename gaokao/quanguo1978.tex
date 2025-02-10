@@ -204,4 +204,45 @@
 		\end{penum}
 	\end{proofsolution}
 
+	\question 已知$\log_{18}9=a\,(a\neq2), 18^b=5$,求$\log_{36}45$.
+
+	\begin{solution}
+		由$18^b=5$得
+		\begin{equation*}
+			b = \log_{18}5
+		\end{equation*}
+		则有:
+		\begin{equation*}
+			a + b = \log_{18}{45}
+		\end{equation*}
+		根据换底公式有:
+		\begin{equation*}
+			\log_{18}{45} = \frac{\log_{36}{45}}{\log_{36}{18}}
+		\end{equation*}
+		则有:
+		\begin{align*}
+			\log_{36}{45} & = \log_{18}{45}\cdot \log_{36}{18}         \\
+			              & = (a+b)\log_{36}{18}                       \\
+			              & = (a+b)\frac{\log_{18}{18}}{\log_{18}{36}} \\
+			              & = (a+b)\frac1{1+\log_{18}2}
+		\end{align*}
+		由$\log_{18}{9} = a$得:
+		\begin{align*}
+			\log_{18}9 & = \log_{18}\frac{18}{2}    \\
+			           & = \log_{18}18 - \log_{18}2 \\
+			           & = 1 - \log_{18}{2}         \\
+			           & = a
+		\end{align*}
+		则有
+		\begin{equation*}
+			\log_{18}2 = 1 - a
+		\end{equation*}
+
+		所以有:
+		\begin{equation*}
+			\log_{36}{45} = \frac{a+b}{2-a}
+		\end{equation*}
+
+	\end{solution}
+
 \end{questions}
