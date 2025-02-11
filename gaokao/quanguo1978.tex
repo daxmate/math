@@ -365,4 +365,88 @@
 		由此可得$\sin(\alpha+2\beta) = 1$, 所以$\alpha+2\beta=\frac{\pi}{2}$.
 	\end{proofsolution}
 
+	\question 已知函数$y=x^2 + (2m+1)x + m^2 - 1\, (m\text{为实数})$.
+	\begin{penum}
+		\item $m$是什么数值时,$y$的极值是$0$?
+		\item
+		      求证:不论$m$是什么数值时,函数图像(即抛物线)的顶点都在同一条直线$L_1$上,画出$m=-1,0,1$时抛物线的草图,来检验这个结论;
+		\item
+		      平行于$L_1$的直线中,哪些与抛物线相交,哪些不相交?求证:任一条平行于$L_1$而与抛物线相交的直线,被各抛物线裁出的线段都相等.
+	\end{penum}
+
+	\begin{solution}
+		\begin{penum}
+			\item 由抛物线的性质可知在$x=-\frac{2m+1}{2}$时有极值,代入函数中有:
+			      \begin{align*}
+				      y & = (-\frac{2m+1}{2})^2 - (2m+1)\frac{2m+1}{2} + m^2 - 1 \\
+				        & = \frac{(2m+1)^2}{4} - \frac{(2m+1)^2}{2} + m^2 - 1    \\
+				        & = \frac{4m^2 - 4 - 4m^2 - 4m - 1}{4}                   \\
+				        & = -m - \frac54
+			      \end{align*}
+			      所以当$m=-\frac54$时极值为零.
+			\item 联解顶点坐标的方程组
+			      \begin{math}
+				      \begin{cases}
+					      x = -\frac{2m+1}{2} \\
+					      y = -m - \frac54
+				      \end{cases}
+			      \end{math}
+			      可得:
+			      \begin{equation*}
+				      y = x - \frac34
+			      \end{equation*}
+			      所以顶点在直线$y=x - \frac34$上.
+
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \begin{axis}[
+							      xmin=-5, xmax=5
+						      ]
+						      \addplot[domain=-2.5:3.5, red!50]{x^2 - x};
+						      \addplot[domain=-3.5:2.5, green!50]{x^2 + x - 1};
+						      \addplot[domain=-4.5:1.5, blue!50]{x^2 + 3*x};
+						      \addplot[domain=-4:4, green!50!blue, thick]{x - 3/4};
+						      \draw[fill=red, red](0.5,-0.25)circle(1pt) (-.5,-1.25)circle(1pt) (-1.5, -2.25)circle(1pt);
+					      \end{axis}
+				      \end{tikzpicture}
+			      \end{center}
+
+			\item 设平行于$L_1$的直线方程为$y=x + b$,联解抛物线与直线的方程组
+			      \begin{equation*}
+				      \begin{cases}
+					      y=x^2 + (2m+1)x + m^2 - 1 \\
+					      y = x + b
+				      \end{cases}
+			      \end{equation*}
+			      可得:
+			      \begin{equation*}
+				      x^2 + 2mx + m^2 - b - 1 = 0
+			      \end{equation*}
+			      当方程有两个相同的根时直线与抛物线相切,即方程的判别式$\Delta=0$时.
+			      \begin{align*}
+				      \Delta & = (2m)^2 - 4(m^2 - b - 1) \\
+				             & = 4m^2 - 4m^2 + b + 1     \\
+				             & = b + 1 = 0
+			      \end{align*}
+			      则当$b\geqslant-1$时与抛物线有相交,当$b<-1$时与抛物线没有交点.
+
+			      当$b\geqslant-1$时求解交点的坐标:
+			      \begin{equation*}
+				      x_1,x_2 = \frac{-2m \pm \sqrt{b + 1}}{2}
+			      \end{equation*}
+			      对应的$y$坐标为:
+			      \begin{align*}
+				      y_1,y_2 = \frac{-2m \pm \sqrt{b + 1}}{2} + b
+			      \end{align*}
+			      交点之间的距离$l$为:
+			      \begin{align*}
+				      l & = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2} \\
+				        & = \sqrt{b + 1 + b + 1}                 \\
+				        & = \sqrt{2b + 2}
+			      \end{align*}
+			      所以与抛物线有交点的情况下直线被抛物线裁出的线段都相等(与$m$无关).
+
+		\end{penum}
+	\end{solution}
+
 \end{questions}
