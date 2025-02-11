@@ -245,4 +245,89 @@
 
 	\end{solution}
 
+	\question[20] 已知$\triangle{ABC}$的三个内角的大小成等差数列,$\tan{A}\tan{C}=2+\sqrt{3}$,求角$A,B,C$的大小.又已知顶点$C$的对边$c$上的高等于$4\sqrt{3}$,求三角形各边$a,b,c$的长.(提示:必要时可验证$(1+\sqrt{3})^2=4+2\sqrt{3}$)
+
+	\begin{solution}
+		设$\angle{B}=\beta$,则角$A,B,C$可以分别表示为$\beta-\delta, \beta, \beta + \delta$,可知$\beta=\ang{60},
+			\angle{A}+\angle{C} = \ang{120}$.
+
+		因为有
+		\begin{equation*}
+			\tan{A}\tan{C}  = \frac{\sin{A}}{\cos{A}}\cdot\frac{\sin{C}}{\cos{C}}
+		\end{equation*}
+		所以得
+		\begin{align*}
+			\sin{A}\sin{C} = (2+\sqrt{3})\cos{A}\cos{C} \\
+			(1+\sqrt{3})\cos{A}\cos{C} + \cos{A}\cos{C} - \sin{A}\sin{C} = 0
+		\end{align*}
+		根据和角公式可得
+		\begin{align*}
+			(1+\sqrt{3})\cos{A}\cos{C} + \cos(A+C)= 0 \\
+			\cos{A}\cos{C} = \frac{\sqrt{3}-1}{4}
+		\end{align*}
+		根据余弦积化和差公式可得
+		\begin{align*}
+			\cos{A}\cos{C} & = \frac12[\cos(A+C)+\cos(A-C)] \\
+			               & = -\frac14 + \frac12\cos(A-C)  \\
+			               & = \frac{\sqrt{3}-1}{4}
+		\end{align*}
+		所以
+		\begin{equation*}
+			\cos(A-C) = \frac{\sqrt{3}}{2}
+		\end{equation*}
+		所以$A-C=\pm\ang{30}$.
+		\begin{penum}
+			\item $A-C=\ang{30}$则有$A=\ang{75}, C=\ang{45}$.
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \coordinate(a) at (0,0);
+					      \coordinate(b) at (3,0);
+					      \coordinate(a1) at (75:5);
+					      \coordinate(b1) at ([xshift=3cm]120:5);
+					      \coordinate(c) at (intersection of a--a1 and b--b1);
+					      \coordinate(d) at ($(a)!(c)!(b)$);
+
+					      \draw (a) -- (b) -- (c) -- cycle;
+					      \draw[dashed, blue] (c) -- (d);
+					      \draw (a)node[below]{$A$} (b) node[below]{$B$} (c)node[above]{$C$} (d) node[below]{$D$};
+
+				      \end{tikzpicture}
+			      \end{center}
+			      根据条件可知$CD=4\sqrt{3}$,可以计算出$a=BC=8$,根据正弦定理有:
+			      \begin{equation*}
+				      \frac{a}{\sin\ang{75}} = \frac{b}{\sin\ang{60}} = \frac{c}{\sin\ang{45}}
+			      \end{equation*}
+			      应用和角公式来计算$\sin\ang{75}$:
+			      \begin{align*}
+				      \sin\ang{75} & = \sin(\ang{45}+\ang{30})                                                    \\
+				                   & = \sin\ang{45}\cos\ang{30} + \cos\ang{45}\sin\ang{30}                        \\
+				                   & = \frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2}\cdot\frac12 \\
+				                   & = \frac{\sqrt{6} + \sqrt{2}}{4}
+			      \end{align*}
+			      则可以分别计算出:
+			      \begin{gather*}
+				      b = \frac{\sqrt{3}}{2}\cdot \frac{8}{\frac{\sqrt{6}+\sqrt{2}}{4}} = 4(3\sqrt{2} - \sqrt{6}) \\
+				      c = \frac{\sqrt{2}}{2}\cdot\frac{8}{\frac{\sqrt{6} + \sqrt{2}}{4}} = 8(\sqrt{3} - 1)
+			      \end{gather*}
+
+			\item $A-C=-\ang{30}$则有$A=\ang{45}, C=\ang{75}$.
+			      \begin{center}
+				      \begin{tikzpicture}
+					      \coordinate(a) at (0,0);
+					      \coordinate(b) at (3,0);
+					      \coordinate(a1) at (45:5);
+					      \coordinate(b1) at ([xshift=3cm]120:5);
+					      \coordinate(c) at (intersection of a--a1 and b--b1);
+					      \coordinate(d) at ($(a)!(c)!(b)$);
+
+					      \draw (a) -- (b) -- (c) -- cycle;
+					      \draw[dashed, blue] (c) -- (d);
+					      \draw (a)node[below]{$A$} (b) node[below]{$B$} (c)node[above]{$C$} (d) node[below]{$D$};
+
+				      \end{tikzpicture}
+			      \end{center}
+			      根据条件可以简单计算出$a=8, b=4\sqrt{6}, c=2\sqrt{3}+4\sqrt{3}=6\sqrt{3}$.
+		\end{penum}
+	\end{solution}
+
 \end{questions}
