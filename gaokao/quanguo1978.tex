@@ -267,14 +267,13 @@
 		\end{align*}
 		根据余弦积化和差公式可得
 		\begin{align*}
-			\cos{A}\cos{C} & = \frac12[\cos(A+C)+\cos(A-C)] \\
-			               & = -\frac14 + \frac12\cos(A-C)  \\
-			               & = \frac{\sqrt{3}-1}{4}
+			\cos{A}\cos{C} & = \frac12[\cos(A+C)+\cos(A-C)]                        \\
+			               & = -\frac14 + \frac12\cos(A-C)  = \frac{\sqrt{3}-1}{4}
 		\end{align*}
-		所以
-		\begin{equation*}
+		可得
+		\begin{math}
 			\cos(A-C) = \frac{\sqrt{3}}{2}
-		\end{equation*}
+		\end{math}
 		所以$A-C=\pm\ang{30}$.
 		\begin{penum}
 			\item $A-C=\ang{30}$则有$A=\ang{75}, C=\ang{45}$.
@@ -305,10 +304,10 @@
 				                   & = \frac{\sqrt{6} + \sqrt{2}}{4}
 			      \end{align*}
 			      则可以分别计算出:
-			      \begin{gather*}
-				      b = \frac{\sqrt{3}}{2}\cdot \frac{8}{\frac{\sqrt{6}+\sqrt{2}}{4}} = 4(3\sqrt{2} - \sqrt{6}) \\
-				      c = \frac{\sqrt{2}}{2}\cdot\frac{8}{\frac{\sqrt{6} + \sqrt{2}}{4}} = 8(\sqrt{3} - 1)
-			      \end{gather*}
+			      \begin{align*}
+				       & b = \frac{\sqrt{3}}{2}\cdot \frac{8}{\frac{\sqrt{6}+\sqrt{2}}{4}} = 4(3\sqrt{2} - \sqrt{6}) \\
+				       & c = \frac{\sqrt{2}}{2}\cdot\frac{8}{\frac{\sqrt{6} + \sqrt{2}}{4}} = 8(\sqrt{3} - 1)
+			      \end{align*}
 
 			\item $A-C=-\ang{30}$则有$A=\ang{45}, C=\ang{75}$.
 			      \begin{center}
@@ -329,5 +328,41 @@
 			      根据条件可以简单计算出$a=8, b=4\sqrt{6}, c=2\sqrt{3}+4\sqrt{3}=6\sqrt{3}$.
 		\end{penum}
 	\end{solution}
+
+	\question[20] 已知$\alpha,\beta$为锐角,$3\sin^2\alpha + 2\sin^2\beta=1, 3\sin2\alpha - 2\sin2\beta
+		=0$.求证:$\alpha+2\beta=\frac{\pi}2.$
+
+	\begin{proofsolution}
+		由和角公式和倍角公式可得:
+		\begin{align*}
+			\sin(\alpha + 2\beta) & = \sin\alpha\cos2\beta + \cos\alpha\sin2\beta                      \\
+			                      & = \sin\alpha(1 - 2\sin^2\beta) + \cos\alpha\cdot\frac32\sin2\alpha \\
+			                      & = 3\sin^3\alpha  + 3\sin\alpha\cos^2\alpha                         \\
+			                      & = 3\sin\alpha(\sin^2\alpha + \cos^2\alpha)                         \\
+			                      & = 3\sin\alpha
+		\end{align*}
+		将$3\sin^2\alpha + 2\sin^2\beta=1$转换为$3\sin^2\alpha=\cos2\beta$并两边平方可得:
+		\begin{equation*}
+			9\sin^4\alpha = \cos^2{2\beta} \tag{1}
+		\end{equation*}
+		将$3\sin2\alpha-2\sin2\beta=0$移项得$3\sin2\alpha=2\sin2\beta$并两边平方可得:
+		\begin{align*}
+			 & 9\sin^2(2\alpha)  = 4\sin^22\beta               \\
+			 & 9\sin^2(2\alpha)  = 4(1-\cos^22\beta)           \\
+			 & \cos^22\beta = 1 - \frac94\sin^22\alpha \tag{2}
+		\end{align*}
+		结合式(1)和式(2)有:
+		\begin{align*}
+			 & 9\sin^4\alpha = 1 - \frac94\sin^22\alpha                 \\
+			 & 36\sin^4\alpha = 4 - 9(1-\cos^22\alpha)                  \\
+			 & 36\sin^4\alpha = 4 - 9[1-(1-2\sin^2\alpha)^2]            \\
+			 & 36\sin^4\alpha = 4 - 9(1-1+4\sin^2\alpha -4\sin^4\alpha) \\
+			 & 36\sin^4\alpha = 4 - 36\sin^2\alpha + 36\sin^4\alpha     \\
+			 & \sin^2\alpha = \frac19
+		\end{align*}
+		又因为$\alpha$是锐角,所以$\sin\alpha=\frac13$.
+
+		由此可得$\sin(\alpha+2\beta) = 1$, 所以$\alpha+2\beta=\frac{\pi}{2}$.
+	\end{proofsolution}
 
 \end{questions}
