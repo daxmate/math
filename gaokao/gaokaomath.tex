@@ -163,7 +163,14 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 }
 
 \sisetup{
-mode=math}
+mode=math
+}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\ToUpper}{m}{
+  \text_uppercase:n {#1}
+}
+\ExplSyntaxOff
 
 
 % TODO 设计封面样式
