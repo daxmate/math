@@ -39,5 +39,27 @@
 
 			\end{solution}
 
+		\part 已知直圆锥体的底面半径等于\qty{1}{\cm},母线的长等于\qty{2}{\cm},求它的体积.
+
+			\begin{solution}
+				\begin{center}
+					\tdplotsetmaincoords{70}{0}
+					\begin{tikzpicture}[tdplot_main_coords, scale=2]
+						\begin{scope}[canvas is xy plane at z=0]
+							\draw (-1,0) coordinate(a) arc[start angle=180, end angle=360, radius=1cm];
+							\draw[dashed] (-1,0) to[out=90, in=90] (1,0) coordinate(b);
+						\end{scope}
+						\draw (1,0) --node[sloped, above]{$\qty{2}{\cm}$} (0,0,{sqrt(3)})coordinate(c) -- (-1,0);
+						\draw[dashed] (c) --node[left]{$h$} (0,0) --node[below]{$\qty{1}{\cm}$} (b);
+					\end{tikzpicture}
+				\end{center}
+				可以计算出$h=\sqrt{3}$,根据体积公式有：
+				\begin{align*}
+					V & = \frac13\pi r^2h                   \\
+					  & = \frac13\pi\times1^2\times\sqrt{3} \\
+					  & = \qty[parse-numbers=false]{\frac{\sqrt{3}}{3}\pi}{\cm\cubed}
+				\end{align*}
+			\end{solution}
+
 	\end{parts}
 \end{questions}
