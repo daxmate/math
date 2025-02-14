@@ -1,6 +1,6 @@
 %!tex program = lualatex
 \documentclass[
-answers
+	answers
 ]{exam}
 % 屏蔽掉一些不影响的警告
 \usepackage{silence}
@@ -11,23 +11,23 @@ answers
 \WarningFilter{latex}{Label `part}
 \WarningFilter{latex}{Command `\theHfootnote'}
 \usepackage{
-ctex, 	 		% 中文支持
-amsmath, 		% ams数学包
-amssymb, 		% ams数学符号
-amsthm,  		% ams定理环境
-csquotes,		% 处理引号
-arcs,	 		% 添加弧的符号
-enumitem,		% 列表环境增强
-tikz,	 		% 绘图工具
-pgfplots,		% 绘制函数曲线
-tikz-3dplot, 	% 3D 图像
-tkz-euclide, 	% 简单几何绘图
-siunitx,	 	% 数字单位处理
-titlesec,	 	% 标题设置
-caption,	 	% 图表标题
-multicol,	 	% 多列环境
-hyperref, 	 	% 处理超链接
-tocloft,	 	% 格式化目录
+	ctex, 	 		% 中文支持
+	amsmath, 		% ams数学包
+	amssymb, 		% ams数学符号
+	amsthm,  		% ams定理环境
+	csquotes,		% 处理引号
+	arcs,	 		% 添加弧的符号
+	enumitem,		% 列表环境增强
+	tikz,	 		% 绘图工具
+	pgfplots,		% 绘制函数曲线
+	tikz-3dplot, 	% 3D 图像
+	tkz-euclide, 	% 简单几何绘图
+	siunitx,	 	% 数字单位处理
+	titlesec,	 	% 标题设置
+	caption,	 	% 图表标题
+	multicol,	 	% 多列环境
+	hyperref, 	 	% 处理超链接
+	tocloft,	 	% 格式化目录
 }
 
 % 横向超过10pt之内不警告
@@ -59,7 +59,7 @@ tocloft,	 	% 格式化目录
 \newenvironment{proofsolution}
 % 定义 proofsolution 环境
 {\renewcommand{\solutiontitle}{\textbf{证明：}}\begin{solution}} % 环境开始部分
-{\end{solution}}            % 环境结束部分
+		{\end{solution}}            % 环境结束部分
 % 添加中式有点倾斜的平行符号
 \renewcommand{\parallel}{
 	\mathrel{ %设置平行符号为数学中的关系符
@@ -72,10 +72,10 @@ tocloft,	 	% 格式化目录
 
 % 修改section的标题样式
 \titleformat{name=\section}
-  {\centering\bfseries} % 格式：居中、大号字体、加粗
-  {}              		% 编号样式
-  {0pt}                 % 编号与标题间距
-  {}                    % 标题前无额外内容
+{\centering\bfseries} % 格式：居中、大号字体、加粗
+{}              		% 编号样式
+{0pt}                 % 编号与标题间距
+{}                    % 标题前无额外内容
 \setcounter{secnumdepth}{0} % 取消section的计数
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % 设置目录中用点线连接目录内容与页码
 \renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries} % 设置目录标题的样式
@@ -84,7 +84,7 @@ tocloft,	 	% 格式化目录
 \NewCommandCopy\oldendsolution\endsolution
 \renewenvironment{solution}
 {\setcounter{equation}{0}
-\oldsolution}
+	\oldsolution}
 {\oldendsolution}
 % 重新定义eqref命令
 \renewcommand{\eqref}[1]{式~(\ref{#1})}
@@ -117,7 +117,6 @@ tocloft,	 	% 格式化目录
 {}{}
 \makeatother
 
-
 % 带圈数字用tikz实现
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
@@ -141,13 +140,13 @@ tocloft,	 	% 格式化目录
 	shapes.symbols,
 }
 \pgfplotsset{
-compat=1.18, 		 		% 设置pgfplots兼容最新的功能
-axis lines = middle, 		% 坐标轴原点在中心
-ticks = none,  		 		% 不显示刻度
-xlabel = $x$, ylabel = $y$, % 坐标轴符号
-xlabel style={anchor=west},
-ylabel style={anchor=south}, % 坐标轴符号的位置
-samples = 100, 				% 采样率,数目越大曲线越平滑
+	compat=1.18, 		 		% 设置pgfplots兼容最新的功能
+	axis lines = middle, 		% 坐标轴原点在中心
+	ticks = none,  		 		% 不显示刻度
+	xlabel = $x$, ylabel = $y$, % 坐标轴符号
+	xlabel style={anchor=west},
+	ylabel style={anchor=south}, % 坐标轴符号的位置
+	samples = 100, 				% 采样率,数目越大曲线越平滑
 }
 
 % 修复pgfplots的fillbetween出现missing characters的警告
@@ -163,15 +162,14 @@ samples = 100, 				% 采样率,数目越大曲线越平滑
 }
 
 \sisetup{
-mode=math
+	mode=math
 }
 
 \ExplSyntaxOn
 \NewDocumentCommand{\ToUpper}{m}{
-  \text_uppercase:n {#1}
+	\text_uppercase:n {#1}
 }
 \ExplSyntaxOff
-
 
 % TODO 设计封面样式
 % \title{历年高考数学试卷及答案}
