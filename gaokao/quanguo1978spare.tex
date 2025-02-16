@@ -74,4 +74,44 @@
 				\end{align*}
 			\end{solution}
 	\end{parts}
+
+	\question 已知两数$x_1, x_2$满足条件:
+	\begin{penum}
+		\item 它们的和是等差数列$1,3,\cdots$的第$20$项;
+		\item 它们的积是等比数列$2,-6,\cdots$的前$4$项和,求根为$\frac{1}{x_1}, \frac{1}{x_2}$的方程.
+	\end{penum}
+
+	\begin{solution}
+		由题意可得\begin{math}
+			\begin{cases}
+				x_1 + x_2 = 39 \\
+				x_1x_2 = 2 -6 + 18 - 54 = -40
+			\end{cases}
+		\end{math},可以解得$x_1=40, x_2 = -1$,或者$x_1=-1, x_2 = 40$.
+
+		假设方程为$ax^2 + bx + c = 0$, 则有两个根之和为:
+		\begin{displaymath}
+			-\frac{b}{a} = \frac1{x_1} + \frac1{x_2} = -1 + \frac1{40} = -\frac{39}{40}
+		\end{displaymath}
+
+		两个根之积为:
+		\begin{displaymath}
+			\frac{c}{a} = -\frac{1}{40}
+		\end{displaymath}
+
+		将方程两边同除以$a$得:
+		\begin{displaymath}
+			x^2 + \frac{b}{a}x + \frac{c}{a} = 0
+		\end{displaymath}
+		代入可得方程为:
+		\begin{displaymath}
+			x^2 + \frac{39}{40} -\frac{1}{40} = 0
+		\end{displaymath}
+
+		即方程为:
+		\begin{displaymath}
+			40x^2 + 39x - 1=0
+		\end{displaymath}
+
+	\end{solution}
 \end{questions}
