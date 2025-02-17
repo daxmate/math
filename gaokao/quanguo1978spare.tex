@@ -114,4 +114,42 @@
 		\end{displaymath}
 
 	\end{solution}
+
+	\question 已知: $\triangle{ABC}$的外接圆的切线$AD$交$BC$的延长线于$D$点,求证:\begin{math}
+		\frac{S_{\triangle{ABC}}}{S_{\triangle{ACD}}} = \frac{AB^2}{AC^2} = \frac{BD}{CD}.
+	\end{math}
+
+	\begin{solution}
+		\begin{center}
+			\begin{tikzpicture}[scale=.7]
+				\tkzSetUpLine[add= 0 and 0]
+				\coordinate (a) at (0,0);
+				\coordinate (b) at (3,0);
+				\coordinate (c) at (4,6);
+				\tkzDefCircle[circum](a,b,c) \tkzGetPoint{o}
+				\tkzDefLine[tangent at=a](o) \tkzGetPoint{x}
+				\tkzInterLL(a,x)(b,c) \tkzGetPoint{d}
+
+				\tkzDrawPolygon(a,b,c)
+				\tkzDrawCircle(o,a)
+				\tkzDrawLine(b,d)
+				\tkzDrawLine(a,d)
+				\tkzDrawPoints[fill=black](a,b,c,d,o)
+				\tkzLabelPoint(a){$A$}
+				\tkzLabelPoint[right](b){$B$}
+				\tkzLabelPoint[above](c){$C$}
+				\tkzLabelPoint[below](d){$D$}
+				\tkzLabelPoint[left](o){$O$}
+
+				\tkzDrawLines[dashed](o,a o,c o,b)
+			\end{tikzpicture}
+		\end{center}
+
+		\triangle{ABC}与\triangle{ACD}同高,所以面积之比等于底边长之比,因此有:
+		\begin{displaymath}
+			\frac{S_{\triangle{ABC}}}{S_{\triangle{ACD}}} = \frac{BD}{CD}
+		\end{displaymath}
+
+	\end{solution}
+
 \end{questions}
