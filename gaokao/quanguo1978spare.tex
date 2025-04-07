@@ -125,7 +125,7 @@
 				\tkzSetUpLine[add= 0 and 0]
 				\coordinate (a) at (0,0);
 				\coordinate (b) at (3,0);
-				\coordinate (c) at (4,6);
+				\coordinate (c) at (5,4);
 				\tkzDefCircle[circum](a,b,c) \tkzGetPoint{o}
 				\tkzDefLine[tangent at=a](o) \tkzGetPoint{x}
 				\tkzInterLL(a,x)(b,c) \tkzGetPoint{d}
@@ -141,7 +141,7 @@
 				\tkzLabelPoint[below](d){$D$}
 				\tkzLabelPoint[left](o){$O$}
 
-				\tkzDrawLines[dashed](o,a o,c o,b)
+				% \tkzDrawLines[dashed](o,a o,c o,b)
 			\end{tikzpicture}
 		\end{center}
 
