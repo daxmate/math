@@ -303,3 +303,4 @@ TSWLatexianTemp*
 
 build/
 .DS_Store
+local-conf.tex
