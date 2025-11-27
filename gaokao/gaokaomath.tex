@@ -150,12 +150,12 @@
 }
 
 % 修复pgfplots的fillbetween出现missing characters的警告
-\makeatletter
-\patchcmd\pgfplotsforeachtodomain@@{\ifnum}{\ifdim}{}{\fail}
-\makeatother
-\usepgfplotslibrary{
-	fillbetween,  		% 在两个曲线之间填充
-}
+% \makeatletter
+% \patchcmd\pgfplotsforeachtodomain@@{\ifnum}{\ifdim}{}{\fail}
+% \makeatother
+% \usepgfplotslibrary{
+% 	fillbetween,  		% 在两个曲线之间填充
+% }
 
 \hypersetup{
 	hidelinks,
